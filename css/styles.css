@@ -32,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem ;
+    padding: 0rem ;
     background-color: var(--blk);
   }
 
@@ -125,7 +125,7 @@
     }
 
     .logo{
-        margin-left: -5em;
+        margin-left: -2em;
     }
 
 
@@ -230,8 +230,35 @@
         padding: 4px;
       }
 
+      .profilepic{
+        border-radius: 12px;
+        width: 30%;
+        float: right;
+        display: inline;
+        margin-top: 16px;
+      }
+      
+      .about{
+          width: 65%;
+      }
+
+
+      hr{
+          background-color: #805FD3;
+          border-color: #805FD3;
+          color: var(--accent);
+          margin-right: 24px;
+      }
 
 
 
+      h3{
+          font-family: Antic Slab;
+          font-size: 20px;
+      }
     
+    .aboutcol{
+        width: 33%;
+        display: inline-block;
+    }
       
