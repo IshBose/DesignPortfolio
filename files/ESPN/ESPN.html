@@ -1,0 +1,202 @@
+<head>
+    <title>ESPN APP Redesign</title>
+
+    <link href="../main.css" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam|Slabo+27px|Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+    </head>
+
+
+              <header>
+                    <div id="navbar">
+                        <a href="../index.html" id="logo"> <img src="../Pics/newShivaLogo.png" style="max-width: 15%;"> </a>
+                            <div id="navbar-right">
+                              <a class="active" href="../index.html#quick">Work</a>
+                            <a href="../Writings.html">Writings</a>
+                            <a href="../Aboutme.html">About</a>
+                            <a href="../Resumes/Ishaan Bose Resume 2021 fall.pdf">Resume</a> 
+                            </div>
+                          </div>
+                          
+                
+                </header>
+<div class="container">
+    <div class="casestudy">
+        <h2 style="padding-top: 150px; ">ESPN iOS APP Redesign - A Case Study on Targeting User Needs</h2>
+        <img src="ESPNPlus.0.jpg" alt="Networking" style="margin-left: auto; margin-right: auto; display: block; max-width: 60%;">
+
+        
+        
+        <p>As a full disclaimer, this was a class project, and I am in no way intending to claim credit over the entire project. I contributed on most pieces of work, and for sake of clarity, will remove or mark all work that I had nothing to do with.</p>
+
+        <p>Preview of Redesign:</p>
+        <img src="ESPN REdesign.gif" style="max-width: 20%;">
+        <p> Team: Ruben Leura, Elysia Mac, Lannie Tran, Khandker Hasan, Kiran Aranha</p>
+        <p>Tools: Figma, Google Docs, Google Forms</p>
+        <p>Role: UI Designer, UX Researcher, UX Designer</p>
+        <p>Timeline: 3 weeks</p>
+
+        <h3>Background</h3>
+        <hr>
+        <p>ESPN is a sports network that broadcasts news, scores and statistics to millions of people worldwide. Keeping the context of the application in mind, a sports application’s purpose is to cater to all of the popular sports and aims to capture many functionalities in one centralized location. The relative advantage of this is that you don’t need many different applications to view news and scores; however there is the constraint of overall clutter and data sprawl that comes with having so much information in one place. This yielded our initial observation that there was a lot of clutter on the home pages, and it can be frustrating to go through the application and look for something, because there is a lot of distracting colors and buttons to look at, which can tie into cognitive load, and how much a user can process before they start to deteriorate in performance.
+        </p>
+
+        <h3> Data Collection</h3>
+        <hr>
+        <p>To understand some crucial errors and possible pain points regarding the application we first conducted some user testing with the current application, and then defined the observed errors.</p> <p>The full <a src="https://docs.google.com/spreadsheets/d/1tpCmnbXvV8T6-i1u85qE5eQp0MwuVitWUuSm-7zj9eY/edit#gid=72682928" style="color:#8987F9; margin-left: 5px; margin-right: 5px;">results </a> are linked.</p>
+        <p>We had the users go through some basic tasks:</p>
+        
+        <li>
+            <ol>Task 1: Find LA Dodgers. Favorite the team and check the Roster 
+            </ol>
+            <ol>Task 2: Find the score of the recent Lakers game and find a highlight of the game
+            </ol>
+            <ol>Task 3: Navigate to the English Premier League Tab, and find the latest news
+            </ol>
+            <ol>Task 4:  Find the settings to turn off video autoplay 
+            </ol>
+            <ol>Task 5:Go to LA Lakers → turn on the alerts for “Team News”, and “Final”
+            </ol>
+        </li>
+
+    <p>These overall tasks aimed to put users through common flows of information, and see where they struggled. Following the tasks, we asked them some questions on their user experience, and what they noticed and how it made them felt. Some notable quotes are shown below.</p>
+
+
+    <img src="Interview 6.svg" style="max-width: 50%;">
+    <img src="Interview 7.svg" style="max-width: 50%;">
+    <img src="Interview 8.svg" style="max-width: 50%;">
+
+
+        <h3> Problem Identification</h3>
+        <hr>
+    <p>This helped us understand some core functionalities that needed work and to nail down some pain points. We found that there were 3 consistent problems that were reoccuring:</p>
+
+    <img src="Problems frame.svg">
+
+    <p>The combination of the 3 negatively affected the overall user experience, and lowered engagement with each major function of the application, as highlighted by the navbar. The core problems are expanded on below:</p>
+        
+    <img src="Problems expanded frame.svg">
+
+
+    <h3>Error Classification</h3>
+    <hr>
+    
+    <p>It is important to classify and define the errors that we encountered, and find the root cause of this error. This would allow us to properly alleviate the tension caused by attacking it at the cause.</p>
+    <img src="Errors.svg">
+
+
+    <h3>Understanding Implicit Tradeoffs</h3>
+    <hr>
+    <p>One significant part of every designer's job is negotiating through the sea of tradeoffs that are implicit in every design. Finding that sweet spot is where a good design can turn to a great design, so we made sure to be aware of the tradeoffs to guide our redesign. The two that we chose are highlighted below:  </p>
+    
+    <p>After ranking them subjectively, we plotted them according to their rankings, using a design space chart.</p>
+
+    <p>To understand how these two factors influence a design, we turned to some key competitors, and analyzed the two factors, giving subjective rankings. The Competitors are as follows:</p>
+
+    <img src="competitorw.svg">
+
+    <h4 style="color: #8987F9;">Cognitive Load vs Amount of Information</h4>
+        <p>There is always going to be an inverse relationship with the amount of information the user can feasibly digest, and the cognitive load. The more information, the harder it is for the user to be truly engaged with the product.</p>
+        <img src="Design Space 1.png" style="max-width: 80%;">
+    <h4 style="color: #8987F9;">Efficiency vs Simplicity</h4>
+    <p>We defined efficiency as the number of clicks it takes to get to a desired object of information, however, a path that is the most "efficient" might also be too confusing to the user, especially if it diverges from industry standards in signifiers.
+    </p>
+    <img src="Design Space 2.png"  style="max-width: 80%;">
+
+
+    <h3>Redesign Sketches</h3>
+    <hr>
+    <p>We started by guiding our thoughts about the pain points into a lo-fi sketch: </p>
+
+    <img src="ESPN Redesign Lo Fi.png" style="max-width: 80%;">
+    <p>*Lo-Fi Sketch was done by Lannie Tran</p>
+
+    <p>The biggest thing to note here was the redefined navbar. We wanted to consolidate the information being presented, and seperate the way that the information flows in a way that is more aligned to what the user truly wants. Our data found that users mostly cared about their teams news, and the scores from their teams, and the other sports news was intrusive and detracted from their overall experience. To highlight this, we split up the information architecture as follows. </p>
+
+    <img src="ESPN Info Architecture.svg" style="max-width: 80%">
+
+    <h3>Prototyping</h3>
+    <hr>
+    <p>With the general redesign in mind, and an understanding of the trade-offs implicit in the creation of a new design, we started Prototyping collaboratively on Figma. Ruben Leura, Lannie Tran, Elysia Mac and I were primarily tasked with this, with Ruben and I having more experience with the tools and leading the effort.</p>
+
+    <p>An Embedded version of the prototype is shown below:</p>
+    <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F1EM7HWORI0AjZ3pwOBw5Ft%2FESPN-Redesign%3Fnode-id%3D11%253A2%26viewport%3D371%252C225%252C0.3324931859970093%26scaling%3Dscale-down" allowfullscreen></iframe>
+
+    <p>Some of the important aspects to note is the re-imagined navbar, the new information architecture that places user need first, and the increased user engagement through personalization.</p>
+
+    <p>A gif version for ease of viewing is shown:</p>
+    <img src="ESPN REdesign.gif" style="max-width: 20%;">
+    <h3>Next Steps</h3>
+    <hr>
+    <p>This project was extremely helpful in allowing my prototyping skills to develop and get a good feel of working in a team setting, and how that can influence the design process.</p>
+
+    <p>The main constraints with this project has to be time, and that is why Independantly I will start testing the new designs feasibility against the old one, and see if there is any improvement in the defined errors that we encountered before.</p>
+
+    <p>Deliverables: New Information Architecture, Navbar</p>
+
+
+
+    <a href="../index.html#quick" style="color: #8987F9;">Back to Portfolio</a>
+</div>
+
+
+
+
+    </div>
+</div>
+<footer>
+        
+
+
+    <div class="container">
+    <div class = "row">
+       <div class="icons">
+       <div id = "li">
+         <a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank">
+             <i class="fab fa-linkedin fa-4x"></i>
+          </a>   
+       </div>      
+       <div id = "ig">
+         <a href="https://www.instagram.com/ishaan.bose/?hl=en" target="_blank">
+             <i class="fab fa-instagram fa-4x"></i>
+         </a>
+       </div>
+       <div id = "fb">
+         <a href="https://www.facebook.com/ishaan.bose.5" target="_blank">
+             <i class="fab fa-facebook fa-4x"></i>
+         </a>
+       </div>
+       <div id = "md">
+         <a href = " https://medium.com/@ishaan.bose" target="_blank">
+             <i class="fab fa-medium-m fa-4x"></i>
+         </a>
+        </div>
+        <div id = "gm">
+                <a href = "mailto:ishaan.bose@gmail.com" target="_blank">
+                    <i class="far fa-envelope fa-4x"></i>
+                </a>
+                </div>
+         <p>© Ishaan Bose, 2020 </p>
+       </div>
+     </div>
+   </div>
+   
+     
+   </footer>
