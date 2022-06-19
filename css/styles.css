@@ -162,6 +162,22 @@ nav h3{
         gap: 0px 24px;
         grid-template-columns: auto auto auto;
       }
+      .image-container {
+        margin-top: 1em;
+        display: grid;
+        gap: 0px 0px;
+        grid-template-columns: auto auto auto;
+        margin-left: 8em;
+      }
+
+      .image-container img{
+          max-width: 100%;
+      }
+
+      .image-container img:hover{
+          transform: scale(1.5);
+          transition: all .5s;
+        }
 
       .mobile-container {
         margin-top: 2em;
@@ -326,9 +342,53 @@ nav h3{
         display: none;
     }
 
+    .portfoliocover{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
+        max-width: 80%;
+        display: block;
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-bottom: 2em;
+
+    }
     
+    .portimage{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 24px;
+        text-align: center;
+        justify-content: center;
+        max-width: 75%;
+        display: block;
+        
+    }
+
     
-      
+
+    .casestudy p{
+        max-width: 80%;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    .casestudy h3{
+        max-width: 80%;
+        margin-left: 4em;
+        margin-right: 5em;
+    }
+
+    .casestudy a{
+        max-width: 80%;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    .quote{
+        font-family: Antic Slab;
+        font-weight: 700;
+    }
 
     /* Phone Sizes */
 
@@ -467,8 +527,6 @@ nav h3{
           }
 
          
-    
-
 
       }
 

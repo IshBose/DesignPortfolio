@@ -75,9 +75,196 @@
 
     <body>
     <!-- Hero Section -->
+
+    <img id ="top" class="portfoliocover" src = "./Campaign Comparison 3.png">
     
+    <div  class = "casestudy">
+
+    <h3 class="portfolio">Background</h3>
+
+    <p>
+      This project was part of my year-long internship that eventually converted into a fulltime design contractor role for Demandbase. All rights for designs belong to Demandbase.
+
+<br><br>B2B Design fundamentally boils down to how effectively you can package and present massive amounts of information to users without overwhelming them. An additional caveat that comes with this information is the ability to provide data contextually. Contextual data is delivered both situationally, meaning at a time that makes sense and is desired by the user, but also in a way that allows other numbers to be intuitively processed. This conflict is the crux of this project, and where I intend to address throughout this case study.
+
+<br><br>
+  <b>Product team:</b> Advertising Cloud<br>
+  <b>Timeline:</b> Q2-Q3 2021<br>
+  <b>Role:</b> Lead Designer on Product Team<br>
+  <b>Collaborators:</b> Principal Product Manager, Senior UX Researcher, Engineering Lead and UX Design Director for guidance<br>
+  <b>Tools used:</b> Sketch, InVision, Zoom for UserTesting, DoveTail<br>
+  <b>Tags:</b> UX Design, UX Research, Interaction design, Data visualization<br>
+
+    </p>
+
+    <br>
+    <a href="./ccomparison.html#solution">Skip to solution</a>
+
+    <h3>Problem Statement</h3>
+    <p>The problem presented to me came in the form of a request: <br><br>
+
+      <b>How might we make the data presented to the user more contextual, and easier to understand?</b><br><br>
+      
+      There are two parts of this problem statement, contextual, and easier to understand. Breaking this down into units of analysis allows us to attack this problem at the root a little easier.<br><br>
+      
+      Contextual information gives you a heads-up on why or how something happened, and allows the user to perceive the information exchange going on, instilling trust in the data and greater confidence in the mastery of the tool. In a general purpose tool like analyzing advertising campaign metrics, this is extremely important - we want to empower the users to feel that they can complete a task, and trust the data.<br><br>
+      
+      Understanding the data is a different issue; we have to break down the data and provide helpful tools to make a random integer mean something to the user. Seeing 243  by itself tells you nothing, but seeing 243 (+200 from last month) shows you that you are doing something correctly. Yay!<br><br>
+      </p>
     
+      <h3>Approach</h3>
+
+      <p>Before I could visualize the data, I had to choose what exactly we would be visualizing. The advertising product contained heaps of useful info, but choosing the core metrics to contextualize would be important. To get a headstart on this I reached out to the internal subject matter experts who are tuned in to customer demands. They couldn’t give me a concrete answer, but revealed the following items had garnered interest in potentially understanding better through contextual help:</p>
     
+      <img class = "portimage" src="./Viz options.png">
+
+      <p>As shown in the image above, the options each provide some pros and cons. Due to the UI already present in the advertising product, I decided to go for <b>targeting campaigns</b>. The main campaign summary card delivers cumulative information for bulk selected campaigns, and we could use these metrics to compare one campaign to another, to provide a benchmark for campaign performance.  This would cover the common use case of creating two identical campaigns in terms of budget, geographic location, and accounts being targeted, with the key difference being creatives (ads being shown). This allows you to A/B test in a way.
+      </p>
+
+      <img class = "portimage" src="./funnel.png">
+
+      <p>This idea seemed to fly well with subject matter experts so I moved towards figuring out the best way to visualize this.
+
+        <br><br>My first premonition was to scan for the contextual tools that we use in the advertising  product to help the users understand the data they are seeing. This serves as the foundation to the project, and establishes some patterns to adhere to. 
+        </p>
+       
+        <img class = "portimage" src="./card.png">
+
+        <p>Some of the main tools that we implement are time-period based benchmarks such as the image shown above which give a relative benchmark to help understand the data shown.
+
+          <br><br>Another pattern being used are trendlines in the campaign funnel which shows the change in funnel performance over time. This allows you to understand how metrics change over time which helps to paint a picture with the data. You could for example look at the dips in the data and try to infer why this occurred. Was this due to a company holiday? Creatives not working? AWS outages? Using these trends allow you to understand not only the averages, but also the outliers.
+          </p>
+
+          <img class = "portimage" src="./trendline.png">
+
+          <p>Another pattern being used in the Demandbase Classic, where similar comparison tools were being used to compare page performance over time. The information being presented was a little different, but we could possibly retrofit some of the patterns being used into something more modern with our use case.
+          </p>
+
+          <img class = "portimage" src="./oldsa.png">
+
+          <p>Another tool I used as a source of inspiration was Google Analytics. There were some nice two bar visualizations, as well as red/green positive and negative benchmarks being used there, which I found interesting.
+          </p>
+
+          <img class = "portimage" src="./ga.png">
+
+          <p>Each source of inspiration was used to generate some ideas of possible comparisons.
+
+            <br><br>Still, we needed a couple parts to put this all together:
+            </p>
+
+           <img id="solution"  class = "portimage" src="./Components needed.png">
+
+           <h3 >Solution</h3>
+           <p>My solution was simple - isolating a single campaign, and providing a dropdown for comparison to another campaign. By comparing one campaign to another side by side, you could see the relative performance, which is the key improvement. A lot of feedback that is circulated surrounding the platform is that it is hard to understand high numbers when presented on their own. By comparing one campaign to another, we circumvent this problem, as there would always be a benchmark to hit.</p>
+
+           <img class = "portimage" src="./flow.png">
+
+           <p>This kind of thinking has already been observed in the platform, while conducting a customer call using the master apprentice model, I noticed that often the user would open two different tabs with separate campaigns, and try to rapidly swap back and forth. This, of course, is inefficient, and often frustrating as the campaign chart shows up in relative size. Putting them together would save some time, and give a new tool with a precise use case.
+
+            <br><br>To facilitate this, it would flow the following way:
+            </p>
+
+            <img class = "portimage" src="./viz.png">
+
+            <p>This would provide a concise and contextual benchmark for the user to view as they start to analyze their campaign performance.
+            </p>
+
+            <h3>Testing</h3>
+
+            <p>
+              We started our first round of testing with primarily internal employees, both those familiar with the advertising platform, and also those who work primarily on other parts of the product. This was done in order to avoid only testing with power users who prefer efficiency over ease of understanding. The testing was conducted over zoom and transcribed with DoveTail, with each moderated session being conducted by a senior UX Researcher, with myself taking notes and one other observer to make sure we didn’t miss anything.
+
+            <br><br>I then looked over the recordings, and tagged the sentiments in DoveTail, bucketing them by commonality. Then, with help from the amazing researcher on our team, broke them into Goods! I Wishs! And needs work :(
+
+            </p>
+
+            <img class = "portimage" src="./UserTest 1.png">
+
+            <h3>Iteration</h3>
+
+            <p>From our user testing session, we had generated some nice leads to work with, namely changing the core comparison visualization to something away from the overlaid bars. I chose that approach since it would not take any more pixels on an already crowded screen, but it did not seem to resonate well. Other key changes needed were new tool tip options to give more information, as well as some additional clarifying iconography.
+
+             <br><br> For our next round of iteration, I looked again through our product, new and old, to see what I could possibly use. I found some inspiration in an old analytics tool called ABM Analytics. Here the paradigm is a little different as they are comparing account lists against each other, but the core experience of comparing two funnels against each other was the same.
+              </p>
+
+              <img class = "portimage" src="./abmanal.png">
+
+              <p>
+                Applying this pattern to the previous  flow:
+                </p>
+
+                <img class = "portimage" src="./new viz.png">
+                <p> Turning into</p>
+                <img class = "portimage" src="./Post benchmark Copy 2 1.png"  style="width: 1500px; height: 550px; object-fit: cover; object-position: 100% 33%;">
+
+
+                <h3>Final Result
+                </h3>
+
+                <p>Finally, we ended with one last round of user testing, which was overwhelmingly positive. The new UI was well received, and there were some glowing reviews. Some of quotes:
+                </p>
+
+                <p class = "quote">
+                  <br> “When can I show this to customers?”&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;
+              
+                  
+
+
+
+
+
+                “This is awesome!”&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
+              
+                
+               
+                “Its good to know the design team here is hard at work haha, this is gonna be huge for our product”
+
+                </p>
+
+                <br><p>The final mockups with the feedback taken into account and iterated upon are below:
+                </p>
+
+                <div class = "image-container">
+                  <img class = "portimage" src="./Campaign Starting Point.png">
+                  <img class = "portimage" src="./Campaign Dashboard pre benchmark.png">
+                  <img class = "portimage" src="./Dropdown hover 1.png">
+                  <img class = "portimage" src="./Post benchmark.png">
+                  <img class = "portimage" src="./post benchmark set hover 2.png">
+                  <img class = "portimage" src="./double hover 4.png">
+                  <img class = "portimage" src="./Trendline hover another example.png">
+              </div>
+
+                <h3>Learning</h3>
+                <p>This project was extremely fun throughout. I was able to lead a new feature release from the initial secondary research all the way up to development, and it was gratifying throughout the way. Hearing both negative and positive sentiments during user testing sessions helped me to improve in being able to rapidly act on feedback and address user needs. 
+
+                  <br><br>I gained experience working on a new feature from scratch, learning project sizing in order to avoid scope creep, and working closely with user researchers to improve designs through feedback and iterations. A lot of the theory that is packed in the classroom became apparent through this project, and I was able to apply a lot of the skills that I learned. If I had more time to work on this, I would try to test with more users who aren’t as familiar with the product. Due to time constraints, we were only able to test with a small number of external users, and mostly internal users who are power users. This can skew the actual adoption of the feature, as these users tend to behave a little differently, and have ready access to more support internally.
+                  
+                  <br><br>A followup on this project that would be a v2 improvement would be to show campaign metrics in a small expandable table below the comparison. This was heavily asked for during our user testing sessions for ease of access. The information is actually baked into the tooltips in the chart, but would be easier to parse with a table.
+                  </p>
+
+
+                  <img class = "portimage" src="./Post benchmark Copy 2 1.png"  style="width: 2296px; height: 700px; object-fit: cover; object-position: 100% 40%; margin-bottom: 12px;">
+
+
+                  <a href="../../index.html">Back to main page</a>
+
+                  <a href="./ccomparison.html#top" style="float: right;">Back to top</a>
+
+
+
+     </div>
+
+
+
+
+
+
+
+
+
+
     
     <!-- Projects section -->
     
@@ -97,7 +284,7 @@
 
 
     <h4 class="center">Seen enough?</h4>
-    <p class="center">Get in touch.</p>
+    <p class="center" >Get in touch.</p>
 
     <div class="img-wrap">
 		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../assets/newli.svg" ></a>
