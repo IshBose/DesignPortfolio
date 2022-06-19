@@ -34,25 +34,53 @@
     <!-- Navbar -->
 
     <nav>
-        <img class = "logo" src="images/Winking Memoji.gif" style="max-width: 11%;">
+        <img class = "logo" src="./images/Winking Memoji.gif">
+        <img class = "mobilelogo" src="./images/Winking Memoji.gif">
+
         <ul class="navigation">
-            <li><a class = "active" href="index.html" >Work</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
-          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "assets/newli.svg" ></a></li>
-          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "assets/send-4008.svg"></a></li>
+            <li><a class = "active" href="./index.html" >Work</a></li>
+            <li><a href="./about.html" class="nav-link">About</a></li>
+            <li><a href="./Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
+          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "./assets/newli.svg" ></a></li>
+          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "./assets/send-4008.svg"></a></li>
         </ul>
+           <!-- Hamburger Menu for mobile -->
         <button class="burger-menu" id="burger-menu">
             <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
+          </button>
+
+          <script>// Nav hamburgerburger selections
+
+            const burger = document.querySelector("#burger-menu");
+            const ul = document.querySelector("nav ul");
+            const nav = document.querySelector("nav");
+
+            burger.addEventListener("click", () => {
+            ul.classList.toggle("show");
+            });
+
+            // Close hamburger menu when a link is clicked
+
+            // Select nav links
+            const navLink = document.querySelectorAll(".nav-link");
+
+            navLink.forEach((link) =>
+            link.addEventListener("click", () => {
+                ul.classList.remove("show");
+            })
+            );
+            </script>        
+
     </nav>  
+
+    
 
     <body>
     <!-- Hero Section -->
     <h1 class = "hero">Hey 👋, My name is Ishaan! </h1>
-    <p class = "about">I am an empathetic product designer and student at UC San Diego dedicated to helping others through design. <br>
+    <p>I am an empathetic product designer and student at UC San Diego dedicated to helping others through design. <br>
 
-        <br>Currently a UX Design Intern @ <b>Hashicorp</b> and a studio lead at UCSD Design For America.<br>
+        <br>Currently a UX Design Intern @ <b>Hashicorp</b> and a studio lead at UCSD <span style="color: #C69214">Design For America.</span><br>
         Previously a UX Designer @ <span style="color: #BFDA33">Demandbase</span>, and  UX Design Intern @ <span style="color: #62ADE4">Institutional Shareholder Services.</span></p>
     
     
@@ -60,26 +88,27 @@
     <!-- Projects section -->
 
     <div class="grid-container">
-        <div class="topwide"><a href="files/ccomparison.html"> <img class = "topwide" src = "images/Campaign Comparison 2.png"> </a> </div>
-        <div class="toplong"><a href="files/tables.html"> <img class = "toplong" src = "images/Expand collapse.png"> </a></div>  
-        <div class="sidelong"><a href="files/dataimport.html"> <img class = "sidelong" src = "images/Data Import.png"> </a></div>
-        <div class="middle"><a href="files/dfa.html"> <img class = "middle" src = "images/DFA.png"> </a> </div>
-        <div class="sidewide"><a href="files/integrate.html"> <img class = "sidewide" src = "images/Integrations Hub 3.png"> </a></div>  
-        <div class="fullwidth"><a href="files/archive.html"> The Archive <p>A collection of older work that just didn’t make the cut</p> </a></div>  
+        <div class="topwide"><a href="./files/ccomparison/ccomparison.html"> <img class = "topwide" src = "./images/Campaign Comparison 2.png"> </a> </div>
+        <div class="toplong"><a href="./files/tables.html"> <img class = "toplong" src = "./images/Expand collapse.png"> </a></div>  
+        <div class="sidelong"><a href="./files/dataimport.html"> <img class = "sidelong" src = "./images/Data Import.png"> </a></div>
+        <div class="middle"><a href="./files/dfa.html"> <img class = "middle" src = "./images/DFA.png"> </a> </div>
+        <div class="sidewide"><a href="./files/integrate.html"> <img class = "sidewide" src = "./images/Integrations Hub 3.png"> </a></div>  
+        <div class="fullwidth"><a href="./files/archive.html"> The Archive <p>A collection of older work that just didn’t make the cut</p> </a></div>  
+      </div>
+
+      <div class="mobile-container">
+        <div class="grid-item"><a href="./files/ccomparison/ccomparison.html"> <img src = "./images/CCmobile.png"> </a> </div>
+        <div class="grid-item"><a href="./files/tables.html"> <img src = "./images/itablesmobile.png"> </a></div>  
+        <div class="grid-item"><a href="./files/dataimport.html"> <img src = "./images/dataauditmobile.png"> </a></div>
+        <div class="grid-item"><a href="./files/dfa.html"> <img src = "./images/DFAmobile.png"> </a> </div>
+        <div class="grid-item"><a href="./files/integrate.html"> <img  src = "./images/integrationsmobile.png"> </a></div>  
+        <div class="grid-item"><a href="./files/archive.html"> <img  src = "./images/archive mobile.png"> </a></div>  
       </div>
 
     </body>
 
 
     <footer>
-
-
-    
-    <!-- Footer section -->
-    
-
-
-
 
     <h4 class="center">Seen enough?</h4>
     <p class="center">Get in touch.</p>

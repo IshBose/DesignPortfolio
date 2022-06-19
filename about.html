@@ -34,22 +34,50 @@
     <!-- Navbar -->
 
     <nav>
-        <img class = "logo" src="images/Winking Memoji.gif" style="max-width: 11%;">
+        <img class = "logo" src="./images/Winking Memoji.gif">
+        <img class = "mobilelogo" src="./images/Winking Memoji.gif">
+
         <ul class="navigation">
-            <li><a href="index.html" >Work</a></li>
-            <li><a class = "active" href="about.html" class="nav-link">About</a></li>
-            <li><a href="Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
-          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "assets/newli.svg" ></a></li>
-          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "assets/send-4008.svg"></a></li>
+            <li><a href="./index.html" >Work</a></li>
+            <li><a class = "active" href="./about.html" class="nav-link">About</a></li>
+            <li><a href="./Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
+          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "./assets/newli.svg" ></a></li>
+          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "./assets/send-4008.svg"></a></li>
         </ul>
+           <!-- Hamburger Menu for mobile -->
         <button class="burger-menu" id="burger-menu">
             <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
-    </nav>  
+          </button>
+
+          <script>// Nav hamburgerburger selections
+
+            const burger = document.querySelector("#burger-menu");
+            const ul = document.querySelector("nav ul");
+            const nav = document.querySelector("nav");
+
+            burger.addEventListener("click", () => {
+            ul.classList.toggle("show");
+            });
+
+            // Close hamburger menu when a link is clicked
+
+            // Select nav links
+            const navLink = document.querySelectorAll(".nav-link");
+
+            navLink.forEach((link) =>
+            link.addEventListener("click", () => {
+                ul.classList.remove("show");
+            })
+            );
+            </script>        
+
+    </nav>   
 
     <body>
     <!-- Hero Section -->
-    <img class="profilepic" src="images/Headshot.jpg"> 
+    <img class="profilepic" src="./images/Headshot.jpg"> 
+
+    <img class="mobilepic" src="./images/Headshot.jpg"> 
 
     <h1 class = "hero">A new way to use empathy. </h1>
     <p class = "about">My journey to design started in Eindhoven, where I studied Design Technology as a higher level concentration in my International Baccalaureate diploma. While the course was highly industrial design focused, a key chapter caught my eye.<br><br>

@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/*** Simple Reset */
 
+*,*::before,*::after{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+/* Variables */
 :root {
     --blk: #242424;
     --accent: #805FD3;
@@ -14,17 +22,9 @@
     scroll-behavior: smooth;
   }
 
-  a {
-    text-decoration: none;
-    color: var(--accent);
-  }
 
-  a:hover {
-    color: var(--hover);
-
-  }
-
-  nav {
+/* Nav */
+nav {
     position: sticky;
     top: 0;
     left: 0;
@@ -34,15 +34,6 @@
     justify-content: space-between;
     padding: 0rem ;
     background-color: var(--blk);
-  }
-
-
-  body {
-    font-family: var(--font-family);
-    background-color: var(--blk);
-    color: white;
-    margin-left: 12.5em;
-    margin-right: 12.5em;
   }
 
   ul {
@@ -60,29 +51,56 @@
       color: white;
   }
 
-.active {
-      color: var(--accent);
+
+  a {
+    text-decoration: none;
+    color: var(--accent);
   }
 
- 
+  a:hover {
+    color: var(--hover);
 
-  .burger-menu {
-    color: var(--primary-color);
+  }
+
+  .active {
+    color: var(--accent);
+}
+
+    .burger-menu {
+    color: white;
     font-size: 2rem;
     border: 0;
-    background-color: transparent;
+    margin-top: 4px;
+    background-color: var(--blk);
     cursor: pointer;
     display: none;
+    }
+
+nav h3{
+    margin-top: 6px;
+    margin-left: 8px;
+}
+
+  
+
+/* Body */
+
+  body {
+    font-family: var(--font-family);
+    background-color: var(--blk);
+    color: white;
+    margin-left: 12.5em;
+    margin-right: 12.5em;
   }
 
-
-
+  
     .sm_icon{
         
         width: 24px;
         fill: white;
         filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
         /* the height is adjusted automatically*/
+        
       }
 
     .sm_icon:hover{
@@ -118,6 +136,7 @@
         font-family: Antic Slab;
         font-size: 24px;
         color: white;
+        margin-top: 24px;
     }
 
     .frontpage{
@@ -126,6 +145,14 @@
 
     .logo{
         margin-left: -2em;
+        max-width: 11%;
+        background-color: var(--blk);
+    }
+
+    .mobilelogo{
+        margin-left: -2em;
+        max-width: 20%;
+        display: none;
     }
 
 
@@ -135,6 +162,13 @@
         gap: 0px 24px;
         grid-template-columns: auto auto auto;
       }
+
+      .mobile-container {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        display: none;
+
+      }
     
       .grid-container > div {
         text-align: center;
@@ -142,12 +176,12 @@
       }
 
       .grid-container img:hover{
-            transform: scale(1.02); 
+            transform: scale(1.01); 
         }
 
       .grid-item img{
           max-width: 100%;
-          border-radius: 12px;
+          border-radius: 8px;
       }
 
 
@@ -190,14 +224,14 @@
         grid-row-start: 3;
         grid-row-end: 4;
        max-width: 683px ;
-       height:350px;
+       margin-top: 6px;
     
 
       }
       
       .fullwidth {
         margin-top: 5px;
-        padding-top: 30px;
+        padding-top: 24px;
         grid-column-start: 1;
         grid-column-end: 5;
         grid-row-start: 5;
@@ -205,6 +239,7 @@
         background-color: #3D4849;
         font-family: Antic Slab;
         border-radius: 12px;
+        max-width: 98%;
       }
       .fullwidth a {
           color: white;
@@ -213,8 +248,12 @@
       .fullwidth p{
           font-family: "Red Hat Display";
           font-size: 16px;
-          padding-bottom: 16px;
+          padding-bottom: 24px;
       }
+
+      .fullwidth:hover{
+        transform: scale(1.02); 
+    }
 
 
       footer{
@@ -246,6 +285,18 @@
         display: inline;
         margin-top: 16px;
       }
+
+
+      .mobilepic{
+        border-radius: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
+        width: 50%;
+        display: none;
+      }
+      
       
       .about{
           width: 65%;
@@ -257,6 +308,7 @@
           border-color: #805FD3;
           color: var(--accent);
           margin-right: 24px;
+          margin-bottom: 8px;
       }
 
 
@@ -264,10 +316,120 @@
       h3{
           font-family: Antic Slab;
           font-size: 20px;
+          
+          margin: 8px;
       }
     
     .aboutcol{
         width: 33%;
         display: inline-block;
     }
+
+    
+    
       
+
+    /* Phone Sizes */
+
+    @media screen and (max-width: 700px) {
+        nav ul {
+            position: fixed;
+            background-color: var(--blk);
+            flex-direction: column;
+            top: 64px;
+            left: 10%;
+            width: 100%;
+            padding-bottom: 24px;
+            
+            text-align: center;
+            transform: translateX(120%);
+            transition: transform 0.3s ease-in;
+          }
+        
+           nav ul li {
+            margin: 4px;
+            font-size: 20px;
+          }
+
+          nav ul.show {
+            transform: translateX(0);
+          }
+        
+
+        .burger-menu {
+            display: block;
+          }
+
+          .hero{
+            font-size: 20px;
+            margin-top: 24px;
+        }
+
+        body {
+            margin-left: 6em;
+            margin-right: 6em;
+          }
+
+        .logo{
+            margin-left: -1em;
+            width: 100%;
+            display: none;
+        }
+
+
+        .mobilelogo{
+            margin-left: -2em;
+            max-width: 30%;
+            display: block;
+        }
+
+        .aboutcol{
+            width: 25%;
+            margin: 16px;
+            display: inline;
+        }
+
+        p{
+            font-size: 14px;
+        }
+
+        .profilepic{
+            display: none;
+        }
+
+        .about{
+            width: 100%;
+        }
+
+        .mobilepic{
+            display: block;
+        }
+
+        h3{
+            font-family: Antic Slab;
+            font-size: 16px;
+        }
+
+        li{
+            font-size: 14px;
+        }
+          
+       
+        .grid-item{
+            display: inline-block;
+            max-width: 700px;
+            margin-bottom: 12px;
+        }
+
+        .mobile-container{
+            display: block;
+        }
+
+        .grid-container{
+            display: none;
+        }
+
+        
+
+
+      }
