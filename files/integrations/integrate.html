@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon-32x32.png"
+    />
+
+    <!-- Animate CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      
+    />
+    <title>Ishaan Bose | Design Portfolio</title>
+  </head>
+
+
+    <!-- Navbar -->
+
+    <nav>
+      <img class = "logo" src="../../images/Winking Memoji.gif">
+      <img class = "mobilelogo" src="../../images/Winking Memoji.gif">
+
+      <ul class="navigation">
+          <li><a class = "active" href="../../index.html" >Work</a></li>
+          <li><a href="../../about.html" class="nav-link">About</a></li>
+          <li><a href="../../Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
+        <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "../../assets/newli.svg" ></a></li>
+        <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "../../assets/send-4008.svg"></a></li>
+      </ul>
+         <!-- Hamburger Menu for mobile -->
+      <button class="burger-menu" id="burger-menu">
+          <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+
+        <script>// Nav hamburgerburger selections
+
+          const burger = document.querySelector("#burger-menu");
+          const ul = document.querySelector("nav ul");
+          const nav = document.querySelector("nav");
+
+          burger.addEventListener("click", () => {
+          ul.classList.toggle("show");
+          });
+
+          // Close hamburger menu when a link is clicked
+
+          // Select nav links
+          const navLink = document.querySelectorAll(".nav-link");
+
+          navLink.forEach((link) =>
+          link.addEventListener("click", () => {
+              ul.classList.remove("show");
+          })
+          );
+          </script>        
+
+  </nav>  
+
+    <body>
+    <!-- Hero Section -->
+
+    <img id ="top" class="portfoliocover" src = "./Album cover Copy 2.png">
+    
+    <div  class = "casestudy">
+
+    <h3 class="portfolio">Background</h3>
+
+    <p>
+      This project was part of my year-long internship that eventually converted into a fulltime design contractor role for Demandbase. All rights for designs belong to Demandbase.
+
+<br><br>What is especially notable about this project was just how non-linear the progress was. I believe it captures exactly how unpredictable product development from where it starts and where it ends. All in all, this project was an independent effort to take in user feedback by tying in multiple open tickets into one seamless solution that addressed user needs directly. One of the constant points of feedback surrounding the settings portion of the product was how hard it was to understand the branching hierarchy of different places within settings, and this project attempted to make this more intuitive by rolling all information surrounding integrations into one functional page.
+
+
+<br><br>
+  <b>Product team:</b>  Integrations and Ecosystems team <br>
+  <b>Timeline:</b> Q1 2022<br>
+  <b>Role:</b> Lead Designer on Product Team<br>
+  <b>Collaborators:</b> Front-end engineers, Principal Product Manager, Engineering Lead<br>
+  <b>Tools used:</b> Sketch, InVision<br>
+  <b>Tags:</b> UX Design, UX Research, Interaction design, Data visualization, Table UX<br>
+
+    </p>
+
+    <br>
+    <a href="./integrate.html#solution">Skip to solution</a>
+
+    <h3>The starting point
+    </h3>
+    <p>Initially, this project started off with a very narrow scope, as we wanted to give users better indication of what exactly is happening to an object when they check on its status.
+      <br> </p>
+
+      <img class = "portimage" src="./icon usage.png">
+
+      <p>I was able to whittle this into a problem statement of: <br><br>
+          
+    <b><i>How might we make the status of each object being transmitted from the integration more clear?
+    </b></i></p>
+
+    <br><br>
+    <p>The issue was quite straight forward, and due to the aggressive timeline of one week to get this design up and ready to be worked, I came up with the following solution.
+    </p>
+
+
+    <img class = "portimage" src="./Data sync initial solution.png">
+
+    
+    <!--70 30-->
+      <h3>A hitch in the road yielding a pivot point</h3>
+
+      <p>I’ve learned to expect the unexpected here as there was a large bit of platform instability due to a large migration of data to a new analytics server which sucked up all the engineering availability. Due to this, the short 2 week project got bumped out 2 quarters, and would no longer be worked on. This was disappointing, but presented me with a unique opportunity to     </p>
+      <img class = "portimage" src="./converge.png" style=" max-width: 15%;">
+
+     <h3>Condensing a few projects into one    </h3>
+     <p>Due to this, I was able to tie in other projects that needed design work into a far more comprehensive solution. The one downside to this being that it would take more LOE from engineering, but upon discussion with the PM, we agreed that it would deliver more value to our customer.
+    </p>
+
+<br>
+    <p>Listing out the problem statements, I started by asking what the level of effort would be for each project. Of course, I couldn’t propose full solutions to each one, but in general terms, I wanted to know how feasible it would be to add these together into one initiative.
+    </p>
+<br>
+
+<!---
+    <p><b>How might we make the status of each object being transmitted from the integration more clear? </b><br>
+        This was detailed above, and was more of a visual change than a functional change. The backend already supplied detailed text notifications, and all we had to do was surface this by connecting the endpoints.
+        This level of effort was deemed small by engineering.
+
+        
+        <img class = "portimage" src="./integrationuser.png" >
+
+
+        <br><br>
+        <b>How might we add a data point to show which user set up the integration, and manages it?</b><br>
+        This was simply a small fix of adding a data point collected by the back end, and showcasing which user in the email or name format 
+        </p>
+
+
+        <p><b>How might we improve the information architecture throughout our settings page?</b><br>
+            As shown in these screenshots below, the settings portion of Demandbase simply had a ton of options. Each section was expandable and had 3-8 options nested in there. Finding what you wanted, even with search capability, was difficult due to the sheer number of pages.
+           </p>
+           <img class = "portimage" src="./badarch.png" style=" max-width: 15%;">
+
+
+           <p>This level of effort was deemed medium by engineering, as it would be shuffling around existing parts.  
+
+        Due to these being relatively small on their own, I got the greenlight into moving ahead and scoping out what a combined problem statement would look like.
+
+        <br><br><b>How might we engage and provide our users with contextual experience with setting up, monitoring and configuring?</b>
+
+        <br><br> I felt this problem statement was both open-ended, but also narrowed our scope to exactly where  the product we would be primarily working in.</p>
+
+           -->
+
+           <img class = "portimage" src="./problem statemetns.png" >
+
+
+        <h3>The first shot at <i>integrating</i> the integrations page
+        </h3>
+
+        <p>The key issue with mixing these 3 different sections was the need to consider the information architecture. As you can see in the diagram below, the 3 sections actually depend on each other, but they live in dramatically different places. 
+        </p>
+
+        <img class = "portimage" src="./Info architecture problems.png" >
+
+        <p>One notable issue is Data sync settings vs data sync status: the configuration of data sync status is actually done in sync settings, but they are far away hierarchy wise in the settings tree. The existing way to workaround this was to use this primary action button. However, this conflicted with other primary action buttons on the page, and was found to be distracting.
+        </p>
+
+        <div class="img-wrap">
+            <img src="./dssettings.png" style="height:200px; padding: 24px;" >   
+            <img class = "sidesideimage" src="./dsstatus.png" >
+
+        </div>
+
+        <!--
+        <img class = "portimage" src="./dssettings.png" >
+        <img class = "portimage" src="./dsstatus.png" >-->
+
+        <p>Initially, I suggested condensing the two data sync pages into one view, either through the use of tabs, or one page. The user could switch between both spaces easily and still not lose context of their session since spatially they are in the same place.
+            In the third concept, the whole of data sync is packaged on one highly condensed page, which albeit long, contains all the info.
+
+        </p>
+
+        <div>
+            <div class="carousel">
+              <ul class="slides">
+                <input type="radio" name="radio-buttons" id="img-1" checked />
+                <li class="slide-container">
+                  <div class="slide-image">
+                    <img src="./Data Sync w Tabs - Settings.png">
+                  </div>
+                  <div class="carousel-controls">
+                    <label for="img-3" class="prev-slide">
+                      <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-2" class="next-slide">
+                      <span>&rsaquo;</span>
+                    </label>
+                  </div>
+                </li>
+                <input type="radio" name="radio-buttons" id="img-2" />
+                <li class="slide-container">
+                  <div class="slide-image">
+                    <img src="./Data Sync w Tabs - Status.png">
+                  </div>
+                  <div class="carousel-controls">
+                    <label for="img-1" class="prev-slide">
+                      <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-3" class="next-slide">
+                      <span>&rsaquo;</span>
+                    </label>
+                  </div>
+                </li>
+                <input type="radio" name="radio-buttons" id="img-3" />
+                <li class="slide-container">
+                  <div class="slide-image">
+                    <img src="./Desktop HD Copy 3.png">
+                  </div>
+                  <div class="carousel-controls">
+                    <label for="img-2" class="prev-slide">
+                      <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-1" class="next-slide">
+                      <span>&rsaquo;</span>
+                    </label>
+                  </div>
+                </li>
+                <div class="carousel-dots">
+                  <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                  <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                  <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+                </div>
+              </ul>
+            </div>
+          </div>
+
+        <!--<img class = "portimage" src="./Data Sync w Tabs - Settings.png" >-->
+
+        
+       <!-- <img class = "portimage" src="./Data Sync w Tabs - Status.png" >-->
+
+        <p>In this concept, the whole of data sync is packaged on one highly condensed page, which albeit long, contains all the info.
+        </p>
+
+        <!--<img class = "portimage" src="./Desktop HD Copy 3.png" >-->
+
+        <p>However, these spot fixes didn’t target the root cause, which was the disconnect between integrations and these other supporting pages. Combining other sections does help with this, but users would still face the problem of getting lost with monitoring the integrations that they do set up.
+        <br><br>
+            To fix this, I proposed a more integrated approach, that considers the hierarchy within the same page
+
+        </p>
+
+        <img class = "portimage" src="./proposed fix.png" >
+
+        <p>What is difficult about this is managing the real estate on the screen. Instead of shoving the data sync pages below or beside the integrations screen, I decided to explore putting it under. So for each integration that is set up, the objects that it yields live in a layer below this to be monitored or configured. A click through would be logical in this situation, but unfortunately, configuring the integration itself is done through the click through integration name.
+        </p>
+
+
+        <p>We root this thinking in the design theory of the OODA or observe - orient - decide - act framework to understand a potential mental model to prescribe to our user. They can observe the outer layer, which causes them to open the inner layer, then they can decide what to do based on what they see, and act upon it.
+        </p>
+
+        <img class = "portimage" src="./ooda.webp" >
+
+        <p>To get around this, I decided to use a new component that I had just freshly designed (check out this other case study) which featured an expandable and collapsible datarow. This way we could maintain the metaphor of the other settings and status pages living in a layer below the main one.
+
+            <br><br>Orienting this together, I took this opportunity to up-level the existing table. I added logos that map to the integration set up screen to clear up any confusion and create an instant association with the integration just created, and the row that they see. 
+            
+           <br><br> To solve the issue of the original data sync status problem, I created a new mapping for the icons:
+            </p>
+
+            <img class = "portimage" src="./Mapping to icon usage.png" >
+
+            <p>This led to a mockup that is annotated below.</p>
+
+            <img class = "portimage" src="./New integrations first pass.png" >
+
+            <p>Clicking on the entire or the entire row (with the exception of the click throughs, highlighted in blue) would expand the row to expose the master detail component. Each row in the master detail component contains an object field from data sync status that belongs to that specific integration.
+            </p>
+
+            <img class = "portimage" src="./Salesforce firstpass.png" >
+
+            <p>Some integrations like salesforce do have more object fields than the rest, so they would have an infinite lazy loading scrolling table within the master detail, while more contained integrations like Marketo would have smaller master detail tables.
+            </p>
+
+            <img class = "portimage" src="./Marketo firstpass.png" >
+
+            <P>Integrations that do not have object types, but instead click throughs to other accounts, such as the ad accounts (Linkedin, Facebook, Twitter etc) would have master details to show this click through. This saves them from navigating to another page to configure their integrations, which activates through clicking on the name of the integrations.
+            </P>
+
+            <img class = "portimage" src="./Li MD.png" >
+
+
+            <h3 id="solution"> Final Result</h3>
+
+            <p>Finally, I took this integrated concept to internal stakeholders and subject matter experts. The initial sentiment was that the concept was really working - being able to create, manage and monitor your integrations in one “hub” was really useful, especially to the technical user.
+
+                <br><br>However, there was one core disconnect
+               
+                <br><br>  They were able to get me some great feedback that really helped to conceptualize what was being done here, about managing expectations. Due to each integration belonging to a greater type hierarchy, they would have different types of objects that live under.
+               </p>
+
+               <img class = "portimage" src="./type.png" >
+
+            <p>Only CRM and MAS integrations have objects in the expand and collapse, while ad networks have clickthrough associated accounts, and G2, TrustRadius and all sales types do not have any objects at all, so they wouldn’t have an expandable row. 
+
+               <br><br> Due to this mismatch in expectation, having all the rows be in the same table might not work. For example, if I learn to expand the Salesforce row to view the objects under, I might think that's what works for every row, but that wouldn’t be true. So following this feedback, we ended with breaking them out by the type, which maps to the setup screen which lowers ambiguity.
+                
+               <br><br> The final solution is as such:
+                </p>
+
+
+                <div class = "image-container">
+                  <img class = "portimage" src="./split out by type.png">
+                  <img class = "portimage" src="./altmarketo open.png">
+                  <img class = "portimage" src="./alt linkedin.png">
+              </div>
+              
+
+                <h3>Learning</h3>
+                <p>This was a super interesting project because the solution that was proposed directly addresses a ton of user feedback that was sitting dormant for ages. Part of the problem was really getting to prioritize that feedback, which came in the form of integrating it into other tickets that had already been specced out. It was also an interesting to work within the settings portion of the product since usually this is one that doesn’t get too much love.
+                  </p>
+
+
+                <br><br>
+
+                  <a href="../../index.html">Back to main page</a>
+
+                  <a href="./integrate.html" style="float: right;">Back to top</a>
+
+
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- Projects section -->
+    
+
+    
+    </body>
+
+
+    <footer>
+
+
+    
+    <!-- Footer section -->
+    
+
+
+
+
+    <h4 class="center">Seen enough?</h4>
+    <p class="center" >Get in touch.</p>
+
+    <div class="img-wrap">
+		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../assets/newli.svg" ></a>
+		<a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon_center" src = "../../assets/send-4008.svg"></a>
+    </div>
+   
+    
+    <h4 class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2022</h4>
+
+    <!-- Website scripts -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Ion icons scripts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+</footer>
+
+</html>
