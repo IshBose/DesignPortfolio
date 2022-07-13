@@ -82,7 +82,7 @@ nav {
     }
 
 nav h3{
-    margin-top: 6px;
+    margin-top: 8px;
     margin-left: 8px;
 }
 
@@ -150,9 +150,16 @@ nav h3{
 
     .logo{
         margin-left: -2em;
-        max-width: 11%;
+        max-width: 25%;
         background-color: var(--blk);
     }
+    .logo:hover{
+     transform: scale(1.15);
+     transition: all .2s;
+
+  }
+
+
 
     .mobilelogo{
         margin-left: -2em;
