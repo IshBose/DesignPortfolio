@@ -377,6 +377,10 @@ nav h3{
         display: block;
         
     }
+
+    .portcontrols{
+      margin-top: 16px;
+    }
     .sidesideimage{
         max-width: 50%;
         height: auto;
