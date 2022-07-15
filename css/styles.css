@@ -98,6 +98,13 @@ nav h3{
     margin-right: 12.5em;
   }
 
+  iframe{
+    display: flex;
+       display: block;
+        margin: 0 auto;
+
+  }
+
   
     .sm_icon{
         
