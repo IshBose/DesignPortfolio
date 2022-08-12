@@ -666,7 +666,9 @@ nav h3{
             display: none;
         }
 
-        
+        .portslide{
+          max-width: 100%;
+        }
 
 
       }
