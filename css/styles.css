@@ -186,7 +186,7 @@ nav h3{
         display: grid;
         gap: 0px 0px;
         grid-template-columns: auto auto auto;
-        margin-left: 8em;
+        margin-left: 2em;
       }
 
       .image-container img{
