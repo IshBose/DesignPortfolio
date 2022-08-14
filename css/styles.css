@@ -399,6 +399,15 @@ nav h3{
       display: block;
     }
 
+    .largeslide{
+
+      width: 100%;
+      margin: 0px;
+      text-align: center;
+      justify-content: center;
+      display: block;
+    }
+
 
 
     .sidesideimage{
