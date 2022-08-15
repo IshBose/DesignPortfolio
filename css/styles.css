@@ -211,7 +211,8 @@ nav h3{
       }
 
       .grid-container img:hover{
-            transform: scale(1.01); 
+            transform: scale(1.03); 
+            transition: all .15s;
         }
 
       .grid-item img{
