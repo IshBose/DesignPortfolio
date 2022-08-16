@@ -169,7 +169,6 @@ nav h3{
 
 
     .mobilelogo{
-        margin-left: -2em;
         max-width: 20%;
         display: none;
     }
@@ -325,6 +324,7 @@ nav h3{
         margin-right: auto;
         text-align: center;
         justify-content: center;
+        margin-top: 24px;
         width: 50%;
         display: none;
       }
@@ -624,9 +624,8 @@ nav h3{
 
 
         .mobilelogo{
-            margin-left: -15em;
             max-width: 30%;
-            display: block;
+            display: inline;
         }
 
         .aboutcol{
