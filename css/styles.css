@@ -190,7 +190,7 @@ nav h3{
       }
 
       .image-container img{
-          max-width: 100%;
+          max-width: 110%;
       }
 
       .image-container img:hover{
@@ -384,6 +384,15 @@ nav h3{
         max-width: 75%;
         display: block;
         
+    }
+
+    video{
+      margin-left: auto;
+        margin-right: auto;
+        padding: 24px;
+        text-align: center;
+        justify-content: center;
+        display: block;
     }
 
     .portcontrols{
