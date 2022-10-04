@@ -297,6 +297,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       .fullwidth:hover{
         transform: scale(1.02); 
+        background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); 
+        transition: transform 0.2s ease-in;
+   
     }
 
     .portfoliocontainer{
@@ -340,8 +343,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
     .portfoliocontainer .sidebysidecard:hover{
       transform: scale(1.02); 
-      transition: transform 0.1s ease-in;
-    }
+      transition: transform 0.2s ease-in;
+      background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);    }
 
     .portfoliocontainer .sidebysidecard img{
      
@@ -364,8 +367,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .portfoliocontainer .longcardtype:hover{
       transform: scale(1.02); 
-      transition: transform 0.1s ease-in;
+      transition: transform 0.2s ease-in;
+      background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);    
     }
+
+    
 
     .portfoliocontainer .longcardtype img{
       border-radius: 8px;
