@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 /*** Simple Reset */
 
@@ -11,10 +12,10 @@
 
 /* Variables */
 :root {
-    --blk: #242424;
-    --accent: #805FD3;
-    --hover: #440AD8;
-    --font-family: "Red Hat Display", sans-serif;
+    --blk: #171A1E;
+    --accent: #8EB8E5;
+    --hover: #CDE5FE;
+    --font-family: "Space Grotesk", sans-serif;
 
   }
   
@@ -48,7 +49,7 @@ nav {
   nav ul {
     display: flex;
     gap: 2rem;
-    font-family: Antic Slab;
+    font-family: Space Grotesk;
     font-size: 24px;
   }
 
@@ -69,6 +70,7 @@ nav {
 
   .active {
     color: var(--accent);
+    font-weight: bold;
 }
 
     .burger-menu {
@@ -116,9 +118,10 @@ nav h3{
       }
 
     .sm_icon:hover{
-        color: #440AD8;
-        fill: #440AD8;
-        filter: invert(10%) sepia(88%) saturate(7248%) hue-rotate(261deg) brightness(85%) contrast(108%);
+        color: #8EB8E5;
+        fill: #8EB8E5;
+        filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%) contrast(91%);
+
 
     }
 
@@ -134,8 +137,7 @@ nav h3{
       }
 
       .sm_icon_center:hover{
-        filter: invert(10%) sepia(88%) saturate(7248%) hue-rotate(261deg) brightness(85%) contrast(108%);
-      }
+filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%) contrast(91%);      }
 
     .img-wrap{
         display: flex;
@@ -145,7 +147,7 @@ nav h3{
     }
 
     .hero{
-        font-family: Antic Slab;
+        font-family: Space Grotesk;
         font-size: 24px;
         color: white;
         margin-top: 24px;
@@ -262,35 +264,175 @@ nav h3{
       }
       
       .fullwidth {
-        margin-top: -16px;
+       
         padding-top: 24px;
-        grid-column-start: 1;
-        grid-column-end: 5;
-        grid-row-start: 5;
-        grid-row-end: 5;
-        background-color: #3D4849;
-        font-family: Antic Slab;
+        /*background-color: #3D4849;*/
+        border: 2px solid rgba(142, 184, 229, .5);
+        font-family: Space Grotesk;
         border-radius: 12px;
-        max-width: 98%;
+        max-width: 97%;
+       text-align: center;
       }
       .fullwidth a {
           color: white;
+          text-align: center;
+          justify-content: center;
       }
       
       .fullwidth p{
-          font-family: "Red Hat Display";
+          font-family: "Space Grotesk";
           font-size: 16px;
           padding-bottom: 24px;
+          text-align: center;
+          justify-content: center;
+      }
+
+      .fullwidth b{
+        text-align: center;
+        justify-content: center;
+        padding-bottom: 12px;
+        font-size: 24px;
+
       }
 
       .fullwidth:hover{
         transform: scale(1.02); 
     }
 
+    .portfoliocontainer{
+      margin-top: 40px;
+      
+    }
+    .portfoliocontainer a{
+      color: white;
+    }
+
+
+    .portfoliocontainer h6{
+      font-weight: bold;
+      font-size: 16px;
+
+      
+    }
+    .portfoliocontainer h3{
+      font-weight: bold;
+      font-size: 24px;
+      
+    }
+
+    .portfoliocontainer p{
+      
+      font-size: 16px;
+      
+    }
+
+    .portfoliocontainer .sidebysidecard{
+      border: 2px solid rgba(142, 184, 229, .5);
+      border-radius: 8px;
+      max-width: 47%;
+      margin-bottom: 40px;
+      padding: 24px;
+
+      display:inline-block;
+      margin-right: 24px;
+
+
+    }
+    .portfoliocontainer .sidebysidecard:hover{
+      transform: scale(1.02); 
+      transition: transform 0.1s ease-in;
+    }
+
+    .portfoliocontainer .sidebysidecard img{
+     
+      border-radius: 8px;
+      max-width: 100%;
+      margin-bottom: 12px;
+
+    }
+
+    .portfoliocontainer .longcardtype{
+      border: 2px solid rgba(142, 184, 229, .5);
+      border-radius: 8px;
+      max-width: 97%;
+      margin-bottom: 40px;
+      padding: 24px;
+
+
+
+    }
+
+    .portfoliocontainer .longcardtype:hover{
+      transform: scale(1.02); 
+      transition: transform 0.1s ease-in;
+    }
+
+    .portfoliocontainer .longcardtype img{
+      border-radius: 8px;
+      max-width: 45%;
+      margin-bottom: 12px; 
+      display: inline;
+      float: right;
+
+    }
+    .portfoliocontainer .longcardtype p {
+      max-width: 50%;
+      
+    }
+    .portfoliocontainer .longcardtype h3 {
+      max-width: 50%;
+      
+    }
+
+
+
+    .bchip {
+      display: inline-block;
+      height: 24px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-right:8px;
+      background-color: #8EB8E5;
+      margin-bottom: 24px;
+      line-height: 6px;
+
+    }
+
+    .pchip {
+      display: inline-block;
+      height: 24px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-right:8px;
+      background-color: #805FD3;
+      margin-bottom: 24px;
+      line-height: 6px;
+
+    }
+
+    .rchip {
+      display: inline-block;
+      height: 24px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-right:8px;
+      background-color: #FF5B5B;
+      margin-bottom: 24px;
+      line-height: 6px;
+
+    }
+
+    
 
       footer{
           margin-top: 32px;
-          font-family: "Red Hat Display";
+          font-family: "Space Grotesk";
           text-align: center;
       }
 
@@ -337,8 +479,8 @@ nav h3{
 
 
       hr{
-          background-color: #805FD3;
-          border-color: #805FD3;
+          background-color:var(--accent);
+          border-color: var(--accent);
           color: var(--accent);
           margin-right: 24px;
           margin-bottom: 8px;
@@ -347,7 +489,7 @@ nav h3{
 
 
       h3{
-          font-family: Antic Slab;
+          font-family: Space Grotesk;
           font-size: 20px;
           
           margin: 8px;
@@ -447,7 +589,7 @@ nav h3{
     }
 
     .quote{
-        font-family: Antic Slab;
+        font-family: Space Grotesk;
         font-weight: 700;
     }
 
@@ -661,7 +803,7 @@ nav h3{
         }
 
         h3{
-            font-family: Antic Slab;
+            font-family: Space Grotesk;
             font-size: 16px;
         }
 
@@ -682,6 +824,10 @@ nav h3{
 
         .grid-container{
             display: none;
+        }
+
+        .portfoliocontainer{
+          display:none;
         }
 
         .portslide{
