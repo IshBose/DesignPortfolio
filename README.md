@@ -1,3 +1,4 @@
-This is the portfolio of Ishaan Bose, with sole purpose of getting design jobz
+This is the portfolio of Ishaan Bose, with sole purpose of getting design jobs.
 
-Last updated August 2022
+
+Last updated Oct 2022
