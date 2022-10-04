@@ -688,6 +688,9 @@ nav h3{
           max-width: 100%;
         }
 
+        .fullwidth{
+          display:none;
+        }
 
       }
 
