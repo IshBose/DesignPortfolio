@@ -270,7 +270,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         border: 2px solid rgba(142, 184, 229, .5);
         font-family: Space Grotesk;
         border-radius: 12px;
-        max-width: 97%;
+        max-width: 96.5%;
        text-align: center;
       }
       .fullwidth a {
@@ -360,13 +360,24 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .portfoliocontainer .longcardtype{
       border: 2px solid rgba(142, 184, 229, .5);
       border-radius: 8px;
-      max-width: 96%;
+      max-width: 96.5%;
       margin-bottom: 40px;
       padding: 24px;
 
 
 
     }
+
+    .cardcol{
+      width: 48%;
+      vertical-align: top;
+      display: inline-block;
+      
+      }
+
+      
+
+      
 
     .portfoliocontainer .longcardtype:hover{
       transform: scale(1.02); 
@@ -380,19 +391,21 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .portfoliocontainer .longcardtype img{
       border-radius: 8px;
-      max-width: 45%;
-      margin-bottom: 12px; 
-      display: inline;
-      float: right;
+      max-width: 100%;
 
     }
     .portfoliocontainer .longcardtype p {
-      max-width: 50%;
-      padding-bottom: 48px;
+      max-width: 100%;
+      margin-left: 24px;
+  
       
     }
     .portfoliocontainer .longcardtype h3 {
-      max-width: 50%;
+      max-width: 100%;
+      margin-left: 24px;
+      vertical-align: baseline;
+
+
       
     }
 
@@ -409,6 +422,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       background-color: #8EB8E5;
       margin-bottom: 24px;
       line-height: 6px;
+      margin-left: 24px;
 
     }
 
@@ -437,6 +451,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       background-color: #FF5B5B;
       margin-bottom: 24px;
       line-height: 6px;
+      
 
     }
 
@@ -897,25 +912,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             display: inline-block;
         }
 
-        .portfoliocontainer .longcardtype img{
-          border-radius: 8px;
-          max-width: 30%;
-          margin-bottom: 12px; 
-          display: inline;
-          float: right;
-    
-        }
+        
 
-        .portfoliocontainer .longcardtype p {
-          max-width: 65%;
-          padding-bottom: 96px;
-          
-        }
-        .portfoliocontainer .longcardtype h3 {
-          max-width: 65%;
        
-          
-        }
 
         
 
