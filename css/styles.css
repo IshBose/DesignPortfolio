@@ -337,7 +337,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       padding: 24px;
 
       display:inline-block;
-      margin-right: 24px;
+      margin-right: 2%;
 
 
     }
@@ -360,7 +360,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .portfoliocontainer .longcardtype{
       border: 2px solid rgba(142, 184, 229, .5);
       border-radius: 8px;
-      max-width: 97%;
+      max-width: 96%;
       margin-bottom: 40px;
       padding: 24px;
 
@@ -388,6 +388,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
     .portfoliocontainer .longcardtype p {
       max-width: 50%;
+      padding-bottom: 48px;
       
     }
     .portfoliocontainer .longcardtype h3 {
@@ -895,5 +896,27 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         .aboutcolhide{
             display: inline-block;
         }
+
+        .portfoliocontainer .longcardtype img{
+          border-radius: 8px;
+          max-width: 30%;
+          margin-bottom: 12px; 
+          display: inline;
+          float: right;
+    
+        }
+
+        .portfoliocontainer .longcardtype p {
+          max-width: 65%;
+          padding-bottom: 96px;
+          
+        }
+        .portfoliocontainer .longcardtype h3 {
+          max-width: 65%;
+       
+          
+        }
+
+        
 
       }
