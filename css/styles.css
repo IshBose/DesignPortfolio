@@ -342,6 +342,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
     }
+    .portfoliocontainer .sidebysidecard  .bchip{
+      margin-left: 8px;
+
+    }
     .portfoliocontainer .sidebysidecard:hover{
       transform: scale(1.02); 
       transition: transform 0.2s ease-in;
