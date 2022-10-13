@@ -634,7 +634,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .casestudy h3{
         max-width: 80%;
         margin: auto;
-        font-size: 20px;
+        font-size: 24px;
         text-align: center;
     }
 
