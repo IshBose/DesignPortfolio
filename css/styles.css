@@ -349,7 +349,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .portfoliocontainer .sidebysidecard:hover{
       transform: scale(1.02); 
       transition: transform 0.2s ease-in;
-      background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);    
+      background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);
+          
       border: 2px solid white;
 
     }
@@ -575,6 +576,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .portslide{
 
       max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      justify-content: center;
+      display: block;
+    }
+
+    .portslide2{
+
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
