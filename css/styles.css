@@ -342,6 +342,18 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
     }
+
+   .portfoliotitle{
+      font-size: 32px;
+      justify-content: center;
+      text-align: center;
+    }
+    .portfoliosubtitle{
+      font-size: 24px;
+      font-weight: 400;
+      text-align: center;
+
+    }
     .portfoliocontainer .sidebysidecard  .bchip{
       margin-left: 8px;
 
@@ -617,17 +629,19 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         max-width: 80%;
         margin-left: 5em;
         margin-right: 5em;
+        font-size: 18px;
     }
     .casestudy h3{
         max-width: 80%;
-        margin-left: 4em;
-        margin-right: 5em;
+        margin: auto;
+        font-size: 20px;
+        text-align: center;
     }
 
     .casestudy a{
-        max-width: 80%;
-        margin-left: 5em;
-        margin-right: 5em;
+        
+        margin-left: 5.5em;
+        font-weight: bold;
     }
 
     .quote{
