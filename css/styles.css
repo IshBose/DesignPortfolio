@@ -148,7 +148,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .hero{
         font-family: Space Grotesk;
-        font-size: 24px;
+        font-size: 32px;
         color: white;
         margin-top: 24px;
     }
@@ -498,7 +498,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       .profilepic{
         border-radius: 12px;
-        width: 25%;
+        width: 28%;
         float: right;
         display: inline;
         margin-top: 16px;
@@ -518,7 +518,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       
       
       .about{
-          width: 64%;
+          width: 65%;
       }
 
 
