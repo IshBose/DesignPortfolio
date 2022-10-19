@@ -299,6 +299,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         transform: scale(1.02); 
         background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); 
         transition: transform 0.2s ease-in;
+        border: 2px solid white;
    
     }
 
@@ -362,6 +363,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       transform: scale(1.02); 
       transition: transform 0.2s ease-in;
       background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);
+     
+
           
       border: 2px solid white;
 
