@@ -372,7 +372,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .portfoliocontainer .sidebysidecard img{
      
-      border-radius: 8px;
+      border-radius: 0px;
       max-width: 100%;
       margin-bottom: 12px;
 
@@ -411,7 +411,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     
 
     .portfoliocontainer .longcardtype img{
-      border-radius: 8px;
+      border-radius: 0px;
       max-width: 100%;
 
     }
