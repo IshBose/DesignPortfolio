@@ -321,13 +321,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .portfoliocontainer h3{
       font-weight: bold;
       font-size: 20px;
+      margin-left: 0px;
       
     }
 
     .portfoliocontainer p{
       
       font-size: 16px;
-      margin-left: 8px;
+      margin-left: 0px;
       
     }
 
@@ -356,7 +357,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     }
     .portfoliocontainer .sidebysidecard  .bchip{
-      margin-left: 8px;
+      margin-left: 0px;
 
     }
     .portfoliocontainer .sidebysidecard:hover{
