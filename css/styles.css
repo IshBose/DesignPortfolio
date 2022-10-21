@@ -804,11 +804,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             background-color: var(--blk);
             flex-direction: column;
             top: 64px;
-            left: 10%;
+            left: 0%;
             width: 100%;
             padding-bottom: 24px;
             
-            text-align: center;
+            text-align: right;
             transform: translateX(120%);
             transition: transform 0.3s ease-in;
           }
@@ -816,6 +816,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
            nav ul li {
             margin: 4px;
             font-size: 20px;
+            margin-right: 3em;
+
+
           }
 
           nav ul.show {
