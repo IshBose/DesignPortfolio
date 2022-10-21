@@ -160,6 +160,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         font-size: 16px;
     }
 
+    .pastexperience{
+      font-size: 20px;
+    }
+
     .logo{
         margin-left: -2em;
         max-width: 25%;
@@ -793,11 +797,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     /************************************************************ Phone Sizes  ******************************************************************/
 
     @media screen and (max-width: 700px) {
-      nav{
-        padding-right: -2rem;
-        padding-left: -2rem;
-
-      }  
+     
       
       nav ul {
             position: fixed;
@@ -924,6 +924,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           width: 300px;
         }
 
+        .pastexperience{
+          display: none;
+        }
       }
 
           /************************************************************ Normal Laptop Sizes  ******************************************************************/
