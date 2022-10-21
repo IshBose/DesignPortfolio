@@ -803,7 +803,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             position: fixed;
             background-color: var(--blk);
             flex-direction: column;
-            top: 64px;
+            top: 52px;
             left: 0%;
             width: 100%;
             padding-bottom: 24px;
@@ -929,6 +929,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         .pastexperience{
           display: none;
+        }
+        .portfoliocover{
+          margin: 0 auto;
+          margin-bottom: 24px;
         }
       }
 
