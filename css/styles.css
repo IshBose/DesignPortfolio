@@ -298,7 +298,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       .fullwidth:hover{
         transform: scale(1.02); 
         background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); 
-        transition: transform 0.2s ease-in;
+        transition: transform 0.1s ease-in; 
         border: 2px solid white;
    
     }
@@ -338,6 +338,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       max-width: 47%;
       margin-bottom: 40px;
       padding: 24px;
+      
 
       display:inline-block;
       margin-right: 2%;
@@ -362,9 +363,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
     .portfoliocontainer .sidebysidecard:hover{
       transform: scale(1.02); 
-      transition: transform 0.2s ease-in;
-      background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);
-     
+      transition:transform 0.1s ease-in;
+     /* background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);*/     
 
           
       border: 2px solid white;
@@ -403,9 +403,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .portfoliocontainer .longcardtype:hover{
       transform: scale(1.02); 
-      transition: transform 0.2s ease-in;
-      background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); 
-      border: 2px solid white;
+      transition: transform 0.1s ease-in;
+      /*background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); */
+      border: 2px solid white; 
    
     }
 
@@ -441,7 +441,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: bold;
       border-radius: 8px;
       margin-right:8px;
-      background-color: #8EB8E5;
+      background-color: #5162CD;
       margin-bottom: 24px;
       line-height: 6px;
 
@@ -455,7 +455,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: bold;
       border-radius: 8px;
       margin-right:8px;
-      background-color: #805FD3;
+      background-color: #452BEE;
       margin-bottom: 24px;
       line-height: 6px;
 
@@ -469,7 +469,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: bold;
       border-radius: 8px;
       margin-right:8px;
-      background-color: #FF5B5B;
+      background-color: #1563FF;
       margin-bottom: 24px;
       line-height: 6px;
       
