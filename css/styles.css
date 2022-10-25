@@ -382,6 +382,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       float: left;
       width: 25%;
       padding: 0 10px;
+      margin-top: 2em;
       
     }
     .casestudy .tinycol h3{
