@@ -611,7 +611,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       gap: 8px 8px;
       grid-template-columns: auto auto auto;
       margin-top: 1em;
-      margin-bottom: 6em;
+      margin-bottom: 2em;
       }
 
       .tcontainer img{
