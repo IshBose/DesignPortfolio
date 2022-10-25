@@ -396,8 +396,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .marginbox{
-    margin-left: 10em;    
-    margin-right: 10em;    
+    margin-left: 0em;    
+    margin-right: 0em;    
 
 }
 
