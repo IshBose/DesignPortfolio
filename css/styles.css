@@ -521,9 +521,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: bold;
       border-radius: 8px;
       margin-right:8px;
-      background-color: #5162CD;
+      background-color: #30D2BB;
       margin-bottom: 24px;
       line-height: 6px;
+      color: black;
 
     }
 
@@ -535,9 +536,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: bold;
       border-radius: 8px;
       margin-right:8px;
-      background-color: #452BEE;
+      background-color: #9C9BFB;
       margin-bottom: 24px;
       line-height: 6px;
+      color: black;
+
 
     }
 
@@ -549,9 +552,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: bold;
       border-radius: 8px;
       margin-right:8px;
-      background-color: #1563FF;
+      background-color: #FF5C76;
       margin-bottom: 24px;
       line-height: 6px;
+      color: black;
+
       
 
     }
