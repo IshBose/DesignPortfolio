@@ -370,6 +370,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .caserow{
       margin-top: 2em;
+      display: grid;
+      gap: 8px 8px;
+      grid-template-columns: auto auto auto;
     }
 
     .column{
@@ -379,10 +382,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
     
     .tinycol{
-      float: left;
+      /*float: left;
       width: 25%;
       padding: 0 10px;
-      margin-top: 2em;
+      margin-top: 2em;*/
+      grid-column-start: 1;
+      grid-column-end: 1;
+      max-width: 100% ;
       
     }
     .casestudy .tinycol h3{
@@ -405,9 +411,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
     .largecol{
-      float: left;
+      /*float: left;
       width: 75%;
-      padding: 0 10px;
+      padding: 0 10px;*/
+      grid-column-start: 2;
+      grid-column-end: 5;
+      max-width: 100% ;
     }
     .portrow:after {
       content: "";
@@ -855,6 +864,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       display: grid;
       gap: 8px 8px;
       grid-template-columns: auto auto auto;
+      margin-top: 2em;
     }
 
     .casestudy .contextcols h2{
@@ -906,8 +916,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .casestudy a{
         
-        margin-left: 5.5em;
         font-weight: bold;
+    }
+
+    .casecontrols{
+      margin-top: 5em;
     }
 
     .quote{
@@ -1046,6 +1059,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .imagebox{
       display: none;
     }
+
+    .mobilehide{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      justify-content: center;
+      margin-top: 24px;
+      width: 100%;
+      display: none;
+    }
     
     input:checked + .slide-container .nav label { display: block; }
   
@@ -1117,7 +1140,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         .mobilelogo{
             max-width: 30%;
             display: block;
-            margin-left: 2em;
+            margin-left: 0.3em;
         }
 
         .aboutcol{
@@ -1155,6 +1178,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         .mobilepic{
             display: block;
+
         }
 
         h3{
@@ -1229,21 +1253,54 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           font-size: 20px;
         }
         .casestudy .tinycol{
-          display: flex;
+          flex-direction: column;
+          max-width: 100% ;
         }
         .casestudy .largecol{
-          display: flex;
+          display: none;
+          flex-direction: column;
+          max-width: 100% ;
+        
+        max-width: 100% ;
+        }
+
+        .caserow{
+          grid-template-columns: 100%;
+          margin-top: 1em;
         }
 
         .imagebox{
-          display: block;
+          display: none;
         }
 
         .portbox{
-          display: none;
+          display: block;
         }
         .column{
           width: 100%;
+        }
+        .mobilehide{
+          display: block;
+        }
+
+        .problemscreen{
+        
+          padding-top:  1em;
+          padding-bottom:  1em;
+          padding-left: 1em;
+          padding-right: 0.5em;
+          margin-right: -.4em;
+
+          margin-left: -1em;
+          margin-top: 0.5em;
+          
+
+          text-align: left;
+        
+
+        }
+        .problemscreen .sectionNum{
+          margin-left: 0em;
         }
       }
 
