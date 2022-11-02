@@ -685,6 +685,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         display: none;
     }
 
+    .aboutcol h5{
+      font-size: 20px;
+    }
+
     .portfoliocover{
         margin-left: auto;
         margin-right: auto;
@@ -842,6 +846,27 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
      
 
     }
+
+    .sneakpeek{
+      font-size: 72px;
+      background-color: #f0f0f1;
+      color: black;
+      padding-top:  1em;
+      padding-bottom:  1em;
+      padding-left: 5em;
+      padding-right: 5em;
+      margin-right: -2.75em;
+
+      margin-left: -5em;
+      margin-top: 0.5em;
+      
+
+      text-align: left;
+     
+
+    }
+
+    
 
     .howmightwe{
       font-size: 72px;
