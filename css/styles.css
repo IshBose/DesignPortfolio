@@ -380,6 +380,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
      width: 50%;
      padding: 0 10px;
     }
+    .fillcolumn{
+      float: left;
+     width: 100%;
+     padding: 0 10px;
+     margin-top: 2em;
+    }
     
     .tinycol{
       /*float: left;
@@ -453,7 +459,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .portfoliocontainer .sidebysidecard:hover{
       transform: scale(1.02); 
       transition:transform 0.1s ease-in;
-     /* background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);*/     
+     /* background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);*/    
+    background-color: #242424;  
+ 
 
           
       border: 2px solid white;
@@ -494,6 +502,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       transform: scale(1.02); 
       transition: transform 0.1s ease-in;
       /*background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); */
+      background-color: #242424;  
       border: 2px solid white; 
    
     }
@@ -833,6 +842,50 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
      
 
     }
+
+    .howmightwe{
+      font-size: 72px;
+      background-color: var(--accent);
+      color: black;
+      padding-top:  3em;
+      padding-bottom:  5em;
+      padding-left: 2.5em;
+      padding-right: 2em;
+      margin-right: -2.75em;
+
+      margin-left: -5em;
+      
+
+      text-align: left;
+     
+
+    }
+
+    .howmightwe p{
+      font-size: 32px;
+      max-width: 100%;
+      margin-left: 6em;
+      margin-right: 5em;
+      
+     
+
+    }
+
+    
+    
+    .howmightwe .sectionNum{
+      margin-left: 12em;
+      margin-right: -0.5em;
+      padding-bottom: 10px;
+      background-color: white;
+    }
+
+    .howmightwe h2{
+      vertical-align: bottom;
+    }
+
+
+
     .problemscreen p{
       font-size: 32px;
       max-width: 100%;
@@ -1300,6 +1353,25 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         }
         .problemscreen .sectionNum{
+          margin-left: 0em;
+        }
+
+        .howmightwe{
+        
+          padding-top:  1em;
+          padding-bottom:  1em;
+          padding-left: 1em;
+          padding-right: 0.5em;
+          margin-right: -.4em;
+
+          margin-left: -1em;
+          
+
+          text-align: left;
+        
+
+        }
+        .howmightwe .sectionNum{
           margin-left: 0em;
         }
       }
