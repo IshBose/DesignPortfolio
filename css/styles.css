@@ -489,7 +489,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .cardcol{
-      width: 48%;
+      width: 49%;
       vertical-align: top;
       display: inline-block;
       
