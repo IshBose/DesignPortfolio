@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
+    
 
        <!-- Google Tag Manager -->
        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -40,13 +42,16 @@
     />
     <title>Ishaan Bose | Design Portfolio</title>
 
-
+    
+     
   </head>
 
 
     <!-- Navbar -->
 
-    <nav>
+
+
+    <nav class="indexnav">
       <a href="./index.html"><img class = "logo" src="./images/Winking Memoji.gif"> </a>
       <a href="./index.html"> <img class = "mobilelogo" src="./images/Winking Memoji.gif"></a>
 
@@ -95,6 +100,18 @@
   <!-- End Google Tag Manager (noscript) -->
 
     <!-- Hero Section -->
+<div class="herosec">
+    <div class="whitewaves">
+
+      <img src="./images/Text group.png" style="max-width: 80%;" class="largeronmobile">
+      
+
+    </div>
+    <img src="./images/Vector.png" style="max-width: 100%;">
+  </div>
+
+
+    <!---
     <div class="index">
       <h1 class = "hero">Hey 👋, my name is <span style="color: #8EB8E5;">Ishaan</span>! </h1>
       <br>
@@ -104,7 +121,7 @@
           Previously a UX Designer @ <span style="color: #BFDA33">Demandbase</span>, and  UX/UI Design Intern @ <span style="color: #62ADE4">Institutional Shareholder Services.</span></p>
         </p>
 
-    </div>
+    </div>-->
 
         <!--Dark mode Toggle-->
 <!--
@@ -384,9 +401,9 @@
 
   <div class="portrow">
     <div class="column">
+      <a href="./files/bulkactions/bulkactions.html">
 
         <div class="sidebysidecard">
-          <a href="./files/bulkactions/bulkactions.html">
           <img src="./images/Monotone Bulk Actions.png">
           <h3>Speeding up the marketing workflow within advertising through Bulk Actions</h3>
           <div class="bchip">
@@ -442,7 +459,29 @@
   </div>  
 
 
+  <script>
+        var navbar = document.querySelector('.indexnav')
 
+      window.onscroll = function() {
+
+        if (window.innerWidth <= 568) {
+            if (window.pageYOffset > 290) {
+            navbar.classList.add('scrolled')
+          } else {
+            navbar.classList.remove('scrolled')
+          }
+        }
+        else{
+        // pageYOffset or scrollY
+        
+          if (window.pageYOffset > 795) {
+            navbar.classList.add('scrolled')
+          } else {
+            navbar.classList.remove('scrolled')
+          }
+       }
+      }
+  </script>
 
 
 

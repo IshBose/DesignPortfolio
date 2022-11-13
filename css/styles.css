@@ -46,6 +46,73 @@ nav {
 
   }
 
+  .indexnav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem ;
+    padding-right: 2rem ;
+    width: 100%;
+    background-color: white;
+    margin-left: initial;
+  }
+  .indexnav a{
+    color: black;
+  }
+  .indexnav .sm_icon{
+       filter: invert(0%) sepia(0%) saturate(16%) hue-rotate(228deg) brightness(94%) contrast(100%);
+
+  }
+  .indexnav.scrolled a:hover {
+    color: var(--hover);
+
+  }
+
+  .indexnav .burger-menu{
+        
+    background-color: white;
+    color: black;
+    
+  }
+  .indexnav.scrolled {
+    background: #171A1E;
+  }
+
+  .indexnav.scrolled a{
+    color: white;
+  }
+
+  .indexnav.scrolled .sm_icon{
+        
+    filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
+   /* filter: invert(0%) sepia(0%) saturate(16%) hue-rotate(228deg) brightness(94%) contrast(100%);*/
+
+    /* the height is adjusted automatically*/
+    
+  }
+
+  .indexnav.scrolled .burger-menu{
+        
+    background-color: var(--blk);
+    color: white;
+    
+  }
+
+  .indexnav.scrolled .sm_icon:hover{
+    color: #8EB8E5;
+    fill: #8EB8E5;
+    filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%) contrast(91%);
+
+
+}
+
+
+  
+
   ul {
     list-style-type: none;
     margin-right:  7em; 
@@ -63,6 +130,7 @@ nav {
   }
 
 
+
   a {
     text-decoration: none;
     color: var(--accent);
@@ -74,7 +142,7 @@ nav {
   }
 
   .active {
-    color: var(--accent);
+    color: var(--accent)!important;
     font-weight: bold;
 }
 
@@ -120,9 +188,12 @@ nav h3{
         width: 24px;
         fill: white;
         filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
+        /*filter: invert(0%) sepia(0%) saturate(16%) hue-rotate(228deg) brightness(94%) contrast(100%);*/
+
         /* the height is adjusted automatically*/
         
       }
+
 
     .sm_icon:hover{
         color: #8EB8E5;
@@ -174,7 +245,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         margin-left: 10em;
 
         max-width: 18%;
-        background-color: var(--blk);
     }
     .logo:hover{
      transform: scale(1.15);
@@ -285,7 +355,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
        
         padding-top: 24px;
         /*background-color: #3D4849;*/
-        border: 2px solid rgba(142, 184, 229, .5);
+        /*border: 2px solid rgba(142, 184, 229, .5)*/
+        background-color: rgba(56, 61, 74, 0.6);       
+
         font-family: Space Grotesk;
         border-radius: 12px;
         max-width: 100%;
@@ -362,6 +434,19 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin-right: 12.5em;
     }
 
+    .whitewaves{
+
+      background-color: white;
+      color: black;
+      justify-content: center;
+      margin: 0 auto;
+      text-align: center;
+  
+     
+
+    }
+
+
     .index h1{
       margin-left: 0em;
     }
@@ -433,7 +518,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .portfoliocontainer .sidebysidecard{
-      border: 2px solid rgba(142, 184, 229, .5);
+      /*border: 2px solid rgba(142, 184, 229, .5);*/
+      background-color: rgba(56, 61, 74, 0.6);       
       border-radius: 8px;
       margin-bottom: 40px;
       padding: 24px;
@@ -462,8 +548,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       transform: scale(1.02); 
       transition:transform 0.1s ease-in;
      /* background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5);*/    
-    background-color: #242424;  
- 
+     background-color: rgba(56, 61, 74, 1);       
 
           
       border: 2px solid white;
@@ -479,18 +564,22 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .portfoliocontainer .longcardtype{
-      border: 2px solid rgba(142, 184, 229, .5);
+      /*border: 2px solid rgba(142, 184, 229, .5);*/
+      background-color: rgba(56, 61, 74, 0.6);       
+
       border-radius: 8px;
-      max-width: 99.5%;
+      max-width: 99%;
       margin-bottom: 40px;
       padding: 24px;
+      margin-left: 5px;
 
 
 
     }
 
     .mobilecard{
-      border: 2px solid rgba(142, 184, 229, .5);
+      /*border: 2px solid rgba(142, 184, 229, .5);*/
+      background-color: rgba(56, 61, 74, 0.6);       
       border-radius: 8px;
       max-width: 99.0%;
       margin-bottom: 24px;
@@ -537,8 +626,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       transform: scale(1.02); 
       transition: transform 0.1s ease-in;
       /*background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); */
-      background-color: #242424;  
       border: 2px solid white; 
+      background-color: rgba(56, 61, 74, 1);       
+
    
     }
 
@@ -1252,9 +1342,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
         .mobilelogo{
-            max-width: 30%;
+            max-width: 20%;
             display: block;
             margin-left: 0.3em;
+        }
+
+        .largeronmobile{
+          max-width: 95%!important;
         }
 
         .aboutcol{
