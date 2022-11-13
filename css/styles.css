@@ -1288,7 +1288,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             position: fixed;
             background-color: var(--blk);
             flex-direction: column;
-            top: 54px;
+            top: 44px;
             left: 0%;
             width: 100%;
             padding-bottom: 24px;
@@ -1305,11 +1305,20 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             margin-right: 1.8em;
 
 
+
           }
 
           nav ul.show {
             transform: translateX(0);
           }
+
+          .indexnav a{
+            color: white;
+          }
+
+          .indexnav .sm_icon {
+            filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
+                  }
         
 
         .burger-menu {
