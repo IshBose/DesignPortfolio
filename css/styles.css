@@ -441,9 +441,15 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       justify-content: center;
       margin: 0 auto;
       text-align: center;
+      margin-left: 12em;
+      margin-right: 12em;
   
      
 
+    }
+
+    .herosec{
+      background-color: white;
     }
 
 
@@ -1356,9 +1362,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             margin-left: 0.3em;
         }
 
-        .largeronmobile{
-          max-width: 95%!important;
+        .whitewaves{
+          margin-left: 2em;
+          margin-right: 2em;
         }
+
+
 
         .aboutcol{
             display: none;
