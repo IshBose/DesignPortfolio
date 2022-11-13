@@ -460,10 +460,12 @@
 
 
   <script>
+    //grabs the navbar
         var navbar = document.querySelector('.indexnav')
 
       window.onscroll = function() {
 
+        //Checks if it is mobile, then the page offset will be lower to account for screen sizes
         if (window.innerWidth <= 568) {
             if (window.pageYOffset > 290) {
             navbar.classList.add('scrolled')
@@ -471,6 +473,8 @@
             navbar.classList.remove('scrolled')
           }
         }
+
+        //else block is if it is a desktop or less
         else{
         // pageYOffset or scrollY
         
