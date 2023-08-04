@@ -16,6 +16,7 @@
     --accent: #8EB8E5;
     --hover: #CDE5FE;
     --font-family: "Space Grotesk", sans-serif;
+    --packer: #02a8ef;
 
   }
   
@@ -490,6 +491,115 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       max-width: 100% ;
       
     }
+
+    /*  casestudystyletwo */
+
+    .casestudystyletwo{
+      margin-left: 20rem;
+      margin-right: 20rem;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      flex-shrink: 0;
+
+    }
+
+    .casestudystyletwo h2{
+      font-size: 32px;
+      flex-shrink: 0;
+
+      
+
+    }
+  
+    .caserows{
+      margin-top: 2em;
+      display: flex;
+      align-items: flex-start;
+      gap: 80px;
+      align-self: stretch;
+
+      
+    }
+    .tinycols{
+      /*float: left;
+      width: 25%;
+      padding: 0 10px;
+      margin-top: 2em;*/
+      max-width: 100% ;
+      
+    }
+
+    .tinycols h3{
+      width: 150px;
+      margin: 0px;
+
+    }
+
+    .largecols{
+      /*float: left;
+      width: 75%;
+      padding: 0 10px;*/
+      grid-column-start: 3;
+      grid-column-end: 5;
+      max-width: 100% ;
+    }
+
+    .problemcard{
+      display: flex;
+      padding: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+    border: 1px solid #02A8EF;
+      background: #C4E5F3;
+      color: black;
+    }
+
+    .hmwcard{
+      display: flex;
+      padding: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      border: 1px solid #02A8EF;
+      background: white;
+      color: black;
+    }
+
+    .sidebysideportfolioimage{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex: 1 0 0;
+      align-self: stretch;
+    }
+
+    .fullength{
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px;
+      text-align: center;
+      justify-content: center;
+      max-width: 100%;
+      display: block;
+      
+  }
+
+    .split{
+      max-width: 50%;
+      flex: 1 0 0;
+    }
+
+
+    /* END OF CASESTUDY STYLE TWO          v            */
+
     .casestudy .tinycol h3{
       text-align: left;
       margin: 0px;
@@ -517,6 +627,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       grid-column-end: 5;
       max-width: 100% ;
     }
+    
+
     .portrow:after {
       content: "";
       display: table;
@@ -1281,6 +1393,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
     
     input:checked + .slide-container .nav label { display: block; }
+
+   
   
     
 
