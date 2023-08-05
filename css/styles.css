@@ -29,6 +29,9 @@
     scroll-behavior: smooth;
   }
 
+  .overflowwrapper{
+    overflow-x: hidden!important;
+  }
 
 /* Nav */
 nav {
@@ -39,11 +42,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem ;
-    padding-right: 2rem ;
+    padding-top:24px ;
+    padding-bottom:24px;
     width: 100%;
     background-color: var(--blk);
     margin-left: initial;
+    padding-left: 200px;
 
   }
 
@@ -55,11 +59,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem ;
-    padding-right: 2rem ;
+    padding-top: 24px ;
+    padding-bottom: 24px;
     width: 100%;
     background-color: white;
     margin-left: initial;
+    padding-left: 200px;
+
   }
   .indexnav a{
     color: black;
@@ -172,6 +178,8 @@ nav h3{
     color: white;
    /* margin-left: 12.5em;
     margin-right: 12.5em;*/
+    overflow-x:hidden 
+
     
   }
   
@@ -405,6 +413,62 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       
     }
+
+    .gradientcard{
+      border-radius: 24px;
+      background: linear-gradient(360deg, #02A8EF 0%, #E5F7FF 100%);
+      max-width: 100%;
+      padding: 48px;
+    }
+
+    .gradientlabel{
+      color: #000;
+      font-family: Space Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .gradienttitle{
+      font-size: 24px;
+      font-weight: 700;
+      line-height: normal;
+      color: black;
+    }
+    .gradienttitle h3{
+      margin: 0px;
+    }
+    .gradientdesc{
+      color: #000;
+      font-family: Space Grotesk;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .gcardinfo{
+      display: inline-flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 12px;
+    }
+
+    .gcardlogo{
+      width: 45.069px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+    
+    .maxcard{
+      max-width: 100%;
+      margin-top: -40px;
+      position: sticky;
+          top: 120px;
+    }
+
+
     .portfoliocontainer a{
       color: white;
     }
@@ -451,6 +515,22 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .herosec{
       background-color: white;
+      color: var(--blk);
+      
+
+
+    }
+
+    .herosec h2{
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .spacer{
+    
+      padding-top: 80px;
+      padding-left: 200px;
+      padding-right: 200px;
     }
 
 
@@ -495,13 +575,15 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     /*  casestudystyletwo */
 
     .casestudystyletwo{
-      margin-left: 20rem;
-      margin-right: 20rem;
+      margin-left: 200px;
+      margin-right:200px;
+      margin-top: 40px;
       display: inline-flex;
       flex-direction: column;
       align-items: center;
       gap: 40px;
       flex-shrink: 0;
+      max-width: 100%;
 
     }
 
@@ -511,6 +593,38 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       
 
+    }
+
+    .c2title{
+      display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    }
+    
+    .c2title img{
+      width: 90px;
+      height: 89.867px;
+    }
+
+    .block{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      align-self: stretch;
+    }
+
+    .blockheader{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      align-self: stretch;
+    }
+
+    .blockheader hr{
+      width: 200px;
+      height: 1px;
     }
   
     .caserows{
@@ -576,7 +690,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 40px;
       flex: 1 0 0;
       align-self: stretch;
     }
@@ -584,7 +697,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .fullength{
       margin-left: auto;
       margin-right: auto;
-      padding: 24px;
       text-align: center;
       justify-content: center;
       max-width: 100%;
@@ -1409,7 +1521,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             position: fixed;
             background-color: var(--blk);
             flex-direction: column;
-            top: 44px;
+            top: 64px;
             left: 0%;
             width: 100%;
             padding-bottom: 24px;
@@ -1418,12 +1530,32 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             transform: translateX(120%);
             transition: transform 0.3s ease-in;
           }
+
+          nav{
+            padding-left: 40px;
+            padding-right: 40px;
+          }
+          .indexnav{
+            padding-left: 40px;
+            color: var(--blk);
+            padding-right: 40px;
+          }
+
+          h1{
+            font-size: 20px;
+          }
+
+          .herosec h2{
+            font-size: 16px;
+          }
+
+          
         
            nav ul li {
             margin: 4px;
             font-size: 20px;
             margin-top: 1em;
-            margin-right: 1.8em;
+            margin-right: 2.5em;
 
 
 
@@ -1435,6 +1567,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
           .indexnav a{
             color: white;
+          }
+
+          #title{
+            color: black;
           }
 
           .indexnav .sm_icon {
@@ -1470,11 +1606,29 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             display: none;
         }
 
+        .casestudystyletwo{
+          margin-left: 40px;
+          padding-right: 100px;
+          margin-top: 24px;
+          margin-right: 0px;
+         
+        }
+
+        .casestudystyletwo h2{
+          font-size: 20px;
+        }
+
+        
+        .c2title img{
+          width: 48px;
+          height: 48px;
+        }
+
+
+
 
         .mobilelogo{
-            max-width: 20%;
-            display: block;
-            margin-left: 0.3em;
+            display: none;
         }
 
         .whitewaves{
@@ -1489,7 +1643,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
         p{
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .profilepic{
@@ -1547,7 +1701,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
         .mobilecard{
-          display: block;
+          display: none;
+        }
+
+        .maxcard{
+          margin-top: 0px;
         }
 
         .grid-container{
@@ -1566,6 +1724,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           max-width: 100%;
 
 
+        }
+
+        .spacer{
+    
+          padding-top: 20px;
+          padding-left: 40px;
+          padding-right: 40px;
         }
 
         .fullwidth{

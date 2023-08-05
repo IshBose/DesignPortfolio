@@ -46,259 +46,76 @@
     <!-- Navbar -->
 
     <nav>
-      <a href="../../index.html"><img class = "logo" src="../../images/Winking Memoji.gif"> </a>
-      <a href="../../index.html"> <img class = "mobilelogo" src="../../images/Winking Memoji.gif"></a>
+      <a href="../../index.html" style="font-size: 32px; font-weight: bold;">Ishaan <span style="color: #8EB8E5;">Bose</span> </a>
+      <a href="../../index.html"> <img class = "mobilelogo" src="./images/Winking Memoji.gif"></a>
 
-      <ul class="navigation">
-          <li><a class = "active" href="../../index.html" >Work</a></li>
-          <li><a href="../../about.html" class="nav-link">About</a></li>
-          <li><a href="../../Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
-        <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "../../assets/newli.svg" ></a></li>
-        <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "../../assets/send-4008.svg"></a></li>
-      </ul>
-         <!-- Hamburger Menu for mobile -->
-      <button class="burger-menu" id="burger-menu">
-          <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
+        <ul class="navigation">
+            <li><a class = "active" href="../../index.html" >Work</a></li>
+            <li><a href="../../about.html" class="nav-link">About</a></li>
+            <li><a href="../../ishaan bose resume 2023 .pdf" class="nav-link">Resume</a></li>
+          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "../../assets/newli.svg" ></a></li>
+          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "../../assets/send-4008.svg"></a></li>
+        </ul>
+           <!-- Hamburger Menu for mobile -->
+        <button class="burger-menu" id="burger-menu">
+            <ion-icon class="bars" name="menu-outline"></ion-icon>
+          </button>
 
-        <script>// Nav hamburgerburger selections
+          <script>// Nav hamburgerburger selections
 
-          const burger = document.querySelector("#burger-menu");
-          const ul = document.querySelector("nav ul");
-          const nav = document.querySelector("nav");
+            const burger = document.querySelector("#burger-menu");
+            const ul = document.querySelector("nav ul");
+            const nav = document.querySelector("nav");
 
-          burger.addEventListener("click", () => {
-          ul.classList.toggle("show");
-          });
+            burger.addEventListener("click", () => {
+            ul.classList.toggle("show");
+            });
 
-          // Close hamburger menu when a link is clicked
+            // Close hamburger menu when a link is clicked
 
-          // Select nav links
-          const navLink = document.querySelectorAll(".nav-link");
+            // Select nav links
+            const navLink = document.querySelectorAll(".nav-link");
 
-          navLink.forEach((link) =>
-          link.addEventListener("click", () => {
-              ul.classList.remove("show");
-          })
-          );
-          </script>        
+            navLink.forEach((link) =>
+            link.addEventListener("click", () => {
+                ul.classList.remove("show");
+            })
+            );
+            </script>        
 
-  </nav>  
+    </nav>   
 
+    <div class="overflowwrapper">
     <body>
     <!-- Hero Section -->
 
     
     <div  class = "casestudystyletwo">
 
-      <div class="center">
-      <h2><span style="color:#02a8ef; text-align: left;"> HCP Packer</span><br>Image Insights</h2>
+      <div class="c2title">
+        <h2><span style="color:#7B42BC; text-align: left;"> Terraform Cloud</span><br>Frictionless Onboarding</h2>
+        <img src="../../images/HashiCorp_Icon_White_RGB.png">
+        <img src="../../images/../images/og-image-8b3e4f7d-blog-aspect-ratio.png">
+
     </div>
       
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Context </h3>
+
+    <img src="../../images/HCGradient.png">
+
+    <div class="block">
+        <div class="blockheader">
+          <h5>CONTEXT</h5><hr>
         </div>
-        <div class="largecols">
-          <p>9 week long intern project on HCP Packer. HCP Packer is HashiCorp’s tool to build and provision machine images at scale. Machine images are used in DevOps and IT to segment their end-user groups by function due to the software/OS differences.</p>
-        </div>
-       
-      </div>
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Role </h3>
-        </div>
-        <div class="largecols">
-          <p>Timeline: Summer 2022<br><br>
-
-            Role: Lead Designer on HCP Packer<br><br>
-            
-            Skills: UX Design, UX Research, Interaction design, Data visualization</p>
-        </div>
-       
-      </div>
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Project </h3>
-        </div>
-        <div class="largecols">
-          <p><b>Goal:</b> Scope out and deliver image usage insights on HCP Packer for users who own infrastructure in their organization, or roadmap advocates, to help them monitor and understand image health.</p>
-        </div>
-       
-      </div>
-
-      <img class ="fullength" src="./annotated iteration graph.png">
-
-
-      <div class="problemcard">
-        <h3>Problem</h3>
-        <p>Practioners need image usage data to inform their machine image lifecycle management at scale. Currently, Packer does not have an easy way to extract this data. We want to provide information contextually to inform the practitioner and aid them in their decision making process.</p>
-      </div>
-
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>UX Research </h3>
-        </div>
-        <div class="largecols">
-            <p>Completed a 2 week research sprint that was primarily conducted through an external survey that was distributed through Reddit
-            </p>
-        </div>
-      </div>
-
-      <div class="sidebysideportfolioimage">
-        <img class="split"  src="./methodology.png">
-        <img class="split" src="./communities.png">
-      </div>
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Problem Decomposition </h3>
-        </div>
-        <div class="largecols">
-            <p>To further understand user needs, we need to decompose the problem into a <i>How might we</i> that we can solve.
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./Problemdecomp.png"   >
-
-      <div class="hmwcard">
-        <h3>How Might We...</h3>
-        <p>enable the practitioner to consume image usage insights to inform decision making on their machine image lifecycle management?
-
-        </p>
-      </div>
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Metrics </h3>
-        </div>
-        <div class="largecols">
-            <p>Some of the possible metrics that our research and interviews yielded.
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./map of metrics.png"   >
-
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Architecture </h3>
-        </div>
-        <div class="largecols">
-            <p>The hierarchy of the product was detailed and looked at to see where there were pockets of space to put information
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./architecturemap.png"   >
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Wireframes </h3>
-        </div>
-        <div class="largecols">
-            <p>Some initial concepts
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./POE.png"   >
-      <img class ="fullength" src="./Training Users.png"   >
-      <img class ="fullength" src="./Billing on overview.png"   >
-
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Solutions </h3>
-        </div>
-        <div class="largecols">
-            <p>Rolling up provision requests for all iterations on a base image.
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./annotated overview.png"   >
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Solutions </h3>
-        </div>
-        <div class="largecols">
-            <p>Providing contextual benchmarks to help the user understand how data changes over time.
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./annotated percent change.png"   >
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Solutions </h3>
-        </div>
-        <div class="largecols">
-            <p>Monitoring iterations at a glance
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./annotated iteration.png"   >
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Solutions </h3>
-        </div>
-        <div class="largecols">
-            <p>Seeing provision requests on a per iteration basis after drill in
-            </p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./annotated iteration roll up.png"   >
-      <img class ="fullength" src="./annotated iteration graph.png"   >
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Solutions </h3>
-        </div>
-        <div class="largecols">
-            <p>Using usage metrics to inform users of destructive actions</p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./annotated revocation warning.png"   >
-
-
-      <div class="caserows" >
-        <div class="tinycols">
-          <h3>Solutions </h3>
-        </div>
-        <div class="largecols">
-            <p>Perscribe actions based on best practice through contextual insights</p>
-        </div>
-      </div>
-
-      <img class ="fullength" src="./annotated revocation.png"   >
-
-
-
-
-
-
-
-
-
-
-
-<!--END OF CASE STUDY **************************************************-->
+        <p>This case study is currently under construction :)</p>
     </div>
 
-     
+    </div>
 
+
+
+    
+
+    
 
 
 
@@ -314,7 +131,7 @@
 
     
     </body>
-
+  </div>
 
     <footer>
 
@@ -335,7 +152,7 @@
     </div>
    
     
-    <h4 class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2022</h4>
+    <h4 class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2023</h4>
 
     <!-- Website scripts -->
     <script src="assets/js/app.js"></script>
