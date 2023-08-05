@@ -1697,6 +1697,10 @@ gap: 12px;
 
 
         }
+        .profilepic{
+          margin-left: 40px;
+        }
+
 
         .mobilecard{
           display: none;
@@ -1864,6 +1868,7 @@ gap: 12px;
               margin-top: 16px;
           }
 
+          
          
 
       }
