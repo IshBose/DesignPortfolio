@@ -18,7 +18,7 @@
 
     <!--CSS Styles -->
     <link rel="stylesheet" href="css/styles.css" />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
 
     <!-- Favicons -->
@@ -40,6 +40,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       
     />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Ishaan Bose | Design Portfolio</title>
 
     
@@ -49,301 +52,192 @@
 
     <!-- Navbar -->
 
-
-    <nav class="indexnav">
-      <a href="./index.html" id="title" style="font-size: 32px; font-weight: bold;">Ishaan <span style="color: #3478FF;">Bose</span> </a>
-      <a href="./index.html"> <img class = "mobilelogo" src="./images/Winking Memoji.gif"></a>
-
-        <ul class="navigation">
-            <li><a class = "active" href="./index.html" >Work</a></li>
-            <li><a href="./about.html" class="nav-link">About</a></li>
-            <li><a href="./ishaan bose resume 2023 .pdf" class="nav-link">Resume</a></li>
-          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "./assets/newli.svg" ></a></li>
-          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "./assets/send-4008.svg"></a></li>
-        </ul>
-           <!-- Hamburger Menu for mobile -->
-        <button class="burger-menu" id="burger-menu">
-            <ion-icon class="bars" name="menu-outline"></ion-icon>
-          </button>
-
-          <script>// Nav hamburgerburger selections
-
-            const burger = document.querySelector("#burger-menu");
-            const ul = document.querySelector("nav ul");
-            const nav = document.querySelector("nav");
-
-            burger.addEventListener("click", () => {
-            ul.classList.toggle("show");
-            });
-
-            // Close hamburger menu when a link is clicked
-
-            // Select nav links
-            const navLink = document.querySelectorAll(".nav-link");
-
-            navLink.forEach((link) =>
-            link.addEventListener("click", () => {
-                ul.classList.remove("show");
-            })
-            );
-            </script>        
-
-    </nav>  
-
-    
-
-    <body>
-      <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Hero Section -->
-    <div class="herosec">
-
-      <div class="spacer">
-      <h5>BIO</h5>
-      <h1>Product Designer with a knack for simplifying technical product spaces in datadense B2B products.</h1>
-
-      <br>
-      <h5>EXPERIENCE</h5>
-      <h2 style="padding: 24px; background-color: rgba(142, 184, 229, 0.20); border-radius: 8px; margin-top: 8px;">Currently <b>@HashiCorp</b> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 16 16"><g fill="#000"><path d="M6.835.6L1 3.96v8.074l2.192 1.264V5.224l3.643-2.1V.6z"/><path d="M9.165.6v6.43h-2.33v-2.4L4.642 5.894v8.237l2.193 1.266v-6.41h2.33v2.383l2.192-1.264V1.864L9.165.6z"/><path d="M9.165 15.4L15 12.04V3.966l-2.193-1.264v8.074l-3.642 2.1V15.4z"/></g></svg>, spearheading growth design on <span style="color: #7B42BC;"><b>Terraform</b>  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z"/></svg></span><br></h2>
-    
-
-       <br><h2> Previously, Advertising and Platform UX <span style="color: #D425A3;"><b>@Demandbase</b></span>, ESG Reporting UX<span style="color: #62ADE4;"> <b>@ISS</b></span>. <br>UC San Diego Cognitive Science Alum -- go tritons!</h2>
-      </div>
-      </div>
-  <img src="./images/Vector.png" style="max-width: 100%;">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 
+    <div class="nav-logo">
+        <a href="./index.html" id="title" style="font-weight: bold;">Ishaan <span style="color: #3478FF;">Bose</span> </a>
+        </div>
 
-    
-    <!-- Projects section -->
-      <!--MOBILE CONTAINER---------------------------------------------------->
-     
-
-      <!--WEB CONTAINER  FOR DESKTOP---------------------------------------------------->
-      
-      <div class="spacer">
-        <a href="./files/hashi/hashi.html"><img  class="maxcard" src="./images/Group 1152.png"></a>
-        <a href="./files/hashi/hashitwo.html"><img  class="maxcard" src="./images/tfccard.png" style="top: 200px "></a>
-        <a href="./files/ccomparison/ccomparison.html"><img  class="maxcard" src="./images/Group 1153.png" style="top: 320px "></a>
-        <a href="./files/tables/tables.html"><img  class="maxcard" src="./images/Group 1155.png" style="top: 440px "></a>
-        <a href="./files/githubforkids/githubforkids.html"><img  class="maxcard" src="./images/Group 1156.png" ></a>
-
-      </div>
+    <ul class="menu">
+        <li><a class="menuItem" href="./index.html">Work</a></li>
+        <li><a class="menuItem" href="./about.html">About</a></li>
+        <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+        <li><a class="menuItem" href="./ishaan bose resume 2023 .pdf">Resume</a></li>
 
 
-
-
-
-
-
-<!--OLD STUFF - DISREGARD   
-  <div class="portfoliocontainer">
-
-
-    <div class="portrow">
-
-      <div class="column">
-
-          <a href="./files/hashi/hashi.html">
-          <div class="sidebysidecard">
-            <img src="./images/Monotone HashiCorp.png">
-            <h3>Enabling the practitioner to consume image usage insights in HCP Packer</h3>
-
-            <div class="bchip">
-              Q3 2022
-            </div>
-
-            <div class="pchip">
-            Product Design
-            </div>
-
-            <div class="rchip">
-              New feature
-            </div>
-            
-
-          <p>Creating new ways for Packer users to track and manage their machine images at scale.</p>
-
-
-          </div></a>
-
-      </div>
-
-      <div class="column">
-
-
-          <a href="./files/ccomparison/ccomparison.html">
-          <div class="sidebysidecard">
-            <img src="./images/Monotone Campaign Comparison.png">
-            <h3>Creating a story through data within Ads through Campaign Comparison</h3>
-            <div class="bchip">
-              Q3 2021
-            </div>
-
-            <div class="pchip">
-            Product Design
-            </div>
-
-            <div class="rchip">
-              New feature
-            </div>
-
-            <p>Adding in the ability to benchmark campaigns within the Demandbase Advertising Cloud.</p>
-          
-
-
-          </div></a>
-      </div>
-
-    </div>
+        <!--Some Hamburger that will always show up-->
+      </ul>
+      <button class="hamburger">
+        <!-- material icons https://material.io/resources/icons/ -->
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons" style="display: none;">close</i>
+      </button>
 
 
   
- 
 
-    <a href="./files/tables/tables.html">
-      
-    <div class="longcardtype">
-      
-      <div class="cardcol">
-      <h3 style="margin-left: 0px">Connecting the dots within Demandbase’s tables</h3>
-      <div class="bchip" style="margin-left: 0px">
-        Q4 2021
-      </div>
 
-      <div class="pchip">
-       UX Design
-      </div>
+    
 
-      <div class="rchip">
-        Design Systems
-      </div>
-      <p style="margin-left: 0px" >Creating a new powerful component for expand and collapse tables through user testing and iteration.</p>
-      <!--<img src="./images/DBGradient.png" >
+    <body style="background-color: white;  background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, #D1D1D14D 1px, transparent 1px),
+      linear-gradient(to bottom, #D1D1D14D 1px, transparent 1px);">
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+  <!-- End Google Tag Manager (noscript) -->
+
+
+
+    <!-- Hero Section -->
+   
+
+    <div class="newHero">
+        <h1>Obssessed with simplifying complex product spaces in B2B</h1>
+        <h3>Currently <span style="color: black;"><b>@HashiCorp</b></span> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 16 16"><g fill="#000"><path d="M6.835.6L1 3.96v8.074l2.192 1.264V5.224l3.643-2.1V.6z"/><path d="M9.165.6v6.43h-2.33v-2.4L4.642 5.894v8.237l2.193 1.266v-6.41h2.33v2.383l2.192-1.264V1.864L9.165.6z"/><path d="M9.165 15.4L15 12.04V3.966l-2.193-1.264v8.074l-3.642 2.1V15.4z"/></g></svg>, spearheading design on product led growth and CDKTF on <span style="color: #7B42BC;"><b>Terraform</b>  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z"/></svg></span><br>
+
+            <br><br>Proud UC San Diego Triton! Previously at Demandbase and ISS.</h3>
     </div>
 
-    <div class="cardcol">
-      <img src="./images/Monotone DB.png"  style="margin-left: 12px">
-      </div>
-    </div>
-  </a>
-  <a href="./files/githubforkids/githubforkids.html">
-    <div class="longcardtype">
 
-      <div class="cardcol">
-      <img src="./images/monotoneGH.png" >
-    </div>
+    <div class="blkwrapper">
 
-    <div class="cardcol">
-      <h3>Creating a more kid-friendly onboarding process on GitHub</h3>
-      <div class="bchip" style="margin-left:24px">
-        Q2 2023
-      </div>
+        <div class="blk-description">
+          <!--  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 16 16"><g fill="#FFF"><path d="M6.835.6L1 3.96v8.074l2.192 1.264V5.224l3.643-2.1V.6z"/><path d="M9.165.6v6.43h-2.33v-2.4L4.642 5.894v8.237l2.193 1.266v-6.41h2.33v2.383l2.192-1.264V1.864L9.165.6z"/><path d="M9.165 15.4L15 12.04V3.966l-2.193-1.264v8.074l-3.642 2.1V15.4z"/></g></svg>-->
+        <h4>Contextualizing Machine Image Usage on HCP Packer</h4>
+        <p>Creating new ways for Packer users to track and manage their machine images at scale.</p>
+        <a href="./files/hashi/hashi.html" style="color: #FAFF00; line-height: 24px;">See Case Study <span class="material-symbols-outlined" style="vertical-align: bottom;">
+            arrow_right_alt
+            </span></a>
 
-      <div class="pchip">
-       Product Design
-      </div>
-
-      <div class="rchip">
-        Class Project
-      </div>
-
-      <p >Finding new ways to engage a younger audience on GitHub through an interactive wizard.</p>
-
-    </div> 
-  </div>
-  </a>
-
-
-  <div class="portrow">
-    <div class="column">
-      <a href="./files/bulkactions/bulkactions.html">
-
-        <div class="sidebysidecard">
-          <img src="./images/Monotone Bulk Actions.png">
-          <h3>Speeding up the marketing workflow within advertising through Bulk Actions</h3>
-          <div class="bchip">
-            Q4 2021
-          </div>
-
-          <div class="pchip">
-          Product Design
-          </div>
-
-          <div class="rchip">
-            New feature
-          </div>
-          <p>Enabling users to carry out bulk actions on ad campaigns within Demandbase to increase speed of use.</p>
-
-        </div></a>
-
-      </div>
-
-        <div class="column">
-        <a href="./files/integrations/integrate.html">
-        <div class="sidebysidecard">
-          <img src="./images/Monotone Integrations.png">
-
-          <h3 style="margin-right: 4px;">Creating a workspace to create, manage and monitor your integrations at scale</h3>
-          <div class="bchip">
-            Q1 2022
-          </div>
-
-          <div class="pchip">
-          UX Design
-          </div>
-
-          <div class="rchip">
-            Redesign
-          </div>
-          <p>Improving information architecture through rearranging feature layout into one efficient page.</p>
-
-
-
-        </div></a>
+       
 
         </div>
-      
-      
-      </div>
+
+        <div class="onright">
+            <img src="./images/imageusagemockupblowup.png">
+     </div>
+    </div>
+
+    <div class="whitewrapper" >
+
+        <div class="fullwrap">
+            <h4>Creating a frictionless onboarding experience for Terraform Cloud</h4>
+            <p>Creating new ways for Packer users to track and manage their machine images at scale.</p>
+            <a href="./files/hashi/hashitwo.html" style="color: #4D17D6; line-height: 24px;">See Case Study <span class="material-symbols-outlined" style="vertical-align: bottom;">
+                arrow_right_alt
+                </span></a>
+
+        </div>
+
+        <img src="./images/frictionless.png" style=" max-width: 75%; grid-column-start: 3; grid-column-end: 3; margin-top: 24px;">
+    </div>
 
 
-  </div>-->
-<!--
-  <div class="fullwidth">
-    <a href="./files/archive.html"><b> THE ARCHIVE</b> <p>A collection of older work that just didn’t make the cut</p> </a>
-  </div>  -->
+    <div class="blkwrapper" style="padding-top: 144px; padding-bottom: 144px;">
 
+        <div class="onleft">
+            <img src="./images/layeredccc.png">
+     </div>
+
+     <div class="onrighttwo">
+        <h4>Creating a new way to understand advertising data on Demandbase One</h4>
+        <p>Adding in the ability to benchmark campaigns within the Demandbase Advertising Cloud.</p>
+        <a href="./files/ccomparison/ccomparison.html" style="color: #FF5B5B; line-height: 24px;">See Case Study <span class="material-symbols-outlined" style="vertical-align: bottom;">
+            arrow_right_alt
+            </span></a>
+
+        </div>
+
+
+        </div>
+
+        <div class="whitewrapper" >
+
+            <div class="fullwrap">
+                <h4>Connecting the dots within Demandbase’s tables</h4>
+                <p>Creating a new powerful component for expand and collapse tables through user testing and iteration.</p>
+                <a href="./files/tables/tables.html" style="color: #1563FF;line-height: 24px;">See Case Study <span class="material-symbols-outlined" style="vertical-align: bottom;">
+                    arrow_right_alt
+                    </span></a>
+    
+            </div>
+    
+            <img src="./images/tablecloseup.png" style=" max-width: 100%; grid-column: 1/5; margin-top: 40px;">
+        </div>
+
+
+        <div class="blkwrapper" style="margin-top: 0px;" >
+
+            
+    
+         <div class="wholewidth">
+            <h4>Making GitHub more Accessible to a younger demographic</h4>
+            <p>Exploring how GitHub could leverage a guided onboarding experience to capture a younger demographic</p>
+            <a href="./files/githubforkids/githubforkids.html" style="color: #FF9900;line-height: 24px;">See Case Study <span class="material-symbols-outlined" style="vertical-align: bottom;">
+                arrow_right_alt
+                </span></a>
+    
+            </div>
+
+            <div class="centergrid">
+                <img src="./images/ghfk.png" >
+                <h4 class="center" style="margin-top: 8px; margin-bottom: 8px; font-size: 16px;">© Ishaan Bose, 2023. Developed with 🍺 and 💙</h4>
+
+            </div>
+
+            
+    
+            </div>
+
+       
+    </div>
+
+    
+
+    
+
+
+
+    
+   
+
+
+
+
+
+  
 
   <script>
-    //grabs the navbar
-        var navbar = document.querySelector('.indexnav')
+    const menu = document.querySelector(".menu");
+const menuItems = document.querySelectorAll(".menuItem");
+const hamburger= document.querySelector(".hamburger");
+const closeIcon= document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
 
-      window.onscroll = function() {
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
 
-        //Checks if it is mobile, then the page offset will be lower to account for screen sizes
-        if (window.innerWidth <= 568) {
-            if (window.pageYOffset > 290) {
-            navbar.classList.add('scrolled')
-          } else {
-            navbar.classList.remove('scrolled')
-          }
-        }
+hamburger.addEventListener("click", toggleMenu);
 
-        //else block is if it is a desktop or less
-        else{
-        // pageYOffset or scrollY
-        
-          if (window.pageYOffset > 545) {
-            navbar.classList.add('scrolled')
-          } else {
-            navbar.classList.remove('scrolled')
-          }
-       }
-      }
+menuItems.forEach( 
+  function(menuItem) { 
+    menuItem.addEventListener("click", toggleMenu);
+  }
+)
   </script>
 
 
@@ -351,31 +245,5 @@
     </body>
 
 
-    <footer>
-
-    <h4 class="center">Seen enough?</h4>
-    <p class="center">Get in touch.</p>
-
-    <div class="img-wrap">
-		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "assets/newli.svg" ></a>
-		<a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon_center" src = "assets/send-4008.svg"></a>
-    </div>
-   
-    
-    <h4 class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2023</h4>
-
-    <!-- Website scripts -->
-    <script src="assets/js/app.js"></script>
-
-    <!-- Ion icons scripts -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-</footer>
 
 </html>
