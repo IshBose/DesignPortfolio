@@ -304,7 +304,7 @@ nav h3{
     margin-top: 72px;
     padding-left: 128px;
     padding-right: 128px;
-    padding-top: 128px;
+    padding-top: 72px;
 
     width: 100%;
     height: 100%;
@@ -386,10 +386,9 @@ nav h3{
   .whitewrapper{
  
     color: var(--blk);
-    margin-top: 72px;
     padding-left: 128px;
     padding-right: 128px;
-    padding-top: 128px;
+    padding-top: 72px;
 
     width: 100%;
     height: 100%;
