@@ -43,47 +43,29 @@
   </head>
 
 
-    <!-- Navbar -->
+ <!-- Navbar -->
 
-    <nav>
-      <a href="../../index.html" style="font-size: 32px; font-weight: bold;">Ishaan <span style="color: #3478FF;">Bose</span> </a>
-      <a href="../../index.html"> <img class = "mobilelogo" src="./images/Winking Memoji.gif"></a>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <ul class="navigation">
-            <li><a class = "active" href="../../index.html" >Work</a></li>
-            <li><a href="../../about.html" class="nav-link">About</a></li>
-            <li><a href="../../ishaan bose resume 2023 .pdf" class="nav-link">Resume</a></li>
-          <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "../../assets/newli.svg" ></a></li>
-          <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "../../assets/send-4008.svg"></a></li>
-        </ul>
-           <!-- Hamburger Menu for mobile -->
-        <button class="burger-menu" id="burger-menu">
-            <ion-icon class="bars" name="menu-outline"></ion-icon>
-          </button>
 
-          <script>// Nav hamburgerburger selections
+ <div class="nav-logo">
+  <a href="../../index.html" id="title" style="font-weight: bold;">Ishaan <span style="color: #3478FF;">Bose</span> </a>
+</div>
 
-            const burger = document.querySelector("#burger-menu");
-            const ul = document.querySelector("nav ul");
-            const nav = document.querySelector("nav");
+ <ul class="menu">
+     <li><a class="menuItem" href="../../index.html">Work</a></li>
+     <li><a class="menuItem" href="../../about.html">About</a></li>
+     <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+     <li><a class="menuItem" href="../../ishaan bose resume 2023 .pdf">Resume</a></li>
 
-            burger.addEventListener("click", () => {
-            ul.classList.toggle("show");
-            });
 
-            // Close hamburger menu when a link is clicked
-
-            // Select nav links
-            const navLink = document.querySelectorAll(".nav-link");
-
-            navLink.forEach((link) =>
-            link.addEventListener("click", () => {
-                ul.classList.remove("show");
-            })
-            );
-            </script>        
-
-    </nav>   
+     <!--Some Hamburger that will always show up-->
+   </ul>
+   <button class="hamburger">
+     <!-- material icons https://material.io/resources/icons/ -->
+     <i class="menuIcon material-icons">menu</i>
+     <i class="closeIcon material-icons" style="display: none;">close</i>
+   </button> 
 
     <div class="overflowwrapper">
     <body>
@@ -128,7 +110,34 @@
     
     <!-- Projects section -->
     
-
+    <script>
+      const menu = document.querySelector(".menu");
+  const menuItems = document.querySelectorAll(".menuItem");
+  const hamburger= document.querySelector(".hamburger");
+  const closeIcon= document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
+  
+  function toggleMenu() {
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+    } else {
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+    }
+  }
+  
+  hamburger.addEventListener("click", toggleMenu);
+  
+  menuItems.forEach( 
+    function(menuItem) { 
+      menuItem.addEventListener("click", toggleMenu);
+    }
+  )
+    </script>
+  
     
     </body>
   </div>
