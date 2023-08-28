@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 
+
 @font-face {
   font-family: "regola";
   src: url("./woff/FTRegolaNeueTrial-Regular.woff") format('woff');
@@ -213,7 +214,74 @@ nav h3{
     margin-left: 8px;
 }
 
-  
+/* new Stuff for nav*/
+
+.nav-logo{
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 4rem;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border-radius: 4px;
+  background-color:   #E7EFFF;
+  color: white;
+  font-size: 24px;
+}
+
+#title{
+  color: black;
+}
+
+.menuItem {
+  display: block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  text-decoration: underline;
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  background: #E7EFFF;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.closeIcon .material-icons {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: var(--blk);
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
 
 /* Body */
 
@@ -223,11 +291,163 @@ nav h3{
     color: white;
    /* margin-left: 12.5em;
     margin-right: 12.5em;*/
-    overflow-x:hidden 
+    overflow-x:hidden;
+   
 
     
   }
   
+
+  .blkwrapper{
+    background-color: var(--blk);
+    color: white;
+    margin-top: 72px;
+    padding-left: 128px;
+    padding-right: 128px;
+    padding-top: 128px;
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: auto auto auto auto auto;
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, #D1D1D11A 1px, transparent 1px),
+      linear-gradient(to bottom, #D1D1D11A 1px, transparent 1px);
+  }
+
+  .blkwrapper .onleft{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .blkwrapper .wholewidth{
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+  }
+
+
+
+  .centergrid{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin-top: 40px;
+  }
+
+  .centergrid img{
+      width: 100%;
+  }
+  .blkwrapper .onleft img{
+    max-width: 100%;
+  }
+
+  .blkwrapper h4{
+    font-size: 32px;
+    margin-bottom: 40px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+  }
+  
+  .blkwrapper .blk-description{
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .blkwrapper p{
+    font-size: 24px;
+    margin-bottom: 40px;
+
+  }
+
+  .blkwrapper a{
+    font-weight: bold;
+  }
+
+  .blkwrapper .onright{
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .blkwrapper .onrighttwo{
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .blkwrapper .onright img{
+    width: 100%;
+  }
+
+  
+
+
+  .whitewrapper{
+ 
+    color: var(--blk);
+    margin-top: 72px;
+    padding-left: 128px;
+    padding-right: 128px;
+    padding-top: 128px;
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: auto auto auto auto auto;
+  }
+
+  .fullwrap{
+  
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+  }
+
+  .fullwrap h4{
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .fullwrap p{
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .whitewrapper h4{
+    font-size: 32px;
+    margin-bottom: 40px;
+    
+  }
+  
+  .whitewrapper .rightwrapper{
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .whitewrapper .leftspacer{
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .whitewrapper p{
+    font-size: 24px;
+    margin-bottom: 40px;
+
+  }
+
+  .whitewrapper a{
+    font-weight: bold;
+  }
+
+
+
+  .whitewrapper .onright img{
+    max-width: 100%;
+  }
+
+
+
 
   iframe{
     display: flex;
@@ -566,6 +786,31 @@ gap: 12px;
       font-weight: 200;
     }
 
+
+    .newHero{
+      margin-top: 128px;
+     margin-left: 128px;
+     margin-right: 128px;
+     margin-bottom: 128px;
+     display: grid;
+     column-gap: 40px;
+     row-gap: 64px;
+     grid-template-columns: auto auto auto auto auto;
+
+    }
+
+    .newHero h1{
+      color: black;
+      font-size: 64px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .newHero h3{
+      color: #5C5858;
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
     .spacer{
     
       padding-top: 80px;
@@ -1625,6 +1870,112 @@ margin-top: 40px;
             color: var(--blk);
             padding-right: 40px;
           }
+
+
+          .newHero{
+            margin-top: 72px;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            row-gap: 24px;
+          }
+
+          .newHero h1{
+            font-size: 32px;
+            grid-column-start: 1;
+            grid-column-end: 5;
+
+          
+          }
+
+          .newHero h3{
+            grid-column-start: 1;
+            grid-column-end: 5;
+
+          
+          }
+
+          .blkwrapper{
+            margin-top: 24px;
+          padding-left: 40px;
+          padding-right: 40px;
+          padding-top: 40px;
+          }
+
+          .whitewrapper{
+
+            margin-top: 24px;
+          padding-left: 40px;
+          padding-right: 40px;
+          padding-top: 40px;
+
+          }
+
+          .whitewrapper .rightwrapper{
+            grid-column-start: 1;
+            grid-column-end: 5;
+          }
+
+          .whitewrapper h4{
+            margin-bottom: 24px;
+          }
+          
+
+          .blkwrapper .blk-description{
+            grid-column-start: 1;
+            grid-column-end: 5;
+            margin-bottom: 40px;
+          }
+          .blkwrapper .blk-description h4{
+            font-size: 20px;
+          }
+
+          .blkwrapper .blk-description p{
+            font-size: 16px;
+          }
+
+          .blkwrapper .onleft{
+            grid-column-start: 1;
+            grid-column-end: 5;
+          }
+
+          .blkwrapper .onrighttwo{
+            grid-column-start: 1;
+            grid-column-end: 5;
+          }
+
+          .blkwrapper .onrighttwo h4{
+            font-size: 20px;
+          }
+
+          .blkwrapper .onrighttwo p{
+            font-size: 16px;          }
+
+            .blkwrapper h4{
+              font-size: 20px;
+            }
+
+            .blkwrapper p{
+              font-size: 16px;
+            }
+
+          .fullwrap h4{
+            font-size: 20px;
+          }
+
+          .fullwrap  p{
+            font-size: 16px;
+          }
+
+          .center{
+            width: 100%;
+          }
+
+        
+      
+        
+      
+        
 
           h1{
             font-size: 20px;
