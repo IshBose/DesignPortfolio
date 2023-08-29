@@ -120,6 +120,14 @@
   background-color:   #E7EFFF;
   color: white;
   font-size: 24px;
+  transition: 0.2s;
+}
+
+.nav-logo:hover{
+ 
+  transform: scale(1.01);
+  border: 2px solid #1563FF;
+
 }
 
 .sm_icon_center{
@@ -173,6 +181,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   cursor: pointer;
   border-radius: 4px;
   border: none;
+  transition: 0.2s;
+}
+
+.hamburger:hover{
+ 
+    transform: scale(1.01);
+    border: 2px solid #1563FF;
+  
 }
 
 .closeIcon .material-icons {
@@ -280,6 +296,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .blkwrapper p{
     font-size: 24px;
     margin-bottom: 40px;
+    font-weight: 100;
 
   }
 
@@ -362,6 +379,28 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   .whitewrapper .onright img{
     max-width: 100%;
+  }
+
+  .archiveportal{
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #E7EFFF;
+    padding: 8px;
+    transition: 0.2s;
+    position: fixed;
+    z-index: 100;
+    bottom: 1rem;
+    right: 1rem;
+
+  }
+
+  .archiveportal:hover{
+    transform: scale(1.2);
+    border: 2px solid #1563FF;
+  }
+  .archiveportal img{
+    width: 100%;
   }
 
 
@@ -558,6 +597,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       color: #5C5858;
       grid-column-start: 2;
       grid-column-end: 5;
+      font-weight: 100;
     }
     .spacer{
     

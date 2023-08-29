@@ -40,47 +40,31 @@
 
 
     <!-- Navbar -->
-    <nav>
-      <a href="../index.html"><img class = "logo" src="../images/Winking Memoji.gif"> </a>
-      <img class = "mobilelogo" src="../images/Winking Memoji.gif">
 
-      <ul class="navigation">
-          <li><a class = "active" href="../index.html" >Work</a></li>
-          <li><a href="../about.html" class="nav-link">About</a></li>
-          <li><a href="../Ishaan Bose 2022 Resume.pdf" class="nav-link">Resume</a></li>
-        <li><a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon" src = "../assets/newli.svg" ></a></li>
-        <li><a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon" src = "../assets/send-4008.svg"></a></li>
-        
-        
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <div class="nav-logo">
+      <img src="../images/croppedtrishul.png" style="width: 20px;height: 24px; margin-right: 4px;">
+        <a href="../index.html" id="title" style="font-weight: bold;">Ishaan <span style="color: #3478FF;">Bose</span> </a>
+        </div>
+
+    <ul class="menu">
+        <li><a class="menuItem" href="../index.html">Work</a></li>
+        <li><a class="menuItem" href="../about.html">About</a></li>
+        <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+        <li><a class="menuItem" href="../ishaan bose resume 2023 .pdf">Resume</a></li>
+
+
+        <!--Some Hamburger that will always show up-->
       </ul>
-         <!-- Hamburger Menu for mobile -->
-      <button class="burger-menu" id="burger-menu">
-          <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
+      <button class="hamburger">
+        <!-- material icons https://material.io/resources/icons/ -->
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons" style="display: none;">close</i>
+      </button>
 
-        <script>// Nav hamburgerburger selections
-
-          const burger = document.querySelector("#burger-menu");
-          const ul = document.querySelector("nav ul");
-          const nav = document.querySelector("nav");
-
-          burger.addEventListener("click", () => {
-          ul.classList.toggle("show");
-          });
-
-          // Close hamburger menu when a link is clicked
-
-          // Select nav links
-          const navLink = document.querySelectorAll(".nav-link");
-
-          navLink.forEach((link) =>
-          link.addEventListener("click", () => {
-              ul.classList.remove("show");
-          })
-          );
-          </script>        
-
-  </nav>    
 
     <body>
       <!-- Google Tag Manager (noscript) -->
@@ -90,29 +74,106 @@
 
   
     <!-- Hero Section -->
-    <h1 class = "hero">The Archive </h1>
-    <p style="margin-left: 12.5em;">A collection of work from previous years that I still wanted to pay homage to. </p>
+    <div class="newHero" >
+      <h1 style="color: white;">The Archive</h1>
+      <h3 style="color: white; font-weight: 100;">A collection of work I can't seem to let go of.</h3>
+  </div>
     
+  
     
     
     <!-- Projects section -->
-   <div class="grid-container">
-      <div class="grid-item"><a href="../files/Cowork/cowork.html"> <img  src = "../images/Card Cover Template Cowork.svg"> </a> </div>
-      <div class="grid-item"><a href="../files/ESPN/ESPN.html"> <img src = "../images/Card Cover Template ESPN.svg"> </a></div>  
-      <div class="grid-item"><a href="../files/SSense/SSENSE.html"> <img  src = "../images/Card Cover Template SSense.svg"> </a></div>
-     
+    <div class="portfoliocontainer">
+
+
+      <div class="portrow">
+        <div class="column">
+          <a href="../files/bulkactions/bulkactions.html">
+    
+            <div class="sidebysidecard">
+              <img src="../images/Monotone Bulk Actions.png">
+              <h3>Speeding up the marketing workflow within advertising through Bulk Actions</h3>
+              <div class="bchip">
+                Q4 2021
+              </div>
+    
+              <div class="pchip">
+              Product Design
+              </div>
+    
+              <div class="rchip">
+                New feature
+              </div>
+              <p>Enabling users to carry out bulk actions on ad campaigns within Demandbase to increase speed of use.</p>
+    
+            </div></a>
+    
+          </div>
+    
+            <div class="column">
+            <a href="../files/integrations/integrate.html">
+            <div class="sidebysidecard">
+              <img src="../images/Monotone Integrations.png">
+    
+              <h3 style="margin-right: 4px;">Creating a workspace to create, manage and monitor your integrations at scale</h3>
+              <div class="bchip">
+                Q1 2022
+              </div>
+    
+              <div class="pchip">
+              UX Design
+              </div>
+    
+              <div class="rchip">
+                Redesign
+              </div>
+              <p>Improving information architecture through rearranging feature layout into one efficient page.</p>
+    
+    
+    
+            </div></a>
+    
+            </div>
+          
+          
+          </div>
+
     </div>
-
-    <div class="mobile-container">
-      <div class="grid-item"><a href="../files/Cowork/cowork.html"> <img  src = "../images/Card Cover Template Cowork.svg"> </a> </div>
-      <div class="grid-item"><a href="../files/ESPN/ESPN.html"> <img src = "../images/Card Cover Template ESPN.svg"> </a></div>  
-      <div class="grid-item"><a href="../files/SSense/SSENSE.html"> <img  src = "../images/Card Cover Template SSense.svg"> </a></div>
-    
-    </div>
+  
+  
 
     
 
     
+
+    <script>
+      const menu = document.querySelector(".menu");
+  const menuItems = document.querySelectorAll(".menuItem");
+  const hamburger= document.querySelector(".hamburger");
+  const closeIcon= document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
+  
+  function toggleMenu() {
+    if (menu.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+    } else {
+      menu.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+    }
+  }
+  
+  hamburger.addEventListener("click", toggleMenu);
+  
+  menuItems.forEach( 
+    function(menuItem) { 
+      menuItem.addEventListener("click", toggleMenu);
+    }
+  )
+    </script>
+  
     </body>
 
 
