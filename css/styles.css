@@ -1762,7 +1762,9 @@ margin-top: 40px;
         }
 
         .portfoliocontainer{
-          display:none;
+          margin-left: 2em;
+          margin-right: 2em;
+
         }
 
         .portslide{
