@@ -1877,6 +1877,15 @@ margin-top: 40px;
         
 
         }
+
+        .casestudy .contextcols{
+          display: block;
+        }
+
+        .casestudy .contextcoltwo{
+
+          margin-top: 24px;
+        }
         .howmightwe .sectionNum{
           margin-left: 0em;
         }
