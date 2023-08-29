@@ -1571,12 +1571,22 @@ margin-top: 40px;
             font-size: 16px;
           }
 
+          .portimage{
+            max-width: 100%;
+          }
+
           .center{
             width: 100%;
           }
 
         
-      
+          .problemcard{
+            padding: 24px;
+          }
+
+          .nextto{
+            gap: 16px;
+          }
         
       
         
