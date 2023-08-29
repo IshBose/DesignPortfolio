@@ -122,6 +122,31 @@
   font-size: 24px;
 }
 
+.sm_icon_center{
+
+  width: 24px;
+  display:inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
+  /* the height is adjusted automatically*/
+}
+
+.sm_icon_center:hover{
+filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%) contrast(91%);      }
+
+
+
+.mobilehide{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  justify-content: center;
+  margin-top: 24px;
+  width: 100%;
+  display: none;
+}
+
 #title{
   color: black;
 }
