@@ -224,10 +224,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
    /* margin-left: 12.5em;
     margin-right: 12.5em;*/
     overflow-x:hidden;
-    background-size: 40px 40px;
-    background-image:
-      linear-gradient(to right, #D1D1D11A 1px, transparent 1px),
-      linear-gradient(to bottom, #D1D1D11A 1px, transparent 1px);
+    
    
 
     
