@@ -18,6 +18,8 @@
     <!--CSS Styles -->
     <link rel="stylesheet" href="../../css/styles.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="jquery-3.6.4.min.js"></script>
+
 
 
     <!-- Favicons -->
@@ -76,347 +78,239 @@
     <!-- Hero Section -->
 
     
-    <div  class = "casestudystyletwo">
-
-      <div class="c2title">
-        <h2><span style="color:#02a8ef; text-align: left;"> HCP Packer</span><br>Image Insights</h2>
-        <img src="../../images/HashiCorp_Icon_White_RGB.png">
-        <img src="../../images/packer.avif">
-
-    </div>
-      
-
-    <div class="block">
-    
-        <div class="blockheader">
-          
-          <div class="blockwrap">
-              <div class="leftbh">
-                <h5>01 OVERVIEW</h5>
-
-              </div>
-
-              <div class="rightbh">
-                <h5>CONTEXT</h5>
-
-              </div>
-              
-         </div>
-         <hr>
-
-        </div>
-        <p>In the summer of 2022 I interned at HashiCorp. HashiCorp creates DevOps tools that allow develops to build, provision and secure cloud infrastructure. I specifically worked on HCP Packer, which is HashiCorp’s tool to build and provision machine images at scale. Machine images are used in DevOps and IT to segment their end-user groups by function due to the software/OS differences. </p>
-
-
-        <div class="nextto">
-          <div class="problemcard">
-            <h3>PROBLEM</h3>
-            <p>Practioners need <b>image usage data</b> to inform their machine image lifecycle management at scale. Currently, Packer does not have an easy way to extract this data. We want to provide information <b>contextually</b> to inform the practitioner and aid them in their decision making process.</p>
-          </div>
-
-          <div class="problemcard">
-            <h3>SOLUTION</h3>
-            <p>Injecting data contextually to inform and guide decision making in 3 levels of hierarchy thorough cards, tables and graphs.</p>
-          </div>
-      </div>
-  
-  
-    </div>
-
-
-
-    <div class="block">
-      <div class="blockheader">
-        <div class="blockwrap">
-            <div class="leftbh">
-              <h5>02 SOLUTION PREVIEW</h5>
-
-            </div>
-
-            <div class="rightbh">
-              <h5>CONTEXT</h5>
-
-            </div>
-            
-       </div>
-       <hr>
-
-      </div>
-  </div>
-
-    <video controls="controls" width="100%" height="100%" name="HCP Packer Preview" controls muted autoplay loop style="margin-top: -20px;">
-      <source src="./hcppackerpreview.mov">
-    </video>
-
-    
-      
-      <div class="block">
-        <div class="blockheader">
-          <div class="blockwrap">
-            <div class="leftbh">
-              <h5>03 UX RESEARCH</h5>
-
-            </div>
-
-            <div class="rightbh">
-              <h5>DISCOVERY</h5>
-
-            </div>
-            
-       </div>
-
-       <hr>
-
-        </div>
-        <p>Lacking context and understanding of this problem space, I set out to investigate by putting together a formal research plan. I started with internal interviews of users of HCP packer to help me understand key terminology workflows, and expectations, before migrating outwards to customers. One method I used to gather rapid qualitative data was to distribute a survey through Reddit. By tapping into HashiCorp’s rich Open source community, I was able to field 70+ responses in 3 days.</p>
-    </div>
 
      
-
-      <div class="sidebysideportfolioimage">
-        <img class="split" src="./medium.png">
-        <img class="split"  src="./persona.png">
-      </div>
-
-
-        
-      <div class="block">
-        <div class="blockheader">
-        <div class="blockwrap">
-          <div class="leftbh">
-            <h5>04 PROBLEM DECOMPOSITION</h5>
-
-          </div>
-
-          <div class="rightbh">
-            <h5>DISCOVERY</h5>
-
-          </div>
-          
-           </div>
-         <hr>
-        </div>
-
-        <p>To further understand the problem space and user needs, I decomposed the problem statement to create a clear list of requirements, as well as a how might we statement that I used to start ideating</p>
-    </div>
-
-      <img class ="fullength" src="./Problemdecomp.png"   >
-
-      <div class="hmwcard">
-        <h3>How Might We...</h3>
-        <p>enable the practitioner to consume image usage insights to inform decision making on their machine image lifecycle management?
-
-        </p>
-      </div>
-
-      <div class="block">
-        <div class="blockheader">
-        <div class="blockwrap">
-          <div class="leftbh">
-            <h5>05 DETERMINING METRICS</h5>
-
-          </div>
-
-          <div class="rightbh">
-            <h5>DEFINE</h5>
-
-          </div>
-          
-           </div>
-         <hr>
-        </div>
-        <p>One of the clear reality was that we had to be picky about which specific insights we would actually start collecting and visualizing. Part of that was deciding what actually is being collected right now, and what could be exposed.</p>
-    </div>
-
-      <img class ="fullength" src="./Researchmotivations.png"   >
-
-
-      <div class="block">
-        <div class="blockheader">
-          <div class="blockwrap">
-            <div class="leftbh">
-              <h5>06 MEASURING SUCCESS</h5>
-  
-            </div>
-  
-            <div class="rightbh">
-              <h5>DEFINE</h5>
-  
-            </div>
-            
-             </div>
-           <hr>
-          </div>
-
-        <div class="portrow" style="margin-top: 1em;">
-          <div class="column">
-            <h4>Desired Outcome -</h4><br>
-              <p style="font-size: 48px;"><b>+20%</b></p>
-              <p>net new iterations</p>
-
-            
-            
-          </div>
-          <div class="column">
-            <h4 >Desired Outcome -</h4><br>
-            <p style="font-size: 48px;"><b>+14%</b></p>
-            <p>registry usage</p>
-
-            
-          </div>
-          
-        </div>
-
-    </div>
-
       
-    <div class="block">
-      <div class="blockheader">
-        <div class="blockwrap">
-          <div class="leftbh">
-            <h5>07 SOLUTION</h5>
 
-          </div>
+    
+    <div class="blockwrapper">
 
-          <div class="rightbh">
-            <h5>IDEATE</h5>
 
-          </div>
+        <div class="blocklist">
+          <div class="c2title">
+            <h2><span style="color:#02a8ef; text-align: left;"> HCP Packer</span><br>Image Insights</h2>
+            <img src="../../images/HashiCorp_Icon_White_RGB.png" style="width: 48px; height: 48px;">
+    
+        </div>
+
+
+         
           
-           </div>
-         <hr>
-        </div>
-      <p>By examining hierarchy, we can expose usage insights from a high level on the overview page -- LOE: Easy</p>
-  </div>
+            <div class="block">
+              <h3>Context</h3>
+              <p>HashiCorp is a unicorn DevOps company that specializes in world class infrastructure products. They are the industry standard in Infrastructure as Code (IaC), and have produced many key products such as Terraform, Vault and Consul. 
 
-      <img class ="fullength" src="./annotated overview.png"   >
-
-      <div class="block">
-        <div class="blockheader">
-          <h5>CONTEXTUALIZATION</h5><hr>
-        </div>
-        <p>One of the things that I wanted to introduce was the concept of benchmarks. Numbers by themselves often lack meaning, but with a benchmark it makes it much easier to understand. -- LOE: medium, considering lookback data expiration</p>
-    </div>
-
-      <img class ="fullength" src="./annotated percent change.png"   >
-
-      <div class="block">
-        <div class="blockheader">
-          <h5>AT A GLANCE</h5><hr>
-        </div>
-        <p>Quickly exposing provision requests through the iterations tabs allows you to track trends in adoption of new machine images</p>
-    </div>
-
-      <img class ="fullength" src="./annotated iteration.png"   >
-
-      <div class="block">
-        <div class="blockheader">
-          <h5>Drilling in</h5><hr>
-        </div>
-        <p>One key insight from research was that <b>Engineers LOVE granularity in data</b>. This allowed us to cater to this user need through a data visualization.</p>
-    </div>
-
-      <img class ="fullength" src="./annotated iteration roll up.png"   >
-      <img class ="fullength" src="./annotated iteration graph.png"   >
-
-      <div class="block">
-        <div class="blockheader">
-          <h5>USING DATA TO INFORM DECISIONS</h5><hr>
-        </div>
-        <p>Finally, we coudl use data to perscribe info to the users, and guide their actions away from destructive actions.</p>
-    </div>
-
-      <img class ="fullength" src="./annotated revocation warning.png"   >
-
-
-
-      <img class ="fullength" src="./annotated revocation.png"   >
-
-
-      <div class="block">
-        <div class="blockheader">
-          <div class="blockwrap">
-            <div class="leftbh">
-              <h5>08 PROTOTYPING</h5>
-  
+                <br><br>In 2022 interned on HashiCorp Packer, which is a tool used by software developers and IT professionals to create identical machine images or "packs" for different platforms, such as virtual machines, containers, or cloud instances. These images include the necessary software, configurations, and settings, ensuring consistency and reducing the potential for errors during deployment.</p>
             </div>
-  
-            <div class="rightbh">
-              <h5>ITERATION</h5>
-  
+
+            <div class="block">
+              <h3>Overview</h3>
+              <div class="colblock">
+                <p>When: Summer 2022</p>
+                <p>Role: Sole Product Designer</p>
+                <p>Tools: Figma, Qualtrics</p>
+
+              </div>
             </div>
+
+            <div class="block">
+              <h3>Solution preview</h3>
+              <video controls="controls" width="100%" height="100%" name="HCP Packer Preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;">
+                <source src="./hcppackerpreview.mov">
+              </video>
+            </div>
+
+            <div class="block">
+              <div class="problemcard">
+                <h3>Problem</h3>
+                <p>Practioners need <b>image usage data</b> to inform their machine image lifecycle management at scale. Currently, Packer does not have an easy way to extract this data. We want to provide information <b>contextually</b> to inform the practitioner and aid them in their decision making process.</p>
+              </div>
+            </div>
+
+
+
+            <div class="block">
+              <h3>User gap</h3>
+              <p>What we identified was a key gap in how users are making decisions, which is the lack of information. This leads to a lack of understanding of what to do in certain situations.</p>
+              <div class="problemcard" style="margin-top: 24px;">
+                <h3>Problem Gap</h3>
+
+                <img src="./problemgap.png">
+              </div>
+            </div>
+
+             <div class="block">
+              <h3>Research need</h3>
+                <p>Unfortunately, what we lacked was the understanding of which metrics specifically that a user needed. Which necessitated research to fill in this gap. 
+
+                  <br><br>
+                  Our team had a quick timeline, and needed a rapid research method that could quickly get over a  critical sample size which we determined to be roughly over N=50, considering our user base. To meet this, we decided to take advantage of HashiCorp’s rich open source community, and use Reddit to source participants.</p>
+            </div>
+
+            <div class="block">
+             
+                <img src="./researchcomms.png">
+            </div>
+
+            <div class="block">
+              <h3>Research finding overview</h3>
+              <div class="colblock">
+                <div class="col">
+                <h4>73</h4>
+                <p>Sample Size</p>
+              </div>
             
-             </div>
-           <hr>
+              <div class="col">
+                <h4>12k</h4>
+                <p>Views</p>
+              </div>
+
+              <div class="col">
+                <h4>15</h4>
+                <p>Metrics Found</p>
+              </div>
+
+            </div>
+
+            </div>
+
+            <div class="block">
+
+              <h3>Metrics found</h3>
+              <img src="./map of metrics.png">
           </div>
-        <p>A full click through showing the flow</p>
-    </div>
 
-    <video controls="controls" width="1000" height="750" name="Campaign comparison" controls muted autoplay loop>
-      <source src="./ImageUsageVideo.mov">
-    </video>
+          <div class="block">
+            <h3>Sorting metrics</h3>
+              <p>To better understand which metrics actually fit together, I card sorted using subject matter experts, and then sent that to internal users of our products to validate whether the language was correct.
 
+                <br><br>
+                One hard part of designing a technical product is the fact that it is hard to understand the problem space as well as speak in terms that the end-user would understand, so this was extremely helpful.</p>
 
-    <div class="block">
-      <div class="blockheader">
-        <div class="blockwrap">
-          <div class="leftbh">
-            <h5>09 KEY TAKEAWAYS</h5>
+                <img src="./metricmatching.png" style="margin-top: 24px;">
 
           </div>
 
-          <div class="rightbh">
-            <h5>CONCLUSION</h5>
 
+          <div class="block">
+            <h3>Desired outcome</h3>
+            <div class="colblock">
+              <div class="col">
+              <h4>+20%</h4>
+              <p>Net new iterations</p>
+            </div>
+          
+            <div class="col">
+              <h4>+14%</h4>
+              <p>Registry usage</p>
+            </div>
+
+            <div class="col">
+              <h4>-8%</h4>
+              <p>Forced iteration</p>
+            </div>
+
+          </div>
+          </div>
+
+          <div class="block">
+            <h3>Solution overview</h3>
+              <p>In an essence, we needed to deliver insights in contextually to make sure that the user is aided in their decision making process. To do this, I delivered the information in 3 levels.</p>
+
+                <img src="./levelstothis.png" style="margin-top: 24px;">
+
+          </div>
+
+          <div class="block">
+            <h3>High Fidelity protoypes</h3>
+              <p>Lets step through what a solution looks like:</p>
+
+              <video controls="controls" width="100%" height="100%" name="HCP Packer Preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;">
+                <source src="./hcppackerpreview.mov">
+              </video>
+
+            
+
+          </div>
+
+  
+
+          
+
+
+          <div class="block">
+            <h3>Achieved outcome</h3>
+            <div class="colblock">
+              <div class="col">
+              <h4>+14%</h4>
+              <p>Net new iterations</p>
+            </div>
+          
+            <div class="col">
+              <h4>+7%</h4>
+              <p>Registry usage</p>
+            </div>
+
+            <div class="col">
+              <h4>-4%</h4>
+              <p>Forced iteration</p>
+            </div>
+
+          </div>
           </div>
           
-           </div>
-         <hr>
-        </div>
-      <p>Some of my core takeaways from this experience, and working at HashiCorp - </p>  </div>
 
+          <div class="block">
+            <h3>Key takeaways</h3>
+              <p>Working here was definitely one of the top experiences of my career to this date. I really enjoyed getting to tackle an extremely complex problem space, especially when juxtaposed with my former experience at a marketing tech company. Here is some of my other key takeaways</p>
 
-      <div class ="aboutcontainer" style="margin-left: 0em;">
+              <div class ="aboutcontainer" style="margin-left: 0em;">
 
-        <div class="aboutcol">
-          <img class="portslide2" src="./Community.png" style="max-width:120% ;">
-        </div>
-        <div class="aboutcol">
-          <img class="portslide2" src="./Understanding Personas.png" style="max-width:120% ;">
-        </div>
-        <div class="aboutcol">
-          <img class="portslide2" src="./Critique.png" style="max-width:120% ;">
-        </div>
+                <div class="aboutcol">
+                  <img class="portslide2" src="./Community.png" style="max-width:120% ;">
+                </div>
+                <div class="aboutcol">
+                  <img class="portslide2" src="./Understanding Personas.png" style="max-width:120% ;">
+                </div>
+               
+                
         
+              </div>
 
-      </div>
-
-      <img class ="portimage" src="./flowers.png">
-
-
-      <div class="block">
-        <div class="blockheader">
-          <div class="blockwrap">
-            <div class="leftbh">
-              <h5>10 NEXT STEPS</h5>
-  
-            </div>
-  
-            <div class="rightbh">
-              <h5>CONCLUSION</h5>
-  
-            </div>
-            
-             </div>
-           <hr>
           </div>
-        <p>Some of the to-do items to follow up on this project. </p> 
-      
-        <p>Providing granular viewing of image usage per iteration</p>
 
-      </div>
+          <div class="block">
+            <h3>Next Steps</h3>
+          
+            <p>If I had more time, I would probably want to consider adding additional granularity to results, and validating this solution with testing </p>
+          
+            <div class ="aboutcontainer" style="margin-left: 0em;">
 
-      <img class ="portimage" src="./Phase2.png">
+                <div class="aboutcol">
+                  <img class="portslide2" src="./testing.png" style="max-width:120% ;">
+                </div>
+                <div class="aboutcol">
+                  <img class="portslide2" src="./Phase2.png" style="max-width:120% ;">
+                </div>
+               
+                
+        
+              </div>
+
+          </div>
+
+          
+
+            
+
+           
+
+
+
+
+        </div>
+
+    </div>
 
   
 
@@ -425,7 +319,6 @@
          
        
 <!--END OF CASE STUDY **************************************************-->
-    </div>
 
 
     <div class ="casecontrols" style="padding-left: 200px; padding-right: 200px;">
@@ -476,6 +369,24 @@
     }
   )
     </script>
+
+    <script>
+
+    window.onscroll = function() { changeImage() }
+
+    function changeImage() {
+      var scroll = window.scrollY + (window.innerHeight/3);
+
+      [...document.getElementsByClassName('section')].forEach(el => {
+        el.classList.remove('active');
+
+        if(el.offsetTop <= scroll && el.offsetTop + el.offsetHeight > scroll) {
+          el.classList.add('active');
+        }
+      })
+    } changeImage();
+  </script>
+
     </body>
   </div>
 

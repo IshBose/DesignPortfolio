@@ -34,6 +34,13 @@
 @font-face {
   font-family: "regola";
   src: url("./woff/FTRegolaNeueTrial-Medium.woff");
+  font-weight: 500;
+
+}
+
+@font-face {
+  font-family: "regola";
+  src: url("./woff/FTRegolaNeueTrial-Medium.woff");
   font-weight: medium;
 
 }
@@ -677,26 +684,63 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       height: 89.867px;
     }
 
-    .block{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-      align-self: stretch;
-    }
-
-    .blockheader{
-            display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 12px;
-      align-self: stretch;
-    }
-
-    .blockheader hr{
+    .blockwrapper{
+      padding-left: 128px;
+      padding-right: 128px;
+      padding-top: 128px;
+  
       width: 100%;
-      height: 1px;
+      height: 100%;
+      display: grid;
+      column-gap: 40px;
+      grid-template-columns: auto auto auto auto auto;
+      
+    }
+
+    .blocklist{
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      grid-column-start: 3;
+      grid-column-end: 3;
+      width:  695px ;
+      gap: 64px;
+    }
+    .block{
+      gap: 16px;
+    }
+
+    .colblock{
+      display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    
+    align-self: stretch;
+    }
+
+    .colblock h4{
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .block h3{
+      color: #B3B3B3;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: capitalize;
+      margin: 0px;
+      padding-bottom: 8px;
+    }
+
+    .block p{
+      color: #FFF;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
     }
 
 
@@ -752,19 +796,30 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .problemcard{
       display: flex;
-      padding: 40px;
+      padding: 24px;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
       align-self: stretch;
-      border-radius: 8px;
-    border: 1px solid #02A8EF;
-      background: #C4E5F3;
-      color: black;
+      border-radius: 4px;
+      background: #2A2F36;
+      color: white;
     }
 
     .problemcard h3{
-      font-size: 12px;
+      font-size: 16px;
+    }
+
+    .problemcard img{
+      max-width: 100%;
+    }
+
+    /* TRY for me */
+    
+   
+        /* TRY for me */
+
+
+    .block img{
+      max-width: 100%;
     }
 
     .nextto{
@@ -1176,6 +1231,8 @@ margin-top: 40px;
         justify-content: center;
         display: block;
     }
+
+    
 
     .portcontrols{
       margin-top: 16px;
@@ -1794,6 +1851,19 @@ margin-top: 40px;
           margin: auto;          
         }
 
+        .blocklist{
+          width: 100%;
+          grid-column-start: 1;
+          grid-column-end: 5;
+
+        }
+
+        .blockwrapper{
+          padding-left: 24px;
+          padding-right: 24px;
+          padding-top: 24px;
+  
+        }
         video{
           height: 300px;
           width: 300px;
