@@ -354,6 +354,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     padding-left: 128px;
     padding-right: 128px;
     padding-top: 72px;
+    align-items: center;
+    justify-items: center;
+
 
     width: 100%;
     height: 100%;
@@ -362,6 +365,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     grid-template-columns: auto auto auto auto auto;
   }
 
+  #midalign{
+    max-width: 65%; 
+    margin-top: 24px;
+    padding-left: 300px;
+  }
   .fullwrap{
   
     grid-column-start: 1;
@@ -1759,6 +1767,13 @@ margin-top: 40px;
           margin-left: 2em;
           margin-right: 2em;
 
+        }
+
+        #midalign{
+          max-width: 100%; 
+          margin-top: 24px;
+          grid-column-start: 3;
+          padding-left: 0;
         }
 
         .casecontrols{
