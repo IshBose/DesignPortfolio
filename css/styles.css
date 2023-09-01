@@ -738,7 +738,35 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       grid-column-start: 3;
       grid-column-end: 3;
       width:  695px ;
-      gap: 64px;
+      gap: 80px;
+    }
+
+    .btn {
+      background-color: white; /* Blue background */
+      border: 1px solid black;
+      color: var(--blk); /* White text */
+      padding: 12px 16px; /* Some padding */
+      font-size: 16px; /* Set a font size */
+      cursor: pointer; /* Mouse pointer on hover */
+      border-radius: 6px;
+      font-weight: 500;
+      line-height: 16px;
+      font-family: Regola;
+      top: 24px;
+      margin:0 auto;
+    display:block;
+    
+    }
+
+    .menu .btn{
+      margin-left: 4rem;
+    }
+    
+    /* Darker background on mouse-over */
+    .btn:hover {
+      background-color: var(--hover);
+      transform: scale(1.02); 
+      transition:transform 0.1s ease-in;
     }
     .block{
       gap: 16px;
