@@ -261,6 +261,31 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .blkwrapper .onleft{
     grid-column-start: 1;
     grid-column-end: 3;
+    transition: 0.2s smooth;
+  }
+
+  .onright:hover{
+    transform: scale(1.01);
+    transition: 0.2s smooth;
+
+  }
+
+  .onleft:hover{
+    transform: scale(1.01);
+    transition: 0.2s smooth;
+
+  }
+
+  .wholewidth:hover{
+    transform: scale(1.01);
+    transition: 0.2s smooth;
+
+  }
+
+  .centergrid:hover{
+    transform: scale(1.01);
+    transition: 0.2s smooth;
+
   }
 
   .blkwrapper .wholewidth{
@@ -1518,6 +1543,20 @@ margin-top: 40px;
         font-weight: 700;
     }
 
+    /*.hoverwrap{
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 24px;
+    }
+
+    .hoverwrap:hover{
+      background-color: #2A2F36;
+      border-radius: 8px;
+
+
+
+    }*/
+
     
   
     
@@ -1529,7 +1568,12 @@ margin-top: 40px;
     @media screen and (max-width: 700px) {
      
       
+
+      .nav-logo{
+        display: none;
+      }
       
+
           .newHero{
             margin-top: 72px;
             margin-left: 40px;
@@ -1559,6 +1603,11 @@ margin-top: 40px;
           padding-right: 40px;
           padding-top: 40px;
           column-gap: 24px;
+
+          }
+
+          .blkwrapper:hover{
+            background-color: #2A2F36;
 
           }
 
@@ -1661,6 +1710,8 @@ margin-top: 40px;
           .herosec h2{
             font-size: 16px;
           }
+
+         
 
           
         
