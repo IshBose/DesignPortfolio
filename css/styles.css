@@ -1558,6 +1558,8 @@ margin-top: 40px;
           padding-left: 40px;
           padding-right: 40px;
           padding-top: 40px;
+          column-gap: 24px;
+
           }
 
           .whitewrapper{
@@ -1601,6 +1603,13 @@ margin-top: 40px;
             grid-column-start: 1;
             grid-column-end: 5;
           }
+
+
+  .blkwrapper .wholewidth{
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+  }
 
           .blkwrapper .onrighttwo h4{
             font-size: 20px;
