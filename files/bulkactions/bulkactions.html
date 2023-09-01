@@ -133,117 +133,6 @@
 
 
 
-
-
-  <!--     <br> It is no secret that the world runs on data. Whole structures that facilitate this data coming in and out and being stored are designed and developed everyday. Understanding how data scales is a whole different topic, especially with the user management side of it. This project is focused on enabling users to create bulk actions.
-      </p>
-    
-        <p>
-            <br><br>
-            <b>Product team:</b> Advertising Cloud<br>
-            <b>Timeline:</b> Q3 2021<br>
-            <b>Role:</b> Lead Designer on Product Team<br>
-            <b>Collaborators:</b> Front-end engineers, Principle Product Manager, Engineering Lead <br>
-            <b>Tools used:</b> Sketch, InVision<br>
-            <b>Tags:</b> UX Design, Interaction Design <br>
-
-            </p>
-
-            <br>
-            <a href="./bulkactions.html#solution">Skip to solution</a>
-
-            <h3>The Opportunity</h3>
-
-            <p>This problem derived from a constant pain point in how users manage their campaigns in the product. A constant piece of feedback is that it is often hard to manually make changes to campaigns, especially when the number of campaigns can balloon as your maturity with the tool increases.
-
-              <br><br>Currently, all campaign configuration post launch is done through a settings cog icon that appears while hovering over the row. The icon is the affordance, and when clicked yields a dropdown menu. However, doing this for multiple campaigns is tedious, and we want to streamline doing this in bulk.
-              </p>
-
-              <img class = "portimage" src="./dropdown options.png">
-
-              <p>So to represent this in a problem statement, I proposed the following:
-
-                <br><br><b>How might we enable bulk management and configuration of campaigns in a clear, intuitive and powerful way?</b>
-                </p>
-
-           
-            <h3>Approach</h3>
-
-            <p></p>
-
-            
-            <img class = "portimage" src="./figjam brainstorm.png">
-            <p>The straight forward part of this project was actually the bulk selection flow. The checkboxes next to the campaign being selected for management was already part of a users mental model. However, we needed to figure out a way to allow them to bulk edit in a way that makes sense.
-            </p>
-
-
-            <img class = "portimage" src="./selection process.png">
-
-            <p>Luckily, there was an ongoing project related to the creative library which also had this problem, which introduced some collaboration. What we needed was an entrypoint to the editing pane, however that might look.
-            </p>
-
-            <img class = "portimage" src="./poe.png">
-
-    
-            <h3 id ="solution" >Solution</h3>
-
-            <img class = "portimage" src="./Ungrouped creatives_take action.png">
-
-            <p>We settled on using the top of the table + a take action affordance which prompts a dropdown to be the point of entry, as shown by the picture below. The pattern of take action already existed in product, but actually pulled out to a redesigned menu which I designed, see below.
-            </p>
-
-            <img class = "portimage" src="./Crm select.png">
-
-            <p>By using take action in two contexts, it presented us with an interesting hurdle, which we debated as a group constantly. This was an interesting mismatch between the use of a component for different end points in a similar context. However, we started to step back a little and consider what we were trying to do as designers here. What we needed to do was consider the user mental model and the gap that exists between their model, and the implementation model of the product team at Demandbase.
-            </p>
-
-            <img class = "portimage" src="./gap in models.png">
-
-            <p>Stepping back, the user controversially doesn’t actually care that clicking the same button has two different end points. The reason for this is that the user thinks in action oriented mindset, not a process oriented mindset. They simply want to take action on whatever is selected, and all other parts are offloaded from their cognition. 
-
-            <br><br>  We validated this idea with external customers and were happy to report that 11/14 found the concept to work, and to find no confusion in it. Most actually found that this concept was more clear than the other take action usage.
-              </p>
-
-            <h3>Iteration</h3>
-
-            <p>The intial feedback did leave some concerns about the type mismatch in actions. As seen in the dropdown below, the existing options were edit, duplicate and pause. New options were added in the scope of this project, which include archive or delete depending on status of campaign, and add watcher to campaign.
-            </p>
-
-            <img class = "portimage" src="./dropdown options.png">
-
-            <p>Depending on the status of the campaign, certain actions can or cannot be completed. To illustrate this, I mapped the statuses to exactly what could be done.
-            </p>
-
-            <img class = "portimage" src="./Status.png">
-            
-            <p>The issue starts to present yourself when you have two types that are selected together that have a mismatch in actions possible, consider the scenario:
-            </p>
-
-            <img class = "portimage" src="./Type mismatch.png">
-
-            <P>As seen above, we need to figure out what exactly the dropdown looks like, and what happens when we select an action that cannot be done.
-            </P>
-
-            <h3>Final Result</h3>
-
-            <p>This leads to my final solution. To get around the dropdown problem, I elected to only show actions that could be done by the types selected. For example, if I had 4 campaigns that had ended being selected, then I wouldn’t present the option to delete, as that is an option that does not work for ended campaigns. This would lower the cognitive load on the user, as they only see options that matter in that context.
-            </p>
-
-            <img class = "portimage" src="./alt dropdown copy.png">
-
-            <p>To solve an issue of when some of the campaigns selected could not complete the action, I throw an informative message into the action modal, and then let them know why it cannot happen. Then, I continue to finish the action on all the ones that can work. The reason for this being from the user standpoint, they simply want to finish the action, they do not care about the total intricacies. That just adds unnecessary friction.
-            </p>
-
-            <div class = "image-container">
-              <img class = "portimage" src="./2 pause.png">
-              <img class = "portimage" src="./no delete archive.png">
-          </div>
-
-          <p>As seen above, the two different types contain different messages depending on what can be done there. This abstracts away the complexity from the user, while still providing them with the options that they need.
-          </p>
-      
-
-          <p>The full click through is as following:-->
           </p>
             <div class = "image-container">
                 <img class = "portimage" src="./alt path selected.png">
@@ -276,34 +165,8 @@
 
         </div>
 
+        <script src="../../js/main.js"></script>
 
-        <script>
-          const menu = document.querySelector(".menu");
-      const menuItems = document.querySelectorAll(".menuItem");
-      const hamburger= document.querySelector(".hamburger");
-      const closeIcon= document.querySelector(".closeIcon");
-      const menuIcon = document.querySelector(".menuIcon");
-      
-      function toggleMenu() {
-        if (menu.classList.contains("showMenu")) {
-          menu.classList.remove("showMenu");
-          closeIcon.style.display = "none";
-          menuIcon.style.display = "block";
-        } else {
-          menu.classList.add("showMenu");
-          closeIcon.style.display = "block";
-          menuIcon.style.display = "none";
-        }
-      }
-      
-      hamburger.addEventListener("click", toggleMenu);
-      
-      menuItems.forEach( 
-        function(menuItem) { 
-          menuItem.addEventListener("click", toggleMenu);
-        }
-      )
-        </script>
       
 
             

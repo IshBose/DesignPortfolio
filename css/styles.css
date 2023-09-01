@@ -236,6 +236,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     
   }
+
+ 
+
+  
   
 /***********   INDEX-WRAPPER              *********/
 
@@ -737,7 +741,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       grid-column-start: 3;
       grid-column-end: 3;
-      width:  695px ;
+      max-width:  695px ;
       gap: 80px;
     }
 
@@ -762,6 +766,54 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin-left: 4rem;
     }
     
+    /* 2. STICKY SIDENAV            *****************/
+
+            /* 2. Make nav sticky */
+      
+        /* 3. ScrollSpy active styles (see JS tab for activation) */
+        .section-nav li.active > a {
+          color: white;
+          font-weight: 500;
+        }
+
+        /* Sidebar Navigation */
+        .section-nav {
+          padding-left: 1rem;
+          
+          position: fixed;
+          top: 8rem;
+          align-self: start;
+        }
+
+        .section-nav a {
+          text-decoration: none;
+          display: block;
+          padding: 0.5rem 0;
+          color: #ccc;
+          transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+        }
+
+        .section-nav a:hover,
+        .section-nav a:focus {
+          color: white;
+        }
+
+        /** Poor man's reset **/
+       
+    
+        ul,
+        ol {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        li {
+          margin-left: 1rem;
+        }
+
+   
+
+
     /* Darker background on mouse-over */
     .btn:hover {
       background-color: var(--hover);
@@ -1608,6 +1660,11 @@ margin-top: 40px;
       .nav-logo{
         display: none;
       }
+
+      .section-nav {
+        display: none;
+      }
+
       
 
           .newHero{
