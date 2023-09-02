@@ -63,7 +63,7 @@
 
 /* Variables */
 :root {
-    --blk: #171A1E;
+    --blk: #0F141E;
     --accent: #3478FF;
     --hover: #8EB8E5;
     --font-family: "regola", sans-serif;
@@ -820,7 +820,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       flex-direction: column;
       align-self: stretch;
       border-radius: 4px;
-      background: #2A2F36;
+      background: #090C12;
+      border: 1px solid #394050;
       color: white;
     }
 
