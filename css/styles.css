@@ -68,11 +68,11 @@
     --hover: #8EB8E5;
     --font-family: "regola", sans-serif;
     --packer: #02a8ef;
+    --terraform: #7B42BC;
 
   }
 
-  
-  
+
   
   html {
     scroll-behavior: smooth;
@@ -92,7 +92,8 @@
 
   a:hover {
     color: var(--hover);
-
+    transform: scale(1.005);
+    transition: 0.2s smooth;
   }
 
   .active {
@@ -100,17 +101,7 @@
     font-weight: bold;
 }
 
-    .burger-menu {
-    color: white;
-    font-size: 2rem;
-    border: 0;
-    margin-top: 4px;
-    background-color: var(--blk);
-    cursor: pointer;
-    display: none;
-    }
-
-
+  
 /* new Stuff for nav*/
 
 .nav-logo{
@@ -137,30 +128,7 @@
 
 }
 
-.sm_icon_center{
 
-  width: 24px;
-  display:inline-block;
-  margin-right: 16px;
-  margin-bottom: 16px;
-  filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
-  /* the height is adjusted automatically*/
-}
-
-.sm_icon_center:hover{
-filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%) contrast(91%);      }
-
-
-
-.mobilehide{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  justify-content: center;
-  margin-top: 24px;
-  width: 100%;
-  display: none;
-}
 
 #title{
   color: black;
@@ -221,6 +189,19 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   transform: translateY(0);
 }
 
+.sm_icon_center{
+
+  width: 24px;
+  display:inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  filter: invert(98%) sepia(2%) saturate(226%) hue-rotate(229deg) brightness(118%) contrast(100%);
+  /* the height is adjusted automatically*/
+}
+
+.sm_icon_center:hover{
+filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%) contrast(91%);      }
+
 
 /***********  BODY         *********/
 
@@ -228,17 +209,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     font-family: var(--font-family);
     background-color: var(--blk);
     color: white;
-   /* margin-left: 12.5em;
-    margin-right: 12.5em;*/
     overflow-x:hidden;
     
-   
-
-    
   }
-
- 
-
   
   
 /***********   INDEX-WRAPPER              *********/
@@ -461,15 +434,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         margin: 8px;
     }
 
-    
-    
-
-   
-   
-
-
-
-    
     .grid-container {
         margin-top: 2em;
         margin-left: 12.5em;
@@ -608,7 +572,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       
     }
 
-   
 
     .newHero{
       margin-top: 128px;
@@ -635,27 +598,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       grid-column-end: 5;
       font-weight: 100;
     }
-    .spacer{
-    
-      padding-top: 80px;
-      padding-left: 200px;
-      padding-right: 200px;
-    }
+   
 
-
-    .index h1{
-      margin-left: 0em;
-    }
 
     .portrow{
       margin: 0 -5px;
-    }
-
-    .caserow{
-      margin-top: 2em;
-      display: grid;
-      gap: 8px 8px;
-      grid-template-columns: auto auto auto;
     }
 
     .column{
@@ -683,26 +630,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     /*  casestudystyletwo */
 
-    .casestudystyletwo{
-      margin-left: 200px;
-      margin-right:200px;
-      margin-top: 40px;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      flex-shrink: 0;
-      max-width: 100%;
-
-    }
-
-    .casestudystyletwo h2{
-      font-size: 32px;
-      flex-shrink: 0;
-
-      
-
-    }
 
     .c2title{
       display: flex;
@@ -711,11 +638,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     align-self: stretch;
     }
     
-    .c2title img{
-      width: 90px;
-      height: 89.867px;
-    }
-
+    
     .blockwrapper{
       padding-left: 128px;
       padding-right: 128px;
@@ -757,64 +680,22 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     
     }
 
-    .menu .btn{
-      margin-left: 4rem;
-    }
-    
-    /* 2. STICKY SIDENAV            *****************/
-
-            /* 2. Make nav sticky */
-      
-        /* 3. ScrollSpy active styles (see JS tab for activation) */
-        .section-nav li.active > a {
-          color: white;
-          font-weight: 500;
-        }
-
-        /* Sidebar Navigation */
-        .section-nav {
-          padding-left: 1rem;
-          
-          position: fixed;
-          top: 8rem;
-          align-self: start;
-        }
-
-        .section-nav a {
-          text-decoration: none;
-          display: block;
-          padding: 0.5rem 0;
-          color: #ccc;
-          transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
-        }
-
-        .section-nav a:hover,
-        .section-nav a:focus {
-          color: white;
-        }
-
-        /** Poor man's reset **/
-       
-    
-        ul,
-        ol {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-        li {
-          margin-left: 1rem;
-        }
-
-   
-
-
-    /* Darker background on mouse-over */
     .btn:hover {
       background-color: var(--hover);
       transform: scale(1.02); 
       transition:transform 0.1s ease-in;
     }
+
+    .menu .btn{
+      margin-left: 4rem;
+    }
+    
+   
+   
+
+
+    /* Darker background on mouse-over */
+   
     .block{
       gap: 16px;
     }
@@ -859,39 +740,57 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       gap: 24px;
        align-self: stretch;
     }
-    .leftbh{
-      flex: 1 0 0;
-    }
 
-    .rightbh{
-      flex: 1 0 0;
-      text-align: right;
+     /* 2. STICKY SIDENAV            *****************/
 
-    }
+            /* 2. Make nav sticky */
+      
+        /* 3. ScrollSpy active styles (see JS tab for activation) */
+        .section-nav li.active > a {
+          color: white;
+          font-weight: 500;
+        }
+
+        /* Sidebar Navigation */
+        .section-nav {
+          padding-left: 1rem;
+          
+          position: fixed;
+          top: 8rem;
+          align-self: start;
+        }
+
+        .section-nav a {
+          text-decoration: none;
+          display: block;
+          padding: 0.5rem 0;
+          color: #ccc;
+          transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+        }
+
+        .section-nav a:hover,
+        .section-nav a:focus {
+          color: white;
+        }
+
+        /** Poor man's reset **/
+       
+    
+        ul,
+        ol {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        li {
+          margin-left: 1rem;
+        }
+
+    
   
-    .caserows{
-      margin-top: 2em;
-      display: flex;
-      align-items: flex-start;
-      gap: 80px;
-      align-self: stretch;
+    
+    
 
-      
-    }
-    .tinycols{
-      /*float: left;
-      width: 25%;
-      padding: 0 10px;
-      margin-top: 2em;*/
-      max-width: 100% ;
-      
-    }
-
-    .tinycols h3{
-      width: 150px;
-      margin: 0px;
-
-    }
 
     .largecols{
       /*float: left;
@@ -988,24 +887,9 @@ margin-top: 40px;
 
     }
 
-    .marginbox{
-    margin-left: 0em;    
-    margin-right: 0em;    
+   
 
-}
-
-
-
-    .largecol{
-      /*float: left;
-      width: 75%;
-      padding: 0 10px;*/
-      grid-column-start: 2;
-      grid-column-end: 5;
-      max-width: 100% ;
-    }
     
-
     .portrow:after {
       content: "";
       display: table;
@@ -1261,52 +1145,7 @@ margin-top: 40px;
         max-width: 90%;
       }
 
-      .music{
-        margin-left: 12em;
-      }
-
-      .music h3{
-        margin-bottom: 24px;
-      }
-
-      .music iframe{
-        margin-left: -2em;
-      }
-      hr{
-          background-color:var(--accent);
-          border-color: var(--accent);
-          color: var(--accent);
-          margin-right: 24px;
-          margin-bottom: 8px;
-      }
-
-
-
-      h3{
-          font-size: 20px;
-          
-          margin: 8px;
-      }
     
-    .aboutcol{
-        width: 80%;
-        display: inline-block;
-    }
-
-    .aboutcol iframe{
-      margin-top: 1em;
-      justify-content: left;
-      text-align: left;
-      float: left;
-    }
-    .aboutcolhide{
-        width: 33%;
-        display: none;
-    }
-
-    .aboutcol h5{
-      font-size: 20px;
-    }
 
     .portfoliocover{
         margin-left: auto;
@@ -1386,10 +1225,7 @@ margin-top: 40px;
 
     
 
-    .casestudy p{
-        margin-right: 2em;
-        font-size: 18px;
-    }
+    
 
     .casestudy{
       
@@ -1400,219 +1236,8 @@ margin-top: 40px;
 
       justify-content: center;
     }
-    .casestudy h3{
-        max-width: 80%;
-        margin: auto;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .casestudy h2{
-      font-size: 48px;
-      display: inline-block;
-  vertical-align: middle ;
-    }
-
-    .casestudy h4{
    
-      margin: auto;
-      font-size: 24px;
-  }
-
-
-
-  .casestudy hr{
-    display: flex;
-   
-    background-color:white;
-    border-color: white;
-    color: black;
-  }
   
-
-    .casestudy .sectionNum{
-
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      padding: 4px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 8px;
-      margin-right:12px;
-      color: white;
-      background-color: #1563FF;
-      margin-bottom: 0px;
-      text-align: center;
-      margin-top: 5em;
-
-
-    }
-
-    .problemscreen{
-      font-size: 72px;
-      background-color: white;
-      color: black;
-      padding-top:  3em;
-      padding-bottom:  3em;
-      padding-left: 2.5em;
-      padding-right: 2em;
-      margin-right: -2.75em;
-
-      margin-left: -5em;
-      margin-top: 0.5em;
-      
-
-      text-align: left;
-     
-
-    }
-
-    .sneakpeek{
-      font-size: 72px;
-      background-color: #f0f0f1;
-      color: black;
-      padding-top:  1em;
-      padding-bottom:  1em;
-      padding-left: 5em;
-      padding-right: 5em;
-      margin-right: -2.75em;
-
-      margin-left: -5em;
-      margin-top: 0.5em;
-      
-
-      text-align: left;
-     
-
-    }
-
-    
-
-    .howmightwe{
-      font-size: 72px;
-      background-color: var(--accent);
-      color: black;
-      padding-top:  3em;
-      padding-bottom:  5em;
-      padding-left: 2.5em;
-      padding-right: 2em;
-      margin-right: -2.75em;
-
-      margin-left: -5em;
-      
-
-      text-align: left;
-     
-
-    }
-
-    .howmightwe p{
-      font-size: 32px;
-      max-width: 100%;
-      margin-left: 6em;
-      margin-right: 5em;
-      
-     
-
-    }
-
-    
-    
-    .howmightwe .sectionNum{
-      margin-left: 12em;
-      margin-right: -0.5em;
-      padding-bottom: 10px;
-      background-color: white;
-    }
-
-    .howmightwe h2{
-      vertical-align: bottom;
-    }
-
-
-
-    .problemscreen p{
-      font-size: 32px;
-      max-width: 100%;
-      margin-left: 6em;
-      margin-right: 5em;
-      
-     
-
-    }
-
-    
-    
-    .problemscreen .sectionNum{
-      margin-left: 12em;
-      margin-right: -0.5em;
-      padding-bottom: 10px;
-    }
-
-    .problemscreen h2{
-      vertical-align: bottom;
-    }
-
-    .timeline{
-      max-width: 75%;
-      justify-content: center;
-    }
-
-    .casestudy .contextcols{
-      display: grid;
-      gap: 8px 8px;
-      grid-template-columns: auto auto auto;
-      margin-top: 2em;
-    }
-
-    .casestudy .contextcols h2{
-      text-align: left;
-    }
-    .casestudy .contextcolone{
-     /* width: 75%;
-      display: block;*/
-      grid-column-start: 1;
-        grid-column-end: 3;
-        max-width: 100% ;
-    }
-
-    .stepcol{
-      grid-column: auto;
-      display: block;
-      
-    }
-
-    .casestudy .contextcolone p{
-      margin-left: 0em;
-      max-width: 100%;
-
-    }
-    .casestudy .contextcoltwo{
-      grid-column-end: 5;
-      font-size: 18px;
-     
-      max-width: 100% ;
-    }
-
-    .researchcol{
-      grid-column-start: 1;
-      grid-column-end: 4;
-      font-size: 18px;
-     
-      max-width: 100% ;
-      
-    }
-
-    .researchcoltwo{
-      grid-column-start: 3;
-      grid-column-end: 5;
-      font-size: 18px;
-     
-      max-width: 50% ;
-      
-    }
-
     .casestudy a{
         
         font-weight: bold;
@@ -1627,21 +1252,7 @@ margin-top: 40px;
     }
 
     /*.hoverwrap{
-      padding-left: 24px;
-      padding-right: 24px;
-      padding-top: 24px;
-    }
-
-    .hoverwrap:hover{
-      background-color: #2A2F36;
-      border-radius: 8px;
-
-
-
-    }*/
-
-    
-  
+   
     
 
     /*                                                             THIS IS ALL RESPONSIVE DESIGN UNDER HERE                                                             */
@@ -1651,6 +1262,8 @@ margin-top: 40px;
     @media screen and (max-width: 700px) {
      
       
+      
+/*            NAV                                                                                                      */
 
       .nav-logo{
         display: none;
@@ -1661,6 +1274,8 @@ margin-top: 40px;
       }
 
       
+
+      /*            INDEX                                                                                                      */
 
           .newHero{
             margin-top: 72px;
@@ -1745,11 +1360,11 @@ margin-top: 40px;
           }
 
 
-  .blkwrapper .wholewidth{
-    grid-column-start: 1;
-    grid-column-end: 5;
+            .blkwrapper .wholewidth{
+              grid-column-start: 1;
+              grid-column-end: 5;
 
-  }
+            }
 
           .blkwrapper .onrighttwo h4{
             font-size: 20px;
@@ -1820,10 +1435,7 @@ margin-top: 40px;
             transform: translateX(0);
           }
 
-          .indexnav a{
-            color: white;
-          }
-
+        
           #title{
             color: black;
           }
@@ -1846,11 +1458,7 @@ margin-top: 40px;
             margin: auto;
           }
 
-        .index{
-          margin-left: 2em;
-          margin-right: 2em;
-
-        }
+       
 
         #midalign{
           max-width: 100%; 
@@ -1868,41 +1476,15 @@ margin-top: 40px;
             display: none;
         }
 
-        .casestudystyletwo{
-          margin-left: 40px;
-          padding-right: 100px;
-          margin-top: 24px;
-          margin-right: 0px;
-         
-        }
+        
 
-        .casestudystyletwo h2{
-          font-size: 20px;
-        }
-
+       
         
         .c2title img{
           width: 48px;
           height: 48px;
         }
 
-
-
-
-        .mobilelogo{
-            display: none;
-        }
-
-        .whitewaves{
-          margin-left: 2em;
-          margin-right: 2em;
-        }
-
-
-
-        .aboutcol{
-            display: none;
-        }
 
         p{
             font-size: 12px;
@@ -1989,12 +1571,6 @@ margin-top: 40px;
 
         }
 
-        .spacer{
-    
-          padding-top: 20px;
-          padding-left: 40px;
-          padding-right: 40px;
-        }
 
         .fullwidth{
           display:none;
@@ -2003,12 +1579,7 @@ margin-top: 40px;
         .casestudy{
           margin: 2em;
         }
-        .casestudy p{
-          /*margin-left: 0px;*/
-          font-size: 14px;
-          margin: auto;          
-        }
-
+       
         .blocklist{
           width: 100%;
           grid-column-start: 1;
@@ -2028,34 +1599,13 @@ margin-top: 40px;
           width: 300px;
         }
 
-        .pastexperience{
-          display: none;
-        }
+       
         .portfoliocover{
           display: none;
           margin-bottom: 24px;
         }
 
-        .casestudy .h4{
-          font-size: 20px;
-        }
-        .casestudy .tinycol{
-          flex-direction: column;
-          max-width: 100% ;
-        }
-        .casestudy .largecol{
-          display: none;
-          flex-direction: column;
-          max-width: 100% ;
-        
-        max-width: 100% ;
-        }
-
-        .caserow{
-          grid-template-columns: 100%;
-          margin-top: 1em;
-        }
-
+       
         .imagebox{
           display: none;
         }
@@ -2070,42 +1620,7 @@ margin-top: 40px;
           display: block;
         }
 
-        .problemscreen{
-        
-          padding-top:  1em;
-          padding-bottom:  1em;
-          padding-left: 1em;
-          padding-right: 0.5em;
-          margin-right: -.4em;
-
-          margin-left: -1em;
-          margin-top: 0.5em;
-          
-
-          text-align: left;
-        
-
-        }
-        .problemscreen .sectionNum{
-          margin-left: 0em;
-        }
-
-        .howmightwe{
-        
-          padding-top:  1em;
-          padding-bottom:  1em;
-          padding-left: 1em;
-          padding-right: 0.5em;
-          margin-right: -.4em;
-
-          margin-left: -1em;
-          
-
-          text-align: left;
-        
-
-        }
-
+      
         .casestudy .contextcols{
           display: block;
         }
@@ -2114,9 +1629,7 @@ margin-top: 40px;
 
           margin-top: 24px;
         }
-        .howmightwe .sectionNum{
-          margin-left: 0em;
-        }
+      
       }
 
           /************************************************************ Normal Laptop Sizes  ******************************************************************/
@@ -2160,11 +1673,15 @@ margin-top: 40px;
                 /************************************************************ Really Big Screen Sizes  ******************************************************************/
 
 
-      @media screen and (min-width: 1500px) {
+      @media screen and (min-width: 1920px) {
         .aboutcolhide{
             display: inline-block;
         }
 
+
+        .blocklist{
+          max-width: 800px
+        }
         
 
        
