@@ -610,6 +610,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
      width: 50%;
      padding: 0 10px;
     }
+
+    .mockupbox{
+      /*margin-left: -128px;
+      margin-right: -128px;*/
+      width: 75vw;
+      height: 100vh;
+      margin-left: -10px;
+
+
+    }
     .fillcolumn{
       float: left;
      width: 100%;
@@ -741,6 +751,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
        align-self: stretch;
     }
 
+    
+
+   
      /* 2. STICKY SIDENAV            *****************/
 
             /* 2. Make nav sticky */
@@ -1569,6 +1582,14 @@ margin-top: 40px;
           max-width: 100%;
 
 
+        }
+
+        .mockupbox{
+         
+          width: auto;
+         
+    
+    
         }
 
 

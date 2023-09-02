@@ -26,6 +26,10 @@ menuItems.forEach(
   }
 )
 
+
+
+/* Side Nav Active  */
+
 let section = document.querySelectorAll('section');
         let lists = document.querySelectorAll('.list');
         function activeLink(li) {
@@ -50,3 +54,7 @@ let section = document.querySelectorAll('section');
                 }
             })
         };
+
+
+        /* Scroll Swap images in case study  */
+         
