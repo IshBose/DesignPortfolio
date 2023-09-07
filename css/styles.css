@@ -73,6 +73,8 @@
   }
 
 
+
+
   
   html {
     scroll-behavior: smooth;
@@ -424,6 +426,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   }
 
+
   
     
 
@@ -673,6 +676,31 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       gap: 80px;
     }
 
+    .img-container{
+      position: relative;
+      width: 100%;
+      margin-bottom: 720px;
+
+
+    }
+    .img-container img {
+      opacity: 0;
+  transition: opacity 0.2s smooth;
+  position: absolute;
+  
+    }
+    
+    .img-container img.show {
+      opacity: 1;
+      width: 250%;
+    }
+
+    #blowup{
+      max-width: 250%;
+    }
+
+    
+
     .btn {
       background-color: white; /* Blue background */
       border: 1px solid black;
@@ -710,6 +738,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       gap: 16px;
     }
 
+    
+
     .colblock{
       display: flex;
     align-items: flex-start;
@@ -722,6 +752,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-size: 24px;
       font-weight: 700;
     }
+    
 
     .block h3{
       color: #B3B3B3;
@@ -733,6 +764,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin: 0px;
       padding-bottom: 8px;
     }
+
+    
+    
+  
 
     .block p{
       color: #FFF;
@@ -841,6 +876,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .block img{
       max-width: 100%;
+    }
+
+    .block{
+      position: relative;
     }
 
     .nextto{

@@ -57,4 +57,47 @@ let section = document.querySelectorAll('section');
 
 
         /* Scroll Swap images in case study  */
+        // JavaScript function to change the image based on scroll position
+       // Function to swap images based on scroll position
+       let lastScroll = 0;
+
+       // Function to swap images based on scroll position
+       const swapImages = () => {
+         const images = document.querySelectorAll('.img-container img');
+         const scrollAmount = window.scrollY;
          
+         // Calculate image index based on scrolling, with smoother transition
+         let imgToShow = (scrollAmount / 200);
+         let lowIndex = Math.floor(imgToShow);
+         let highIndex = Math.ceil(imgToShow) % images.length;
+         let ratio = imgToShow - lowIndex;
+         
+         // Reset opacity for all images
+         images.forEach((img) => {
+           img.style.opacity = 0;
+           img.classList.remove('show');
+         });
+       
+         // Set opacity based on the ratio between the two images
+         images[lowIndex % images.length].style.opacity = 1 - ratio;
+         images[highIndex].style.opacity = ratio;
+       };
+       
+       // Listen for scroll events
+       window.addEventListener('scroll', swapImages);
+       
+       // Initialize first image as visible
+       document.addEventListener('DOMContentLoaded', () => {
+         const firstImage = document.querySelector('.img-container img');
+         if (firstImage) {
+           firstImage.style.opacity = 1;
+         }
+       });
+       
+          
+
+
+// JavaScript for handling the sticky behavior
+
+
+  
