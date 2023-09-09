@@ -63,7 +63,7 @@
 
 /* Variables */
 :root {
-    --blk: #171A1E;
+    --blk: #0F141E;
     --accent: #3478FF;
     --hover: #8EB8E5;
     --font-family: "regola", sans-serif;
@@ -610,6 +610,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
      width: 50%;
      padding: 0 10px;
     }
+
+    .mockupbox{
+      /*margin-left: -128px;
+      margin-right: -128px;*/
+      width: 75vw;
+      height: 100vh;
+      margin-left: -10px;
+
+
+    }
     .fillcolumn{
       float: left;
      width: 100%;
@@ -741,6 +751,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
        align-self: stretch;
     }
 
+    
+
+   
      /* 2. STICKY SIDENAV            *****************/
 
             /* 2. Make nav sticky */
@@ -807,7 +820,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       flex-direction: column;
       align-self: stretch;
       border-radius: 4px;
-      background: #2A2F36;
+      background: #090C12;
+      border: 1px solid #394050;
       color: white;
     }
 
@@ -1569,6 +1583,14 @@ margin-top: 40px;
           max-width: 100%;
 
 
+        }
+
+        .mockupbox{
+         
+          width: auto;
+         
+    
+    
         }
 
 
