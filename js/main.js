@@ -56,6 +56,8 @@ let section = document.querySelectorAll('section');
         };
 
 
+        
+
         /* Scroll Swap images in case study  */
         // JavaScript function to change the image based on scroll position
        // Function to swap images based on scroll position
@@ -100,4 +102,4 @@ let section = document.querySelectorAll('section');
 // JavaScript for handling the sticky behavior
 
 
-  
+

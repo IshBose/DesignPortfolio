@@ -694,10 +694,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       opacity: 1;
       width: 250%;
     }
-
+    /*
     #blowup{
       max-width: 250%;
-    }
+    }*/
+
+   
+    
 
     
 
