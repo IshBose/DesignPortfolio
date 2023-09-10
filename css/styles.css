@@ -620,6 +620,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
     }
+
+    .mockupcards img{
+      margin-top: 48px;
+    
+
+    }
     .fillcolumn{
       float: left;
      width: 100%;
@@ -708,6 +714,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
    
     .block{
       gap: 16px;
+       
     }
 
     .colblock{
