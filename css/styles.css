@@ -334,7 +334,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .workcard{
     background-color: #141415;
     border: 1px solid  #222223;
-    height: 350px;
     width: 100%;
     border-radius: 6px;
     align-items: center;
@@ -342,8 +341,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }
 
   .workcard img{
-    height: 350px;
-    flex-shrink: 0;
+    width: 100%;
+      flex-shrink: 0;
     padding: 24px;
     margin: auto;
     display: block;
