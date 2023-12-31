@@ -63,9 +63,9 @@
 
 /* Variables */
 :root {
-    --blk: #0F141E;
+    --blk: #0C0C0D;
     --accent: #3478FF;
-    --hover: #8EB8E5;
+    --hover: white;
     --font-family: "regola", sans-serif;
     --packer: #02a8ef;
     --terraform: #7B42BC;
@@ -83,6 +83,11 @@
   }
 
 /* Nav */
+
+  p{
+    font-size: 16px;
+    font-weight: 100;
+  }
 
 
   a {
@@ -108,14 +113,14 @@
   position: fixed;
   display: flex;
   z-index: 100;
-  top: 1rem;
-  right: 4rem;
+  top: 2rem;
+  left: 128px;
   padding: 4px;
   padding-left: 8px;
   padding-right: 8px;
 
   border-radius: 4px;
-  background-color:   #E7EFFF;
+  background-color:   #222226;
   color: white;
   font-size: 24px;
   transition: 0.2s;
@@ -124,19 +129,19 @@
 .nav-logo:hover{
  
   transform: scale(1.01);
-  border: 2px solid #1563FF;
+  border: 2px solid white;
 
 }
 
 
 
 #title{
-  color: black;
+  color: white;
 }
 
 .menuItem {
   display: block;
-  margin: 2rem 4rem;
+  margin: 4rem 7rem;
   font-size: 1.8rem;
   color: white;
   text-decoration: none;
@@ -149,10 +154,11 @@
 .hamburger {
   position: fixed;
   z-index: 100;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 128px;
   padding: 4px;
-  background: #E7EFFF;
+  background: #222226;
+  color: white;
   cursor: pointer;
   border-radius: 4px;
   border: none;
@@ -162,7 +168,7 @@
 .hamburger:hover{
  
     transform: scale(1.01);
-    border: 2px solid #1563FF;
+    border: 2px solid white;
   
 }
 
@@ -214,187 +220,147 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }
   
   
-/***********   INDEX-WRAPPER              *********/
+/***********   INDEX-STUFF              *********/
 
-  .blkwrapper{
-    background-color: var(--blk);
-    color: white;
+
+  .indexcontainer{
+    margin-left: 128px;
+    margin-right: 128px;
     margin-top: 72px;
-    padding-left: 128px;
-    padding-right: 128px;
-    padding-top: 72px;
-
-    width: 100%;
-    height: 100%;
-    display: grid;
-    column-gap: 40px;
-    grid-template-columns: auto auto auto auto auto;
-    background-size: 40px 40px;
-    background-image:
-      linear-gradient(to right, #D1D1D11A 1px, transparent 1px),
-      linear-gradient(to bottom, #D1D1D11A 1px, transparent 1px);
-  }
-
-  .blkwrapper .onleft{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    transition: 0.2s smooth;
-  }
-
-  .onright:hover{
-    transform: scale(1.01);
-    transition: 0.2s smooth;
-
-  }
-
-  .onleft:hover{
-    transform: scale(1.01);
-    transition: 0.2s smooth;
-
-  }
-
-
-  .centergrid:hover{
-    transform: scale(1.01);
-    transition: 0.2s smooth;
-
-  }
-
-  .blkwrapper .wholewidth{
-    grid-column-start: 1;
-    grid-column-end: 4;
-
-  }
-
-
-
-  .centergrid{
-    grid-column-start: 1;
-    grid-column-end: 5;
-    margin-top: 40px;
-  }
-
-  .centergrid img{
-      width: 100%;
-  }
-  .blkwrapper .onleft img{
-    max-width: 100%;
-  }
-
-  .blkwrapper h4{
-    font-size: 32px;
-    margin-bottom: 40px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-
-  }
-  
-  .blkwrapper .blk-description{
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-
-  .blkwrapper p{
-    font-size: 24px;
-    margin-bottom: 40px;
-    font-weight: 100;
-
-  }
-
-  .blkwrapper a{
-    font-weight: bold;
-  }
-
-  .blkwrapper .onright{
-    grid-column-start: 2;
-    grid-column-end: 5;
-  }
-
-  .blkwrapper .onrighttwo{
-    grid-column-start: 3;
-    grid-column-end: 5;
-  }
-
-  .blkwrapper .onright img{
-    width: 100%;
-  }
-
-  
-  .whitewrapper{
- 
-    color: var(--blk);
-    padding-left: 128px;
-    padding-right: 128px;
-    padding-top: 72px;
     align-items: center;
-    justify-items: center;
-
-
-    width: 100%;
     height: 100%;
-    display: grid;
-    column-gap: 40px;
-    grid-template-columns: auto auto auto auto auto;
+    color: #BBBBBB;
   }
 
-  #midalign{
-    max-width: 65%; 
-    margin-top: 24px;
-    padding-left: 300px;
-  }
-  .fullwrap{
-  
+  .indexcontainer h1{
     grid-column-start: 1;
     grid-column-end: 5;
+    display:grid;
+    font-size: 82px;
+    margin-top: 160px;
+    color: #F8F8F8;
+  }
+
+
+
+  .subtitle h4{
+    padding-top: 40px;
+    padding-bottom: 12px;
+  }
+
+  .portfoliolist{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 128px;
+    margin-top: 64px;
+  }
+
+  .portfoliopiece{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+  }
+
+  .portfoliopiece h3{
+    font-size: 18px;
+    color: #F8F8F8;
+  }
+
+  .description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
 
   }
 
-  .fullwrap h4{
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-  .fullwrap p{
-    grid-column-start: 2;
-    grid-column-end: 5;
+  .worklist{
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-self: stretch;
   }
 
-  .whitewrapper h4{
-    font-size: 32px;
-    margin-bottom: 40px;
+  .workitem{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 6px;
+    margin-left: -24px;
+    margin-right: -24px;
+
+  }
+
+  .workitem:hover{
+    background-color: #18181B;
+    transition: all .5s;
+
     
   }
+
+  .tinytext{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;  
+
+  }
+
+  .tinytext p{
+    font-size: 12px;
+
+  }
+
+  .workitem hr{
+    background: #222223;
+    height: 1px;
+    width: 100%;
+  }
+
+  .workitem h5{
+    color: #F8F8F8;
+    font-weight: Medium;
+    font-size: 16px;
+  }
+
+
+  .workcard{
+    background-color: #141415;
+    border: 1px solid  #222223;
+    height: 350px;
+    width: 100%;
+    border-radius: 6px;
+    align-items: center;
+    position: relative;
+  }
+
+  .workcard img{
+    height: 350px;
+    flex-shrink: 0;
+    padding: 24px;
+    margin: auto;
+    display: block;
+    
+  }
+
+  .worklist a{
+    color: #BBBBBB;
+    width: 100%;
+  }
+
   
-  .whitewrapper .rightwrapper{
-    grid-column-start: 2;
-    grid-column-end: 5;
-  }
-
-  .whitewrapper .leftspacer{
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-
-  .whitewrapper p{
-    font-size: 24px;
-    margin-bottom: 40px;
-
-  }
-
-  .whitewrapper a{
-    font-weight: bold;
-  }
-
-
-
-  .whitewrapper .onright img{
-    max-width: 100%;
-  }
-
   .archiveportal{
     width: 48px;
     height: 48px;
     border-radius: 10px;
-    background-color: #E7EFFF;
+    background-color: #222226;
     padding: 8px;
     transition: 0.2s;
     position: fixed;
@@ -406,7 +372,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   .archiveportal:hover{
     transform: scale(1.2);
-    border: 2px solid #1563FF;
+    border: 2px solid white;
   }
   .archiveportal img{
     width: 100%;
@@ -484,57 +450,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
 
 
+    
       
-      .fullwidth {
-       
-        padding-top: 24px;
-        /*background-color: #3D4849;*/
-        /*border: 2px solid rgba(142, 184, 229, .5)*/
-        background-color: rgba(56, 61, 74, 0.6);       
-
-        border-radius: 12px;
-        max-width: 100%;
-        text-align: center;
-       margin-left:  12.5em;
-       margin-right:  12.5em;
-
-
-      }
-      .fullwidth a {
-          color: white;
-          text-align: center;
-          justify-content: center;
-      }
-      
-      .fullwidth p{
-          font-size: 16px;
-          padding-bottom: 24px;
-          text-align: center;
-          justify-content: center;
-      }
-
-      .fullwidth b{
-        text-align: center;
-        justify-content: center;
-        padding-bottom: 12px;
-        font-size: 24px;
-
-      }
-
-      .fullwidth:hover{
-        transform: scale(1.02); 
-        background-image: linear-gradient(to right bottom, #805fd3, #747adf, #7191e5, #7aa5e6, #8eb8e5); 
-        transition: transform 0.1s ease-in; 
-        box-shadow:0px 0px 0px 2px white inset; 
-   
-    }
+  /***********   Portfolio PIECE STUFF             *********/
 
     .portfoliocontainer{
       margin-top: 40px;
       margin-left: 12.5em;
-      margin-right: 12.5em;
-
-      
+      margin-right: 12.5em; 
     }
 
     
@@ -573,37 +496,20 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
 
-    .newHero{
-      margin-top: 128px;
-     margin-left: 128px;
-     margin-right: 128px;
-     margin-bottom: 128px;
-     display: grid;
-     column-gap: 40px;
-     row-gap: 64px;
-     grid-template-columns: auto auto auto auto auto;
+   .col1{
+    width: 70%;
+    display: flex;
+   }
 
-    }
+   .col2{
+    width: 25%;
+    display: flex;
+   }
 
-    .newHero h1{
-      color: black;
-      font-size: 64px;
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+   .col2 img{
+    width: 100%;
+   }
 
-    .newHero h3{
-      color: #5C5858;
-      grid-column-start: 2;
-      grid-column-end: 5;
-      font-weight: 100;
-    }
-   
-
-
-    .portrow{
-      margin: 0 -5px;
-    }
 
     .column{
       float: left;
@@ -703,7 +609,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .menu .btn{
-      margin-left: 4rem;
+      margin-left: 7rem;
     }
     
    
@@ -840,22 +746,17 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       max-width: 100%;
     }
 
-    /* TRY for me */
-    
-   
-        /* TRY for me */
-
-
+ 
     .block img{
       max-width: 100%;
     }
 
     .nextto{
-      display: flex;
-align-items: flex-start;
-gap: 40px;
-align-self: stretch;
-margin-top: 40px;
+          display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    margin-top: 40px;
     }
 
     .hmwcard{
@@ -915,6 +816,34 @@ margin-top: 40px;
       content: "";
       display: table;
       clear: both;
+    }
+
+    .row{
+      display: flex;
+      padding-top: 40px;
+      gap: 24px;
+      margin-left: 0px;
+    }
+
+    .row1{
+      display: flex;
+      padding-top: 40px;
+      gap: 80px;
+      margin-left: 0px;
+    }
+
+    .aboutcontainer{
+      margin-left: 128px;
+      margin-right: 128px;
+      margin-top: 128px;
+      align-items: center;
+      height: 100%;
+      color: #BBBBBB;
+    }
+
+    .aboutcontainer h1{
+      font-size: 40px;
+      color: white;
     }
 
     .portfoliocontainer .sidebysidecard{
@@ -1151,14 +1080,7 @@ margin-top: 40px;
           
       }
 
-      .aboutcontainer{
-        margin-left: 12.5em;
-      display: grid;
-      gap: 8px 8px;
-      grid-template-columns: auto auto auto;
-      margin-top: 1em;
-      margin-bottom: 2em;
-      }
+     
 
       .tcontainer img{
         justify-content: center;
@@ -1287,128 +1209,41 @@ margin-top: 40px;
 /*            NAV                                                                                                      */
 
       .nav-logo{
+        display: block;
+        left: 24px;
+      }
+
+      .nav-logo img{
         display: none;
+      }
+
+      .hamburger{
+        right: 24px;
       }
 
       .section-nav {
         display: none;
       }
 
+      .menuItem{
+        margin: 2rem 1rem;
+      }
+
+      .menu .btn{
+        margin-left: 1rem;;
+      }
+
+      .row{
+        display: block;
+      }
+
       
 
       /*            INDEX                                                                                                      */
 
-          .newHero{
-            margin-top: 72px;
-            margin-left: 40px;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            row-gap: 24px;
-          }
 
-          .newHero h1{
-            font-size: 32px;
-            grid-column-start: 1;
-            grid-column-end: 5;
-
+       
           
-          }
-
-          .newHero h3{
-            grid-column-start: 1;
-            grid-column-end: 5;
-
-          
-          }
-
-          .blkwrapper{
-            margin-top: 24px;
-          padding-left: 40px;
-          padding-right: 40px;
-          padding-top: 40px;
-          column-gap: 24px;
-          grid-template-columns: auto auto auto;
-
-          }
-
-          .blkwrapper:hover{
-            background-color: #2A2F36;
-
-          }
-
-          .whitewrapper{
-
-            margin-top: 24px;
-          padding-left: 40px;
-          padding-right: 40px;
-          padding-top: 40px;
-          grid-template-columns: auto auto auto;
-
-
-          }
-
-          .whitewrapper .rightwrapper{
-            grid-column-start: 1;
-            grid-column-end: 5;
-          }
-
-          .whitewrapper h4{
-            margin-bottom: 24px;
-          }
-          
-
-          .blkwrapper .blk-description{
-            grid-column-start: 1;
-            grid-column-end: 5;
-            margin-bottom: 40px;
-          }
-          .blkwrapper .blk-description h4{
-            font-size: 20px;
-          }
-
-          .blkwrapper .blk-description p{
-            font-size: 16px;
-          }
-
-          .blkwrapper .onleft{
-            grid-column-start: 1;
-            grid-column-end: 5;
-          }
-
-          .blkwrapper .onrighttwo{
-            grid-column-start: 1;
-            grid-column-end: 5;
-          }
-
-
-            .blkwrapper .wholewidth{
-              grid-column-start: 1;
-              grid-column-end: 5;
-
-            }
-
-          .blkwrapper .onrighttwo h4{
-            font-size: 20px;
-          }
-
-          .blkwrapper .onrighttwo p{
-            font-size: 16px;          }
-
-            .blkwrapper h4{
-              font-size: 20px;
-            }
-
-            .blkwrapper p{
-              font-size: 16px;
-            }
-
-          .fullwrap h4{
-            font-size: 20px;
-          }
-
-          .fullwrap  p{
-            font-size: 16px;
-          }
 
           .portimage{
             max-width: 100%;
@@ -1458,7 +1293,7 @@ margin-top: 40px;
 
         
           #title{
-            color: black;
+            color: white;
           }
 
           .indexnav .sm_icon {
@@ -1526,10 +1361,19 @@ margin-top: 40px;
 
         }
 
+        .col1{
+          width: 100%;
+        }
+        .col2{
+          display: none;
+        }
+
        
 
         .aboutcontainer{
-          display: none;
+          display: block;
+          margin-left: 24px;
+          margin-right: 24px;
         }
 
         .mobilepic{
@@ -1619,7 +1463,7 @@ margin-top: 40px;
         .blockwrapper{
           padding-left: 24px;
           padding-right: 24px;
-          padding-top: 24px;
+          padding-top: 100px;
           column-gap: 0px;
   
         }
@@ -1657,6 +1501,35 @@ margin-top: 40px;
         .casestudy .contextcoltwo{
 
           margin-top: 24px;
+        }
+
+        .indexcontainer{
+          margin-left: 24px;
+          margin-right: 24px;
+        }
+
+        .indexcontainer h1{
+          font-size: 24px;
+          margin-top: 100px;
+
+        }
+
+        .worklist{
+          display: block;
+        }
+
+        .workcard{
+            height: auto;
+        }
+        
+
+        .workcard img{
+          width: 100%;
+          height: auto;
+        }
+
+        .block p{
+          font-size: 12px;
         }
       
       }
