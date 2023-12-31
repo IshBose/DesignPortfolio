@@ -236,7 +236,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     grid-column-start: 1;
     grid-column-end: 5;
     display:grid;
-    font-size: 82px;
+    font-size: 72px;
     margin-top: 160px;
     color: #F8F8F8;
   }
