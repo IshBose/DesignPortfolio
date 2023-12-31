@@ -496,12 +496,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
    .col1{
-    width: 70%;
+    width: 60%;
     display: flex;
    }
 
    .col2{
-    width: 25%;
+    width: 35%;
     display: flex;
    }
 
