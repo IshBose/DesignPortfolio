@@ -63,7 +63,7 @@
 
 /* Variables */
 :root {
-    --blk: #0C0C0D;
+    --blk: #131316;
     --accent: #3478FF;
     --hover: white;
     --font-family: "regola", sans-serif;
@@ -326,7 +326,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }
 
   .workitem:hover{
-    background-color: #18181B;
+    background-color: #2c2c31;
     transition: all .5s;
 
     
