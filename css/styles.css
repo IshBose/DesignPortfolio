@@ -703,7 +703,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         /* Sidebar Navigation */
         .section-nav {
-          padding-left: 1rem;
+          padding-left: 7rem;
           
           position: fixed;
           top: 8rem;
