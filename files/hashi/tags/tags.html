@@ -111,14 +111,14 @@
 
 
           <div class="c2title">
-          <h2><span style="color:#844FBA; text-align: left;"> Terraform Cloud</span><br>Key Value Tags</h2>
+          <h2><span style="color:#844FBA; text-align: left; font-family: tiempoitalic;"> HCP Terraform</span><br>Key Value Tags</h2>
+
           <img src="../../../images/HashiCorp_Icon_White_RGB.png" style="width: 48px; height: 48px;">
           </div>
-          <h2>Summary</h2>
 
 
           <div class="block" style="margin-top: -40px;">
-            <h3>Context</h3>
+            <h3 id="context" >Context</h3>
             <p>HashiCorp is a unicorn DevOps company that specializes in world class infrastructure products. They are the industry standard in Infrastructure as Code (IaC), and have produced many key products such as Terraform, Vault and Consul. 
 
               <br><br>In 2023 I rejoined HashiCorp as a product designer focusing on Product Led Growth and the CLI experience on Terraform. Terraform is the industry standard tool to provision cloud-agnostic infrastructure as code. This allows you to use a declarative language to manage dynamic loads, and spin up new servers rapidly. </p>
@@ -136,16 +136,25 @@
 
             </div>
           </div>
+          <h3 id="preview">Solution preview</h3>
+
+          <div class="solutionPre" >
+            <div class="block">
+              <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                <source src="./NonTalkThroughTagProto.mp4">
+              </video>
+            </div>
+        </div>
 
           
 
+         
 
-           <!---->
 
-          <button type="button" class="collapsible">The "Too long didn't read" version:</button>
+          <!--<button type="button" class="collapsible">The "Too long didn't read" version:</button>
             <div class="content">
 
-                <!--Collapse Content-->
+                <!--Collapse Content
                 <div class="collapsewrapper">
                     <div class = gencard>
                         <h3>Background</h3>
@@ -212,100 +221,239 @@
 
 
 
-            <!---->
+            -->
 
         <hr style="fill: #404040; width:100%;">
 
         <h2>Detailed Case Study</h2>
 
-        <div class="block" style="margin-top: -40px;">
+        <div class="block" style="margin-top: -40px;" id="problem">
             <h3>Background</h3>
             <p>Terraform Cloud has the concept of “Tags” within the product, and also as an object type within a code block. Tags were introduced to allow users to quickly organize, correlate and filter the core resource of Terraform Cloud, Workspaces.
             </p>
 
 
-                <img src="./tagscloudblock.png" >
+                <img src="./tagscloudblock.png" class="img-wrap-2"      style=" max-width: 75%;"   >
           </div>
 
-        <div class="problemcard">
-            <h3>General Brief</h3>
-            <p>Customers are finding tags useful, but incomplete, find a way to improve it.</p>
-        </div>
-
-
-          <div class="block" id="research">
-            <h3>Supporting Qualitative Research 
-            </h3>
-              <p>To start out, the team and I had to figure out where exactly tags as a concept was falling short. These conversations helped set the foundation for understanding what the user problem is. It also yielded two main insightful pieces of feedback.</p>
-        
-            
-        
-            </div>
-
-
-          <div class="block">
-            <h3>Supporting Quantitative Research 
-            </h3>
-
-            <p>The first thing I did after hearing about customer painpoints was to venture into Snowflake and understand how tags are being used today. Tags, in its current implementation, are by nature fairly permissive in how you can use them.
-
-               <br><br> A quick gander through the current tags found something interesting.<br>
-                
-                </p>
-
-                <img src="./Tag diagram.png" style="max-width: 50%; display: block;
-                margin-left: auto;
-                margin-right: auto;
-               " >
-
-                <p>             <br><br>  36% of users are currently already using a “key:value” notation their tags, validating the need for this to be supported more natively.
-                </p>
-
-          </div>
-
-
-          <div class="block">
-          <div class = gencard style="background: #202020; border: 1px solid #585858;">
-            <h3>Problem</h3>
-            <p>Tags as a concept is ineffective in allowing customers to perform more administrative tasks, such as managing billing, audit, and RBAC. The current implementation is too permissive, meaning anyone can add or remove tags, and a tag itself cannot be added at a project level. This causes the customer to have to more manual busy work on their end to maintain a system of record of internal metadata to keep up.
-
+        <div class="block">
+            <h3 id="research" >So what's wrong?            </h3 >
+            <p>The issue is that tags in their current inception were useful, but limited in how customers think about and use tags. A single value string when applied to an object is useful for filtering usecases, but doesn’t necessarily map to the entire spectrum of user types in Terraform Cloud. To illustrate this, lets consider two personas: 
             </p>
 
-                <img src="./currenttagging.gif">
+            <img src="./persona intro.png" class="img-wrap-2" style="max-width: 75%;">
 
+            <p>To understand why, lets map outs the platform engineer journeys to illustrate where the current implementation of tags is lacking
+            </p>
 
-            </div>
+            <img src="./COREUSERS.png" style="border-radius: 12px; max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
+
+            <img src="./phases.png" style="border-radius: 12px; max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
+
+            <img src="./viz timeline.png" style="border-radius: 12px; max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
+
+            <P><br>So what we can tell is that tags need to be developed more to fit the competitive landscape that Terraform nestles in, mainly cloud service providers, and must follow similar implementation models in terms of hierarchies.
+            </P>
+
+            <img src="./csptags.png" style="border-radius: 4px; max-width: 100%; margin-top: 40px; ">
+
         </div>
 
         <div class="problemcard">
-            <h3>Design Goal</h3>
-            <p>Customers require more granular tagging mechanisms on their projects and workspaces to correlate, organize and label their resources. Key:Value tags would allow customers to be able to place higher level tags onto their resources, enhancing visibility into key areas such as chargeback, team management, and auditing. 
+          <h3>Key Learning
+          </h3>
+          <p>Customers desire the ability to tag their cloud resource with key value pairs.</p>
+        </div>
+
+        <div class="block">
+          <h3>So how are they currently used?          </h3>
+          <p>When you look at tags, you can start to categorize them into 2 types.
+
+<br><br>            One type of tag is largely arbitrary and is added by the end user (the app developer that I just mentioned), while the other type of tag is more administrative, likely by the second persona mentioned, the platform engineer!
+           </p>
+
+           <img src="./commonlyused.png" class="img-wrap-2" style="max-width: 75%;">
+
+           <p>The more administrative type of tags also come with a key characteristic, they likely feature a key and a value, which allows you to organize resources by value based indicators. There was only one problem… Terraform Cloud didn’t support this natively.
+
+           <br><br> Users started to hack their way around it, and add delimiters like “:” and “=” within a single value tag to try to do this, and the data showed that 36% of all tags had some kind of janky delimiter in there, proving need for this in the application.
             </p>
+
+
+            <img src="./Tag diagram.png" class="img-wrap-2"      style=" max-width: 40%;"            >
         </div>
 
 
-        <div class="block" id="research">
-            <h3>Constraints
-            </h3>
-              <p>One core constraint is that the “older” tags style still had to live on within the product, and couldn’t be deprecated, as this had larger implications on how customers use tags for compliance. Due to this, we had to juggle the previous implementation of tags with the new one, and navigate the complexity that a new feature would introduce to a user’s mental model.</p>
+        <div class="block" id="ideation">
+          <h3>Designing a better tags</h3>
+          <p>To begin we had to ascertain exactly what the user need is here. We knew that generally there was demand for this type of tag, and that users were hacking their way around the current implementation, but we didn’t know exactly how users were setting up tags in their organization.
+ 
+            <br><br>To approach this, my PM and I engaged with 4 different customers who expressed interest in this sort of thing. We focused on specifically the platform engineer persona that I mentioned before, as they were the persona type that was the least served by the current model.
+            </p>
+            <img src="./platform engineer learnigns.png" class="img-wrap-2" style=" max-width: 70%;"  >
+
+
+        </div>
+
+
+        <div class="block">
+
+          <p> This user research allowed us to create an initial problem statement -
+          </p>
+          <div class="problemcard" style="margin-top: 16px;">
+            <h3>Problem statement</h3>
+            <p>Tags as a concept is ineffective in allowing customers to perform more administrative tasks, such as managing billing, audit, and RBAC. The current implementation is too permissive, meaning anyone can add or remove tags, and a tag itself cannot be added at a project level. This causes the customer to have to more manual busy work on their end to maintain a system of record of internal metadata to keep up.</p>
+          </div>
+      </div>
+
+
+      <div class="block">
+        <h3>Goal Setting</h3>
+
+        <div class="rowcard">
+          <div class="rowcard1">
+            <h3>Increase Tag Usage on Resources</h3>
+            <p>General Goal</p>
+          </div>
+          <div class="rowcard2">
+            <h3>Enable consumption of contract entitlement</h3>
+            <p>Long tail Goal</p>
+          </div>
+          <div class="rowcard3">
+            <h3>-75% Workspace Tag Usage</h3>
+            <p>Migration Goal</p>
+          </div>
+       </div>
+
+      </div>
+
+     
+
+      <div class="block" id="solution">
+        <h3>Solution: Key design problems</h3>
+
+        <h4>Inheritence with edge cases        </h4>
+        <p>One of the key issues to solve was how to convey inheritence, which is the concept that lower level resources are able to inherit higher level metadata through tags. This concept was already easily understood in the cloud infrastructure world, but birthed a lot of complexity with understanding all the possible edge cases, and where there might need to be design work to understand it.
+
+        </p>
+
+        <img src="./tagdirections.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+
+
+
+        <img src="./Tag Inheritence iteration.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+
+      </div>
+
+      <div class="block">
+        <h4>Filtering by tags
+        </h4>
+        <p> When a tag is created and applied to a resource, one of the core user journeys that a user will accomplish is filtering. A key example is taking a large list of resources like all the workspaces in an organization, and filtering it down to the subset that includes the "env:prod" tag. When considering the technical implementation, the metaphor that matched the most was akin to a query, so the design reflected that. A user would search for a tag and then a list of resources that match that tag would return.
+        </p>
+        <img src="./query_.png"  class="img-wrap-2" style="max-width: 100%; border-radius: 6px; ">
+
+
+        <img src="./querywriter.gif"  class="img-wrap-2" style="max-width: 100%; border-radius: 6px; margin-top: -24px; ">
+
+
+      </div>
+
+
+      <div class="block" id="mockups">
+        <h4>Binding tags
+
+        </h4>
+        <p>We needed to undertstand how both the app developer and platform persona would use the tag binding workflow to determine how to present it.</p>
         
-            </div>
+
+        <img src="./Tag binding interaction iteration.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+
+
+
+      </div>
+
+
+      <div class="block">
+        <h4>Mental model
+
+        </h4>
+        <p>One of the big hurdles was managing how a user would perceive the new key value tag vs the existing workspace tag, and how that influences adoption.</p>
+        
+        <img src="./mentalmodeldiscussion.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+
+
+
+
+      </div>
+
+      <div class="block">
+        <h4 id="prototype">Complete flow
+
+        </h4>
+        <p>The prototype for the full tag flow is below. This flow connects both the Platform Engineer (Plata) and the App Developer (Appo). In mature organizations these personas are separate, and the platform engineers predefine tags for the app developers to use. I talk through some of the example use cases and why you need to do things like create reserved keys. **By default the sound is off so you aren't blasted by my voice :)
+
+        </p>
+
+
+      
+      </div>
+
+
+
+      <div class="solutionPre2" >
+        <div class="block">
+          <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+            <source src="./NonTalkThroughTagProto.mp4">
+          </video>
+        </div>
+    </div>
+
+
+      <div class="block">
+        <h3 id=#conclusion>Customer reactions</h3>
+
+        <p>Customer sentiment was overwhelmingly positive for this feature. Many customers had been asking for this for a long time, and could finally stop having to create bespoke solutions or hack their way around managing cloud resources. Cost attribution is one of those things that can actually negatively influence engagement from a contract perspective because customers are fearful about going over their contracted entitlement quota. As a result of enabling more accurate cost attribution with key value tags, customers felt more confident about using the amount that they bought.
+
+        </p>
+
+
+      </div>
+
+      <div class="block">
+        <h3 id="conclusion">Conclusion</h3>
+
+       <p> While adding something like tags might seem trivial or tablestakes, it was actually quite a large effort that took many months. A large part of this was implementation discussions at a larger platform level, in which many teams engaged on discussions for how tags should work not only for Terraform, but also for other HashiCorp Cloud products. That delayed our timelines and restricted our scope, but gave us a solution that was stronger.
+
+        <br<br>I feel that the main skill I developed was learning how to navigate the latent tensions of an EPD structure during the implementation phase. Our project was at risk, and it felt like cutting corners on the proposed design was the easiest way to meet our deadlines. At the base level, I understood, but I also learned how to pick my battles in advocating for a better experience while also staying pragmatic in how we bring value to our customers. This isn’t really something taught in school, so it was nice to get some reps in to further build that skill.
+      </p>
+
+
+      </div>
+
+      <div class="block">
+        <h3>Next steps</h3>
+
+       <p> Automatic tag migration from old tag -> new tag
+
+      </p>
+
+
+      </div>
 
 
 
 
 
-        <div class="block" id="research">
-            <h3>Pattern identification
-            </h3>
-              <p>Tags is a very common pattern, so one thing that I had to navigate was understanding how other dev tools and DevOps services are using the concept. I had to make sure that the verbiage and concept aligned with higher level services, like cloud providers.            </p>
+      
+
         
 
-              <div class="problemcard">
-                <h3>Key Insight:</h3>
-                <p>There are usually two types of tags, value-only labels, and key value tags. Binding tags are separate from the creation of tags.                </p>
-            </div>
-            </div>
+        
+
+
+         
+
+     
 
 
 
@@ -337,7 +485,7 @@
     
     <!-- Projects section -->
     
-    <script src="../../js/main.js">
+    <script src="../../../js/main.js">
 
     </script>
 
@@ -377,8 +525,8 @@
     <p class="center" >Get in touch.</p>
 
     <div class="img-wrap">
-		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../assets/newli.svg" ></a>
-		<a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon_center" src = "../../assets/send-4008.svg"></a>
+		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../../assets/newli.svg" ></a>
+		<a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon_center" src = "../../../assets/send-4008.svg"></a>
     </div>
    
     
