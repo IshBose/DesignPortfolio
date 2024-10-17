@@ -716,7 +716,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       height: 100%;
       display: grid;
       column-gap: 40px;
-      grid-template-columns: 20% 20% 20% 20%;
+      grid-template-columns: 20% 20% 20% 20% 20%;
       
     }
 
@@ -1731,7 +1731,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         .blocklist{
           width: 100%;
           grid-column-start: 1;
-          grid-column-end: 5;
+          grid-column-end: 6;
 
         }
 
@@ -1741,6 +1741,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           padding-top: 100px;
           column-gap: 0px;
   
+        }
+
+
+        .rowcard{
+          flex-direction: column;
+          
+        }
+        .block img{
+          max-width: 100%;
+        
         }
         video{
           height: 300px;
