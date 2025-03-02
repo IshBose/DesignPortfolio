@@ -116,30 +116,36 @@
   
 /* new Stuff for nav*/
 
-.nav-logo{
+.nav-logo {
   position: fixed;
   display: flex;
   z-index: 100;
   top: 2rem;
-  left:2rem;
-  padding: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  border-radius: 4px;
-  background-color:   #222226;
-  border: 1px solid #323845;
-  color: white;
+  left: calc(10% + 4px); /* Aligns with body content edge */
+  gap: 8px;
+  align-items: center; /* Vertically aligns items */
+  color: #1D1B20;
   font-size: 24px;
   font-weight: 100;
   transition: 0.2s;
 }
 
-.nav-logo:hover{
- 
-  transform: scale(1.01);
-  border: 2px solid white;
+.nav-logo a{
+  color: #1D1B20;
+  font-size: 20px;
+}
 
+.nav-logo a:hover{
+ color: #090C12;
+
+}
+
+
+.gradient-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%; /* Makes it a circle */
+  background: linear-gradient(90deg, #92BFFE, #EE84F5, #B978FF);
 }
 
 
@@ -150,8 +156,9 @@
 
 .menuItem {
   display: block;
-  margin: 4rem 2rem;
+  margin: 4rem 7rem;
   font-size: 1.8rem;
+  text-align: right;
   color: white;
   text-decoration: none;
 }
@@ -164,14 +171,14 @@
   position: fixed;
   z-index: 100;
   top: 2.2rem;
-  right: 2rem;
+  right: 7rem;
   padding-top: 4px;
   padding-bottom: 0px;
   padding-left: 4px;
   padding-right: 4px;
-  background: #222226;
-  border: 1px solid #323845;
-  color: white;
+  background: white;
+  
+  color: #1D1B20;
   cursor: pointer;
   border-radius: 4px;
   border: none;
@@ -180,8 +187,7 @@
 
 .hamburger:hover{
  
-    transform: scale(1.01);
-    border: 2px solid white;
+    border: 1px solid #1D1B20;
   
 }
 
@@ -203,6 +209,17 @@
   list-style: none;
   padding-top: 4rem;
 }
+
+.time-container {
+  position: fixed;
+  display: flex;
+  top: 2rem;
+  left: 50%;  /* Move to center */
+  transform: translateX(-50%);  /* Adjust back by 50% of its own width */
+  font-size: 18px;
+  gap: 8px;
+}
+
 
 .showMenu {
   transform: translateY(0);
@@ -226,8 +243,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   body {
     font-family: var(--font-family);
-    background-color: var(--blk);
-    color: white;
+    background-color: #FEFDFD;
+    color: #1D1B20;
     overflow-x:hidden;
     
   }
@@ -239,87 +256,131 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .indexcontainer{
     margin: auto;
     height: 100%;
-    max-width: 1184px;
+    max-width: 80%;
     justify-content: center;
     color: #BBBBBB;
   }
 
-  .indexcontainer h1{
-    grid-column-start: 1;
-    grid-column-end: 5;
-    display:grid;
-    font-size: 64px;
-    margin-top: 160px;
-    color: #F8F8F8;
+  .portgrid{
+    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    column-gap: 40px;
+    margin-top: 72px;
+    display: grid;
+    max-width: none;
   }
+
+  .portgrid a{
+    color: #8E8E93 ;
+  }
+  .portgridcol1  {
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 40px;
+    display: grid;
+
+}
+
+.portgridcol2 {
+            display: grid;
+  grid-template-rows: repeat(2, 1fr);
+      row-gap: 40px;
+
+}
+
+.portgridcol1 a  .portgridcolcard img{
+  height: 90%;
+}
+
+.portgridcol2 a .portgridcolcard img{
+  height: 94%;
+}
+
+.contactform{
+  float: right;
+  color: #1D1B20;
+  margin-top: 40px;
+  gap: 16px;
+  padding-top: 40px;
+   padding-bottom: 40px;
+}
+
+.contactform a button{
+  margin-top: 16px;
+  float: right;
+}
+  
+
+
+
+  
+  .portgridcolcard{
+    gap: 8px;
+    background-image: none;
+    height: 100%;    
+    flex-direction: column;
+
+   
+
+
+  }
+
+  .portgridcolcard img:hover{
+    
+    transform: scale(1.02);
+    transition: 0.4s;
+     /*background-image: url("../images/bg-changer1.png");*/
+  }
+
+  /*#c2h2 img:hover{
+    background-image: url("../images/bg-changer2.png");
+  }
+
+  #c2h3 img:hover{
+    background-image: url("../images/bg-changer3.png");
+  }*/
+
+
+  .portgridcolcard img{
+    background-color: #F0F1F5;
+    padding: 24px;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .portgridcolcard h3{
+    font-size: 16px;
+    font-weight: 400;
+    color:#1D1B20;
+  }
+
+  
+
+  .tallportgridcolcard img{
+    background-color: #F0F1F5;
+    padding: 24px;
+    max-width: 100%;
+    margin-top: 8px;
+  }
+
+  .tallportgridcolcard h3{
+    font-size: 16px;
+    font-weight: 400;
+    color:#1D1B20;
+  }
+  
 
   .indexemphasize{
-    padding: 16px;
-    gap: 24px;
-    background-color: #222226;
-    border: 1px solid #323845;
-    border-radius: 6px;
-    margin-top: 40px;
+    max-width: 50%;
+    color: #8E8E93;
+    font-size: 16px;
+    margin-top: 144px;
   }
 
-  .newHero{
-    margin-top: 128px;
-   margin-left: 128px;
-   margin-right: 128px;
-   margin-bottom: 128px;
-   display: grid;
-   column-gap: 40px;
-   row-gap: 64px;
-   grid-template-columns: auto auto auto auto auto;
-
-  }
-
-  .newHero h1{
-    color: black;
-    font-size: 64px;
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-
-
-  .newHero h3{
-    color: #5C5858;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    font-weight: 100;
-  }
+  
 
 
 
-  .subtitle h4{
-    padding-top: 40px;
-    padding-bottom: 12px;
-  }
 
-  .portfoliolist{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 72px;
-    margin-top: 64px;
-    grid-template-columns: auto auto auto auto auto;
-
-  }
-
-  .portfoliopiece{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    align-self: stretch;
-  }
-
-  .portfoliopiece h3{
-    font-size: 18px;
-    color: #F8F8F8;
-  }
+  
 
   .description{
     display: flex;
@@ -344,131 +405,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     align-self: stretch;
   }
 
-  .workitem{
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    padding: 24px;
-    border-radius: 6px;
-    margin-left: -24px;
-    margin-right: -24px;
-   
 
-
-  }
-
-  .workitemdesc{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-   
-  }
-
-  .workitemdesc h3{
-    font-size: 24px;
-    font-weight: 600;
-    color: #FFF;
-  }
-
-  .workcardcover{
-    max-width: 58%;
-    border-radius: 4px;
-    
-  }
-
-  .workitem:hover{
-    background-color: #2c2c31;
-    transition: all .2s;
-
-    
-  }
-
-  .workitemsbuttons{
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-  }
-
-
-  .linkin{
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    padding: 8px;
-    background-color: #222226;
-    border: 1px solid #323845;
-    border-radius: 100px;
-    width: fit-content;
-  }
   
-
-  .workstatus{
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    padding: 8px;
-    background-color: #222226;
-    border: 1px solid #323845;
-    border-radius: 6px;
-    width: fit-content;
-  }
-
-  .tinytext{
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    align-self: stretch;  
-
-  }
-
-  .tinytext p{
-    font-size: 12px;
-
-  }
-
+  
  hr{
     background: #323845;
     height: 1px;
     width: 100%;
   }
-  .workitem hr{
-    background: #222223;
-    height: 1px;
-    width: 100%;
-  }
-
-  .workitem h5{
-    color: #F8F8F8;
-    font-weight: Medium;
-    font-size: 16px;
-  }
-
-
-  .workcard{
-    background-color: #141415;
-    border: 1px solid  #222223;
-    width: 100%;
-    border-radius: 6px;
-    align-items: center;
-    position: relative;
-  }
-
-  .workcard img{
-    width: 100%;
-      flex-shrink: 0;
-    padding: 24px;
-    margin: auto;
-    display: block;
-    
-  }
-
-  .worklist a{
-    color: #BBBBBB;
-    width: 100%;
-  }
-
   
+
   .archiveportal{
     width: 48px;
     height: 48px;
@@ -755,7 +701,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .menu .btn{
-      margin-left: 2rem;
+      margin-right: 7rem;
     }
     
    
@@ -783,7 +729,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .block h3{
-      color: #B3B3B3;
+      color: #8E8E93;
       font-size: 16px;
       font-style: normal;
       font-weight: 500;
@@ -799,7 +745,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .block p{
-      color: #FFF;
+      color: #1D1B20;
       font-size: 16px;
       font-weight: 100;
     }
@@ -822,7 +768,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       
         /* 3. ScrollSpy active styles (see JS tab for activation) */
         .section-nav li.active > a {
-          color: white;
+          color: black;
           font-weight: 500;
         }
 
@@ -839,13 +785,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           text-decoration: none;
           display: block;
           padding: 0.5rem 0;
-          color: #ccc;
+          color: #8E8E93;
           transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
         }
 
         .section-nav a:hover,
         .section-nav a:focus {
-          color: white;
+          color: black;
         }
 
         /** Poor man's reset **/
@@ -895,9 +841,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       flex-direction: column;
       align-self: stretch;
       border-radius: 4px;
-      background: #090C12;
-      border: 1px solid #394050;
-      color: white;
+      background: #F0F1F5;
+      border: 1px solid #757575;
+      color: #1D1B20;
 
     }
 
@@ -930,23 +876,23 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .rowcard h3{
       font-weight: 600;
-      color: white;
+      color: #1D1B20;
     }
 
     .rowcard p{
-      color: #E0E0E0;
+      color: #1D1B20;
     }
     .rowcard1{
       border-radius: 6px;
-      border: 1px solid #394050;
-      background-color: #131313;
+      border: 1px solid #757575;
+      background-color: #F0F1F5;
       padding: 16px;
     }
 
     .rowcard2{
       border-radius: 6px;
-      border: 1px solid #585858;
-      background-color: #202020;
+      border: 1px solid #757575;
+      background-color: #F0F1F5;
       padding: 16px;
 
     }
@@ -1098,6 +1044,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       gap: 24px;
       margin-left: 0px;
     }
+
+    .row2{
+      padding-top: 8px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between; /* Pushes divs to opposite sides */
+      align-items: center; /* Centers them vertically */
+    }
+
+    
 
     .row1{
       display: flex;
@@ -1485,8 +1441,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 /*            NAV                                                                                                      */
 
       .nav-logo{
-        display: block;
         left: 24px;
+      }
+
+      .gradient-circle{
+        height: 14px;
+        width: 14px;
       }
 
       .nav-logo img{
@@ -1495,6 +1455,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       .hamburger{
         right: 24px;
+        top: 1.6rem;
       }
 
       .section-nav {
@@ -1506,7 +1467,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
 
       .menu .btn{
-        margin-left: 1rem;;
+        margin-right: 1rem;;
       }
 
       .row{
@@ -1656,6 +1617,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         }
 
+
         h3{
             font-size: 16px;
         }
@@ -1789,15 +1751,41 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
         .indexcontainer{
-          margin-left: 24px;
-          margin-right: 24px;
+          max-width: 90%;
         }
 
-        .indexcontainer h1{
-          font-size: 24px;
-          margin-top: 100px;
+        .time-container{
+          font-size: 14px;
+        }
+
+        .indexemphasize{
+          max-width: 100%;
+          margin-top: 96px;
+
 
         }
+     
+
+        .indexcontainer p{
+          font-size: 14px;
+
+        }
+
+        .nav-logo a{
+          font-size: 14px;
+        }
+
+        .portgrid{
+          display: block;
+          margin-top: 40px;
+
+        }
+
+        .row2 h3{
+          font-size: 14px;
+        }
+
+     
 
         .worklist{
           display: block;
@@ -1921,9 +1909,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
       @media screen and (min-width: 2260px) {
         
-        .indexcontainer{
-          min-width: 1920px;
-        }
+        
 
         p{
           font-size: 20px;
@@ -1949,10 +1935,5 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
       @media screen and (max-width: 1261px) {
 
-        .indexcontainer{
-          margin: 0;
-          margin-left: 40px;
-          margin-right: 40px;
-
-        }
+  
       }

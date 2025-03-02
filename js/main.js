@@ -72,3 +72,34 @@ let section = document.querySelectorAll('section');
             }
           });
         }
+
+
+
+      
+        function updateTimeAndIcon() {
+            const now = new Date();
+            const hour = now.getHours();
+            const minutes = now.getMinutes();
+            
+            // Format time to HH:MM AM/PM
+            const amPm = hour >= 12 ? "PM" : "AM";
+            const formattedHour = hour % 12 || 12; // Convert 0 to 12-hour format
+            const formattedMinutes = minutes.toString().padStart(2, "0");
+            const formattedTime = `${formattedHour}:${formattedMinutes} ${amPm}`;
+
+            let icon = "⏳"; // Default loading icon
+
+            if (hour >= 1 && hour < 12) {
+                icon = "🌅"; // Sunrise
+            } else if (hour >= 12 && hour < 17) {
+                icon = "⛅"; // Sun
+            } else if (hour >= 17 || hour === 0) {
+                icon = "🌑"; // Moon
+            }
+
+            document.getElementById("timeIcon").textContent = icon;
+            document.getElementById("currentTime").textContent = formattedTime;
+        }
+
+        updateTimeAndIcon(); // Run on page load
+
