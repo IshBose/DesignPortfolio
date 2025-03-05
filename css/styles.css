@@ -396,15 +396,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   }
 
-  .worklist{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    gap: 40px;
-    align-self: stretch;
-  }
-
+ 
 
   
   
@@ -1063,17 +1055,17 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .aboutcontainer{
-      margin-left: 128px;
-      margin-right: 128px;
-      margin-top: 128px;
-      align-items: center;
-      height: 100%;
-      color: #BBBBBB;
+      margin: auto;
+      padding-top: 128px;
+    height: 100%;
+    max-width: 80%;
+    justify-content: center;
+    color: #1D1B20;
     }
 
     .aboutcontainer h1{
       font-size: 40px;
-      color: white;
+      color: #1D1B20;
     }
 
     .portfoliocontainer .sidebysidecard{
