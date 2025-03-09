@@ -766,7 +766,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         /* Sidebar Navigation */
         .section-nav {
-          padding-left: 2rem;
+          padding-left: 8rem;
           
           position: fixed;
           top: 8rem;
@@ -828,8 +828,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .problemcard{
       display: flex;
-      padding: 24px;
-      gap:8px;
+      padding: 16px;
+      gap:0px;
       flex-direction: column;
       align-self: stretch;
       border-radius: 4px;
