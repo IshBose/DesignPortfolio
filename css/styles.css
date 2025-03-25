@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+
+
 /***********   FONT FACES FOR REGOLA              *********/
 
 @font-face {
@@ -973,11 +975,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin-top: -40px;
     }
 
-    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .collapsible:hover {
-      background-color: #1b1b1f;
-    }
-
+   
     /* Style the collapsible content. Note: hidden by default */
     .content {
       padding: 0 0px;
@@ -1120,6 +1118,227 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-size: 40px;
       color: #1D1B20;
     }
+
+    .gallery-container {
+      position: relative;
+      width: 80%;
+      height: 80vh;
+      overflow: hidden;
+      padding: 20px;
+      margin: 0 auto; /* Centers horizontally */
+  }
+    
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .gallery-header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    
+    .gallery-header p {
+      color: #64748b;
+    }
+    
+    .polaroid {
+      position: absolute;
+      background-color: white;
+      padding: 15px 15px 30px 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      cursor: grab;
+      user-select: none;
+      z-index: 1;
+    }
+    
+    .polaroid:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .polaroid.dragging {
+      cursor: grabbing;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    .polaroid img {
+      display: block;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    .polaroid .caption {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    
+    #polaroid1 {
+      top: 50px;
+      left: 50px;
+      transform: rotate(-2deg);
+    }
+    
+    #polaroid2 {
+      top: 100px;
+      left: 300px;
+      transform: rotate(3deg);
+    }
+    
+    #polaroid3 {
+      top: 350px;
+      left: 150px;
+      transform: rotate(-1deg);
+    }
+    
+    #polaroid4 {
+      top: 450px;
+      left: 350px;
+      transform: rotate(2deg);
+    }
+
+    #polaroid5 {
+      top: 150px;
+      left: 550px;
+      transform: rotate(-3deg);
+    }
+    
+    #polaroid6 {
+      top: 380px;
+      left: 650px;
+      transform: rotate(1.5deg);
+    }
+    
+    #polaroid7 {
+      top: 50px;
+      left: 950px;
+      transform: rotate(4deg);
+    }
+    
+    #polaroid8 {
+      top: 290px;
+      left: 850px;
+      transform: rotate(-2.5deg);
+    }
+
+
+    .accordion {
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
+  
+  .accordion-item {
+      border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .accordion-item:last-child {
+      border-bottom: none;
+  }
+  
+  .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      cursor: pointer;
+      user-select: none;
+  }
+  
+  .accordion-header:hover {
+      color: #4a5568;
+  }
+  
+  .accordion-title {
+      flex: 1;
+  }
+  
+  .company {
+      font-size: 1.1rem;
+  }
+  
+  .role {
+      color: #1563FF;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+  }
+  
+  .date {
+      color: #718096;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      margin-left: 1rem;
+  }
+  
+  .accordion-icon {
+      margin-left: 1rem;
+      transition: transform 0.3s ease;
+  }
+  
+  .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 0.5rem;
+  }
+  
+  .accordion-item.active .accordion-content {
+      max-height: 500px;
+      padding-bottom: 1rem;
+  }
+  
+  .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+  }
+  
+  .description {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      color: #4a5568;
+  }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+  
+  .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+  }
+  
+  .skill-tag {
+      background: #edf2f7;
+      color: #4a5568;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+  }
+  
+  @media (max-width: 640px) {
+      .accordion-header {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      
+      .date {
+          margin-left: 0;
+          margin-top: 0.25rem;
+      }
+      
+      .accordion-icon {
+          position: absolute;
+          right: 1rem;
+      }
+
+    }
+    
 
     .portfoliocontainer .sidebysidecard{
       /*border: 2px solid rgba(142, 184, 229, .5);*/
