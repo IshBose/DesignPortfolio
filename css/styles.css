@@ -125,14 +125,14 @@
   gap: 8px;
   align-items: center; /* Vertically aligns items */
   color: #1D1B20;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 100;
   transition: 0.2s;
 }
 
 .nav-logo a{
   color: #1D1B20;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .nav-logo a:hover{
@@ -216,7 +216,7 @@
   top: 2rem;
   left: 50%;  /* Move to center */
   transform: translateX(-50%);  /* Adjust back by 50% of its own width */
-  font-size: 18px;
+  font-size: 16px;
   gap: 8px;
 }
 
@@ -654,7 +654,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       height: 100%;
       display: grid;
       column-gap: 40px;
-      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: repeat(5, 1fr);
       
     }
 
@@ -663,8 +663,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       flex-direction: column;
       align-items: flex-start;
 
-      grid-column-start: 2;
-      grid-column-end: 5;
+      grid-column: 2 / span 3; /* Starts at column 2 and spans 3 columns */
       max-width:  100% ;
       gap: 80px;
     }
@@ -704,6 +703,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
    
     .block{
       gap: 16px;
+      width: 100%;
        
     }
 
@@ -766,7 +766,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         /* Sidebar Navigation */
         .section-nav {
-          padding-left: 8rem;
+          left: calc(9% + 8px); /* Aligns with body content edge */
           
           position: fixed;
           top: 8rem;
@@ -836,6 +836,59 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       background: #F0F1F5;
       border: 1px solid #757575;
       color: #1D1B20;
+
+    }
+
+    .countercard{
+     padding: 8px;
+      display: flex;
+      flex-direction: row;
+      gap:8px;
+      background: #F0F1F5;
+      border: 1px solid #757575;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      max-width: 100%;
+      align-items: center; /* Aligns items vertically */
+
+
+    }
+
+    .countercard b{
+      font-weight: 500;
+    }
+
+    #cardcolor2{
+      background-color: #E3E3E4;
+    }
+
+    #cardcolor3{
+      background-color: #D4D4D5;
+      
+    }
+    #cardcolor3 h3{
+      color: #494848;
+    }
+
+    #cardcolor4{
+      background-color:#BEBEC1;
+    }
+
+    #cardcolor3 h3{
+      color: #494848;
+    }
+
+    .step{
+      padding-left: 7px;
+      padding-right: 7px;
+      padding-bottom: 4px;
+      padding-top: 4px;
+      border-radius: 100px;
+      background-color: #FFFFFF;
+      border: 1px solid #1D1B20;
+      font-size: 10px;
+      align-items: center; /* Aligns items vertically */
 
     }
 
