@@ -103,3 +103,23 @@ let section = document.querySelectorAll('section');
 
         updateTimeAndIcon(); // Run on page load
 
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const accordionItems = document.querySelectorAll('.accordion-item');
+          
+          accordionItems.forEach(item => {
+              const header = item.querySelector('.accordion-header');
+              
+              header.addEventListener('click', function() {
+                  // Toggle current item
+                  item.classList.toggle('active');
+                  
+                  // Optional: Close other items when one is opened
+                  // accordionItems.forEach(otherItem => {
+                  //     if (otherItem !== item) {
+                  //         otherItem.classList.remove('active');
+                  //     }
+                  // });
+              });
+          });
+      });
