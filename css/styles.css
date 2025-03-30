@@ -398,7 +398,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     transform: translateY(0);
   }
 
-  
+
 
 
 
@@ -453,6 +453,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .archiveportal img{
     width: 100%;
   }
+
+
+  
 
 
 
@@ -1142,8 +1145,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .gallery-container {
       position: relative;
-      width: 80%;
-      height: 80vh;
+      width: 100%;
+      height: 90vh;
       overflow: hidden;
       padding: 20px;
       margin: 0 auto; /* Centers horizontally */
