@@ -123,3 +123,18 @@ let section = document.querySelectorAll('section');
               });
           });
       });
+
+
+/*
+      document.querySelectorAll('.portgridcolcard img').forEach(img => {
+        const originalSrc = img.src;
+        const gifSrc = originalSrc.replace('.png', '.gif'); // Assuming your GIF has the same name but different extension
+        
+        img.addEventListener('mouseenter', () => {
+          img.src = gifSrc;
+        });
+        
+        img.addEventListener('mouseleave', () => {
+          img.src = originalSrc;
+        });
+      });*/
