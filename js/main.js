@@ -140,3 +140,25 @@ let section = document.querySelectorAll('section');
         });
       });*/
 
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for 1 second (1000ms) before showing the portgrid
+        setTimeout(function() {
+          const portgrid = document.querySelector('.indexemphasize');
+          if (portgrid) {
+            portgrid.classList.add('visible');
+          }
+        }, 250);
+      });
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for 1 second (1000ms) before showing the portgrid
+        setTimeout(function() {
+          const portgrid = document.querySelector('.portgrid');
+          if (portgrid) {
+            portgrid.classList.add('visible');
+          }
+        }, 600);
+      });
+
