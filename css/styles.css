@@ -281,6 +281,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 }
 
+.portgrid a:hover{
+  transform: none;
+}
+
 .portgridcol2 {
             display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -327,7 +331,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   .portgridcolcard img:hover{
     
-    transform: scale(1.02);
+    background-color: #dedfe1;
+    transform: scale(1.002);
     transition: 0.4s;
      /*background-image: url("../images/bg-changer1.png");*/
   }
