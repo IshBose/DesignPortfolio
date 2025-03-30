@@ -125,6 +125,7 @@ let section = document.querySelectorAll('section');
       });
 
 
+
 /*
       document.querySelectorAll('.portgridcolcard img').forEach(img => {
         const originalSrc = img.src;
@@ -138,3 +139,4 @@ let section = document.querySelectorAll('section');
           img.src = originalSrc;
         });
       });*/
+
