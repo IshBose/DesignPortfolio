@@ -75,34 +75,63 @@ let section = document.querySelectorAll('section');
 
 
 
-      
         function updateTimeAndIcon() {
-            const now = new Date();
-            const hour = now.getHours();
-            const minutes = now.getMinutes();
-            
-            // Format time to HH:MM AM/PM
-            const amPm = hour >= 12 ? "PM" : "AM";
-            const formattedHour = hour % 12 || 12; // Convert 0 to 12-hour format
-            const formattedMinutes = minutes.toString().padStart(2, "0");
-            const formattedTime = `${formattedHour}:${formattedMinutes} ${amPm}`;
+          const now = new Date();
+          const hour = now.getHours();
+          const minutes = now.getMinutes();
+          
+          // Format time to HH:MM AM/PM
+          const amPm = hour >= 12 ? "PM" : "AM";
+          const formattedHour = hour % 12 || 12; // Convert 0 to 12-hour format
+          const formattedMinutes = minutes.toString().padStart(2, "0");
+          const formattedTime = `${formattedHour}:${formattedMinutes} ${amPm}`;
 
-            let icon = "⏳"; // Default loading icon
+          let icon = "⏳"; // Default loading icon
 
-            if (hour >= 1 && hour < 12) {
-                icon = "🌅"; // Sunrise
-            } else if (hour >= 12 && hour < 17) {
-                icon = "⛅"; // Sun
-            } else if (hour >= 17 || hour === 0) {
-                icon = "🌑"; // Moon
-            }
+          if (hour >= 1 && hour < 12) {
+              icon = "🌅"; // Sunrise
+          } else if (hour >= 12 && hour < 17) {
+              icon = "⛅"; // Sun
+          } else if (hour >= 17 || hour === 0) {
+              icon = "🌑"; // Moon
+          }
 
-            document.getElementById("timeIcon").textContent = icon;
-            document.getElementById("currentTime").textContent = formattedTime;
-        }
+          document.getElementById("timeIcon").textContent = icon;
+          document.getElementById("currentTime").textContent = formattedTime;
+      }
 
-        updateTimeAndIcon(); // Run on page load
+      // Scroll handling
+      let lastScrollY = 0;
+      const timeContainer = document.querySelector('.time-container');
+      
+      function handleScroll() {
+          const currentScrollY = window.scrollY;
+          
+          // Show/hide based on scroll direction and position
+          if (currentScrollY > lastScrollY && currentScrollY > 50) {
+              // Scrolling down & past threshold
+              timeContainer.classList.remove('visible');
+              timeContainer.classList.add('hidden');
+          } else if (currentScrollY < lastScrollY || currentScrollY < 10) {
+              // Scrolling up or near top
+              timeContainer.classList.remove('hidden');
+              timeContainer.classList.add('visible');
+          }
+          
+          lastScrollY = currentScrollY;
+      }
 
+      // Initialize
+      document.addEventListener('DOMContentLoaded', function() {
+          // Initial time update
+          updateTimeAndIcon();
+          
+          // Set up interval for time updates
+          setInterval(updateTimeAndIcon, 60000); // Update every minute
+          
+          // Add scroll event listener
+          window.addEventListener('scroll', handleScroll, { passive: true });
+      });
 
         document.addEventListener('DOMContentLoaded', function() {
           const accordionItems = document.querySelectorAll('.accordion-item');

@@ -123,13 +123,16 @@
   display: flex;
   z-index: 100;
   top: 2rem;
-  left: calc(10% + 4px); /* Aligns with body content edge */
+  left: calc(10% - 4px); /* Aligns with body content edge */
   gap: 8px;
   align-items: center; /* Vertically aligns items */
   color: #1D1B20;
   font-size: 16px;
   font-weight: 100;
   transition: 0.2s;
+  background-color: white;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 .nav-logo a{
@@ -172,7 +175,7 @@
 .hamburger {
   position: fixed;
   z-index: 100;
-  top: 2.2rem;
+  top: 2.5rem;
   right: 7rem;
   padding-top: 4px;
   padding-bottom: 0px;
@@ -215,13 +218,24 @@
 .time-container {
   position: fixed;
   display: flex;
-  top: 2rem;
-  left: 50%;  /* Move to center */
-  transform: translateX(-50%);  /* Adjust back by 50% of its own width */
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 16px;
   gap: 8px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 1000;
 }
 
+.time-container.hidden {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+}
+
+.time-container.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
 
 .showMenu {
   transform: translateY(0);
