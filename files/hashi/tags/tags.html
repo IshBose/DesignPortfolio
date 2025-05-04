@@ -108,7 +108,6 @@
         </li>
         <li><a href="#ideation">Ideation</a></li>
         <li><a href="#solution">Solution</a></li>
-        <li><a href="#hifi">Mockups</a></li>
         <li><a href="#prototype">Prototype</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
          
@@ -167,11 +166,10 @@
 
         <hr style="fill: #404040; width:100%;">
 
-        <h2>Detailed Case Study</h2>
 
         <div class="block" style="margin-top: -40px;" id="problem">
             <h3>Background</h3>
-            <p>Terraform Cloud has the concept of “Tags” within the product, and also as an object type within a code block. Tags were introduced to allow users to quickly organize, correlate and filter the core resource of Terraform Cloud, Workspaces.
+            <p>Terraform Cloud has the concept of “Tags” within the product, and also as an object type within  the cloud block in a terraform configuration file. Tags were introduced to allow users to quickly organize, correlate and filter the core resource of Terraform Cloud, Workspaces.
             </p>
 
 
@@ -183,18 +181,36 @@
             <p>The issue is that tags in their current inception were useful, but limited in how customers think about and use tags. A single value string when applied to an object is useful for filtering usecases, but doesn’t necessarily map to the entire spectrum of user types in Terraform Cloud. To illustrate this, lets consider two personas: 
             </p>
 
-            <img src="./persona intro.png" class="img-wrap-2" style="max-width: 75%;">
+
+            <div class="blockcard">
+              <h3>Core personas</h3>
+              <div class="row">
+                <img src="./appo.png">
+                <div>
+                  <h4>Appo the app developer</h4>
+                  <p>This individual finds value in the current state of tags, using it mainly to filter</p>
+              </div>
+              </div>
+              <div class="row">
+                <img src="./plata.png">
+                <div>
+                  <h4>Plata the app Platform Engineer</h4>
+                  <p>The platform engineer, or the Terraform expert of their organization, <b>likely won’t find value in the current implementation of tags</p></b>
+              </div>
+              </div>
+              
+            </div>
 
             <p>To understand why, lets map outs the platform engineer journeys to illustrate where the current implementation of tags is lacking
             </p>
 
-            <img src="./COREUSERS.png" style="border-radius: 12px; max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
+            <img src="./COREUSERS-1.png" style=" max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
 
-            <img src="./phases.png" style="border-radius: 12px; max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
+            <img src="./phases.png" style=" max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
 
-            <img src="./viz timeline.png" style="border-radius: 12px; max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
+            <img src="./viz timeline.png" style=" max-width: 100%; margin-top: 16px; margin-bottom: 16px;">
 
-            <P><br>So what we can tell is that tags need to be developed more to fit the competitive landscape that Terraform nestles in, mainly cloud service providers, and must follow similar implementation models in terms of hierarchies.
+            <P><br>So what we can tell is that key value tags are a major type of tag that our customers want to use, but can't currently. Which makes sense since the other platforms that our core users are mainly in, Cloud Service Providers, also have this concept.
             </P>
 
             <img src="./csptags.png" style="border-radius: 4px; max-width: 100%; margin-top: 40px; ">
@@ -242,7 +258,7 @@
 
           <p> This user research allowed us to create an initial problem statement -
           </p>
-          <div class="problemcard" style="margin-top: 16px;">
+          <div class="problemcard" style="margin-top: 24px;">
             <h3>Problem statement</h3>
             <p>Tags as a concept is ineffective in allowing customers to perform more administrative tasks, such as managing billing, audit, and RBAC. The current implementation is too permissive, meaning anyone can add or remove tags, and a tag itself cannot be added at a project level. This causes the customer to have to more manual busy work on their end to maintain a system of record of internal metadata to keep up.</p>
           </div>
@@ -308,7 +324,7 @@
         <p>We needed to undertstand how both the app developer and platform persona would use the tag binding workflow to determine how to present it.</p>
         
 
-        <img src="./Tag binding interaction iteration.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+        <img src="./Tag binding interaction iteration.png" style="border-radius: 4px; max-width:100%; margin-top: 16px;">
 
 
 
@@ -321,7 +337,7 @@
         </h4>
         <p>One of the big hurdles was managing how a user would perceive the new key value tag vs the existing workspace tag, and how that influences adoption.</p>
         
-        <img src="./mentalmodeldiscussion.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+        <img src="./mentalmodeldiscussion.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; ">
 
 
 
@@ -357,6 +373,28 @@
         <p>Customer sentiment was overwhelmingly positive for this feature. Many customers had been asking for this for a long time, and could finally stop having to create bespoke solutions or hack their way around managing cloud resources. Cost attribution is one of those things that can actually negatively influence engagement from a contract perspective because customers are fearful about going over their contracted entitlement quota. As a result of enabling more accurate cost attribution with key value tags, customers felt more confident about using the amount that they bought.
 
         </p>
+
+
+      </div>
+
+      <div class="block">
+        <h3>Impact</h3>
+        <div class="rowcard">
+          <div class="rowcard1">
+            <h3>12 percent of all active organizations</h3>
+            <p>using new tag type</p>
+          </div>
+          <div class="rowcard2">
+            <h3>322 customers </h3>
+            <p>Using project tags</p>
+          </div>
+          <div class="rowcard2">
+            <h3>Workspace tag creation down 87%</h3>
+            <p>Through design decisions</p>
+          </div>
+       </div>
+
+       <p style="margin-top: 40px;">Additionally, design patterns have been adopted by other HashiCorp platform design team, and used in 4 new products.</p>
 
 
       </div>

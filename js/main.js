@@ -1,30 +1,33 @@
 /* Used for scrolling sidenav on casestudy */
 
-const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".menuItem");
-const hamburger= document.querySelector(".hamburger");
-const closeIcon= document.querySelector(".closeIcon");
-const menuIcon = document.querySelector(".menuIcon");
+document.addEventListener("DOMContentLoaded", function () {
+  const sectionLinks = document.querySelectorAll(".section-nav a");
+  const sections = Array.from(sectionLinks).map(link =>
+    document.querySelector(link.getAttribute("href"))
+  );
 
-function toggleMenu() {
-  if (menu.classList.contains("showMenu")) {
-    menu.classList.remove("showMenu");
-    closeIcon.style.display = "none";
-    menuIcon.style.display = "block";
-  } else {
-    menu.classList.add("showMenu");
-    closeIcon.style.display = "block";
-    menuIcon.style.display = "none";
-  }
-}
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -70% 0px", // Adjust based on when you want to trigger active state
+    threshold: 0
+  };
 
-hamburger.addEventListener("click", toggleMenu);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const index = sections.indexOf(entry.target);
+      const linkItem = sectionLinks[index].parentElement;
 
-menuItems.forEach( 
-  function(menuItem) { 
-    menuItem.addEventListener("click", toggleMenu);
-  }
-)
+      if (entry.isIntersecting) {
+        document.querySelectorAll(".section-nav li").forEach(li => li.classList.remove("active"));
+        linkItem.classList.add("active");
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    if (section) observer.observe(section);
+  });
+});
 
 
 

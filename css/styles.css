@@ -49,7 +49,7 @@
 
 @font-face {
   font-family: "regola";
-  src: url("./woff/FTRegolaNeueTrial-Heavy.woff");
+  src: url("./woff/FTRegolaNeueTrial-Semibold.woff");
   font-weight:600;
 
 }
@@ -60,6 +60,8 @@
   font-weight:400;
 
 }
+
+
 
 
 /*** Simple Reset */
@@ -78,6 +80,7 @@
     --font-family: "regola", sans-serif;
     --packer: #02a8ef;
     --terraform: #7B42BC;
+    --card: #F0F1F5;
 
   }
 
@@ -686,7 +689,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     
     
     .blockwrapper{
-      padding-left: 0px;
+      padding-left: 24px;
       padding-right: 0px;
       padding-top: 128px;
   
@@ -705,7 +708,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       grid-column: 2 / span 3; /* Starts at column 2 and spans 3 columns */
       max-width:  100% ;
-      gap: 80px;
+      gap: 100px;
     }
 
     .btn {
@@ -767,6 +770,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: 500;
       line-height: normal;
       text-transform: capitalize;
+      font-weight: 600;
       margin: 0px;
       padding-bottom: 8px;
     }
@@ -780,6 +784,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       color: #1D1B20;
       font-size: 16px;
       font-weight: 100;
+      line-height: 1.5;
     }
 
 
@@ -1049,7 +1054,34 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
  
     .block img{
       max-width: 75%;
-      margin-top: 16px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    .block b{
+      font-weight: 600;
+    }
+
+    .blockcard{
+
+      background-color: var(--card);
+      border-radius: 6px;
+      border: 1px solid #757575;
+      padding: 24px;
+      margin: 40px;
+    }
+    
+    .blockcard .row{
+      padding-top: 16px
+        }
+
+    .blockcard .row img{
+      max-width: 10%;
+      margin-top: 0px;
+    }
+
+    .blockcard b{
+      font-weight: 600;
     }
 
     .nextto{
