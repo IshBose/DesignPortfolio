@@ -87,6 +87,20 @@
 
   }
 
+  ol{
+  }
+
+  .text-secondary-color{
+    color: var(--secondarytext);
+  }
+
+  .text-primary-color{
+    color: var(--primarytext);
+  }
+
+  .has-decoration{
+    text-decoration: underline;
+  }
 
   
   html {
@@ -220,6 +234,11 @@
       margin-bottom: 2rem;
     }
 
+
+    .margin-xxxxl{
+      margin: 12rem;
+    }
+
     .has-gap{
       gap:24px
     }
@@ -296,6 +315,13 @@
 
 
     /*Flex-box*/
+
+
+  .flex{
+    display: flex;
+    gap: 8px;
+  }
+
 
     .flex-row {
       flex-direction: row;
@@ -440,6 +466,11 @@
     font-weight: bold;
 }
 
+/* Text */
+h3{
+  font-weight: 600;
+  font-size: 18px;
+}
   
 /* new Stuff for nav*/
 
@@ -451,11 +482,11 @@
   left: calc(10% - 4px); /* Aligns with body content edge */
   gap: 8px;
   align-items: center; /* Vertically aligns items */
-  color: #1D1B20;
+  color: var(--primarytext);
   font-size: 16px;
   font-weight: 100;
   transition: 0.2s;
-  background-color: white;
+  background-color: var(--background);
   padding: 8px;
   border-radius: 6px;
 }
@@ -471,11 +502,12 @@
 }
 
 
-.gradient-circle {
+.gradient-circle-logo {
   width: 16px;
   height: 16px;
   border-radius: 50%; /* Makes it a circle */
-  background: linear-gradient(180deg, #1A2A6C, #B21F1F, #FDBB2D);
+  background: linear-gradient(180deg, #1A2A6C 0%, #B21F1F 50%, #FDBB2D 100%);
+
 }
 
 
@@ -506,9 +538,8 @@
   padding-bottom: 0px;
   padding-left: 4px;
   padding-right: 4px;
-  background: white;
-  
-  color: #1D1B20;
+  background: var(--background);
+  color: var(--primarytext);
   cursor: pointer;
   border-radius: 4px;
   border: none;
@@ -603,14 +634,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }
 
   .portgrid{
-    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
-    column-gap: 40px;
-    margin-top: 72px;
+    grid-template-rows: auto;
     display: grid;
-    max-width: none;
+    gap: 128px;
+    max-width: 100%;
     opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   .portgrid.visible {
@@ -619,12 +649,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }
 
   .portgrid a{
-    color: #8E8E93 ;
+    color: var(--primarytext) ;
   }
   .portgridcol1  {
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 40px;
-    display: grid;
+   
+    gap: 24px;
+    width: 100%;
 
 }
 
@@ -633,56 +663,39 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 }
 
 .portgridcol2 {
-            display: grid;
-  grid-template-rows: repeat(2, 1fr);
-      row-gap: 40px;
+            display: block;
 
 }
 
-.portgridcol1 a  .portgridcolcard img{
-  height: 90%;
-}
 
-.portgridcol2 a .portgridcolcard img{
-  height: 94%;
+.portgridcol2 img{
+  width: 100%;
 }
 
 .contactform{
-  float: right;
-  color: #1D1B20;
-  margin-top: 40px;
+  color: var(--primarytext);
   gap: 16px;
-  padding-top: 40px;
-   padding-bottom: 40px;
 }
 
 .contactform a button{
   margin-top: 16px;
-  float: right;
+  display: flex;
+}
+
+.subtitle{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 240% */
+  letter-spacing: 1px;
+  color: var(--secondarytext);
 }
   
 
 
 
   
-  .portgridcolcard{
-    gap: 8px;
-    background-image: none;
-    height: 100%;    
-    flex-direction: column;
-
-   
-
-
-  }
-
-  .portgridcolcard img:hover{
-    
-    background-color: #dedfe1;
-    transform: scale(1.002);
-    transition: 0.4s;
-     /*background-image: url("../images/bg-changer1.png");*/
-  }
+  
 
   /*#c2h2 img:hover{
     background-image: url("../images/bg-changer2.png");
@@ -693,39 +706,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }*/
 
 
-  .portgridcolcard img{
-    background-color: #F0F1F5;
-    padding: 24px;
-    width: 100%;
-    margin-top: 16px;
-  }
-
-  .portgridcolcard h3{
-    font-size: 16px;
-    font-weight: 400;
-    color:#1D1B20;
-  }
-
-  
-
-  .tallportgridcolcard img{
-    background-color: #F0F1F5;
-    padding: 24px;
-    max-width: 100%;
-    margin-top: 8px;
-  }
-
-  .tallportgridcolcard h3{
-    font-size: 16px;
-    font-weight: 400;
-    color:#1D1B20;
-  }
+ 
   
 
   .indexemphasize{
     color: var(--secondarytext);
     font-size: 48px;
-    margin-top: 164px;
+    margin-top: 200px;
     opacity: 0;
     font-weight: medium;
   transform: translateY(20px);
@@ -748,12 +735,135 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   }
 
 
+  /* Animated gradient circles */
+  .gradient-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    overflow: hidden;
+}
 
+.gradient-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    animation: moveRadialGradient 8s ease-in-out infinite;
+}
 
-  .flex{
-    display: flex;
-    gap: 8px;
+.gradient-circle-1 {
+    width: 240px;
+    height: 240px;
+    top: 10%;
+    left: -120px;
+    filter: blur(20px);
+    animation: slowPulse 6s ease-in-out infinite, float 12s ease-in-out infinite, breathe 20s ease-in-out infinite;
+}
+
+.gradient-circle-1::before {
+    background: radial-gradient(circle at 30% 30%, #ff9a8b 0%, rgba(255,154,139,0) 50%),
+                radial-gradient(circle at 70% 70%, #fecfef 0%, rgba(254,207,239,0) 50%),
+                radial-gradient(circle at 40% 80%, #a8edea 0%, rgba(168,237,234,0) 50%);
+    animation: moveRadialGradient 8s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.gradient-circle-2 {
+    width: 360px;
+    height: 360px;
+    top: 40%;
+    right: -240px;
+    filter: blur(20px);
+    animation: slowPulse 8s ease-in-out infinite, float 15s ease-in-out infinite, breathe 25s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+.gradient-circle-2::before {
+    background: radial-gradient(circle at 60% 40%, #fed6e3 0%, rgba(254,214,227,0) 50%),
+                radial-gradient(circle at 20% 70%, #d299c2 0%, rgba(210,153,194,0) 50%),
+                radial-gradient(circle at 80% 20%, #ff9a8b 0%, rgba(255,154,139,0) 50%);
+    animation: moveRadialGradient 10s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+/* Moving radial gradient animation */
+@keyframes moveRadialGradient {
+  0% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+      filter: blur(0px);
   }
+  25% {
+      transform: translate(-20px, -15px) rotate(90deg) scale(1.2);
+      filter: blur(2px);
+  }
+  50% {
+      transform: translate(-10px, -30px) rotate(180deg) scale(0.8);
+      filter: blur(1px);
+  }
+  75% {
+      transform: translate(15px, -20px) rotate(270deg) scale(1.1);
+      filter: blur(2px);
+  }
+  100% {
+      transform: translate(0, 0) rotate(360deg) scale(1);
+      filter: blur(0px);
+  }
+}
+
+/* Slow pulsing animation for gradient circles */
+@keyframes slowPulse {
+  0%, 100% {
+      transform: scale(1);
+      opacity: 0.5;
+  }
+  50% {
+      transform: scale(1.3);
+      opacity: 0.8;
+  }
+}
+
+/* Floating animation for more dynamic movement */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0px) translateX(0px);
+  }
+  25% {
+      transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+      transform: translateY(-10px) translateX(-15px);
+  }
+  75% {
+      transform: translateY(-30px) translateX(5px);
+  }
+}
+
+/* Breathing effect for more organic movement */
+@keyframes breathe {
+  0%, 100% {
+      transform: scale(1) rotate(0deg);
+      filter: blur(20px);
+  }
+  50% {
+      transform: scale(1.1) rotate(180deg);
+      filter: blur(25px);
+  }
+}
+
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+
+
+
+
+
 
 
   
@@ -1059,8 +1169,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       line-height: 16px;
       font-family: Regola;
       top: 24px;
+      gap: 8px;
       margin:0 auto;
-    display:block;
+     display:block;
     
     }
 
@@ -1070,6 +1181,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       transition:transform 0.1s ease-in;
     }
 
+
+    .btn img{
+      max-width: 16px;
+    }
     .menu .btn{
       margin-right: 7rem;
     }
@@ -1481,18 +1596,41 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
    
 
     
-    .portrow:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
 
     .row{
       display: flex;
-      padding-top: 40px;
-      gap: 24px;
-      margin-left: 0px;
+      gap: 40px;
+      width: 100%;
+      align-items: flex-start;
+      margin: auto;
+      margin: -1rem;
     }
+
+    .rowhover {
+      padding: 1rem;
+      border-radius: 6px;
+      transition: box-shadow 0.3s ease;
+    }
+
+ .rowhover:hover {
+  box-shadow: 0 0 0 1px var(--strokeongray, #DBD7D2);
+  animation: pulseColor 4s infinite ease-in-out;
+}
+
+@keyframes pulseColor {
+  0% {
+    box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0 1px rgba(186, 172, 255, 0.6);
+  }
+}
+
+
+
 
     .row2{
       padding-top: 8px;
