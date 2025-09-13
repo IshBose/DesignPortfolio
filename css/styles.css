@@ -72,6 +72,10 @@
 	padding:0;
 }
 
+.fullwidth{
+  max-width: 100%!important;
+}
+
 /* Variables */
 :root {
     --blk: #131316;
@@ -82,12 +86,13 @@
     --terraform: #7B42BC;
     --card: #F0F1F5;
     --primarytext: #141218;
-    --secondarytext: rgba(60, 60, 67, 0.60);
+    --secondarytext: #686868;
     --background:#F7F7FF;
 
   }
 
-  ol{
+  img{
+    max-width: 100%;
   }
 
   .text-secondary-color{
@@ -98,8 +103,24 @@
     color: var(--primarytext);
   }
 
+  .textcasetitle{
+    font-size: 48px;
+  font-weight: 500;
+  }
+
+  .largetext{
+    font-size: 24px;
+    font-weight: 100;
+  }
+
   .has-decoration{
     text-decoration: underline;
+  }
+
+  h4{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
   }
 
   
@@ -479,7 +500,7 @@ h3{
   display: flex;
   z-index: 100;
   top: 2rem;
-  left: calc(10% - 4px); /* Aligns with body content edge */
+  left: calc(14%); /* Aligns with body content edge */
   gap: 8px;
   align-items: center; /* Vertically aligns items */
   color: var(--primarytext);
@@ -533,7 +554,7 @@ h3{
   position: fixed;
   z-index: 100;
   top: 2.5rem;
-  right: 7rem;
+  right: 14rem;
   padding-top: 4px;
   padding-bottom: 0px;
   padding-left: 4px;
@@ -628,7 +649,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .indexcontainer{
     margin: auto;
     height: 100%;
-    max-width: 80%;
+    margin-left: 200px;
+    margin-right: 200px;
+
     justify-content: center;
     color: #BBBBBB;
   }
@@ -1084,6 +1107,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
      padding: 0 10px;
     }
 
+    .col-lg{
+    width: 70%;
+    }
+    .col-sm{
+    width: 30%;
+    }
+
 
 
     .column img{
@@ -1143,7 +1173,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       height: 100%;
       display: grid;
       column-gap: 40px;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       
     }
 
@@ -1152,10 +1182,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       flex-direction: column;
       align-items: flex-start;
 
-      grid-column: 2 / span 3; /* Starts at column 2 and spans 3 columns */
+      grid-column: 3 / span 4; /* Starts at column 2 and spans 3 columns */
       max-width:  100% ;
       gap: 100px;
+      margin-left: -24px;
     }
+
 
     .btn {
       background-color: white; /* Blue background */
@@ -1232,7 +1264,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .block p{
-      color: #1D1B20;
+      color: var(--secondarytext);
       font-size: 16px;
       font-weight: 100;
       line-height: 1.5;
@@ -1262,11 +1294,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         /* Sidebar Navigation */
         .section-nav {
-          left: calc(9% + 8px); /* Aligns with body content edge */
+          left: calc(13%); /* Aligns with body content edge */
           
           position: fixed;
           top: 8rem;
           align-self: start;
+          font-size: 14px;
+          font-weight: 100;
         }
 
         .section-nav a {
@@ -1603,6 +1637,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       width: 100%;
       align-items: flex-start;
       margin: auto;
+    }
+
+    .minusmargin{
       margin: -1rem;
     }
 
@@ -1619,13 +1656,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 @keyframes pulseColor {
   0% {
-    box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.4);
+    box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.6);
   }
   50% {
     box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.9);
   }
   100% {
-    box-shadow: 0 0 0 1px rgba(186, 172, 255, 0.6);
+    box-shadow: 0 0 0 1px rgba(186, 172, 255, 0.8);
   }
 }
 
