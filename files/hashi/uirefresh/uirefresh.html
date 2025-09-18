@@ -54,7 +54,7 @@
     
  <!--NAV-->
  <div class="nav-logo">
-   <div class="gradient-circle"></div>
+   <div class="gradient-circle-logo"></div>
      <a href="../../../index.html"  >Ishaan Bose</a>
      </div>
 
@@ -108,6 +108,10 @@
         </li>
         <li><a href="#ideation">Ideation</a></li>
         <li><a href="#hifi">Mockups</a></li>
+         <li><a href="#prototype">Prototype</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+
+
    
          
         </ol>
@@ -120,54 +124,67 @@
       <div class="blocklist">
 
 
-          <div class="c2title">
-          <h2><span style="color:#844FBA; text-align: left; font-family: tiempoitalic;"> HCP Terraform</span><br>UI Refresh</h2>
-
-          <img src="../../../images/HashiCorp_Icon_White_RGB.png" style="width: 48px; height: 48px;">
-          </div>
-
-
-          <div class="block" style="margin-top: -40px;">
-            <h3 id="context" >Context</h3>
-            <p>
-              Developer tools are notoriously known for having poor user interfaces, its like the field is allergic to products that are both powerful and also nice to look at 😝. So you can imagine my excitement when I was tapped to work on some UI improvements for HCP Terraform, a managed service to deploy and track cloud infrastructure. During my time at HashiCorp, I had often focused more on feature work, but I am a deep proponent of continuous improvement of the overall experience. This project was a key lesson in managing scope creep and taking an ambiguous project brief into a redesign of the 4 highest traffic pages on HCP Terraform.
-
-
-            </p>
-          </div>
+          <div class="block"id="context">
+                      <img src="../../../images/UIRefreshGridCard.png" class="fullwidth" >
 
           <div class="block">
-            <h3>Overview</h3>
-            <div class="colblock">
-              <p>When: Q2 2024-Q1 2025</p>
-              <p>Team: Product Designer (Me), 
-            Eng Lead</p>
-              <p>Tools: Figma, Snowflake, Qualtrics</p>
+            <div class="subtitle" >PROJECT</div>
+            <h2 class="textcasetitle">Rethinking the UI of the multi million DAU pages of HashiCorp’s flagship product.</h2>
+           </div>
 
 
 
-            </div>
+                <div class="has-gap margin-sm padding-top">
+                    <div class="row padding-bottom-lg">
+                          <div class="block padding-bottom">
+                          <div class="subtitle">ORGANIZATION</div>
+
+                          <div class="flex">
+                                  <img style="width: 28px;
+        height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
+                            <h2 class="largetext">HashiCorp</h2></div>
+                          </div>
+
+                            <div class="block ">
+                          <div class="subtitle">WHEN</div>
+                            <h2 class="largetext">Q1 2025</h2>
+                          </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="block padding-bottom">
+                        <div class="subtitle">ROLE</div>
+                          <h2 class="largetext">Lead Product Designer, Researcher</h2>
+                        </div>
+
+                        <div class="block">
+                        <div class="subtitle">TOOLS</div>
+                          <h2 class="largetext">Figma, Snowflake, CommandAI</h2>
+                        </div>
+                    </div>
+              </div>
           </div>
-          <h3 id="preview">Solution preview</h3>
 
-          <div class="solutionPre" >
             <div class="block">
-              <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
-                <source src="./prototype.mp4">
-              </video>
-            </div>
-        </div>
+            <div class="subtitle" id="problem">CONTEXT</div>
+            <h4>The UI of the product had organically lagged from feature development, and felt dated.</h4>
+                 <p>Developer tools are notoriously known for having poor user interfaces, its like the field is allergic to products that are both powerful and also nice to look at 😝. So you can imagine my excitement when I was tapped to work on some UI improvements for HCP Terraform, a managed service to deploy and track cloud infrastructure. During my time at HashiCorp, I had often focused more on feature work, but I am a deep proponent of continuous improvement of the overall experience. This project was a key lesson in managing scope creep and taking an ambiguous project brief into a redesign of the 4 highest traffic pages on HCP Terraform.</p>    
+          </div>
+    
 
-          
 
+
+          <div class="block">
+            <div class="subtitle">SOLUTION PREVIEW</div>
+              <div class="solutionPre margin-top" >
+              <div class="block">
+                <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                  <source src="./prototype.mp4">
+                </video>
+              </div>
+          </div>
+          </div>
          
-
-
-          
-
-        <hr style="fill: #404040; width:100%;">
-
-        <h2>Detailed Case Study</h2>
+         
 
         <div class="problemcard" style="margin-top: -40px; margin-bottom: -40px;" id="problem">
           <h3>The Brief</h3>
@@ -178,39 +195,33 @@
         </div>
 
         <div class="block">
-          <h3>Where to start?</h3>
-          <p>As a designer, your eyes will often roll into the back of your head at the sheer utterance of “make this look nicer”, or “make it pop”, but this was the rare occasion in which I was really happy to hear this being mentioned. The UI of Terraform Cloud had gotten incremental improvements over time, but hadn’t gotten a true facelift since its inception in 2018. A lot can change in 6 years, and this was no exception. 
+         <div class="subtitle">WHERE TO START?</div>
 
-            <br><br>The core problem that a lot of SaaS companies face is the incessant need for new features to prevent churn and bring in new contracts. There often feels like a push and pull between reducing tech and design debt, and bringing new features that make customers excited. Unfortunately, due to this reason we lacked complete buyin company wide that this was important to work on. This project had executive sponsorship via design and engineering, but didn’t get product buy in. This was highlighted by the EPD Structure of this project, in <b>which we lacked true product management ownership.</b>
-            
-            </p>
+              <p>As a designer, hearing “make this look nicer” usually makes your eyes roll—but this time, I welcomed it. Terraform Cloud’s UI had only seen incremental updates since its 2018 launch and was overdue for a facelift. Six years is a long time in design, and the product showed it.
 
-            <img src="./MismatchedEPD.png" class="img-wrap-2" style="max-width: 50%;">
+                  <br><br>The challenge, familiar to many SaaS companies, was balancing new feature demands (to reduce churn and win contracts) with addressing design and tech debt. While the project had executive backing from design and engineering, it lacked full company buy-in—most notably from product. This absence of true product management ownership reflected the fuzzy EPD structure around the project.
 
-            <p>This fuzzy ownership model was a key theme in this project, so remember that going forward.
-            </p>
-        </div>
+                  <br><br>This theme of unclear ownership shaped much of what followed. </p>
 
-        <div class="block">
-          <h3>Rooting redesigns in real problems</h3>
-          <p>I wanted to root all the potential UI changes that I was proposing in real customer problems, and less gut feeling. To do this I started out with understanding sentiment in product through two main methods: cognitive ethnography and direct feedback form.
-          </p>
+                  <img src="./MismatchedEPD.png" class="img-wrap-2" style="max-width: 40%;">
+
         </div>
 
         <div class="block" id="research">
-          <h3>External foundation setting
-          </h3>
-          <p>
-            Cognitive ethnography was done through social media, I deemed this method suitable for 2 core reasons, time and cost. Tapping into HashiCorp’s rich user base was easy and free, and could help set a foundation for what to optimize on. 
+                                <div class="subtitle">Rooting redesigns in real problems</div>
+          <h4>I wanted to root all the potential UI changes that I was proposing in real customer problems, and less gut feeling. To do this I started out with understanding sentiment in product through two main methods: cognitive ethnography and direct feedback form.
+          </h4>
+        
 
-            <br><br>Compounding this, I gathered some adhoc direct feedback through anonymous surveys on reddit and in-app feedback forms that were housed on snowflake.
-            
+          <p class="block margin-top">
+            I conducted cognitive ethnography through social media, a method chosen for its efficiency in time and cost. Leveraging HashiCorp’s user base provided quick, free insights that formed a foundation for optimization. I supplemented this with ad-hoc feedback via anonymous Reddit surveys and in-app Snowflake forms.
+
+            <br><br>Additionally, I analyzed familiar design patterns practitioners already use. By reusing these patterns, I reduced the need for relearning and made the new UI more efficient.</p>
+          
             <img src="./userquotes.png" class="img-wrap-2" style="max-width: 50%;">
 
-          </p>
+          
 
-          <p>This set an initial foundation for what to look out for and improve.
-          </p>
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px;">
             <h3>Key Learning</h3>
@@ -218,13 +229,14 @@
             </p>
           </div>
 
-          <p>Additionally, I leaned on understanding what design patterns that practitioners are familiar with and what could be brought over from that. By offloading the need to re-learn the UI, I could make the new UI more efficient.
-          </p>
-        
         </div>
 
+        
+        
+
         <div class="block">
-          <h3>Internal foundation setting          </h3>
+          <div class="subtitle">Internal foundation setting </div>
+          <h4>Creating an affinity map allowed me to stank rank ideas and weigh tradeoffs. UI Changes carry more weight than you think, when considering customer adversity to change.</h4>
           <p>The next step was to engage with the internal liaison for customers - the field and PM’s. Both levels of subject matter experts could help point me towards larger pain points with the UI that had been collected but perhaps not prioritized. This could help us to justify working on this project. From here, I created a simple affinity map, and then tailored my first attempt at ideating on what an improvement could look like.
 
           </p>
@@ -236,8 +248,8 @@
        
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px;">
-            <h3>Key Learning</h3>
-            <p>High traffic pages that the users land on influence brand perception, and in their current state don’t fit into the more evolved design language of newer features.
+            <h3 class="text-primary-color">Key Learning</h3>
+            <p class="text-primary-color">High traffic pages that the users land on influence brand perception, and in their current state don’t fit into the more evolved design language of newer features.
 
 
 
@@ -246,8 +258,8 @@
           </div>
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px; " id="cardcolor2">
-            <h3>Key Learning</h3>
-            <p>In order to get internal buy in, we must manage scope creep and provide clear foundational wins to the organization.
+            <h3 class="text-primary-color">Key Learning</h3>
+            <p class="text-primary-color">In order to get internal buy in, we must manage scope creep and provide clear foundational wins to the organization.
 
 
 
@@ -258,8 +270,8 @@
           </div>
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px;" id="cardcolor3">
-            <h3>Design goal</h3>
-            <p>Deliver a highly scoped redesign of the 4 highest traffic pages on terraform to improve usability, accelerate design system adoption, and create a more recognizable design language without introducing new features.
+            <h3 class="text-primary-color">Design goal</h3>
+            <p class="text-primary-color">Deliver a highly scoped redesign of the 4 highest traffic pages on terraform to improve usability, accelerate design system adoption, and create a more recognizable design language without introducing new features.
 
 
 
@@ -269,7 +281,8 @@
         </div>
 
         <div class="block">
-          <h3> Ideation</h3>
+         <div class="subtitle"> Ideation</div>
+         <h4>We needed high level themes to make this project feasible, and ensure scope doesn't blow up.</h4>
           <p>From this design goal, we had a couple key parts of this project to decompose our ideation into:
           </p>
 
@@ -277,7 +290,7 @@
             <div class="step">
               1
             </div>
-            <p><b>Usability:</b> Fix bugs, heuristic issues, and feedback points of these key pages
+            <p class="text-primary-color"><b>Usability:</b> Fix bugs, heuristic issues, and feedback points of these key pages
             </p>
           </div>
           
@@ -285,7 +298,7 @@
             <div class="step">
               2
             </div>
-            <p><b>Accelerate design system adoption:</b> Quantitative measure to show key win and match towards company goals.
+            <p class="text-primary-color"><b>Accelerate design system adoption:</b> Quantitative measure to show key win and match towards company goals.
             </p>
           </div>
 
@@ -293,7 +306,7 @@
             <div class="step">
               3
             </div>
-            <p><b>Create recognizable design language:</b> Use patterns that exist already and have been codified and validated by customers to reduce risk
+            <p class="text-primary-color"><b>Create recognizable design language:</b> Use patterns that exist already and have been codified and validated by customers to reduce risk
             </p>
           </div>
 
@@ -301,7 +314,7 @@
             <div class="step">
               4
             </div>
-            <p><b>No new functionality:</b> New features needs product teams to own it, discovery on if customers need this, and a more defined product development process.
+            <p class="text-primary-color"><b>No new functionality:</b> New features needs product teams to own it, discovery on if customers need this, and a more defined product development process.
             </p>
           </div>
 
@@ -311,70 +324,84 @@
       </div>
 
       <div class="block" id="ideation">
-        <h3 >First concept</h3>
-        <p>The first concept for this stemmed directly from the usability improvements that we had highlighted.
-        </p>
+      <div class="subtitle"> First concept</div>
 
-        <img src="./WorkspacesInitial.png" class="img-wrap-2" style="max-width: 100%;" >
-        <img src="./RunIniital.png" class="img-wrap-2"style="max-width: 100%;" >
+        <h4>The first concept for this stemmed directly from the usability improvements that we had highlighted.
+        </h4>
+        <p>We used our internal SME's and power users to yield insights which informed our first concepts. With this, I tried to push the bar as much as I could visually, to see how customers would react.</p>
 
-        <img src="./RunInitial.png" class="img-wrap-2"style="max-width: 100%;" >
 
+
+         <img src="./WorkspaceoverviewFCBA.png" class="fullwidth" >
+        <img src="./RunFCBA.png" class="fullwidth" >
+         <img src="./RunDetailsFCBA.png" class="fullwidth" >
+
+
+        
 
 
       </div>
 
+      
+
 
       <div class="block">
-        <h3>Customer touch points</h3>
+        <div class="subtitle">Customer touch points</div>
+         <h4>Customers overwhelmingly liked the direction, but there was small nitpicks around presentation.</h4>
 
         <p>The next step was ensuring that what was being designed really had met the goals that we set out to do. This was done through several customer calls were we went over the proposed designs and captured sentiment. 
-        </p><br>
+        <br><br>Additionally, we circulated this to customers through the field, and got eyes on it. At this stage, the feedback was overwhelmingly positive, and truly I felt chuffed that we were going to get closer to delivering something that i thought would bring a lot of value.</p>
 
-        <img src="./ConceptVal-UI.png" class="img-wrap-2" style="max-width: 100%;" >
-
-
-        <br> <p>Additionally, we circulated this to customers through the field, and got eyes on it. At this stage, the feedback was overwhelmingly positive, and truly I felt chuffed that we were going to get closer to delivering something that i thought would bring a lot of value.
-        </p>
-
-
+        <img src="./ConceptVal-UI.png"  >
       </div>
 
       <div class="block">
-        <h3>A hitch in our journey</h3>
-        <img src="./Roadblock.png" class="img-wrap-2" style="max-width: 100%;" >
+        <div class="subtitle">A hitch in our journey</div>
+        <h4>Despite customer feedback, our product org believed the proposed designs were too radical of a change, and therefore would necessitate longer discovery.</h4>
+
+        <img src="./Roadblock.png"  >
 
         <p>At this stage unfortunately we started to hit a roadblock - product management started to get increasingly uneasy that there was not product involvement in this, and what that potential blowback would look like. Their fears were rooted in reality, and while frustrating, I saw their points:
           <br><br>
 
 
-         1. Who would own this if it went spectacularly wrong?<br><br>
-         2. Did this go through formal product development processes that we have internally?<br><br>
-         3. What level of discovery was done here?<br><br>
-         4. Why was this done in a silo?<br><br>
+         1. Who would own this if it went spectacularly wrong?<br>
+         2. Did this go through formal product development processes that we have internally?<br>
+         3. What level of discovery was done here?<br>
+         4. Why was this done in a silo?<br>
           
           <br>I could have aimed to rebut each question, but rather than looking at it as an us vs them situation, I aimed to answer their core concern, <b>which is risk.</b>
           
 
-          <img src="./productriskmatrix.jpg" class="img-wrap-2" style="max-width: 100%;" >
+          <img src="./productriskmatrix.jpg"  >
 
           <br><br>With UI based changes, the risk matrix often will tell the tail that it is not worth pursuing, in that often it can be categorized as low impact and high risk. After all, users likely won't buy your enterprise infrastructure software because of the UI, but existing customers absolutely will be upset if the UI changes drastically for the worse.
 
-          
-          <br><br>So really, our goal was to disprove the assumption that <b>this UI project was low impact.</b>
-          </p>
+                    </p>
       </div>
 
       <div class="block">
-        <h3>Definitively De-risking</h3>
-        <p>To me, the ultimate way to definitively de-risk a design is to provide a substantial sample size of users that validate your decision decisions, which gives you too much ammo to be rejected. To accomplish this, I first set out to do this in two ways:
+           <div class="subtitle">Descoping</div>
+            <h4>My first approach was scaling back degree of change by creating a consistent design language product wide.</h4>
+            <p>This included auditing patterns across the product, and workshopping a consistent language for how our product should look.</p>
+
+            <img src="./description-list-vertical-grid-gaps-283037b98e2208013e90a01dc3ee4c8d.png" class="borderradius-normal border">
+
+      </div>
+
+      <div class="block">
+                <div class="subtitle">Definitively De-risking</div>
+
+                  <h4>So really, our goal was to disprove the assumption that this UI project was low impact.</h4>
+
+        <p class="margin-top">To me, the ultimate way to definitively de-risk a design is to provide a substantial sample size of users that validate your decision decisions, which gives you too much ammo to be rejected. To accomplish this, I first set out to do this in two ways:
         </p>
 
-        <div class="countercard">
+        <div class="countercard margin-top">
           <div class="step">
             1
           </div>
-          <p>Raise awareness internally of the changes and get field buy in
+         <p class="text-primary-color">Raise awareness internally of the changes and get field buy in
 
           </p>
         </div>
@@ -383,7 +410,7 @@
           <div class="step">
             2
           </div>
-          <p>Connect with customers directly and understand their general sentiment</p>
+          <p class="text-primary-color">Connect with customers directly and understand their general sentiment</p>
 
         </div>
       </div>
@@ -391,50 +418,152 @@
       
 
       <div class="block">
-        <h3>Raise awareness internally</h3>
-        <p>To me, internal awareness started with the people who were often the closest to customers - the sales folks and solution architects of the company. To accomplish this, I reached out to 10 sales folks who represent different segments of customers and conducted concept validation tests with them, walking them through the designs and getting their feedback.</p>
-        <img src="./SMEquote.png" class="img-wrap-2" style="max-width: 100%;" >
+           <div class="subtitle">Raise awareness internally</div>
+            <h4>Our sales and solution engineering teams approved of the changes.</h4>
+
+
+        <p>To me, internal awareness started with the people who were often the closest to customers — the sales folks and solution architects of the company. To accomplish this, I reached out to 10 sales folks who represent different segments of customers and conducted concept validation tests with them, walking them through the designs and getting their feedback.</p>
+        <img src="./SMEquote.png"  >
 
       </div>
 
       <div class="block">
-        <h3>Connect with customers directly
-        </h3>
-        <p>Finally, my most daring bet here was to consider de-risking design by reaching out to customers directly, through a survey. In my mind, if I could reach 10k+ users and get a general sentiment that the designs are a true improvement, then I could feel confident in knowing that this design is safe. To accomplish this, I pulled a list of active users who have provisioned a workspace through the UI. This validated that they are my target persona. Next, I plugged it into Marketo and made sure that they were not individuals who had opted out of communication, as there would be legal ramifications with contacting individuals who had opted out.
+  
+                   <div class="subtitle">Connect with customers directly</div>
+      <h4>A large scale (n=1184) survey showed that 65% thought the new designs was an improvement, while 23% said it was a substantial improvement.</h4>
 
-          <br><br>Here are the highlights:
-          
+
+        <p>Finally, my most daring bet here was to consider de-risking design by reaching out to customers directly, through a survey. In my mind, if I could reach 1k+ users and get a general sentiment that the designs are a true improvement, then I could feel confident in knowing that this design is safe. To accomplish this, I pulled a list of active users who have provisioned a workspace through the UI. This validated that they are my target persona. Next, I plugged it into Marketo and made sure that they were not individuals who had opted out of communication, as there would be legal ramifications with contacting individuals who had opted out.
 
           </p>
 
-          <img src="./surveyresults.png" class="img-wrap-2" style="max-width: 100%;" >
-
-
-
-          
-
+          <img src="./surveyresults.png" >
       </div>
 
 
 
 
       <div class="block">
-        <h3>Convincing leadership</h3>
-        <p>With these two core steps accomplished, convincing leadership became much easier. I had definitively proved that these designs were better and worth working on, and we finally were able to gather buy-in from the top down. This resulted in finally getting the go ahead from stakeholders org wide to invest high level engineering capacity towards it and ship it in Q2 of 2025.
+        <div class="subtitle">Convincing leadership</div>
+        <h4>Finally, leadership started to see the value of changing UI. Under one condition: keep engineering committment low.</h4>
+        <p>With these two core steps accomplished, convincing leadership became much easier. I had definitively proved that these designs were better and worth working on, and we finally were able to gather buy-in from the top down. This resulted in finally getting the go ahead from stakeholders org wide to invest engineering capacity towards it. Unfortunately, I had to concede on exactly how many people would get to work on this, and we only had 1 FTE allotted to the project.
         </p>
       </div>
 
       <div class="block" id="hifi">
-        <h3>Finalized Designs</h3>
-        <p>After another round of careful iteration from the feedback gathered through validation, I was able to deliver the following 4 screens.</p>
-        
-        <img src="./WorkspaceListB&A.png" class="img-wrap-2" style="max-width: 100%;" >
-        <img src="./WorkspaceOverviewB&A.png" class="img-wrap-2" style="max-width: 100%;" >
-        <img src="./WorkspaceOverviewEB&A.png" class="img-wrap-2" style="max-width: 100%;" >
-        <img src="./RunList'B&A.png" class="img-wrap-2" style="max-width: 100%;" >
-        <img src="./RunDetailsB&A.png" class="img-wrap-2" style="max-width: 100%;" >
+        <div class="subtitle">Finalized Designs</div>
 
+        <h4>After another round of careful iteration from the feedback gathered through validation, I was able to deliver the following 4 screens — this is the before and after.</h4>
+        <p>The new design focused on minimalism, which was the new design standard that was being brought through in other areas of the product, while trying to keep the pages as actionable as possible.</p>
+        
+        
       </div>
+
+
+       <div class="block margin-top-lg">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Workspace List Before and After</h4>
+                      <p class="text-primary-color margin-top"><B>Goal: </B>Make the page more actionable</p>
+                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
+                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      </p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+
+               <img src="./Workspace list.png" class="fullwidth">
+
+
+                  
+            </div>
+
+
+              <div class="block margin-top-lg">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Workspace Overview Before and After</h4>
+                      <p class="text-primary-color margin-top"><B>Goal: </B>Make the list easier to skim, and pull the more important information to the top.</p>
+                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
+                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      </p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+
+                   <img src="./workspace overview-2.png" class="fullwidth">
+
+            </div>
+
+
+              <div class="block margin-top-lg">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Run List Before and After</h4>
+                      <p class="text-primary-color margin-top"><B>Goal: </B>Reduce visual fatigue on the list.</p>
+                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
+                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      </p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+                                    <img src="./run list.png" class="fullwidth">
+
+            </div>
+
+            <div class="block margin-top-lg">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Run Details Before and After</h4>
+                      <p class="text-primary-color margin-top"><B>Goal: </B>Reduce visual fatigue, and increase actionability.</p>
+                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
+                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      </p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+
+                  <img src="./runs.png" class="fullwidth">
+
+            </div>
+
+
+
+      <div id="prototype" class="block">
+            <div class="subtitle">FULL PROTOTYPE</div>
+            <H4>The full prototype of changed pages.</H4>
+                <div class="solutionPre margin-top" >
+                <div class="block">
+                  <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                    <source src="./prototype.mp4">
+                  </video>
+                </div>
+            </div>
+
+         </div>
+
+       <div class="block">
+        <div id="conclusion" class="subtitle">
+            CONCLUSION</div>
+            <h4>More than the UI changes, I learned how to advocate for a design I believed in, and influence others to make a change.</h4>
+           <p>This refresh touched a product used by tens of thousands of practitioners daily, making its impact both wide-reaching and immediate. One of the hardest parts of the journey wasn’t the design work itself, but convincing others that change was necessary. Early concepts and visuals became powerful tools to shift that perception—showing, not just telling, what a modernized Terraform Cloud could feel like. In the end, the UI proved to be more than surface-level polish: it reinforced HashiCorp’s brand perception, signaling maturity, trust, and care for the user experience at scale.</p>
+                </div>
 
 
 
