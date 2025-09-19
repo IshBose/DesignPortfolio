@@ -52,366 +52,357 @@
 
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
- <!--NAV-->
- <div class="nav-logo">
-  <div class="gradient-circle-logo"></div>
-    <a href="../../../index.html"  >Ishaan Bose</a>
+
+<div id="loginContainer" class="center vertical-middle">
+        <div class="login-header">
+            <div class="lock-icon">🔒</div>
+            <h1>This case study is protected by NDA</h1>
+            <p class="subtitle">Enter the password to access</p>
+        </div>
+        
+        <div class="input-group">
+            <input 
+                type="password" 
+                id="passwordInput" 
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        
+        <button id="unlockBtn" onclick="checkPassword()">
+            Unlock Case Study
+        </button>
+        
+        <div id="errorMessage" class="error-message">
+            Incorrect password. Please try again.
+        </div>
     </div>
 
-    <div class="time-container">
-      <span class="icon" id="timeIcon">⏳</span>
-      <span id="currentTime"></span>
-  </div>
-
-<ul class="menu">
-    <li><a class="menuItem" href="../../../index.html">Work</a></li>
-    <li><a class="menuItem" href="../../../about.html">About</a></li>
-    <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
-    <li><a class="menuItem" href="../../../ishaan bose resume 2023 .pdf">Resume</a></li>
-    <li> <a href = "mailto: ishaan.bose@gmail.com" >
-      <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
-    send
-    </span> Contact me</button></a>
-  </li>
-
- 
+    <!-- Success Animation -->
+    <div id="successAnimation" class="success-animation">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <path d="M14 27 L22 35 L38 16"></path>
+            </svg>
+        </div>
+    </div>
 
 
-    <!--Some Hamburger that will always show up-->
-  </ul>
-  <button class="hamburger" >
-    <!-- material icons https://material.io/resources/icons/ -->
-    <i class="menuIcon material-icons">menu</i>
-    <i class="closeIcon material-icons" style="display: none;">close</i>
-  </button>
-
-
-    <div class="overflowwrapper">
-
-           <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <body>
-    <!-- Hero Section -->
-
-    <nav class="section-nav">
-        <ol>
-          <li><a href="#context">Context</a></li>
-  
-          <!--<li><a href="#preview">Solution Preview </a></li>-->
-  
-          <li><a href="#problem">Problem</a></li>
-          <li>
-              <a href="#research">Research</a>       
-              <!--<ul>
-                <li class=""><a href="#research--finding">Research findings</a></li>
-                <li class="">
-                  <a href="#research--metrics">Metrics identified</a>
-                </li>
-               </ul>-->
-        </li>
-        <li><a href="#ideation">Ideation</a></li>
-        <li><a href="#solution">Solution</a></li>
-        <li><a href="#prototype">Prototype</a></li>
-        <li><a href="#conclusion">Conclusion</a></li>
-         
-        </ol>
-      </nav>
-
-    
-    <div class="blockwrapper">
-
-
-      <div class="blocklist">
-
-
-          <div class="block"id="context">
-                      <img src="../../../images/TagsGridCard.png" class="fullwidth" >
-
-          <div class="block">
-            <div class="subtitle" >PROJECT</div>
-            <h2 class="textcasetitle">Providing accurate cost tracking and Fin-ops through key value tags</h2>
-           </div>
-
-
-
-                <div class="has-gap margin-sm padding-top">
-                    <div class="row padding-bottom-lg">
-                          <div class="block padding-bottom">
-                          <div class="subtitle">ORGANIZATION</div>
-
-                          <div class="flex">
-                                  <img style="width: 28px;
-        height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
-                            <h2 class="largetext">HashiCorp</h2></div>
-                          </div>
-
-                            <div class="block ">
-                          <div class="subtitle">WHEN</div>
-                            <h2 class="largetext">Q2 2024</h2>
-                          </div>
-                    </div>
-                    <div class="row"> 
-                        <div class="block padding-bottom">
-                        <div class="subtitle">ROLE</div>
-                          <h2 class="largetext">Lead Product Designer, Researcher</h2>
-                        </div>
-
-                        <div class="block">
-                        <div class="subtitle">TOOLS</div>
-                          <h2 class="largetext">Figma, Snowflake, CommandAI</h2>
-                        </div>
-                    </div>
-              </div>
-          </div>
-    
-
-          <div class="subtitle">SOLUTION PREVIEW</div>
-            <div class="solutionPre" style="margin-top:-80px;" >
-            <div class="block">
-              <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
-                <source src="./NonTalkThroughTagProto.mp4">
-              </video>
-            </div>
+<!--WRAPPER FOR ENCYRPTION-->
+    <!--NAV-->
+    <div class="nav-logo">
+      <div class="gradient-circle-logo"></div>
+        <a href="../../../index.html"  >Ishaan Bose</a>
         </div>
 
-        <div class="block">
-            <div class="subtitle" id="problem">PROBLEM</div>
-            <h4>The current implementation of workspace tags within HCP Terraform doesn’t match the mental model of our large customers.</h4>
-                 <p>Terraform Cloud supports “Tags” both in the product and as an object in the Terraform configuration's cloud block. Tags were introduced to help users organize, correlate, and filter Workspaces—the core resource in Terraform Cloud.
-            However, the current single-value tag format is limited. While it's useful for basic filtering (as appreciated by app developers, it doesn't meet the more advanced needs of platform engineers, who manage infrastructure at scale. To understand this gap, let’s explore the platform engineer’s journey and where the current tagging system falls short.</p>
-         
+        <div class="time-container">
+          <span class="icon" id="timeIcon">⏳</span>
+          <span id="currentTime"></span>
+      </div>
 
-            <img src="./phases.png" class="fullwidth">
-            <img src="./viz timeline.png" class="fullwidth">
+    <ul class="menu">
+        <li><a class="menuItem" href="../../../index.html">Work</a></li>
+        <li><a class="menuItem" href="../../../about.html">About</a></li>
+        <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+        <li><a class="menuItem" href="../../../ishaan bose resume 2023 .pdf">Resume</a></li>
+        <li> <a href = "mailto: ishaan.bose@gmail.com" >
+          <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
+        send
+        </span> Contact me</button></a>
+      </li>
 
-         
-          </div>
-
-           <div class="block">
-            <div class="subtitle" id="research">CURRENT BEHAVIOR</div>
-            <h4>Current usage of workspace tags suggest desire for key value schema and inheritance down the resource hierarchy.</h4>
-                 <p>Tags generally fall into two categories: user-defined (added by app developers) and administrative (added by platform engineers). Administrative tags often use key-value pairs to organize resources more effectively. However, Terraform Cloud didn’t natively support key-value tagging, leading users to hack around it by embedding delimiters like ":" or "=" in single-value tags. In fact, 36% of all tags contained such delimiters, highlighting the clear need for proper support.</p>
-         
-
-            <div class=row>
-              <div class="col-lg">
-                <img src="./commonlyused.png" class="fullwidth" >
-                </div>
-              <div class="col-sm">
-                <img src="./Tag diagram.png" class="fullwidth" > 
-              </div>
-            </div>  
-          </div>
-
-          <div class="block">
-            <div class="subtitle" id="RESEARCH">RESEARCH</div>
-            <h4>Our user research was lean and effective in identifying a problem statement to work with. </h4>
-            <p>To begin we had to ascertain exactly what the user need is here. We knew that generally there was demand for this type of tag, and that users were hacking their way around the current implementation, but we didn’t know exactly how users were setting up tags in their organization.
-              <br><br>To approach this, my PM and I engaged with 4 different customers who expressed interest in this sort of thing. We focused on specifically the platform engineer persona that I mentioned before, as they were the persona type that was the least served by the current model.</p>
-          
-              <div class="problemcard margin-top">
-                <div class="subtitle">PROBLEM STATEMENT</div>
-                <p>Tags as a concept is ineffective in allowing customers to perform more administrative tasks, such as managing billing, audit, and RBAC. The current implementation is too permissive, meaning anyone can add or remove tags, and a tag itself cannot be added at a project level. This causes the customer to have to more manual busy work on their end to maintain a system of record of internal metadata to keep up.</p>
-
-              </div>
-            </div>
-
-             <div class="block">
-              <div class="subtitle" id="IDEATION">GOAL SETTING </div>
-              <h4>Our  long term goal was to increase confidence in resource consumption.</h4>
-              <p>With administrative tags, customers should in theory be able to consume their contract entitlements with greater confidence.</p>
-           
-              <div class="row">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">20% Feature Adoption</p>
-                  <p>General Goal</p>
-                </div>
-                <div class="gencard margin-top">
-                   <p class="heavy  text-primary-color">+% consumption of contract</p>
-                  <p>Long Term Goal</p>
-
-                </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">-75% Workspace Tag Usage</p>
-                  <p>Migration Indicator</p>
-
-                </div>
-              </div>
-           
-            </div>
-
-            <div class="block">  
-                <div class="row">
-                    <div class="col-sm">
-                      <div class="subtitle">CHALLENGES AND SOLUTIONS</div>
-                      <h4>Tag Binding</h4>
-                      <br>
-                      <p class="text-secondary-color">Challenge:  We need to provide the affordance of both predefined tags, and arbitrary tagging.</p>
-                      <br>
-                      <p class="text-primary-color"><B>Decision: </B>Use fields with smart suggestions, as testing showed that power-select component biased users towards pre-existing tags.</p>
-
-                    </div>
-                    <div class="col-lg">
-                      <img src="./BindingTest.gif" class="fullwidth">
-                    </div>
-                    
-                  </div>
-              <img src="./Tag Binding Design deciisons.png" class="fullwidth">
-            </div>
+    
 
 
-            <div class="block">  
-                <div class="row">
-                    <div class="col-sm">
-                      <h4>Tag inheritance & resource hierarchy</h4>
-                      <br>
-                      <p class="text-secondary-color">Challenge:  We do not want to overtly bias users towards overriding tags, but also do not want to not present the affordance of overridability.</p>
-                      <br>
-                      <p class="text-primary-color"><B>Decision: </B>Visually separate inherited tags, but shorten view through grid of tags, as there tends to be many inherited tag per project, and often non-overridable.x</p>
+        <!--Some Hamburger that will always show up-->
+      </ul>
+      <button class="hamburger" >
+        <!-- material icons https://material.io/resources/icons/ -->
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons" style="display: none;">close</i>
+      </button>
+              <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <body>
+        <!-- Hero Section -->
 
-                    </div>
-                    <div class="col-lg">
-                      <img src="./InheritenceTest.gif" class="fullwidth">
-                    </div>
-                    
-                  </div>
-              <img src="./inheritencedecisions.png" class="fullwidth">
-            </div>
+         <div id="portfolioContent">
+
+        <nav class="section-nav">
+            <ol>
+              <li><a href="#context">Context</a></li>
+      
+              <!--<li><a href="#preview">Solution Preview </a></li>-->
+      
+              <li><a href="#problem">Problem</a></li>
+              <li>
+                  <a href="#research">Research</a>       
+                  <!--<ul>
+                    <li class=""><a href="#research--finding">Research findings</a></li>
+                    <li class="">
+                      <a href="#research--metrics">Metrics identified</a>
+                    </li>
+                  </ul>-->
+            </li>
+            <li><a href="#ideation">Ideation</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#prototype">Prototype</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
             
-            <div class="block">  
-                <div class="row">
-                    <div class="col-sm">
-                      <h4>Tag filtering and organization</h4>
-                      <br>
-                      <p class="text-secondary-color">Challenge: We did not store the key and value of all tags in a user’s organization, which made traditional tag filtering patterns unusable (dropdowns)></p>
-                      <br>
-                      <p class="text-primary-color"><B>Decision: </B>The metaphor that matched the most was akin to a query, so the design reflected that. A user would search for a tag and then a list of resources that match that tag would return.</p>
+            </ol>
+          </nav>
 
-                    </div>
-                    <div class="col-lg">
-                      <img src="./querywriter.gif" class="fullwidth">
-                    </div>
-                    
-                  </div>
-              <img src="./tagfilterexplain.png" class="fullwidth">
-            </div>
-
-            <div class="block">  
-                <div class="row">
-                    <div class="col-sm">
-                      <h4>Mental model issues with naming</h4>
-                      <br>
-                      <p class="text-secondary-color">Challenge: We could not fully deprecate old workspace tags without breaking compatibility guarantees, but having two “tags” with different names felt like we were offloading the complexity of our internal implementation to the user.</p>
-                      <br>
-                      <p class="text-primary-color"><B>Decision: </B>Soft deprecate tag type by removing action through UI, ensuring higher adoption of new tag type</p>
-
-                    </div>
-                    <div class="col-lg">
-                      <img src="./namingblur.png" class="fullwidth">
-                    </div>
-                    
-                  </div>
-              <img src="./MentalModelExpalin.png" class="fullwidth">
-            </div>
+        
+        <div class="blockwrapper">
 
 
+          <div class="blocklist">
 
-            <div>
-              <div class="subtitle" id="prototype">Prototype</div>
-                  <h4>The complete end to end journey from tag creation to binding. </h4>
 
-              <div class="solutionPre margin-top-lg" >
+              <div class="block"id="context">
+                          <img src="../../../images/TagsGridCard.png" class="fullwidth" >
+
               <div class="block">
-                <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
-                  <source src="./NonTalkThroughTagProto.mp4">
-                </video>
+                <div class="subtitle" >PROJECT</div>
+                <h2 class="textcasetitle">Providing accurate cost tracking and Fin-ops through key value tags</h2>
               </div>
+
+
+
+                    <div class="has-gap margin-sm padding-top">
+                        <div class="row padding-bottom-lg">
+                              <div class="block padding-bottom">
+                              <div class="subtitle">ORGANIZATION</div>
+
+                              <div class="flex">
+                                      <img style="width: 28px;
+            height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
+                                <h2 class="largetext">HashiCorp</h2></div>
+                              </div>
+
+                                <div class="block ">
+                              <div class="subtitle">WHEN</div>
+                                <h2 class="largetext">Q2 2024</h2>
+                              </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="block padding-bottom">
+                            <div class="subtitle">ROLE</div>
+                              <h2 class="largetext">Lead Product Designer, Researcher</h2>
+                            </div>
+
+                            <div class="block">
+                            <div class="subtitle">TOOLS</div>
+                              <h2 class="largetext">Figma, Snowflake, CommandAI</h2>
+                            </div>
+                        </div>
+                  </div>
               </div>
-             </div>
+        
+
+              <div class="subtitle">SOLUTION PREVIEW</div>
+                <div class="solutionPre" style="margin-top:-80px;" >
+                <div class="block">
+                  <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                    <source src="./NonTalkThroughTagProto.mp4">
+                  </video>
+                </div>
+            </div>
 
             <div class="block">
-              <div class="subtitle">IMPACT </div>
-              <h4>Large customers have indicated increased confidence in RUM usage. </h4>
-              <p>Additionally, design patterns have been adopted by other HashiCorp platform design team, and used in 4 new products.</p>
-           
-              <div class="row">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">22% Feature Adoption</p>
-                  <p>General Goal</p>
-                </div>
-                <div class="gencard margin-top">
-                   <p class="heavy  text-primary-color">450+ customers onboarded</p>
-                  <p>Long Term Goal</p>
+                <div class="subtitle" id="problem">PROBLEM</div>
+                <h4>The current implementation of workspace tags within HCP Terraform doesn’t match the mental model of our large customers.</h4>
+                    <p>Terraform Cloud supports “Tags” both in the product and as an object in the Terraform configuration's cloud block. Tags were introduced to help users organize, correlate, and filter Workspaces—the core resource in Terraform Cloud.
+                However, the current single-value tag format is limited. While it's useful for basic filtering (as appreciated by app developers, it doesn't meet the more advanced needs of platform engineers, who manage infrastructure at scale. To understand this gap, let’s explore the platform engineer’s journey and where the current tagging system falls short.</p>
+            
 
-                </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Workspace tags down 87%</p>
-                  <p>Migration Indicator</p>
+                <img src="./phases.png" class="fullwidth">
+                <img src="./viz timeline.png" class="fullwidth">
 
-                </div>
+            
               </div>
-           
-            </div>
 
-             <div class="block">
-              <div class="subtitle" id="conclusion">CONCLUSION</div>
-              <h4>Perceived "utility features" have large scale implications on how customers structure their organizations, and are absolutely necessary to creating enterprise ready solutions. </h4>
-              <p> Adding tags might seem straightforward, but it turned into a months-long effort due to complex cross-team discussions about how tagging should work across all HashiCorp Cloud products—not just Terraform. This delayed timelines and limited scope, but ultimately led to a more robust solution. The biggest skill I developed was learning to navigate the tensions within an EPD structure. The project was at risk, and while cutting corners seemed tempting, I learned to choose my battles—balancing advocacy for a better experience with pragmatic delivery. It’s not something you learn in school, so it was valuable hands-on growth.</p>
-            </div>
+              <div class="block">
+                <div class="subtitle" id="research">CURRENT BEHAVIOR</div>
+                <h4>Current usage of workspace tags suggest desire for key value schema and inheritance down the resource hierarchy.</h4>
+                    <p>Tags generally fall into two categories: user-defined (added by app developers) and administrative (added by platform engineers). Administrative tags often use key-value pairs to organize resources more effectively. However, Terraform Cloud didn’t natively support key-value tagging, leading users to hack around it by embedding delimiters like ":" or "=" in single-value tags. In fact, 36% of all tags contained such delimiters, highlighting the clear need for proper support.</p>
+            
+
+                <div class=row>
+                  <div class="col-lg">
+                    <img src="./commonlyused.png" class="fullwidth" >
+                    </div>
+                  <div class="col-sm">
+                    <img src="./Tag diagram.png" class="fullwidth" > 
+                  </div>
+                </div>  
+              </div>
+
+              <div class="block">
+                <div class="subtitle" id="RESEARCH">RESEARCH</div>
+                <h4>Our user research was lean and effective in identifying a problem statement to work with. </h4>
+                <p>To begin we had to ascertain exactly what the user need is here. We knew that generally there was demand for this type of tag, and that users were hacking their way around the current implementation, but we didn’t know exactly how users were setting up tags in their organization.
+                  <br><br>To approach this, my PM and I engaged with 4 different customers who expressed interest in this sort of thing. We focused on specifically the platform engineer persona that I mentioned before, as they were the persona type that was the least served by the current model.</p>
+              
+                  <div class="problemcard margin-top">
+                    <div class="subtitle">PROBLEM STATEMENT</div>
+                    <p>Tags as a concept is ineffective in allowing customers to perform more administrative tasks, such as managing billing, audit, and RBAC. The current implementation is too permissive, meaning anyone can add or remove tags, and a tag itself cannot be added at a project level. This causes the customer to have to more manual busy work on their end to maintain a system of record of internal metadata to keep up.</p>
+
+                  </div>
+                </div>
+
+                <div class="block">
+                  <div class="subtitle" id="IDEATION">GOAL SETTING </div>
+                  <h4>Our  long term goal was to increase confidence in resource consumption.</h4>
+                  <p>With administrative tags, customers should in theory be able to consume their contract entitlements with greater confidence.</p>
+              
+                  <div class="row">
+                    <div class="gencard margin-top">
+                      <p class="heavy text-primary-color">20% Feature Adoption</p>
+                      <p>General Goal</p>
+                    </div>
+                    <div class="gencard margin-top">
+                      <p class="heavy  text-primary-color">+% consumption of contract</p>
+                      <p>Long Term Goal</p>
+
+                    </div>
+                    <div class="gencard margin-top">
+                      <p class="heavy text-primary-color">-75% Workspace Tag Usage</p>
+                      <p>Migration Indicator</p>
+
+                    </div>
+                  </div>
+              
+                </div>
+
+                <div class="block">  
+                    <div class="row">
+                        <div class="col-sm">
+                          <div class="subtitle">CHALLENGES AND SOLUTIONS</div>
+                          <h4>Tag Binding</h4>
+                          <br>
+                          <p class="text-secondary-color">Challenge:  We need to provide the affordance of both predefined tags, and arbitrary tagging.</p>
+                          <br>
+                          <p class="text-primary-color"><B>Decision: </B>Use fields with smart suggestions, as testing showed that power-select component biased users towards pre-existing tags.</p>
+
+                        </div>
+                        <div class="col-lg">
+                          <img src="./BindingTest.gif" class="fullwidth">
+                        </div>
+                        
+                      </div>
+                  <img src="./Tag Binding Design deciisons.png" class="fullwidth">
+                </div>
+
+
+                <div class="block">  
+                    <div class="row">
+                        <div class="col-sm">
+                          <h4>Tag inheritance & resource hierarchy</h4>
+                          <br>
+                          <p class="text-secondary-color">Challenge:  We do not want to overtly bias users towards overriding tags, but also do not want to not present the affordance of overridability.</p>
+                          <br>
+                          <p class="text-primary-color"><B>Decision: </B>Visually separate inherited tags, but shorten view through grid of tags, as there tends to be many inherited tag per project, and often non-overridable.x</p>
+
+                        </div>
+                        <div class="col-lg">
+                          <img src="./InheritenceTest.gif" class="fullwidth">
+                        </div>
+                        
+                      </div>
+                  <img src="./inheritencedecisions.png" class="fullwidth">
+                </div>
+                
+                <div class="block">  
+                    <div class="row">
+                        <div class="col-sm">
+                          <h4>Tag filtering and organization</h4>
+                          <br>
+                          <p class="text-secondary-color">Challenge: We did not store the key and value of all tags in a user’s organization, which made traditional tag filtering patterns unusable (dropdowns)></p>
+                          <br>
+                          <p class="text-primary-color"><B>Decision: </B>The metaphor that matched the most was akin to a query, so the design reflected that. A user would search for a tag and then a list of resources that match that tag would return.</p>
+
+                        </div>
+                        <div class="col-lg">
+                          <img src="./querywriter.gif" class="fullwidth">
+                        </div>
+                        
+                      </div>
+                  <img src="./tagfilterexplain.png" class="fullwidth">
+                </div>
+
+                <div class="block">  
+                    <div class="row">
+                        <div class="col-sm">
+                          <h4>Mental model issues with naming</h4>
+                          <br>
+                          <p class="text-secondary-color">Challenge: We could not fully deprecate old workspace tags without breaking compatibility guarantees, but having two “tags” with different names felt like we were offloading the complexity of our internal implementation to the user.</p>
+                          <br>
+                          <p class="text-primary-color"><B>Decision: </B>Soft deprecate tag type by removing action through UI, ensuring higher adoption of new tag type</p>
+
+                        </div>
+                        <div class="col-lg">
+                          <img src="./namingblur.png" class="fullwidth">
+                        </div>
+                        
+                      </div>
+                  <img src="./MentalModelExpalin.png" class="fullwidth">
+                </div>
 
 
 
-          
+                <div>
+                  <div class="subtitle" id="prototype">Prototype</div>
+                      <h4>The complete end to end journey from tag creation to binding. </h4>
 
-          
+                  <div class="solutionPre margin-top-lg" >
+                  <div class="block">
+                    <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                      <source src="./NonTalkThroughTagProto.mp4">
+                    </video>
+                  </div>
+                  </div>
+                </div>
 
-         
+                <div class="block">
+                  <div class="subtitle">IMPACT </div>
+                  <h4>Large customers have indicated increased confidence in RUM usage. </h4>
+                  <p>Additionally, design patterns have been adopted by other HashiCorp platform design team, and used in 4 new products.</p>
+              
+                  <div class="row">
+                    <div class="gencard margin-top">
+                      <p class="heavy text-primary-color">22% Feature Adoption</p>
+                      <p>General Goal</p>
+                    </div>
+                    <div class="gencard margin-top">
+                      <p class="heavy  text-primary-color">450+ customers onboarded</p>
+                      <p>Long Term Goal</p>
 
+                    </div>
+                    <div class="gencard margin-top">
+                      <p class="heavy text-primary-color">Workspace tags down 87%</p>
+                      <p>Migration Indicator</p>
 
-          
+                    </div>
+                  </div>
+              
+                </div>
 
+                <div class="block">
+                  <div class="subtitle" id="conclusion">CONCLUSION</div>
+                  <h4>Perceived "utility features" have large scale implications on how customers structure their organizations, and are absolutely necessary to creating enterprise ready solutions. </h4>
+                  <p> Adding tags might seem straightforward, but it turned into a months-long effort due to complex cross-team discussions about how tagging should work across all HashiCorp Cloud products—not just Terraform. This delayed timelines and limited scope, but ultimately led to a more robust solution. The biggest skill I developed was learning to navigate the tensions within an EPD structure. The project was at risk, and while cutting corners seemed tempting, I learned to choose my battles—balancing advocacy for a better experience with pragmatic delivery. It’s not something you learn in school, so it was valuable hands-on growth.</p>
+                </div>
 
+          <!-- END OF BLOCKLIST  -->
+          </div>
+        <!-- END OF BLOCKWRAPPER  -->
+        </div>
 
-        
-
-       
-
-        
-
-
-         
-
-     
-
-
-
-          
-
-
-
-          
-
-      <!-- END OF BLOCKLIST  -->
       </div>
-    <!-- END OF BLOCKWRAPPER  -->
-    </div>
 
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-    
     <!-- Projects section -->
     
     <script src="../../../js/main.js">

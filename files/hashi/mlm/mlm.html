@@ -58,6 +58,7 @@
       <span id="currentTime"></span>
   </div>
 
+  
 <ul class="menu">
     <li><a class="menuItem" href="../../../index.html">Work</a></li>
     <li><a class="menuItem" href="../../../about.html">About</a></li>
@@ -81,12 +82,53 @@
     <i class="closeIcon material-icons" style="display: none;">close</i>
   </button>
 
-    <div class="overflowwrapper">
+
+  
+
 
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <body>
     <!-- Hero Section -->
+
+
+    <div id="loginContainer" class="center vertical-middle">
+        <div class="login-header">
+            <div class="lock-icon">🔒</div>
+            <h1>This case study is protected by NDA</h1>
+            <p class="subtitle">Enter the password to access</p>
+        </div>
+        
+        <div class="input-group">
+            <input 
+                type="password" 
+                id="passwordInput" 
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        
+        <button id="unlockBtn" onclick="checkPassword()">
+            Unlock Case Study
+        </button>
+        
+        <div id="errorMessage" class="error-message">
+            Incorrect password. Please try again.
+        </div>
+    </div>
+
+    <!-- Success Animation -->
+    <div id="successAnimation" class="success-animation">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <path d="M14 27 L22 35 L38 16"></path>
+            </svg>
+        </div>
+    </div>
+
+ <div id="portfolioContent">
+
 
     <nav class="section-nav">
         <ol>
