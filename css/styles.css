@@ -89,6 +89,8 @@
     --secondarytext: #686868;
     --background:#F7F7FF;
     --bordercolor: #DBD7D2;
+    --highglight: #B21F1F;
+
 
   }
 
@@ -282,6 +284,10 @@
 
     .border{
       border: 1px solid var(--bordercolor);
+    }
+
+    .border-highlight{
+     border:1px solid var(--highglight)!important;
     }
     
     
@@ -1546,6 +1552,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       max-width: 100%;
     }
 
+    .problemcard p{
+      color: var(--primarytext);
+    }
+
  
     .block img{
       max-width: 75%;
@@ -2196,7 +2206,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         padding: 24px;
         text-align: center;
         justify-content: center;
-        max-width: 75%;
+        max-width: 85%!important;
         display: block;
         margin-top: 40px;
         margin-bottom: 40px;
@@ -2278,6 +2288,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .casecontrols{
       margin-top: 5em;
+      position: absolute;
+          left: calc(13%); /* Aligns with body content edge */
     }
 
     .quote{
