@@ -76,6 +76,10 @@
   max-width: 100%!important;
 }
 
+.smallerwidth{
+  max-width: 40%!important;
+}
+
 /* Variables */
 :root {
     --blk: #131316;
@@ -541,6 +545,10 @@ h3{
 
 }
 
+.margin-left-index{
+  left: 200px
+}
+
 
 .gradient-circle-logo {
   width: 16px;
@@ -672,7 +680,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     margin-right: 200px;
 
     justify-content: center;
-    color: #BBBBBB;
   }
 
   .portgrid{
@@ -2272,13 +2279,15 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         width: 14px;
       }
 
+      
+
       .nav-logo img{
         display: none;
       }
 
       .hamburger{
         right: 24px;
-        top: 1.6rem;
+        top: 1.8rem;
       }
 
       .section-nav {
@@ -2295,18 +2304,39 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       .row{
         display: block;
+        margin-bottom: 4rem;
       }
 
       
 
-      /*            INDEX                                                                                                      */
+      /*            INDEX        
+      
+      */
 
+      .gradient-circle-1{
+        display: none;
+      }
 
-       
+      .gradient-circle-2{
+        display: none;
+      }
+
+      .contactform{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+       .margin-xxxxl{
+        margin: 4rem;
+       }
+
+       .solutionPre{
+        width: 100%;
+       }
           
 
           .portimage{
             max-width: 100%;
+            padding: 0px;
           }
 
           .center{
@@ -2315,7 +2345,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         
           .problemcard{
-            padding: 24px;
+            padding: 12px;
           }
 
           .nextto{
@@ -2448,6 +2478,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         li{
             font-size: 14px;
         }
+
+        .smallerwidth{
+          width: 80%!important;
+        }
           
        
         .grid-item{
@@ -2504,10 +2538,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     
         }
 
-
-        .fullwidth{
-          display:none;
+        .col-lg{
+          width: 100%;
         }
+
+        .col-sm{
+            width: 100%;
+        }
+
+
+       
 
         .casestudy{
           margin: 2em;
@@ -2515,9 +2555,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
        
         .blocklist{
           width: 100%;
-          grid-column-start: 1;
-          grid-column-end: 6;
+          grid-column-start: 2;
+          grid-column-end: 7;
+          gap: 40px;
 
+        }
+
+        .portimage{
+          max-width: 100%!important;
         }
 
         .blockwrapper{
@@ -2526,6 +2571,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           padding-top: 100px;
           column-gap: 0px;
   
+        }
+
+        .textcasetitle{
+          font-size: 24px;
+        }
+
+        .largetext{
+          font-size: 20px;
         }
 
 
@@ -2537,17 +2590,21 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           max-width: 100%;
         
         }
-        video{
-          height: 300px;
-          width: 300px;
-        }
-
+       
        
         .portfoliocover{
           display: none;
           margin-bottom: 24px;
         }
 
+        h4{
+          font-size: 20px;
+        }
+
+
+        #youtube{
+          width: 100%;
+        }
        
         .imagebox{
           display: none;
@@ -2574,11 +2631,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
         .indexcontainer{
-          max-width: 90%;
+          margin-left: 24px;
+          margin-right: 24px;
         }
 
         .time-container{
           font-size: 14px;
+          display: none;
         }
 
         .indexemphasize{
@@ -2587,6 +2646,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
         }
+        
+        .indexemphasize h1{
+          font-size: 20px;
+        }
+
+        
      
 
         .indexcontainer p{
