@@ -558,7 +558,7 @@ h3{
 
 .menuItem {
   display: block;
-  margin: 4rem 7rem;
+  margin: 4rem 14rem;
   font-size: 1.8rem;
   text-align: right;
   color: white;
@@ -1084,7 +1084,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       max-width: 16px;
     }
     .menu .btn{
-      margin-right: 7rem;
+      margin-right: 14rem;
     }
     
     /* Darker background on mouse-over */
