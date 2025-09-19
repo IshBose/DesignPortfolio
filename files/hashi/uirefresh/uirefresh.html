@@ -187,7 +187,7 @@
          
 
         <div class="problemcard" style="margin-top: -40px; margin-bottom: -40px;" id="problem">
-          <h3>The Brief</h3>
+          <div class="subtitle">The Brief</div>
           <p>Improve the UI of some of the high traffic pages of our application.
           </p>
 
@@ -224,7 +224,7 @@
 
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px;">
-            <h3>Key Learning</h3>
+            <div class="subtitle">Key Learning</div>
             <p>Users find significant friction in high traffic pages that don’t meet basic usability goals and force users to complete extra steps to consume data.
             </p>
           </div>
@@ -248,7 +248,7 @@
        
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px;">
-            <h3 class="text-primary-color">Key Learning</h3>
+            <div class="subtitle text-primary-color">Key Learning</div>
             <p class="text-primary-color">High traffic pages that the users land on influence brand perception, and in their current state don’t fit into the more evolved design language of newer features.
 
 
@@ -258,7 +258,7 @@
           </div>
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px; " id="cardcolor2">
-            <h3 class="text-primary-color">Key Learning</h3>
+               <div class="subtitle text-primary-color">Key Learning</div>
             <p class="text-primary-color">In order to get internal buy in, we must manage scope creep and provide clear foundational wins to the organization.
 
 
@@ -270,7 +270,7 @@
           </div>
 
           <div class="problemcard" style="margin-top: 24px; margin-bottom: 24px;" id="cardcolor3">
-            <h3 class="text-primary-color">Design goal</h3>
+             <div class="subtitle text-primary-color">Design goal</div>
             <p class="text-primary-color">Deliver a highly scoped redesign of the 4 highest traffic pages on terraform to improve usability, accelerate design system adoption, and create a more recognizable design language without introducing new features.
 
 
@@ -465,13 +465,12 @@
                     <div class="col-sm">
                       <h4>Workspace List Before and After</h4>
                       <p class="text-primary-color margin-top"><B>Goal: </B>Make the page more actionable</p>
-                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
-                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      <p class="text-secondary-color margin-top"> The list previously used distracting badges and wasn't very easy to skim. Rearranging status to be more modern felt like the right way forward.
                       </p>
 
                     </div>
                     <div class="col-lg">
-                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                      <img src="./workspacelistchanges.gif" class="fullwidth" style="margin-top: 0px;">
                     </div>
                     
                   </div>
@@ -494,12 +493,12 @@
 
                     </div>
                     <div class="col-lg">
-                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                      <img src="./workspaceoverviewchanges.gif" class="fullwidth" style="margin-top: 0px;">
                     </div>
                     
                   </div>
 
-                   <img src="./workspace overview-2.png" class="fullwidth">
+                   <img src="./workspace overview.png" class="fullwidth">
 
             </div>
 
@@ -509,13 +508,12 @@
                     <div class="col-sm">
                       <h4>Run List Before and After</h4>
                       <p class="text-primary-color margin-top"><B>Goal: </B>Reduce visual fatigue on the list.</p>
-                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
-                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      <p class="text-secondary-color margin-top">Considerations: This list can be many rows long, we need this to be as skimmable as possible and reorient the information to be more actionable. The previous version overemphasized the avatar, which can many times be a bot conducting a job when using the terraform API.
                       </p>
 
                     </div>
                     <div class="col-lg">
-                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                      <img src="./runlistchanges.gif" class="fullwidth" style="margin-top: 0px;">
                     </div>
                     
                   </div>
@@ -528,13 +526,12 @@
                     <div class="col-sm">
                       <h4>Run Details Before and After</h4>
                       <p class="text-primary-color margin-top"><B>Goal: </B>Reduce visual fatigue, and increase actionability.</p>
-                      <p class="text-secondary-color margin-top">Considerations: This page is the central landing page of the workspace, the fundamental unit of Terraform. However, this page lacks actionability, and as a result isn't a part of a customer workflow too often.
-                        <br><br>To make it more actionable, I tried using color more thoughtfully.
+                      <p class="text-secondary-color margin-top">Considerations: The color used previously made it easy to see high level operations but was a strain to look at. Also considering user behavior, customers don't come to this page unless they are debugging, which is the critical user journey we need to support, hence the high level info cards.
                       </p>
 
                     </div>
                     <div class="col-lg">
-                      <img src="./workspaceinitialbeforeandafter.gif" class="fullwidth">
+                      <img src="./rundetailschanges.gif" class="fullwidth" style="margin-top: 0px;">
                     </div>
                     
                   </div>

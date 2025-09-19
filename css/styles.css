@@ -241,7 +241,7 @@
     }
     
     .margin-lg {
-      margin: 2rem;
+      margin: 2rem!important;
     }
     
     .margin-left-lg {
@@ -253,7 +253,7 @@
     }
     
     .margin-top-lg {
-      margin-top: 2rem;
+      margin-top: 2rem!important;
     }
     
     .margin-bottom-lg {

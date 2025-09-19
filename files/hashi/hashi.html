@@ -54,7 +54,7 @@
 
     <!--NAV-->
  <div class="nav-logo">
-  <div class="gradient-circle"></div>
+  <div class="gradient-circle-logo"></div>
     <a href="../../index.html"  >Ishaan Bose</a>
     </div>
 
@@ -127,33 +127,60 @@
 
 
         <div class="blocklist">
-          <div class="c2title">
-            <h2><span style="color:#02a8ef; text-align: left; font-family: tiempoitalic;"> HCP Packer</span><br>Image Insights</h2>
-    
-        </div>
+          <div class="block"id="context">
+                      <img src="../../images/PackerGridCard.png" class="fullwidth" >
+
+          <div class="block">
+            <div class="subtitle" >PROJECT</div>
+            <h2 class="textcasetitle">Delivering insights on machine images for devops practitioners.</h2>
+           </div>
+
+
+
+                <div class="has-gap margin-sm padding-top">
+                    <div class="row padding-bottom-lg">
+                          <div class="block padding-bottom">
+                          <div class="subtitle">ORGANIZATION</div>
+
+                          <div class="flex">
+                                  <img style="width: 28px;
+        height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../images/image 19.png">
+                            <h2 class="largetext">HashiCorp</h2></div>
+                          </div>
+
+                            <div class="block ">
+                          <div class="subtitle">WHEN</div>
+                            <h2 class="largetext">Q2 2022</h2>
+                          </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="block padding-bottom">
+                        <div class="subtitle">ROLE</div>
+                          <h2 class="largetext">Lead Product Designer, Researcher</h2>
+                        </div>
+
+                        <div class="block">
+                        <div class="subtitle">TOOLS</div>
+                          <h2 class="largetext">Figma, Qualtrics</h2>
+                        </div>
+                    </div>
+              </div>
+          </div>
 
 
          
           
             <div class="block">
-              <h3 id="context">Context</h3>
+              <div class="subtitle" id="context">Context</div>
               <p>HashiCorp is a unicorn DevOps company that specializes in world class infrastructure products. They are the industry standard in Infrastructure as Code (IaC), and have produced many key products such as Terraform, Vault and Consul. 
 
                 <br><br>In 2022 interned on HashiCorp Packer, which is a tool used by software developers and IT professionals to create identical machine images or "packs" for different platforms, such as virtual machines, containers, or cloud instances. These images include the necessary software, configurations, and settings, ensuring consistency and reducing the potential for errors during deployment.</p>
             </div>
 
-            <div class="block">
-              <h3>Overview</h3>
-              <div class="colblock">
-                <p>When: Summer 2022</p>
-                <p>Role: Sole Product Designer</p>
-                <p>Tools: Figma, Qualtrics</p>
-
-              </div>
-            </div>
+            
 
             <div class="block">
-              <h3 id="preview">Solution preview</h3>
+              <div class="subtitle" id="preview">Solution preview </div>
               <video controls="controls" width="100%" height="100%" name="HCP Packer Preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;">
                 <source src="./hcppackerpreview.mov">
               </video>
@@ -161,40 +188,44 @@
 
             <div class="block" id="problem">
               <div class="problemcard">
-                <h3>Problem</h3>
-                <p>Practioners need <b>image usage data</b> to inform their machine image lifecycle management at scale. Currently, Packer does not have an easy way to extract this data. We want to provide information <b>contextually</b> to inform the practitioner and aid them in their decision making process.</p>
+                <div class="subtitle">Problem</div>
+                <p class="text-primary-color">Practioners need <b>image usage data</b> to inform their machine image lifecycle management at scale. Currently, Packer does not have an easy way to extract this data. We want to provide information <b>contextually</b> to inform the practitioner and aid them in their decision making process.</p>
               </div>
             </div>
 
 
 
             <div class="block">
-              <h3>User gap</h3>
-              <p>What we identified was a key gap in how users are making decisions, which is the lack of information. This leads to a lack of understanding of what to do in certain situations.</p>
+              <div class="subtitle">User gap</div>
+              <h4>We found a key gap in decision-making: users often lack the information they need, leaving them uncertain about what actions to take.</h4>
+              <p>There was a general understanding from existing customer feedback that they lacked actionable data to inform them of how their iterations were being used. Often these metrics would help inform when and how an image's general software lifecycle would fare.</p>
               <div class="problemcard" style="margin-top: 24px;">
-                <h3>Problem Gap</h3>
+                <div class="subtitle">Problem Gap</div>
 
                 <img src="./problemgap.png">
               </div>
             </div>
 
              <div class="block" id="research">
-              <h3>Research need</h3>
+              <div class="subtitle">Research need</div>
+              <h4>I was able to use HashiCorp's rich OSS community to my advantage, with survey outreach through reddit.</h4>
                 <p>Unfortunately, what we lacked was the understanding of which metrics specifically that a user needed. Which necessitated research to fill in this gap. 
 
                   <br><br>
                   Our team had a quick timeline, and needed a rapid research method that could quickly get over a  critical sample size which we determined to be roughly over N=50, considering our user base. To meet this, we decided to take advantage of HashiCorp’s rich open source community, and use Reddit to source participants.</p>
-            </div>
 
-            <div class="block" id="research--finding">
              
-                <img src="./researchcomms.png">
-                <img src="./persona.png">
+                  <div class="row">
+                    <div class="col">
+                        <img src="./researchcomms.png" class="fullwidth">
+                    </div>
+                     <div class="col">
+                      <img src="./persona.png" class="fullwidth">
+                     </div>
+                </div>
 
-            </div>
 
-            <div class="block">
-              <h3>Research finding overview</h3>
+                  <div class="subtitle">Research finding overview</div>
               <div class="colblock">
                 <div class="col">
                 <h4>73</h4>
@@ -215,14 +246,18 @@
 
             </div>
 
+           
+
             <div class="block">
 
-              <h3 id="research--metrics">Metrics found</h3>
+              <div class="subtitle" id="research--metrics">Metrics found</div>
+              <h4>From this research, we were able to collect 15 metrics of interest that we were able to stack rank and group into high level themes.</h4>
               <img src="./map of metrics.png">
           </div>
 
           <div class="block">
-            <h3>Sorting metrics</h3>
+            <div class="subtitle">Sorting metrics</div>
+            <h4>From here, I further workshopped the metrics with engineering and product to understand feasibility, how customers were solving this problem currently, and how these metrics could look.</h4>
               <p>To better understand which metrics actually fit together, I card sorted using subject matter experts, and then sent that to internal users of our products to validate whether the language was correct.
 
                 <br><br>
@@ -234,7 +269,8 @@
 
 
           <div class="block">
-            <h3>Desired outcome</h3>
+            <div class="subtitle">Desired outcome</div>
+            <h4>To root this problem in outcomes, not features, I set high level goals that we wanted to target.</h4>
             <div class="colblock">
               <div class="col">
               <h4>+20%</h4>
@@ -255,7 +291,8 @@
           </div>
 
           <div class="block" id="ideation">
-            <h3>Ideation</h3>
+            <div class="subtitle">Ideation</div>
+            <h4>From here, I created high level wireframes to start critique sessions on information architecture and general workflows.</h4>
               <p>I ideated through low fidelity wireframes, where I iterated rapidly and sought feedback from our design team. I looked for ideas surrounding context of delivery, and high level user needs.</p>
 
                 <img src="./Packer wire1.png" style="margin-top: 24px;">
@@ -267,7 +304,8 @@
           </div>
 
           <div class="block" id="solution">
-            <h3>Solution overview</h3>
+            <div class="subtitle">Solution overview</div>
+            <h4>A useful exercise was rooting everything in 3 core CUJ's that stemmed from the customer research collected via survey.</h4>
               <p>In an essence, we needed to deliver insights in contextually to make sure that the user is aided in their decision making process. To do this, I delivered the information in 3 levels.</p>
 
                 <img src="./CUJ.png" style="margin-top: 24px;">
@@ -277,7 +315,8 @@
 
 
           <div class="block" id="hifi">
-            <h3>Mockups</h3>
+            <div class="subtitle">Mockups</div>
+            <h4>From this research and iteration through critique, I created core mock ups that I validated through user research.</h4>
               <p>Lets step through what a solution looks like:</p>
 
           <div class="mockupcards">
@@ -293,7 +332,7 @@
           </div>
 
           <div class="block" id="prototype">
-            <h3>High Fidelity protoypes</h3>
+            <div class="subtitle">High Fidelity protoypes</div>
               <p>A little motion to illustrate the point</p>
 
               <video controls="controls" width="100%" height="100%" name="HCP Packer Preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;">
@@ -310,7 +349,7 @@
 
 
           <div class="block">
-            <h3>Achieved outcome</h3>
+            <div class="subtitle">Achieved outcome</div>
             <div class="colblock">
               <div class="col">
               <h4>+14%</h4>
@@ -332,7 +371,8 @@
           
 
           <div class="block" id="conclusion">
-            <h3>Key takeaways</h3>
+            <div class="subtitle">Key takeaways</div>
+            <h4>The core takeaway was learning how to interact and design a highly complex tool that is used and relied on by thousands of people. That is not easy in any way, and the responsibility of the designer is to ensure that it works to user expectation.</h4>
               <p>Working here was definitely one of the top experiences of my career to this date. I really enjoyed getting to tackle an extremely complex problem space, especially when juxtaposed with my former experience at a marketing tech company. Here is some of my other key takeaways</p>
 
               <div class ="colblock" style="margin-left: 0em; margin-top: 40px;">
@@ -351,7 +391,7 @@
           </div>
 
           <div class="block">
-            <h3>Next Steps</h3>
+            <div class="subtitle">Next Steps</div>
           
             <p>If I had more time, I would probably want to consider adding additional granularity to results, and validating this solution with testing </p>
           
