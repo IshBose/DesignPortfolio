@@ -733,24 +733,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   color: var(--secondarytext);
   text-transform: uppercase;
 }
-  
 
-
-
-  
-  
-
-  /*#c2h2 img:hover{
-    background-image: url("../images/bg-changer2.png");
-  }
-
-  #c2h3 img:hover{
-    background-image: url("../images/bg-changer3.png");
-  }*/
-
-
- 
-  
 
   .indexemphasize{
     color: var(--secondarytext);
@@ -902,13 +885,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   50% { transform: scale(1.1); opacity: 0.8; }
 }
 
-
-
-
-
-
-
-
   
 
   .description{
@@ -918,49 +894,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     gap: 24px;
     align-self: stretch;
 
-  }
-
-  .logo{
-    max-width: 135px;
-
-  }
-
- 
-
-  
+  }  
   
  hr{
     background: #323845;
     height: 1px;
     width: 100%;
   }
-  
-
-  .archiveportal{
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    background-color: #222226;
-    border: 1px solid #323845;
-
-    padding: 8px;
-    transition: 0.2s;
-    position: fixed;
-    z-index: 100;
-    bottom: 2rem;
-    right: 2rem;
-
-  }
-
-  .archiveportal:hover{
-    transform: scale(1.2);
-    border: 2px solid white;
-  }
-  .archiveportal img{
-    width: 100%;
-  }
-
-
   
 
 
@@ -1010,54 +950,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     
 
-    .grid-container {
-        margin-top: 2em;
-        margin-left: 12.5em;
-        margin-right: 12.5em;
-
-        display: grid;
-        gap: 16px 16px;
-        grid-template-columns: auto auto auto;
-      }
-      .image-container {
-        margin-top: 1em;
-        display: grid;
-        gap: 0px 0px;
-        grid-template-columns: auto auto auto;
-        margin-left: 2em;
-      }
-
-      .image-container img{
-          max-width: 110%;
-      }
-
-      .image-container img:hover{
-          transform: scale(1.5);
-          transition: all .5s;
-        }
-
-      .mobile-container {
-        margin-top: 2em;
-        margin-bottom: 2em;
-        display: none;
-
-      }
-    
-      .grid-container > div {
-        text-align: center;
-        font-size: 24px;
-      
-      }
-
-      .grid-container img:hover{
-            transform: scale(1.03); 
-            transition: all .15s;
-        }
-
-      .grid-item img{
-          max-width: 100%;
-          border-radius: 8px;
-      }
+   
+  
 
 
     
@@ -1068,15 +962,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin-top: 40px;
       margin-left: 12.5em;
       margin-right: 12.5em; 
-    }
-
-    
-    
-    .maxcard{
-      max-width: 100%;
-      margin-top: -40px;
-      position: sticky;
-          top: 120px;
     }
 
 
@@ -1140,49 +1025,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       width: 100%;
     }
 
-    .mockupbox{
-      /*margin-left: -128px;
-      margin-right: -128px;*/
-      width: 75vw;
-      height: 100vh;
-      margin-left: -10px;
-
-
-    }
-
-    .mockupcards img{
-      margin-top: 48px;
+   
     
-
-    }
-    .fillcolumn{
-      float: left;
-     width: 100%;
-     padding: 0 10px;
-     margin-top: 2em;
-    }
-    
-    .tinycol{
-      /*float: left;
-      width: 25%;
-      padding: 0 10px;
-      margin-top: 2em;*/
-      grid-column-start: 1;
-      grid-column-end: 1;
-      max-width: 100% ;
-      
-    }
-
+   
     /*  casestudystyletwo */
-
-
-    .c2title{
-      display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-self: stretch;
-    }
-    
     
     .blockwrapper{
       padding-left: 24px;
@@ -1241,10 +1087,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin-right: 7rem;
     }
     
-   
-   
-
-
     /* Darker background on mouse-over */
    
     .block{
@@ -1348,33 +1190,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         li {
           margin-left: 1rem;
         }
-
-    
-  
-    
-    
-
-
-    .largecols{
-      /*float: left;
-      width: 75%;
-      padding: 0 10px;*/
-      grid-column-start: 3;
-      grid-column-end: 5;
-      max-width: 100% ;
-    }
-
-    .tldrsum{
-      display: flex;
-      padding: 16px;
-      flex-direction: column;
-      align-self: stretch;
-      border-radius: 4px;
-      background: #2C2C31;
-      border: 1px solid rgb(65, 64, 64);
-      color: white;
-      gap: 24px;
-    }
 
     .problemcard{
       display: flex;
@@ -1567,89 +1382,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       font-weight: 600;
     }
 
-    .blockcard{
-
-      background-color: var(--card);
-      border-radius: 6px;
-      border: 1px solid #757575;
-      padding: 24px;
-      margin: 40px;
-    }
-    
-    .blockcard .row{
-      padding-top: 16px
-        }
-
-    .blockcard .row img{
-      max-width: 10%;
-      margin-top: 0px;
-    }
-
-    .blockcard b{
-      font-weight: 600;
-    }
-
-    .nextto{
-          display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    align-self: stretch;
-    margin-top: 40px;
-    }
-
-    .hmwcard{
-      display: flex;
-      padding: 40px;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      align-self: stretch;
-      border-radius: 8px;
-      border: 1px solid #02A8EF;
-      background: white;
-      color: black;
-    }
-
-    .sidebysideportfolioimage{
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex: 1 0 0;
-      align-self: stretch;
-    }
-
-    .fullength{
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      justify-content: center;
-      max-width: 100%;
-      display: block;
-      
-  }
-
-    .split{
-      max-width: 50%;
-      flex: 1 0 0;
-    }
-
 
     /* END OF CASESTUDY STYLE TWO          v            */
-
-    .casestudy .tinycol h3{
-      text-align: left;
-      margin: 0px;
-      max-width: 100%;
-    }
-    
-    .casestudy .tinycol p{
-      max-width: 100%;
-
-    }
-
-   
-
-    
 
     .row{
       display: flex;
