@@ -20,8 +20,7 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send" />
     <!-- Favicons -->
     <link
       rel="apple-touch-icon"
@@ -54,10 +53,10 @@
     <!-- Navbar -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_cool_down" />
     <!--NAV-->
-    <div class="nav-logo">
-      <div class="gradient-circle"></div>
+    <div class="nav-logo" style="left: 200px; ">
+      <div class="gradient-circle-logo"></div>
         <a href="./index.html"  >Ishaan Bose</a>
         </div>
 
@@ -71,31 +70,21 @@
         <li><a class="menuItem" href="./about.html">About</a></li>
         <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
         <li><a class="menuItem" href="./ishaan bose resume 2023 .pdf">Resume</a></li>
-        <li> <a href = "mailto: ishaan.bose@gmail.com" >
-          <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
-        send
-        </span> Contact me</button></a>
+        <li>     <a href="mailto: ishaan.bose@gmail.com">
+
+                      <button class="btn margin-right">   <img src="images/streamline-sharp_mail-send-email-message.svg">
+                        Contact me</button></a>
       </li>
 
      
 
-
         <!--Some Hamburger that will always show up-->
       </ul>
-      <button class="hamburger" 
-     >
+      <button class="hamburger">
         <!-- material icons https://material.io/resources/icons/ -->
         <i class="menuIcon material-icons">menu</i>
         <i class="closeIcon material-icons" style="display: none;">close</i>
       </button>
-
-
-
-
-  
-
-
-    
 
     <body>
       <!-- Google Tag Manager (noscript) -->
@@ -106,12 +95,24 @@
  
 
 
+ <!-- Animated gradient circles -->
+ <div class="gradient-circle gradient-circle-1"></div>
+ <div class="gradient-circle gradient-circle-2"></div>
 
 
     <!--holds everything-->
     <div class="indexcontainer">
       <div class="indexemphasize">
-        <p>Currently a <span style="color: #1D1B20"> Designer at HashiCorp</span> designing the future for <span style="color: #1D1B20">Terraform.</span> My journey to design started  in the Netherlands, and has taken me through <span style="color: #1D1B20">UC San Diego</span>, via the Cognitive Science program. Since the early days, I have always been obsessed with the intersection between <span style="color: #1D1B20">beauty and usability</span>, and more than anything, <span style="color: #1D1B20">building things people love to use.</span> </p>
+        <h1>Product designer with a soft spot for developer tools and complex systems. I live for that moment when something confusing just clicks. </h1>
+      <p>Currently <span style="color: #141218;">@ HashiCorp (IBM) designing Terraform</span>, the industry standard for provisioning cloud infrastructure. Prev - Demandbase, ISS</p>
+      </div>
+
+
+      <div class="justify-center flex margin-xxxxl text-secondary-color">
+        <p>See more</p>
+        <span class="material-symbols-outlined">
+          arrow_cool_down
+          </span>
       </div>
 
       
@@ -119,115 +120,249 @@
       
 
       <div class="portgrid">
-        <!--Col 1-->
-      
-                <!--Col 2-->
-        <div class="portgridcol1">
-          <a href="./files/hashi/tags/tags-protected.html">
-            <div class="portgridcolcard">
-              <div class="row2">
-                <h3>Key value tags</h3>
-                <p>2024 · HashiCorp</p>
+        <!--Project-->
+           <a href="files/hashi/tags/tags.html">
+             <div class="row rowhover minusmargin">
+                <div class="portgridcol1">
+                          <div class="margin-bottom">
+                            <div class="subtitle">PROJECT</div>
+                            <h3 class="text-primary-color">Key Value Tags</h3>
+                          </div>
+                          <div class="margin-bottom">
+                            <div class="subtitle">PRODUCT</div>
+                            <p class="text-primary-color">HashiCorp Terraform <svg  xmlns="http://www.w3.org/2000/svg" 
+     viewBox="-10 -10 128 128" 
+     width="16" height="16">
+  <g fill-rule="evenodd">
+    <path d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 0" fill="#5c4ee5"/>
+    <path d="M81.41 81.336l31.633-18.418V26.082L81.41 44.5zm0 0" fill="#4040b2"/>
+    <path d="M11.242 42.36L42.86 60.776V23.941L11.242 5.523zm0 0M77.941 85.375L46.324 66.957v36.82l31.617 18.418zm0 0" fill="#5c4ee5"/>
+  </g>
+</svg>
+</p> 
+                          </div>
+                          <div class="margin-bottom">
+                              <div class="subtitle">BIO</div>
+                              <p class="text-primary-color">Enabling large enterprises to accurately report on their cloud spend through key value tagging.</p>
+                          </div>
 
+                          <div class="margin-bottom">
+                              <div class="subtitle">IMPACT</div>
+                              <p class="text-primary-color">3x tagging on HCP Terraform </p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">METADATA</div>
+                              <p class="text-primary-color">2024 · Product Design · Lead Designer </p>
+                          </div>
+                </div>
+                <div class="portgridcol2">
+                  <img src="./images/TagsGridCard.png">
+                </div>
+              </div>
+           </a>
+           <!--Project-->
+           <a href="files/hashi/mlm/mlm.html">
+             <div class="row rowhover minusmargin">
+                <div class="portgridcol1">
+                          <div class="margin-bottom">
+                            <div class="subtitle">PROJECT</div>
+                            <h3 class="text-primary-color">Module Lifecycle Management</h3>
+                          </div>
+                          <div class="margin-bottom">
+                            <div class="subtitle">PRODUCT</div>
+                            <p class="text-primary-color">HashiCorp Terraform <svg  xmlns="http://www.w3.org/2000/svg" 
+     viewBox="-10 -10 128 128" 
+     width="16" height="16">
+  <g fill-rule="evenodd">
+    <path d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 0" fill="#5c4ee5"/>
+    <path d="M81.41 81.336l31.633-18.418V26.082L81.41 44.5zm0 0" fill="#4040b2"/>
+    <path d="M11.242 42.36L42.86 60.776V23.941L11.242 5.523zm0 0M77.941 85.375L46.324 66.957v36.82l31.617 18.418zm0 0" fill="#5c4ee5"/>
+  </g>
+</svg></p>
+                          </div>
+                          <div class="margin-bottom">
+                              <div class="subtitle">BIO</div>
+                              <p class="text-primary-color">Enabling cloud engineers to manage the entire software lifecycle on their Terraform modules.</p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">IMPACT</div>
+                              <p class="text-primary-color">Safer module lifecycle practices </p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">METADATA</div>
+                              <p class="text-primary-color">2024 · Product Design · Lead Designer </p>
+                          </div>
+                </div>
+                <div class="portgridcol2">
+                  <img src="./images/MLMGridCard.png">
+                </div>
+              </div>
+           </a>
+           <!--Project-->
+           <a href="files/hashi/uirefresh/uirefresh.html">
+             <div class="row rowhover minusmargin">
+                <div class="portgridcol1">
+                          <div class="margin-bottom">
+                            <div class="subtitle">PROJECT</div>
+                            <h3 class="text-primary-color">HCP Terraform UI Refresh</h3>
+                          </div>
+                          <div class="margin-bottom">
+                            <div class="subtitle">PRODUCT</div>
+                            <p class="text-primary-color">HashiCorp Terraform<svg  xmlns="http://www.w3.org/2000/svg" 
+     viewBox="-10 -10 128 128" 
+     width="16" height="16">
+  <g fill-rule="evenodd">
+    <path d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 0" fill="#5c4ee5"/>
+    <path d="M81.41 81.336l31.633-18.418V26.082L81.41 44.5zm0 0" fill="#4040b2"/>
+    <path d="M11.242 42.36L42.86 60.776V23.941L11.242 5.523zm0 0M77.941 85.375L46.324 66.957v36.82l31.617 18.418zm0 0" fill="#5c4ee5"/>
+  </g>
+</svg></p>
+                          </div>
+                          <div class="margin-bottom">
+                              <div class="subtitle">BIO</div>
+                              <p class="text-primary-color">Rethinking the UI of the multi million DAU pages of HashiCorp’s flagship product.</p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">IMPACT</div>
+                              <p class="text-primary-color">Enhancing brand perception through a modern UI. </p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">METADATA</div>
+                              <p class="text-primary-color">2025 · Visual Design · Lead Designer </p>
+                          </div>
+                </div>
+                <div class="portgridcol2">
+                  <img src="./images/UIRefreshGridCard.png">
+                </div>
+              </div>
+           </a>
+           <!--Project-->
+           <a href="files/hashi/hashi.html">
+             <div class="row rowhover minusmargin">
+                <div class="portgridcol1">
+                          <div class="margin-bottom">
+                            <div class="subtitle">PROJECT</div>
+                            <h3 class="text-primary-color">Image Usage Insights</h3>
+                          </div>
+                          <div class="margin-bottom">
+                            <div class="subtitle">PRODUCT</div>
+                            <p class="text-primary-color">HashiCorp Packer<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="-10 -10 128 128" 
+     width="16" height="16">
+  <path d="M66.477 39.691v88.547L24.918 104.23V15.676zm0 0" fill-rule="evenodd" fill="#1daeff"/>
+  <path d="M87.055 26.023L41.879 0v18.078l30.715 17.738v54.22l14.46 8.284c8.95 5.168 16.266 2.07 16.266-6.875V51.688c0-8.95-7.316-20.497-16.265-25.665zm0 0" fill="#1d94dd"/>
+</svg>
+  </p>
+                          </div>
+                          <div class="margin-bottom">
+                              <div class="subtitle">BIO</div>
+                              <p class="text-primary-color">Delivering insights on machine images for devops practitioners.</p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">IMPACT</div>
+                              <p class="text-primary-color">Enhanced visibility into image usage </p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">METADATA</div>
+                              <p class="text-primary-color">2022 · Product Design · Lead Designer </p>
+                          </div>
+                </div>
+                <div class="portgridcol2">
+                  <img src="./images/PackerGridCard.png">
+                </div>
+              </div>
+           </a>
+           <!--Project-->
+           <a href="files/ccomparison/ccomparison.html">
+             <div class="row rowhover minusmargin">
+                <div class="portgridcol1">
+                          <div class="margin-bottom">
+                            <div class="subtitle">PROJECT</div>
+                            <h3 class="text-primary-color">Advertising Campaign Comparison</h3>
+                          </div>
+                          <div class="margin-bottom">
+                            <div class="subtitle">PRODUCT</div>
+                            <div class="flex">
+                            <p class="text-primary-color ">Demandbase one </p> <img style="width: 16px; height: 16px;" src="./images/d6d8a430b813776d9dfe1a1d92ea89b2642bc212.png"></div>row
+                          </div>
+                          <div class="margin-bottom">
+                              <div class="subtitle">BIO</div>
+                              <p class="text-primary-color">Powering marketing decision makers to accurately benchmark their advertising campaigns.</p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">IMPACT</div>
+                              <p class="text-primary-color">Increased confidence in Ad Spend </p>
+                          </div>
+
+                          <div class="margin-bottom">
+                              <div class="subtitle">METADATA</div>
+                              <p class="text-primary-color">2022 · Product Design · Lead Designer </p>
+                          </div>
+                </div>
+                <div class="portgridcol2">
+                  <img src="./images/AdCompGridCard.png">
+                </div>
+              </div>
+           </a>
+
+           <div class="row padding-bottom-lg">
+
+            <div class="column">
+              <div class="subtitle">ARCHIVE</div>
+              <ol class="text-primary-color has-decoration" style="list-style-type:number;">
+                <li><a href="./files/tables/tables.html">Master Detail Tables -- Demandbase -- 2022</a></li>
+                <li><a href="./files/integrations/integrate.html"> Integrations Hub -- Demandbase -- 2022</a></li>
+              <li><a href="./files/bulkactions/bulkactions.html"> Bulk Action -- Demandbase -- 2021</a></li>
+
+                <li><a href="./files/githubforkids/githubforkids.html"> GitHub for Kids -- UC San Diego -- 2023</a></li>
+              </ol>
             </div>
-            <img src="./images/Workspace_Overview_tag.png">
-
-
-            </div>
-        </a>
-        <a href="./files/hashi/hashi-protected.html">
-
-          <div class="portgridcolcard">
-            <div class="row2">
-              <h3>Packer image usage insights</h3>
-              <p>2022 · HashiCorp</p>
-           </div>
-           <img src="./images/frequency of use.png">
-
-          </div>
-
-        </a>
-
-
-        <a href="./files/ccomparison/ccomparison.html">
-
-          <div class="portgridcolcard">
-            <div class="row2">
-              <h3>Advertising campaign comparison</h3>
-              <p>2022 · Demandbase</p>
-           </div>
-           <img src="./images/campaigncomparison.png">
-
-          </div>
-
-        </a>
-          
-        </div>
-                <!--Col 3-->
-        <div class="portgridcol2">
-          <a href="./files/hashi/uirefresh/uirefresh-protected.html">
-
-          <div class="portgridcolcard">
-            <div class="row2">
-              <h3>HCP Terraform UI Refresh</h3>
-              <p>2025 · HashiCorp</p>
-           </div>
-           <img src="./images/Workspace_Overview2.png">
-
-          </div>
-
-          </a>
-          <a href="./files/hashi/mlm/mlm-protected.html">
-            <div class="portgridcolcard">
-              <div class="row2">
-                <h3>Module Lifecycle Management</h3>
-                <p>2024 · HashiCorp</p>
-            </div>
-
-            <img src="./images/RunDetails_SRO_Warning.png">
 
             
+            <div class="column">
+              <div class="contactform">
+               <div class="subtitle">CONTACT</div>
 
-            </div>
-          </a>
-         
+                <p>Interested in what you saw? Get in touch. </p>
 
-          
-        </div>
+                <div class="flex">
+
+                    <a href="https://www.linkedin.com/in/ishaanbose/">
+
+                      <button class="btn"  style="color: white; background-color: #141218;"> <img src="images/mdi_linkedin.svg">
+                        LinkedIn</button></a>
+
+                    <a href="mailto: ishaan.bose@gmail.com">
+
+                      <button class="btn">   <img src="images/streamline-sharp_mail-send-email-message.svg">
+                        Contact me</button></a>
+
+                    </div>
+                    
+                </div>
+              </div>
+
+         </div>
       </div>
 
-      <div class="contactform">
-        <p>Interested in what you saw? Get in touch. </p>
 
-        <a href="mailto: ishaan.bose@gmail.com">
 
-          <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
-            send
-            </span> Contact me</button></a>
-            
+       </div>
       </div>
+       
 
       
-
 
     </div>
 
-
-
-    
-
-
-    
-
-    
-   
-
-      
-    
-
-
-       
-   
 
 
 

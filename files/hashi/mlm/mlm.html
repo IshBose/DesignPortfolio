@@ -37,7 +37,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       
     />
-    <title>Design Portfolio | HashiCorp</title>
+    <title>Design Portfolio | Module Deprecation</title>
 
    
   </head>
@@ -49,7 +49,7 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
  <div class="nav-logo">
-  <div class="gradient-circle"></div>
+  <div class="gradient-circle-logo"></div>
     <a href="../../../index.html"  >Ishaan Bose</a>
     </div>
 
@@ -58,6 +58,7 @@
       <span id="currentTime"></span>
   </div>
 
+  
 <ul class="menu">
     <li><a class="menuItem" href="../../../index.html">Work</a></li>
     <li><a class="menuItem" href="../../../about.html">About</a></li>
@@ -81,9 +82,53 @@
     <i class="closeIcon material-icons" style="display: none;">close</i>
   </button>
 
-    <div class="overflowwrapper">
+
+  
+
+
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <body>
     <!-- Hero Section -->
+
+
+    <div id="loginContainer" class="center vertical-middle">
+        <div class="login-header">
+            <div class="lock-icon">🔒</div>
+            <h1>This case study is protected by NDA</h1>
+            <p class="subtitle">Enter the password to access</p>
+        </div>
+        
+        <div class="input-group">
+            <input 
+                type="password" 
+                id="passwordInput" 
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        
+        <button id="unlockBtn" onclick="checkPassword()">
+            Unlock Case Study
+        </button>
+        
+        <div id="errorMessage" class="error-message">
+            Incorrect password. Please try again.
+        </div>
+    </div>
+
+    <!-- Success Animation -->
+    <div id="successAnimation" class="success-animation">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <path d="M14 27 L22 35 L38 16"></path>
+            </svg>
+        </div>
+    </div>
+
+ <div id="portfolioContent">
+
 
     <nav class="section-nav">
         <ol>
@@ -116,114 +161,125 @@
       <div class="blocklist">
 
 
-          <div class="c2title">
-          <h2><span style="color:#844FBA; text-align: left; font-family: tiempoitalic;"> HCP Terraform</span><br>Module Lifecycle Management</h2>
-
-        <img src="../../../images/HashiCorp_Icon_White_RGB.png" style="width: 48px; height: 48px;">
-          </div>
-
-
-          <div class="block" style="margin-top: -40px;">
-            <h3 id="context" >Context</h3>
-            <p>HashiCorp is a unicorn DevOps company that specializes in world class infrastructure products. They are the industry standard in Infrastructure as Code (IaC), and have produced many key products such as Terraform, Vault and Consul. 
-
-              <br><br>In 2023 I rejoined HashiCorp as a product designer focusing on Product Led Growth and the CLI experience on Terraform. Terraform is the industry standard tool to provision cloud-agnostic infrastructure as code. This allows you to use a declarative language to manage dynamic loads, and spin up new servers rapidly. </p>
-          </div>
+          
+        <div class="block">
+                      <img src="../../../images/MLMGridCard.png" class="fullwidth" >
 
           <div class="block">
-            <h3>Overview</h3>
-            <div class="colblock">
-              <p>When: Q3 2024</p>
-              <p>Team: Product Designer (Me), 
-            Product Manager, Eng Lead, EM</p>
-              <p>Tools: Figma, Snowflake, Commandbar</p>
+            <div class="subtitle">PROJECT</div>
+            <h2 class="textcasetitle">Enabling module lifecycle management within HCP Terraform</h2>
+           </div>
 
 
 
-            </div>
+                <div class="has-gap margin-sm padding-top">
+                    <div class="row padding-bottom-lg">
+                          <div class="block padding-bottom">
+                          <div class="subtitle">ORGANIZATION</div>
+
+                          <div class="flex">
+                                  <img style="width: 28px;
+        height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
+                            <h2 class="largetext">HashiCorp</h2></div>
+                          </div>
+
+                            <div class="block ">
+                          <div class="subtitle">WHEN</div>
+                            <h2 class="largetext">Q3 2024</h2>
+                          </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="block padding-bottom">
+                        <div class="subtitle">ROLE</div>
+                          <h2 class="largetext">Lead Product Designer, Researcher</h2>
+                        </div>
+
+                        <div class="block">
+                        <div class="subtitle">TOOLS</div>
+                          <h2 class="largetext">Figma, Snowflake, CommandAI</h2>
+                        </div>
+                    </div>
+              </div>
           </div>
-          <h3 id="preview">Solution preview</h3>
+    
 
-          <div class="solutionPre" >
+          <div class="subtitle">SOLUTION PREVIEW</div>
+            <div class="solutionPre" style="margin-top:-80px;" >
             <div class="block">
               <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
                 <source src="./MLMPrototype.mp4">
               </video>
             </div>
         </div>
+         
+        <div class="block" id="context">
+            <div class="subtitle" id="problem">BACKGROUND</div>
+            <h4>Think of Terraform Modules as the "recipe" for repeatable chunks of infrastructure, and the registry being the recipe books.</h4>
+                <p>Terraform Cloud has the concept of software modules as a foundational element for managing cloud infrastructure. Modules are reusable, self-contained packages of Terraform configurations that encapsulate a set of resources. They help organize and manage infrastructure as code by promoting reusability and maintainability. You can define a module once and then use it many times, which helps for the overall notion of DRY (Do not Repeat Yourself) code. Modules come in two core flavors - public, which are downloaded from the Terraform registry, and private, which are managed by internal organizations.</p>
 
-          
+            <img src="./registrydiagram.png" class="fullwidth">
 
          
-
-
-                        
-
-        <hr style="fill: #404040; width:100%;">
+          </div>
+        
 
         <div class="block">
-            <h3  >Background</h3>
+            <div class="subtitle">PROBLEM</div>
+            <h4>The authors of modules lack the ability to natively manage the lifecycle of their infrastructure modules.</h4>
             <p>
-                Terraform Cloud has the concept of software modules as a foundational element for managing cloud infrastructure. Modules are reusable, self-contained packages of Terraform configurations that encapsulate a set of resources. They help organize and manage infrastructure as code by promoting reusability and maintainability. You can define a module once and then use it many times, which helps for the overall notion of DRY (Do not Repeat Yourself) code. Modules come in two core flavors - public, which are downloaded from the Terraform registry, and private, which are managed by internal organizations.
+                Terraform modules, like any software, evolve through versioning (think iOS 17 to 18). Organizations release new versions to address security, bugs, and improvements. The challenge is getting users to upgrade—different roles and skill levels create gaps in how people experience these updates.
             </p>
 
-            <img src="./registry-diagram-750e6deaeb937939290744f3943e1776.png" class="img-wrap-2"      style=" max-width: 45%; border-radius: 12px;"   >
+            <img src="./persona intro.png"     >
+            <br>
+              <p>The separation in these two personas is what makes this tricky. Lets consider the following scenario:
+            </p>
 
-
+            <img src="./VizScenariomore.png"  >
 
         </div>
 
-        <div class="block">
-            <h3>So what's wrong?</h3>
-            <p>
-                Modules have a lifecycle that follows most software processes. Companies want to gradually upgrade their software over time through versioning, think iOS 17 to iOS 18, and terraform modules are no different. Organizations will usually create multiple versions of a module in order to stay up to date with latest security standards, bug fixes, etc. 
-                <br><br>The core issue with this is that incentivising the end user to upgrade from one module version to the next is often tricky. Two different individuals who have two different roles currently have a gap in their Terraform experience, lets dig in further.
-
-            </p>
-
-            <img src="./persona intro.png" class="img-wrap-2"      style=" max-width: 80%; border-radius: 12px;"   >
-
-            <p>The separation in these two personas is what makes this tricky. Lets consider the following scenario:
-            </p>
-
-            <img src="./VizScenariomore.png" class="img-wrap-2"      style=" max-width: 80%; border-radius: 12px;"   >
-
-
-        </div>
+       
 
         <div class="block">
-            <h3>How do customers solve this problem today?</h3>
+            <div class="subtitle">CURRENT BEHAVIOR</div>
+            <h4>Customers work around this native feature through anti-patterns that do not scale well.</h4>
             <p>There are two core ways to approach this problem currently, which was told by customers. Each have downfalls and are indicative of the level of cloud maturity of the customer.</p>
-            <img src="./customersolutions.png" class="img-wrap-2"      style=" max-width: 80%; border-radius: 12px;"   >
+            <img src="./customersolutions.png"    >
 
 
         </div>
 
         <div id="research" class="block">
-            <h3>Empathy building</h3>
-            <p>The core way my EPD team approached this was considering this gap between the module author persona, and the module consumer persona. To create empathy with the problem at hand, we sat in on many customer calls to understand how organizations were truly segmented. 
-            
-            <br><br>A naive assumption I had was that the module author persona and the module consumer persona were likely going to be on the same team within a company, likely one focused on DevOps or cloud infra, but this couldn’t be further from the truth! Most module author personas were platform engineers on the central SRE team, while the module consumers were app developers or SWE’s looking to self serve infra quickly. This helped to further humanize the situation of communication and how it could sprawl quickly. These individuals likely never met face to face or had meetings to discuss these things, which made it more difficult to overcome.
+            <div class="subtitle">EMPATHY BUILDING</div>
+            <h4>I assumed authors and consumers worked on the same team—but they rarely do!</h4>
+           <p>My EPD team approached this by examining the gap between module authors and module consumers. To build empathy, we joined customer calls to see how organizations were truly structured.
+
+          <br><br>I initially assumed both personas sat on the same DevOps or cloud infra team. In reality, authors were usually platform engineers on central SRE teams, while consumers were app developers or SWE’s seeking quick, self-serve infrastructure. This revealed how communication could easily break down—these groups often never interacted directly, making alignment much harder.
 
             </p>
-        </div>
 
-        <div id="problem" class="problemcard">
-            <h3>Problem statement</h3>
-            <p>Module authors need a native way in Terraform to communicate to module consumers for situations when you need to upgrade or migrate your module.
+             <div id="problem" class="problemcard margin-top-lg">
+            <div class="subtitle">PROBLEM STATEMENT</div>
+            <p class="text-primary-color">Module authors need a native way in Terraform to communicate to module consumers for situations when you need to upgrade or migrate your module.
             </p>
         </div>
+        </div>
+
+      
 
         <div class="block">
-            <h3>User flows</h3>
+            <div class="subtitle">USERFLOWS</div>
+            <h4>Customer calls unveiled a need for deprecation and revocation well after a module version is first published.</h4>
             <p>These customer calls and the problem statement helped us to devise some basic user flows. The parts of the flow that was highlighted are "new" areas. </p>
 
-            <img src="./Userflow.png"  style="max-width: 100%;"     >
+            <img src="./Userflow.png"  class="fullwidth"    >
 
         </div>
 
         <div  id="solution" class="block">
-            <h3>Solution</h3>
+            <div class="subtitle">Solution</div>
+            <h4>I decomposed the overall flow into 2 core goals.</h4>
             <p>From here it was clear that we needed to build something within Terraform to help this core persona of the module author. To help understand how to create a solution we had to decompose the problem a little bit more.
 
                 </p>
@@ -234,7 +290,7 @@
                       <p>Module consumer Persona</p>
                     </div>
                     <div class="rowcard2">
-                      <h3>Dissuasion of previous usage</h3>
+                      <h3>Dissuasion of previous version usage</h3>
                       <p>Long tail Goal</p>
                     </div>
                     
@@ -242,58 +298,113 @@
         </div>
 
 
-        <div id ="hifi" class="block">
-            <h3>Key design problems</h3>
-            <h4>Presenting information in context</h4>
+        
 
-            <img src="./SRO.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
+         <div class="block">  
+                <div class="row">
+                    <div class="col-sm">
+                      <div class="subtitle" id="hifi">CHALLENGES AND SOLUTIONS</div>
+                      <h4>Presenting information in context</h4>
+                      <br>
+                      <p class="text-secondary-color">Challenge: How might we give information in context in a way that is noisy enough to notice, but not overwhelming?</p>
+                      <br>
+                      <p class="text-primary-color"><B>Decision: </B>Use shortened accordions, with alerts to draw attention</p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./SROWarning.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+              <img src="./SROITeration.png" class="fullwidth">
+            </div>
+
+             <div class="block">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Decoupling messaging from a run</h4>
+                      <br>
+                      <p class="text-secondary-color">Challenge: Users don’t always kick off runs in a set cadence, and sometimes informing them there might be too late. How might we provide information more statically? </p>
+                      <br>
+                      <p class="text-primary-color"><B>Decision: </B>2 new indicators of module health that is decoupled from the run was included.</p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./HealthOverviewFlow.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+              <img src="./HealthonOther.png" class="fullwidth">
+            </div>
+
+             <div class="block">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Zooming out and tying it to general workflow</h4>
+                      <br>
+                      <p class="text-secondary-color">Challenge: What are broader Jobs To Be Done that encompass these workflows, how do they fit in?</p>
+                      <br>
+                      <p class="text-primary-color"><B>Decision: </B>Module health data included in the explorer, greater change request flows
+                    </p>
+
+                    </div>
+                    <div class="col-lg">
+                      <img src="./changereqs.gif" class="fullwidth">
+                    </div>
+                    
+                  </div>
+              <img src="./changereqexplain.png" class="fullwidth">
+            </div>
 
 
+              <div class="block">  
+                <div class="row">
+                    <div class="col-sm">
+                      <h4>Crafting a CLI Experience</h4>
+                      <br>
+                      <p class="text-secondary-color">Challenge: The CLI is often the golden workflow for users, how can we create a minimal viable design for the CLI?</p>
+                      <br>
+                      <p class="text-primary-color"><B>Decision: </B> Use verbose messaging in the CLI, and summarized in the UI</p>
 
-        </div>
+                    </div>
+                    <div class="col-lg">
+                      <img src="./Org/Workspace/Runs/RunDetailsConsole warnign for revoked.png" class="fullwidth">
+                    </div>
+                    
+                  </div>
+              <img src="./CLIEXperienceExplain.png" class="fullwidth">
+            </div>
 
 
-        <div class="block">
-            <h4>Decoupling messaging from a run</h4>
+       
 
-            <img src="./Health.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
-        </div>
-
-        <div class="block">
-            <h4>Zooming out and tying it to general workflows</h4>
-
-            <img src="./JTBD.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
-        </div>
-
-        <div class="block">
-            <h4>CLI Experience</h4>
-
-            <img src="./CLI.png" style="border-radius: 4px; max-width:100%; margin-top: 16px; margin-bottom: 16px;">
-        </div>
-        <h3> Full prototype</h3>
-        <p>The full prototype from module author persona to the linking with the module consumer persona is linked below!</p>
-
+      
+      
         <div id="prototype" class="block">
-
-            <div class="solutionPre" >
+            <div class="subtitle">FULL PROTOTYPE</div>
+            <H4>The full prototype from module author persona to the linking with the module consumer persona.</H4>
+                <div class="solutionPre margin-top" >
                 <div class="block">
                   <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
                     <source src="./MLMPrototype.mp4">
                   </video>
                 </div>
             </div>
-     
-        </div>
 
-        <div id="conclusion" class="block">
-            <h3>Conclusion</h3>
+         </div>
+
+       <div class="block">
+        <div id="conclusion" class="subtitle">
+            CONCLUSION</div>
             <p>This project was super interesting as it features a common problem that many organizations face at scale. It was really cool hearing how mature organizations tried to solve this problem in a bespoke way, and how our solution could help them. One of the core learnings here was developing a skill for listening intently, and tuning through the noise. It was really important to face the extreme amount of signals that could come with a research effort of this scale.
 
                <br><br> Another awesome milestone was seeing this unveiled at the largest possible stage at HashiConf, HashiCorp’s massive annual user conference. <a href="https://www.youtube.com/watch?v=-dmzfQndOtk">You can check out the recording here!</a>
                 
                 </p>
 
-                <img src="./MLMYTR.png" class="img-wrap-2" style="max-width: 75%;">
+<iframe class="margin-top-lg" width="840" height="472" src="https://www.youtube.com/embed/-dmzfQndOtk?si=j9obHhAIGHHST434" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
+
+                </div>
 
         </div>
 
@@ -358,8 +469,7 @@
 
 
 
-    <h4 class="center">Seen enough?</h4>
-    <p class="center" >Get in touch.</p>
+    <p class="center">Seen enough?</p>    <p class="center" >Get in touch.</p>
 
     <div class="img-wrap">
 		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../../assets/newli.svg" ></a>
@@ -367,7 +477,7 @@
     </div>
    
     
-    <h4 class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2024</h4>
+    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2025</p>
 
     <!-- Website scripts -->
     <script src="assets/js/app.js"></script>

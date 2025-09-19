@@ -196,3 +196,161 @@ let section = document.querySelectorAll('section');
 
       
 
+       // Added: JavaScript functionality to toggle the menu
+        const menu = document.querySelector(".menu");
+        const menuItems = document.querySelectorAll(".menuItem");
+        const hamburger = document.querySelector(".hamburger");
+        const closeIcon = document.querySelector(".closeIcon");
+        const menuIcon = document.querySelector(".menuIcon");
+
+        function toggleMenu() {
+            if (menu.classList.contains("showMenu")) {
+                menu.classList.remove("showMenu");
+                closeIcon.style.display = "none";
+                menuIcon.style.display = "block";
+            } else {
+                menu.classList.add("showMenu");
+                closeIcon.style.display = "block";
+                menuIcon.style.display = "none";
+            }
+        }
+
+        hamburger.addEventListener("click", toggleMenu);
+
+        // Optional: Close menu when clicking on menu items
+        menuItems.forEach(function(menuItem) {
+            menuItem.addEventListener("click", toggleMenu);
+        });
+
+
+
+        /* Encruption*/
+        // Simple encryption/decryption using Base64 and XOR
+        const CORRECT_PASSWORD_HASH = 'bose'; // Change this to your desired password
+        
+        let attempts = 0;
+        const MAX_ATTEMPTS = 5;
+        let locked = false;
+
+        // Check password when Enter key is pressed
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        function checkPassword() {
+            if (locked) {
+                showError('Too many attempts. Please refresh the page.');
+                return;
+            }
+
+            const input = document.getElementById('passwordInput');
+            const password = input.value;
+            const loginContainer = document.getElementById('loginContainer');
+            const errorMsg = document.getElementById('errorMessage');
+            const unlockBtn = document.getElementById('unlockBtn');
+            
+            // Add loading state
+            unlockBtn.classList.add('loading');
+            unlockBtn.textContent = 'Checking...';
+            
+            // Simulate processing time
+            setTimeout(() => {
+                if (password === CORRECT_PASSWORD_HASH) {
+                    // Success
+                    input.classList.remove('error');
+                    input.classList.add('success');
+                    errorMsg.classList.remove('show');
+                    unlockBtn.textContent = 'Success!';
+                    
+                    // Show success animation
+                    const successAnim = document.getElementById('successAnimation');
+                    successAnim.classList.add('show');
+                    
+                    // Transition to portfolio
+                    setTimeout(() => {
+                        loginContainer.style.display = 'none';
+                        successAnim.classList.remove('show');
+                        document.getElementById('portfolioContent').style.display = 'block';
+                        document.body.style.background = '#f5f5f5';
+                    }, 1500);
+                    
+                } else {
+                    // Error
+                    attempts++;
+                    input.classList.add('error');
+                    input.classList.remove('success');
+                    loginContainer.classList.add('shake');
+                    
+                    if (attempts >= MAX_ATTEMPTS) {
+                        locked = true;
+                        showError('Too many failed attempts. Please refresh the page.');
+                        unlockBtn.style.opacity = '0.5';
+                        unlockBtn.style.cursor = 'not-allowed';
+                    } else {
+                        showError(`Incorrect password. ${MAX_ATTEMPTS - attempts} attempts remaining.`);
+                    }
+                    
+                    setTimeout(() => {
+                        loginContainer.classList.remove('shake');
+                        input.classList.remove('error');
+                    }, 500);
+                    
+                    unlockBtn.classList.remove('loading');
+                    unlockBtn.textContent = 'Unlock Portfolio';
+                    
+                    // Clear input
+                    input.value = '';
+                }
+            }, 600);
+        }
+
+        function showError(message) {
+            const errorMsg = document.getElementById('errorMessage');
+            errorMsg.textContent = message;
+            errorMsg.classList.add('show');
+        }
+
+        function togglePassword() {
+            const input = document.getElementById('passwordInput');
+            const toggle = document.querySelector('.toggle-password');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                toggle.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                toggle.textContent = '👁️';
+            }
+        }
+
+        function logout() {
+            // Reset everything
+            document.getElementById('portfolioContent').style.display = 'none';
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordInput').classList.remove('success', 'error');
+            document.getElementById('errorMessage').classList.remove('show');
+            document.getElementById('unlockBtn').textContent = 'Unlock Portfolio';
+            document.getElementById('unlockBtn').classList.remove('loading');
+            document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            attempts = 0;
+            locked = false;
+        }
+
+        // Prevent right-click context menu (basic protection)
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Disable text selection on the login screen
+        document.getElementById('loginContainer').style.userSelect = 'none';
+        
+
+
+
+
+        
+

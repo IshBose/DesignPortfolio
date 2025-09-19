@@ -49,35 +49,45 @@
 
 
 
-     <div class="nav-logo">
-      <img src="../../images/croppedtrishul.png" style="width: 20px;height: 24px; margin-right: 4px;">
-      <a href="../../index.html" id="title" style="font-weight: bold;">Ishaan <span style="color: #3478FF;">Bose</span> </a>
+       
+   <!--NAV-->
+ <div class="nav-logo">
+  <div class="gradient-circle-logo"></div>
+    <a href="../../index.html"  >Ishaan Bose</a>
     </div>
+
+    <div class="time-container">
+      <span class="icon" id="timeIcon">⏳</span>
+      <span id="currentTime"></span>
+  </div>
+
+<ul class="menu">
+    <li><a class="menuItem" href="../../index.html">Work</a></li>
+    <li><a class="menuItem" href="../../about.html">About</a></li>
+    <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+    <li><a class="menuItem" href="../../ishaan bose resume 2023 .pdf">Resume</a></li>
+    <li> <a href = "mailto: ishaan.bose@gmail.com" >
+      <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
+    send
+    </span> Contact me</button></a>
+  </li>
+
  
-     <ul class="menu">
-         <li><a class="menuItem" href="../../index.html">Work</a></li>
-         <li><a class="menuItem" href="../../about.html">About</a></li>
-         <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
-         <li><a class="menuItem" href="../../ishaan bose resume 2023 .pdf">Resume</a></li>
-         <li> <a href = "mailto: ishaan.bose@gmail.com">
-          <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
-        send
-        </span> Contact me</button></a>
-      </li>
- 
- 
-         <!--Some Hamburger that will always show up-->
-       </ul>
-       <button class="hamburger">
-         <!-- material icons https://material.io/resources/icons/ -->
-         <i class="menuIcon material-icons">menu</i>
-         <i class="closeIcon material-icons" style="display: none;">close</i>
-       </button>
+
+
+    <!--Some Hamburger that will always show up-->
+  </ul>
+  <button class="hamburger" >
+    <!-- material icons https://material.io/resources/icons/ -->
+    <i class="menuIcon material-icons">menu</i>
+    <i class="closeIcon material-icons" style="display: none;">close</i>
+  </button>
 
     <body>
       <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <!-- End Google Tag Manager (noscript) -->
     <!-- Hero Section -->
 
@@ -404,6 +414,24 @@
 
 
 
+     <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+s
+
 
 
 
@@ -452,8 +480,7 @@
 
 
 
-    <h4 class="center">Seen enough?</h4>
-    <p class="center" >Get in touch.</p>
+    <p class="center">Seen enough?</p>    <p class="center" >Get in touch.</p>
 
     <div class="img-wrap">
 		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../assets/newli.svg" ></a>

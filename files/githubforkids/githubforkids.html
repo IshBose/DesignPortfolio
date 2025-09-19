@@ -28,7 +28,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../../assets/favicon-32x32.png"
+      href="../../assets/favicon.png"
     />
 
     <!-- Animate CSS CDN -->
@@ -49,30 +49,38 @@
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-   <div class="nav-logo">
-    <img src="../../images/trishulwhiter.png" style="width: 32px;height: 32px; margin-right: 0px;">
-    <a href="../../index.html" id="title"  ><span style="color: #C09B70; font-family: tiempoitalic;">Ishaan</span> Bose</a>
+   <!--NAV-->
+ <div class="nav-logo">
+  <div class="gradient-circle-logo"></div>
+    <a href="../../index.html"  >Ishaan Bose</a>
+    </div>
+
+    <div class="time-container">
+      <span class="icon" id="timeIcon">⏳</span>
+      <span id="currentTime"></span>
   </div>
 
-   <ul class="menu">
-       <li><a class="menuItem" href="../../index.html">Work</a></li>
-       <li><a class="menuItem" href="../../about.html">About</a></li>
-       <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
-       <li><a class="menuItem" href="../../ishaan bose resume 2023 .pdf">Resume</a></li>
-       <li> <a href = "mailto: ishaan.bose@gmail.com">
-        <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
-      send
-      </span> Contact me</button></a>
-    </li>
+<ul class="menu">
+    <li><a class="menuItem" href="../../index.html">Work</a></li>
+    <li><a class="menuItem" href="../../about.html">About</a></li>
+    <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+    <li><a class="menuItem" href="../../ishaan bose resume 2023 .pdf">Resume</a></li>
+    <li> <a href = "mailto: ishaan.bose@gmail.com" >
+      <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
+    send
+    </span> Contact me</button></a>
+  </li>
+
+ 
 
 
-       <!--Some Hamburger that will always show up-->
-     </ul>
-     <button class="hamburger">
-       <!-- material icons https://material.io/resources/icons/ -->
-       <i class="menuIcon material-icons">menu</i>
-       <i class="closeIcon material-icons" style="display: none;">close</i>
-     </button>
+    <!--Some Hamburger that will always show up-->
+  </ul>
+  <button class="hamburger" >
+    <!-- material icons https://material.io/resources/icons/ -->
+    <i class="menuIcon material-icons">menu</i>
+    <i class="closeIcon material-icons" style="display: none;">close</i>
+  </button>
 
     <body>
       <!-- Google Tag Manager (noscript) -->
@@ -116,43 +124,70 @@
 
 
         <div class="blocklist">
-          <div class="c2title">
-            <h2><span style="color:#c9510c; text-align: left;"> GitHub</span><br>For Kids</h2>
-            <img src="../../images/ucsdlogo.png" style="width: 48px; height: 48px;">
-            <img src="../../images/githublogo.jpeg" style="width: 48px; height: 48px;">
-        </div>
+                <div class="block"id="context">
+
+          <div class="block">
+            <div class="subtitle" >PROJECT</div>
+            <h2 class="textcasetitle">Making computer science more accessible to kids.</h2>
+           </div>
+
+
+
+                <div class="has-gap margin-sm padding-top">
+                    <div class="row padding-bottom-lg">
+                          <div class="block padding-bottom">
+                          <div class="subtitle">ORGANIZATION</div>
+
+                          <div class="flex">
+                                  <img style="width: 28px;
+        height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../images/ucsdlogo.png">
+                            <h2 class="largetext">UC San Diego</h2></div>
+                          </div>
+
+                            <div class="block ">
+                          <div class="subtitle">WHEN</div>
+                            <h2 class="largetext">Q4 2022</h2>
+                          </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="block padding-bottom">
+                        <div class="subtitle">ROLE</div>
+                          <h2 class="largetext">Product Designer, Researcher</h2>
+                        </div>
+
+                        <div class="block">
+                        <div class="subtitle">TOOLS</div>
+                          <h2 class="largetext">Figma, Zoom</h2>
+                        </div>
+                    </div>
+              </div>
+            </div>
 
         <div class="block" id="context">
-          <h3>Context</h3>
+          <div class="subtitle">Context</div>
+          <h4>Making computers cheaper and more accessible has introduced a whole new user base to computer science, but how can we help them succeed?</h4>
           <p>Computer science is one of the hottest fields in the market, with less technical positions are being asked to become familiar with industry-standard tools in many companies, making technological literacy invaluable. One key competency is using Git to collaborate with other developers and practice safe software management practices. To take advantage of this ubiquity, we wanted to introduce GitHub, the largest provider for Git and version control, to younger audiences. 
             <br><br>The reason for this is simple - from a user perspective, starting to learn the tools of the trade earlier allows you to accelerate your early career growth. From the company's perspective, they can leverage this rapid influx of new practitioners into added market share by building their brand from the newest, and youngest developers. 
             <br><br><b>Thus, targeting pre-teens and teens in the middle school age range would allow us to develop a new simplified model of version control - GitHub for Kids. 
            </b></p>
+
+                     <img class = "portimage" src="./ProjectTimelineGithub.png" style="max-width: 100%;" >
+
         </div>
 
-        <div class="block">
-          <h3>Overview</h3>
-          <div class="colblock">
-            <p>When: Spring 2022</p>
-            <p>Role: Lead Product Designer</p>
-            <p>Tools: Figma, Qualtrics</p>
-
-          </div>
-
-          <img class = "portimage" src="./ProjectTimelineGithub.png" style="max-width: 100%;" >
-        </div>
+    
 
         <div class="block">
-          <h3>Business case</h3>
+          <div class="subtitle">Business case</div>
           <div class="column" style="padding: 0px;">
             <h4>Incentive -</h4><br>
-              <p>Gain market share and increase brand loyalty</p>
+              <p class="text-primary-color"><b>Gain market share and increase brand loyalty</b></p>
               <br>
               <p>Increase Usability</p>   
           </div>
           <div class="column">
             <h4 >Desired Outcome -</h4><br>
-            <p>Increased satisfaction with experience</p>
+            <p class="text-primary-color"><b>Increased satisfaction with experience</b></p>
             <br>
             <p>+20% onboarding completion</p>
           </div>
@@ -160,13 +195,14 @@
 
         <div class="block" id="problem">
           <div class="problemcard">
-            <h3>Problem</h3>
+            <div class="subtitle">Problem</div>
             <p>Pre-teens struggle with navigating the initial setup and onboarding process when starting to use GitHub, which leaves them feeling overwhelmed, leading to drop-off altogether. They need a simplified flow that would allow them to easily understand and perceive the next best action during setup in order to follow safe and modern version control practices.</p>         
            </div>
         </div>
 
         <div class="block" id="research">
-            <h3>Research</h3>
+            <div class="subtitle">Research</div>
+            <h4>Our research consisted of observational user studies of children who took part of a coding class that my teammate was conducting.</h4>
             <p>Challenge: Find Target User, and understand what exactly is their current painpoint in onboarding  </p>
             <br>
             <p>Approach: Conduct observational user testing studies to gain qualitative data </p>
@@ -179,14 +215,15 @@
         </div>
 
         <div class="block">
-          <div class="problemcard" style="border: 1px solid white;">
-            <h3>How might we...</h3>
+          <div class="problemcard">
+            <div class="subtitle">How might we...</div>
             <p>Simplify the GitHub onboarding process to engage a younger audience?</p>         
            </div>
         </div>
 
         <div class="block" id="ideation">
-            <h3>Ideation</h3>
+            <div class="subtitle">Ideation</div>
+            <h4>Our research showed that onboarding, and the sheer number of steps was often a blocker to getting kids to start.</h4>
             <p>Challenge: Ideate on potential ways to simplify terms, and explain things in a way that a younger audience would understand
               <br><br> Approach: Sketch, test and integrate
               <br><br>Outcome: Flow of use, core idea 
@@ -197,7 +234,8 @@
         </div>
 
         <div class="block" >
-          <h3>Prototyping</h3>
+          <div class="subtitle">Prototyping</div>
+          <h4>I created a prototype that we could test with these kids again, to see if it addressed their onboarding pain points.</h4>
           <p>Challenge 3: Build out our idea into a higher fidelity prototype which could be tested.
             <br><br>Approach: Develop multiple representations of what screens could look like
             <br><br> Outcome: 1 Full Flow of screens, 3 Alternative Screens for flow
@@ -207,38 +245,43 @@
       </div>
 
       <div class="block" id="solution">
-        <h3>Solution intro</h3>
-        <p>The core part of this solution is introducing a stepper wizard that delivers helpful "octotips" </p>
+        <div class="subtitle">Solution intro</div>
+        <h4>The core part of this solution is introducing a stepper wizard that delivers helpful "octotips" </h4>
+        <p>Breaking the onboarding down into a smaller stepper made it more manageable.</p>
         <img class ="portimage" src="./Wizard.png" style="max-width: 100%;">
 
     </div>
 
     <div class="block">
-      <h3>Project types</h3>
-      <p>Choosing a project type speeds up the repo creation process by pre loading helpful licenses, folder structure and file types. </p>
+      <div class="subtitle">Project types</div>
+      <h4>Choosing a project type speeds up the repo creation process by pre loading helpful licenses, folder structure and file types. </h4>
+      <p>Giving kids some default option and templates would help them be guided.</p>
       <img class ="portimage" src="./Step 2.png" style="max-width: 100%;">
     </div>
 
     <div class="block">
-      <h3>Feature Gate</h3>
-      <p>This feature uses a neutral point of entry which preserves the normal point of entry for non-targeted user. By default this would come on for first time users.  </p>
+      <div class="subtitle">Feature Gate</div>
+      <h4>This feature uses a neutral point of entry which preserves the normal point of entry for non-targeted user. By default this would come on for first time users.  </h4>
+      <p>This opt in element would preserve the experience for the vast majority of users who are not kids.s</p>
       <img class ="portimage" src="./FeatureGate.png" style="max-width: 100%;">
     </div>
 
     <div class="block">
-      <h3>Nudge guidance</h3>
+      <div class="subtitle">Nudge guidance</div>
+      <h4>We needed to simplify technical terms and make it easier to understand.</h4>
       <p>From our user research we realized that for first time and younger users, understanding the buttons and their terminology can be difficult. To target this pain point, I decided to use metaphors and kid friendly language in helpful tool tips that auto play on first time activation of a repo. </p>
       <img class ="portimage" src="./GuidedStepBranchAnnotated.png" style="max-width: 100%;">
     </div>
 
     <div class="block" id="testing">
-      <h3>Testing</h3>
+      <div class="subtitle">Testing</div>
+      <h4>We re-engaged with the same kids who we tested on originally. </h4>
       <p> I tested this prototype with target users that reflected our core persona, using an observational user test.</p>      
       <img class ="portimage" src="./testing.png" >
 
 
       <br>
-      <p> Some of the key insights, as extracted from testing:    </p>
+      <h4> Some of the key insights, as extracted from testing:    </h4>
 
 
       <img class ="portimage" src="./quotes.png" >
@@ -246,37 +289,39 @@
 
     <div class="block" >
       <div class="problemcard">
-      <h3>Takeaway</h3>
+      <div class="subtitle">Takeaway</div>
       <p>Our design helped pre-teens understand and conceptualize the onboarding process by breaking it down into more manageable steps.</p>
     </div>
     </div>
 
     <div class="block" id="iteration">
-      <h3>Iteration</h3>
-      <p>From our user testing we wanted to add additional state and hover indicators to make sure our users knew what affordances were possible.</p>
+      <div class="subtitle">Iteration</div>
+      <h4>From our user testing we wanted to add additional state and hover indicators to make sure our users knew what affordances were possible.</h4>
+      <p>Subtle interactions can help the design feel more delightful.</p>
       <img class ="portimage" src="./COGS127 Project - GitHub for Kids.png" >
 
     </div>
 
     <div class="block">
-      <h3>Results from iteration</h3>
+      <div class="subtitle">Results from iteration</div>
       <div class="column" style="padding-left: 0px;">
         <h4>Outcome -</h4><br>
-          <p style="font-size: 48px;"><b>80%</b></p>
+          <p style="font-size: 48px;" class="text-primary-color"><b>80%</b></p>
           <p>satisfaction</p>
 
       </div>
       <div class="column">
         <h4 >Outcome -</h4><br>
-        <p style="font-size: 48px;"><b>100%</b></p>
+        <p style="font-size: 48px;" class="text-primary-color"><b>100%</b></p>
         <p>onboarding completion rate</p>
       </div>
 
     </div>
 
     <div class="block" id="prototype">
-      <h3>Prototype</h3>
-      <p>A full click through stepping through it.</p>
+      <div class="subtitle">Prototype</div>
+      <h4>A full click through stepping through it.</h4>
+      <p>The end to end flow focuses on onboarding, and using "octotips" to help guide kids through the repo creation process. From there it can teach kids throuhg accessible language and metaphors.</p>
       <video controls="controls" width="100%" height="100%" name="GitHub For Kids" controls muted autoplay loop style="padding-left: 0px; border-radius: 6px;">
         <source src="./GitHubforKids Prototype.mov">
       </video>
@@ -284,7 +329,8 @@
     </div>
 
     <div class="block" id="conclusion">
-      <h3>Key takeaways</h3>
+      <div class="subtitle">Key takeaways</div>
+      <h4>The best part about this was getting to interact with real kids who are learning how to code through volunteers at UC San Diego. Seeing their passion was invigorating!</h4>
     
       <p> This project was really fun, as it was my final project that I've been able to complete while at UC San Diego. It has been heartwarming to see how far my design skills have progressed in relation to some of the first projects that I completed in my time here, and I look back fondly on this experience. I am excited to continue to grow and apply what I learned here in new experiences, and see where that takes me.
 
@@ -293,7 +339,7 @@
     </div>
 
     <div class="block">
-      <h3>Next steps</h3>
+      <div class="subtitle">Next steps</div>
     
       <p>A follow up on this project that I would do if I was given more time would be to see the influence of color on perception and engagement for children's use. One hypothesis that I had was that children would engage more with bright and colorful web elements, but I decided against that in favor of staying inline with GitHub Brand guidelines. I would love to conduct a more formal experiment to see how this assumption fares.</p>
 
@@ -336,8 +382,7 @@
 
 
 
-    <h4 class="center">Seen enough?</h4>
-    <p class="center" >Get in touch.</p>
+    <p class="center">Seen enough?</p>    <p class="center" >Get in touch.</p>
 
     <div class="img-wrap">
 		<a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "../../assets/newli.svg" ></a>
