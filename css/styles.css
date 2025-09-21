@@ -76,6 +76,7 @@
   max-width: 100%!important;
               cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
 }
 
 .smallerwidth{
@@ -1627,20 +1628,20 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       
         .fullwidth:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
         }
 
         /* Fullscreen overlay styles */
      .image-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 1);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  transition: opacity 0.3s ease;
-}
+        position: fixed;
+        inset: 0;
+        background: rgba(255, 255, 255, .95);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease;
+          }
 
 .image-overlay.active {
   display: flex;
@@ -1650,8 +1651,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 .image-overlay img.overlay-image {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border-radius: 6px;
+  padding: 24px;
+  border: 1px solid var(--bordercolor);
 }
 
 .image-overlay .close-button {

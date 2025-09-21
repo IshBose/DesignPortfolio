@@ -283,8 +283,7 @@ let section = document.querySelectorAll('section');
                         loginContainer.style.display = 'none';
                         successAnim.classList.remove('show');
                         document.getElementById('portfolioContent').style.display = 'block';
-                        document.body.style.background = '#f5f5f5';
-                        
+                        document.body.style.background = 'var(--background)';                        
                         // Attach listeners to newly visible images
                         attachListeners();
                     }, 1500);
