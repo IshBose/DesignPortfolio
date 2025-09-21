@@ -202,6 +202,8 @@ let section = document.querySelectorAll('section');
         const hamburger = document.querySelector(".hamburger");
         const closeIcon = document.querySelector(".closeIcon");
         const menuIcon = document.querySelector(".menuIcon");
+        
+        console.log("Menu elements found:", { menu, hamburger, closeIcon, menuIcon });
 
         function toggleMenu() {
             if (menu.classList.contains("showMenu")) {
@@ -224,7 +226,9 @@ let section = document.querySelectorAll('section');
 
 
 
-        /* Encruption*/
+        /* Encruption***********************************************************************/
+        console.log("Starting password/encryption section");
+        
         // Simple encryption/decryption using Base64 and XOR
         const CORRECT_PASSWORD_HASH = 'bose'; // Change this to your desired password
         
@@ -233,11 +237,17 @@ let section = document.querySelectorAll('section');
         let locked = false;
 
         // Check password when Enter key is pressed
-        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
+        const passwordInput = document.getElementById('passwordInput');
+        if (passwordInput) {
+            console.log("Password input found, adding enter key listener");
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkPassword();
+                }
+            });
+        } else {
+            console.log("Password input not found - probably not a password-protected page");
+        }
 
         function checkPassword() {
             if (locked) {
@@ -274,6 +284,9 @@ let section = document.querySelectorAll('section');
                         successAnim.classList.remove('show');
                         document.getElementById('portfolioContent').style.display = 'block';
                         document.body.style.background = '#f5f5f5';
+                        
+                        // Attach listeners to newly visible images
+                        attachListeners();
                     }, 1500);
                     
                 } else {
@@ -308,8 +321,10 @@ let section = document.querySelectorAll('section');
 
         function showError(message) {
             const errorMsg = document.getElementById('errorMessage');
-            errorMsg.textContent = message;
-            errorMsg.classList.add('show');
+            if (errorMsg) {
+                errorMsg.textContent = message;
+                errorMsg.classList.add('show');
+            }
         }
 
         function togglePassword() {
@@ -327,16 +342,21 @@ let section = document.querySelectorAll('section');
 
         function logout() {
             // Reset everything
-            document.getElementById('portfolioContent').style.display = 'none';
-            document.getElementById('loginContainer').style.display = 'block';
-            document.getElementById('passwordInput').value = '';
-            document.getElementById('passwordInput').classList.remove('success', 'error');
-            document.getElementById('errorMessage').classList.remove('show');
-            document.getElementById('unlockBtn').textContent = 'Unlock Portfolio';
-            document.getElementById('unlockBtn').classList.remove('loading');
-            document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            attempts = 0;
-            locked = false;
+            const portfolioContent = document.getElementById('portfolioContent');
+            const loginContainer = document.getElementById('loginContainer');
+            
+            if (portfolioContent && loginContainer) {
+                portfolioContent.style.display = 'none';
+                loginContainer.style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').classList.remove('success', 'error');
+                document.getElementById('errorMessage').classList.remove('show');
+                document.getElementById('unlockBtn').textContent = 'Unlock Portfolio';
+                document.getElementById('unlockBtn').classList.remove('loading');
+                document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                attempts = 0;
+                locked = false;
+            }
         }
 
         // Prevent right-click context menu (basic protection)
@@ -346,11 +366,130 @@ let section = document.querySelectorAll('section');
         });
 
         // Disable text selection on the login screen
-        document.getElementById('loginContainer').style.userSelect = 'none';
+        const loginContainer = document.getElementById('loginContainer');
+        if (loginContainer) {
+            loginContainer.style.userSelect = 'none';
+        }
+
+
+
+
+        //THIS IS FOR IMAGE PREVIEW - SIMPLIFIED VERSION
+        console.log("Starting image overlay initialization");
         
+        // Global variables for the overlay functionality
+        let imageOverlay = null;
+        let overlayImage = null;
+        let isOverlayInitialized = false;
 
+        function initializeImageOverlay() {
+            if (isOverlayInitialized) return;
+            
+            console.log("Initializing image overlay");
+            
+            // Create overlay
+            imageOverlay = document.createElement("div");
+            imageOverlay.className = "image-overlay";
+            imageOverlay.innerHTML = `
+              <span class="close-button">&times;</span>
+              <img class="overlay-image" alt="">
+            `;
+            document.body.appendChild(imageOverlay);
 
+            overlayImage = imageOverlay.querySelector(".overlay-image");
+            const closeButton = imageOverlay.querySelector(".close-button");
 
+            // Close handlers
+            closeButton.addEventListener("click", closeFullscreen);
+            imageOverlay.addEventListener("click", e => {
+                if (e.target === imageOverlay) closeFullscreen();
+            });
+            document.addEventListener("keydown", e => {
+                if (e.key === "Escape" && imageOverlay.classList.contains("active")) {
+                    closeFullscreen();
+                }
+            });
 
-        
+            // Mobile swipe-to-close
+            let touchStartY = 0;
+            imageOverlay.addEventListener("touchstart", e => {
+                if (e.touches.length === 1) {
+                    touchStartY = e.touches[0].clientY;
+                }
+            });
 
+            imageOverlay.addEventListener("touchend", e => {
+                if (e.changedTouches.length === 1) {
+                    const touchEndY = e.changedTouches[0].clientY;
+                    if (touchEndY - touchStartY > 80) {
+                        closeFullscreen();
+                    }
+                }
+            });
+
+            isOverlayInitialized = true;
+        }
+
+        function openFullscreen(src, alt) {
+            if (!isOverlayInitialized) initializeImageOverlay();
+            
+            console.log("Opening fullscreen for:", src);
+            overlayImage.src = src;
+            overlayImage.alt = alt || "";
+            imageOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeFullscreen() {
+            if (imageOverlay) {
+                imageOverlay.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        }
+
+        function setupImageClickHandlers() {
+            console.log("Setting up image click handlers");
+            
+            // Remove any existing listeners first
+            document.removeEventListener("click", handleImageClick);
+            
+            // Add the click handler
+            document.addEventListener("click", handleImageClick);
+            
+            // Add visual feedback to images
+            document.querySelectorAll("img.fullwidth").forEach(img => {
+                if (!img.dataset.clickable) {
+                    img.style.cursor = "pointer";
+                    img.dataset.clickable = "true";
+                    console.log("Made image clickable:", img.src);
+                }
+            });
+        }
+
+        function handleImageClick(e) {
+            if (e.target.tagName === "IMG" && e.target.classList.contains("fullwidth")) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log("Image clicked:", e.target.src);
+                openFullscreen(e.target.src, e.target.alt);
+            }
+        }
+
+        // Initialize on multiple events to ensure it works
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupImageClickHandlers);
+        } else {
+            setupImageClickHandlers();
+        }
+
+        window.addEventListener('load', setupImageClickHandlers);
+
+        // For the password-protected page
+        setTimeout(() => {
+            setupImageClickHandlers();
+        }, 2000);
+
+        // Legacy function for backwards compatibility
+        function attachListeners() {
+            setupImageClickHandlers();
+        }

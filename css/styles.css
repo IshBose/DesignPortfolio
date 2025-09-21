@@ -74,6 +74,8 @@
 
 .fullwidth{
   max-width: 100%!important;
+              cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .smallerwidth{
@@ -1607,6 +1609,60 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .block b{
       font-weight: 600;
     }
+
+    /* For preview */
+     .close-button {
+                top: -60px;
+                right: 0;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+            }
+
+            .overlay-content {
+                max-width: 98%;
+                max-height: 90%;
+            }
+        
+      
+        .fullwidth:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Fullscreen overlay styles */
+     .image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 1);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.image-overlay img.overlay-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.image-overlay .close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+}
 
 
     /* END OF CASESTUDY STYLE TWO          v            */
