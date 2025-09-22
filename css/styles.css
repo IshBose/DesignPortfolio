@@ -775,7 +775,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   .gradient-circle {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 1.0;
     overflow: hidden;
 }
 
@@ -796,13 +796,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     top: 10%;
     left: -120px;
     filter: blur(20px);
-    animation: slowPulse 6s ease-in-out infinite, float 12s ease-in-out infinite, breathe 20s ease-in-out infinite;
+    animation: slowPulse 3s ease-in-out infinite, float 6s ease-in-out infinite, breathe 10s ease-in-out infinite;
 }
 
 .gradient-circle-1::before {
-    background: radial-gradient(circle at 30% 30%, #ff9a8b 0%, rgba(255,154,139,0) 50%),
-                radial-gradient(circle at 70% 70%, #fecfef 0%, rgba(254,207,239,0) 50%),
-                radial-gradient(circle at 40% 80%, #a8edea 0%, rgba(168,237,234,0) 50%);
+    background: radial-gradient(circle at 30% 30%, #ff9a8b 0%, rgba(255,154,139,0) 60%),
+                radial-gradient(circle at 70% 70%, #fecfef 0%, rgba(254,207,239,0) 80%),
+                radial-gradient(circle at 40% 80%, #a8edea 0%, rgba(168,237,234,0) 60%);
     animation: moveRadialGradient 8s ease-in-out infinite;
     animation-delay: 0s;
 }
@@ -813,14 +813,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     top: 40%;
     right: -240px;
     filter: blur(20px);
-    animation: slowPulse 8s ease-in-out infinite, float 15s ease-in-out infinite, breathe 25s ease-in-out infinite;
+    animation: slowPulse 4s ease-in-out infinite, float 7s ease-in-out infinite, breathe 12s ease-in-out infinite;
     animation-delay: -3s;
 }
 
 .gradient-circle-2::before {
-    background: radial-gradient(circle at 60% 40%, #fed6e3 0%, rgba(254,214,227,0) 50%),
-                radial-gradient(circle at 20% 70%, #d299c2 0%, rgba(210,153,194,0) 50%),
-                radial-gradient(circle at 80% 20%, #ff9a8b 0%, rgba(255,154,139,0) 50%);
+    background: radial-gradient(circle at 60% 40%, #fed6e3 0%, rgba(254,214,227,0) 60%),
+                radial-gradient(circle at 20% 70%, #d299c2 0%, rgba(210,153,194,0) 60%),
+                radial-gradient(circle at 80% 20%, #ff9a8b 0%, rgba(255,154,139,0) 80%);
     animation: moveRadialGradient 10s ease-in-out infinite;
     animation-delay: -2s;
 }
