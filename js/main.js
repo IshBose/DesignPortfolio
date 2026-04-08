@@ -229,8 +229,7 @@ let section = document.querySelectorAll('section');
         /* Encruption***********************************************************************/
         console.log("Starting password/encryption section");
         
-        // Simple encryption/decryption using Base64 and XOR
-        const CORRECT_PASSWORD_HASH = 'bose'; // Change this to your desired password
+        const CORRECT_PASSWORD_HASH = 'e0d7680971095e5adc1f7617b583df4d5b36e61e6f8f84b478c6966ddf14eb54';
         
         let attempts = 0;
         const MAX_ATTEMPTS = 5;
@@ -249,7 +248,7 @@ let section = document.querySelectorAll('section');
             console.log("Password input not found - probably not a password-protected page");
         }
 
-        function checkPassword() {
+        async function checkPassword() {
             if (locked) {
                 showError('Too many attempts. Please refresh the page.');
                 return;
@@ -260,41 +259,45 @@ let section = document.querySelectorAll('section');
             const loginContainer = document.getElementById('loginContainer');
             const errorMsg = document.getElementById('errorMessage');
             const unlockBtn = document.getElementById('unlockBtn');
-            
+
             // Add loading state
             unlockBtn.classList.add('loading');
             unlockBtn.textContent = 'Checking...';
-            
-            // Simulate processing time
+
+            // Hash the input with SHA-256 and compare
+            const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
+            const hashHex = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+            const isCorrect = hashHex === CORRECT_PASSWORD_HASH;
+
             setTimeout(() => {
-                if (password === CORRECT_PASSWORD_HASH) {
+                if (isCorrect) {
                     // Success
                     input.classList.remove('error');
                     input.classList.add('success');
                     errorMsg.classList.remove('show');
                     unlockBtn.textContent = 'Success!';
-                    
+
                     // Show success animation
                     const successAnim = document.getElementById('successAnimation');
                     successAnim.classList.add('show');
-                    
+
                     // Transition to portfolio
                     setTimeout(() => {
                         loginContainer.style.display = 'none';
                         successAnim.classList.remove('show');
                         document.getElementById('portfolioContent').style.display = 'block';
-                        document.body.style.background = 'var(--background)';                        
+                        document.body.style.background = 'var(--background)';
                         // Attach listeners to newly visible images
                         attachListeners();
                     }, 1500);
-                    
+
                 } else {
                     // Error
                     attempts++;
                     input.classList.add('error');
                     input.classList.remove('success');
                     loginContainer.classList.add('shake');
-                    
+
                     if (attempts >= MAX_ATTEMPTS) {
                         locked = true;
                         showError('Too many failed attempts. Please refresh the page.');
@@ -303,15 +306,15 @@ let section = document.querySelectorAll('section');
                     } else {
                         showError(`Incorrect password. ${MAX_ATTEMPTS - attempts} attempts remaining.`);
                     }
-                    
+
                     setTimeout(() => {
                         loginContainer.classList.remove('shake');
                         input.classList.remove('error');
                     }, 500);
-                    
+
                     unlockBtn.classList.remove('loading');
                     unlockBtn.textContent = 'Unlock Portfolio';
-                    
+
                     // Clear input
                     input.value = '';
                 }
