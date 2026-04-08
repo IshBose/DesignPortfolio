@@ -84,6 +84,12 @@
 }
 
 /* Variables */
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 :root {
     --blk: #131316;
     --accent: #3478FF;
@@ -1682,27 +1688,67 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     .rowhover {
+      position: relative;
       padding: 1rem;
       border-radius: 6px;
+      isolation: isolate;
       transition: box-shadow 0.3s ease;
     }
 
- .rowhover:hover {
-  box-shadow: 0 0 0 1px var(--strokeongray, #DBD7D2);
-  animation: pulseColor 4s infinite ease-in-out;
-}
+    /* Per-card glow colors */
+    .portgrid > a:nth-child(1) .rowhover { --glow-1: rgba(41, 182, 255, 0.5);  --glow-2: rgba(120, 220, 255, 0.3); }
+    .portgrid > a:nth-child(2) .rowhover { --glow-1: rgba(168, 85, 247, 0.5);  --glow-2: rgba(216, 155, 255, 0.3); }
+    .portgrid > a:nth-child(3) .rowhover { --glow-1: rgba(244, 63, 94, 0.5);   --glow-2: rgba(255, 150, 160, 0.3); }
+    .portgrid > a:nth-child(4) .rowhover { --glow-1: rgba(249, 115, 22, 0.5);  --glow-2: rgba(255, 200, 100, 0.3); }
+    .portgrid > a:nth-child(5) .rowhover { --glow-1: rgba(16, 185, 129, 0.5);  --glow-2: rgba(110, 231, 183, 0.3); }
 
-@keyframes pulseColor {
-  0% {
-    box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 0 1px rgba(219, 215, 210, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 0 1px rgba(186, 172, 255, 0.8);
-  }
-}
+    /* Rolling gradient — extends beyond card bounds */
+    .rowhover::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border-radius: 24px;
+      background: conic-gradient(
+        from var(--gradient-angle),
+        var(--glow-1),
+        var(--glow-2),
+        var(--glow-1)
+      );
+      filter: blur(16px);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      animation: gradientRoll 6s linear infinite;
+    }
+
+    /* Solid cover — sits above gradient but below card content */
+    .rowhover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      background: var(--background);
+      transition: background 0.7s ease;
+      z-index: 0;
+    }
+
+    .rowhover:hover::after {
+      background: #ffffff;
+    }
+
+    /* Lift card content above the white cover */
+    .rowhover > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rowhover:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes gradientRoll {
+      to { --gradient-angle: 360deg; }
+    }
 
 
 
