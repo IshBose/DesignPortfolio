@@ -102,7 +102,7 @@
     --secondarytext: #686868;
     --background:#F7F7FF;
     --bordercolor: #DBD7D2;
-    --highglight: #B21F1F;
+    --highlight: #B21F1F;
 
 
   }
@@ -125,7 +125,7 @@
   }
 
   .heavy{
-    font-weight: 600!important;
+    font-weight: 600;
   }
 
   .largetext{
@@ -149,7 +149,7 @@
   }
 
   .overflowwrapper{
-    overflow-x: hidden!important;
+    overflow-x: hidden;
   }
 
     /* Padding */
@@ -228,7 +228,7 @@
     }
     
     .margin-top {
-      margin-top: 1rem!important;
+      margin-top: 1rem;
     }
     
     .margin-bottom {
@@ -256,7 +256,7 @@
     }
     
     .margin-lg {
-      margin: 2rem!important;
+      margin: 2rem;
     }
     
     .margin-left-lg {
@@ -268,7 +268,7 @@
     }
     
     .margin-top-lg {
-      margin-top: 2rem!important;
+      margin-top: 2rem;
     }
     
     .margin-bottom-lg {
@@ -281,14 +281,14 @@
     }
 
     .has-gap{
-      gap:24px
+      gap: 24px;
     }
 
     .has-gap-sm{
-      gap:16px
+      gap: 16px;
     }
     .has-gap-xs{
-      gap:8px
+      gap: 8px;
     }
 
     .borderradius-normal{
@@ -300,7 +300,7 @@
     }
 
     .border-highlight{
-     border:1px solid var(--highglight)!important;
+     border:1px solid var(--highlight);
     }
     
     
@@ -308,60 +308,12 @@
 
     /* Alignment */
 
-    .text-left {
-      text-align: left;
-    }
-    
-    .text-center {
-      text-align: center;
-    }
-    
-    .text-right {
-      text-align: right;
-    }
-    
-    .text-justify {
-      text-align: justify;
-    }
-    
-    .vertical-top {
-      vertical-align: top;
-    }
-    
     .vertical-middle {
       vertical-align: middle;
     }
-    
-    .vertical-bottom {
-      vertical-align: bottom;
-    }
 
-    
+
     /*display*/
-    .block {
-  display: block;
-    }
-
-    .inline {
-      display: inline;
-    }
-
-    .inline-block {
-      display: inline-block;
-    }
-
-    .flex {
-      display: flex;
-    }
-
-    .inline-flex {
-      display: inline-flex;
-    }
-
-    .grid {
-      display: grid;
-    }
-
     .hidden {
       display: none;
     }
@@ -375,118 +327,8 @@
     gap: 8px;
   }
 
-
-    .flex-row {
-      flex-direction: row;
-    }
-    
-    .flex-col {
-      flex-direction: column;
-    }
-    
-    .justify-start {
-      justify-content: flex-start;
-    }
-    
     .justify-center {
       justify-content: center;
-    }
-    
-    .justify-end {
-      justify-content: flex-end;
-    }
-    
-    .justify-between {
-      justify-content: space-between;
-    }
-    
-    .justify-around {
-      justify-content: space-around;
-    }
-    
-    .items-start {
-      align-items: flex-start;
-    }
-    
-    .items-center {
-      align-items: center;
-    }
-    
-    .items-end {
-      align-items: flex-end;
-    }
-    
-    .self-start {
-      align-self: flex-start;
-    }
-    
-    .self-center {
-      align-self: center;
-    }
-    
-    .self-end {
-      align-self: flex-end;
-    }
-
-    /*width and height*/
-
-    .w-full {
-      width: 100%;
-    }
-    
-    .w-auto {
-      width: auto;
-    }
-    
-    .h-full {
-      height: 100%;
-    }
-    
-    .h-auto {
-      height: auto;
-    }
-    
-    .max-w-screen {
-      max-width: 100vw;
-    }
-    
-    .max-h-screen {
-      max-height: 100vh;
-    }
-
-
-    /*font transformation*/
-
-    .font-bold {
-      font-weight: bold;
-    }
-    
-    .font-normal {
-      font-weight: normal;
-    }
-    
-    .font-light {
-      font-weight: 300;
-    }
-    
-    .uppercase {
-      text-transform: uppercase;
-    }
-    
-    .lowercase {
-      text-transform: lowercase;
-    }
-    
-    .capitalize {
-      text-transform: capitalize;
-    }
-    
-    .underline {
-      text-decoration: underline;
-    }
-    
-    .no-underline {
-      text-decoration: none;
     }
     
     
@@ -511,7 +353,7 @@
   a:hover {
     color: var(--hover);
     transform: scale(1.005);
-    transition: 0.2s smooth;
+    transition: 0.2s ease;
   }
 
   .active {
@@ -1144,10 +986,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 
   iframe{
-    display: flex;
-       display: block;
-        margin: 0 auto;
-
+    display: block;
+    margin: 0 auto;
   }
 
   
@@ -1177,13 +1017,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       margin-top: -64px;
     }
 
-    .solutionPre2{
-      background-image: linear-gradient(to right top, #d53a92, #bc45a0, #9f4ea8, #8155ab, #6159a9, #6959a5, #6f5aa0, #745b9c, #945b95, #ad5e8a, #be657e, #c87072);      padding:24px;
-      border-radius: 6px;
-      margin-top: -40px;
-    }
-
-    
 
    
   
@@ -1325,9 +1158,9 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     /* Darker background on mouse-over */
    
     .block{
+      display: block;
       gap: 16px;
       width: 100%;
-       
     }
 
     .colblock{
@@ -1439,27 +1272,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     }
 
-    .countercard{
-     padding: 8px;
-      display: flex;
-      flex-direction: row;
-      gap:8px;
-      background: #F0F1F5;
-      border: 1px solid #757575;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      border-radius: 6px;
-      max-width: 100%;
-      align-items: center; /* Aligns items vertically */
-
-
-    }
-
-    .countercard b{
-      font-weight: 500;
-    }
-
-    #cardcolor2{
+#cardcolor2{
       background-color: #E3E3E4;
     }
 
@@ -1475,8 +1288,23 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       background-color:#BEBEC1;
     }
 
-    #cardcolor3 h3{
-      color: #494848;
+    .countercard{
+     padding: 8px;
+      display: flex;
+      flex-direction: row;
+      gap:8px;
+      background: #F0F1F5;
+      border: 1px solid #757575;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      max-width: 100%;
+      align-items: center; /* Aligns items vertically */
+
+    }
+
+    .countercard b{
+      font-weight: 500;
     }
 
     .step{
@@ -1565,11 +1393,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     }
 
-    .collapsewrapper{
-      margin-top: -40px;
-    }
-
-   
     /* Style the collapsible content. Note: hidden by default */
     .content {
       padding: 0 0px;
@@ -2068,50 +1891,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     }
 
-    .mobilecard{
-      /*border: 2px solid rgba(142, 184, 229, .5);*/
-      background-color: rgba(56, 61, 74, 0.6);       
-      border-radius: 8px;
-      max-width: 99.0%;
-      margin-bottom: 24px;
-      margin-top: 24px;
-      padding: 16px;
-      margin-left: 2em;
-      margin-right: 2em;
-      display: none;
-    }
-
-    a .mobilecard{
-      color: white;
-    }
-
-    .mobilecardcol{
-      width: 100%;
-      display: inline-block;
-    }
-
-    .mobilecard img{
-      max-width: 100%;
-    }
-
-
-    .mobilecard h3{
-      margin: 0px;
-      margin-top: 16px;
-      margin-bottom: 16px;
-
-    }
-
-    .cardcol{
-      width: 49%;
-      vertical-align: top;
-      display: inline-block;
-      
-      }
-
-      
-
-      
 
     .portfoliocontainer .longcardtype:hover{
       transform: scale(1.02); 
@@ -2227,25 +2006,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
 
 
-      .mobilepic{
-        border-radius: 8px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        justify-content: center;
-        margin-top: 40px;
-        width: 50%;
-        display: none;
-      }
-      
-      
-      .about{
-          width: 80%;
-          
-      }
-
-     
-
       .tcontainer img{
         justify-content: center;
         margin: 2em;
@@ -2289,10 +2049,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     
-
-    .portcontrols{
-      margin-top: 16px;
-    }
 
     .portslide{
 
@@ -2361,10 +2117,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .quote{
         font-weight: 700;
     }
-
-    /*.hoverwrap{
-   
-    
 
     /*                                                             THIS IS ALL RESPONSIVE DESIGN UNDER HERE                                                             */
 
@@ -2454,25 +2206,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             padding: 12px;
           }
 
-          .nextto{
-            gap: 16px;
-          }
-        
-      
-        
-
           h1{
             font-size: 20px;
           }
 
-          .herosec h2{
-            font-size: 16px;
-          }
-
-         
-
-          
-        
            nav ul li {
             margin: 4px;
             font-size: 20px;
@@ -2497,27 +2234,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
                   }
         
 
-        .burger-menu {
-            display: block;
-          }
-
-          .hero{
-            font-size: 24px;
-            margin-top: 24px;
-        }
-
         body {
             margin: auto;
           }
 
        
-
-        #midalign{
-          max-width: 100%; 
-          margin-top: 24px;
-          grid-column-start: 3;
-          padding-left: 0;
-        }
 
         .casecontrols{
           display: none;
@@ -2543,19 +2264,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         
 
-        .about{
-            width: 85%;
-           margin-left: 2em;      
-
-        }
-
-        .abouthero{
-          margin-left: 1.2em;
-          font-size: 24px;
-          margin-top: 24px;
-
-        }
-
         .col1{
           width: 100%;
         }
@@ -2571,12 +2279,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           margin-right: 24px;
         }
 
-        .mobilepic{
-            display: block;
-
-        }
-
-
         h3{
             font-size: 16px;
         }
@@ -2590,35 +2292,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
           
        
-        .grid-item{
-            display: inline-block;
-            max-width: 700px;
-            margin-bottom: 12px;
-        }
-
-        .mobile-container{
-            display: none;
-            margin-left: 2em;
-            margin-right: 2em;
-
-
-        }
         .profilepic{
           margin-left: 40px;
         }
 
-
-        .mobilecard{
-          display: none;
-        }
-
-        .maxcard{
-          margin-top: 0px;
-        }
-
-        .grid-container{
-            display: none;
-        }
 
         .portfoliocontainer{
           margin-left: 2em;
@@ -2634,14 +2311,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           max-width: 100%;
 
 
-        }
-
-        .mockupbox{
-         
-          width: auto;
-         
-    
-    
         }
 
         .col-lg{
@@ -2708,14 +2377,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
 
-        #youtube{
-          width: 100%;
-        }
-       
-        .imagebox{
-          display: none;
-        }
-
         .portbox{
           display: block;
         }
@@ -2727,15 +2388,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
       
-        .casestudy .contextcols{
-          display: block;
-        }
-
-        .casestudy .contextcoltwo{
-
-          margin-top: 24px;
-        }
-
         .indexcontainer{
           margin-left: 24px;
           margin-right: 24px;
@@ -2781,64 +2433,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
      
 
-        .worklist{
-          display: block;
-          gap: 72px;
-        }
-
-        .workcard{
-            height: auto;
-        }
-        
-
-        .workcard img{
-          width: 100%;
-          height: auto;
-        }
-
-        .workitem{
-          flex-direction: column;
-
-        }
-
-        .workitemdesc{
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          width: 100%;
-         
-        }
-
         .description{
           flex-direction: column;
           gap: 24px;
-      
-        }
-      
-        .workitemdesc h3{
-          font-size: 14px;
-        }
 
-        .linkin{
-          display: flex;
-          flex-direction: row;
-          gap: 8px;
-          padding: 8px;
-          background-color: #222226;
-          border: 1px solid #323845;
-          border-radius: 100px;
-          width: fit-content;
-        }
-
-       
-        .workstatus p{
-          padding-top: 2px;
-        }
-      
-      
-        .workcardcover{
-          max-width: 100%;
-          
         }
 
         .block p{
@@ -2851,54 +2449,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       @media screen and (min-width: 992px) {
 
-          
-        .topwide {
-            max-width: 100% ;
-    
-          }
-          .toplong {
-            max-width: 100% ;
-    
-          }
-          .middle {
-           max-width: 100%;
-           max-height: 100%;
-    
-          }
-          .sidelong {
-           max-width: 100% ;
-    
-          }
-          .sidewide {
-          max-width: 100%;
-           /*margin-top: 4px;*/
-        
-    
-          }
-
-          .aboutcol{
-              margin-top: 16px;
-          }
-
-          
-         
-
       }
 
                 /************************************************************ Really Big Screen Sizes  ******************************************************************/
 
 
       @media screen and (min-width: 1920px) {
-        .aboutcolhide{
-            display: inline-block;
-        }
-
-
-
-
-       
-
-        
 
       }
       @media screen and (min-width: 2260px) {
