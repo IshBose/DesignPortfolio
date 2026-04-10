@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+     <!-- Google Tag Manager -->
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NRTS34N');</script>
+      <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../../css/styles.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../assets/favicon.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Design Portfolio | Recoverable Items</title>
+
+  </head>
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<div id="loginContainer" class="center vertical-middle">
+        <div class="login-header">
+            <div class="lock-icon">🔒</div>
+            <h1>This case study is protected by NDA</h1>
+            <p class="subtitle">Enter the password to access</p>
+        </div>
+
+        <div class="input-group">
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <button id="unlockBtn" onclick="checkPassword()">
+            Unlock Case Study
+        </button>
+
+        <div id="errorMessage" class="error-message">
+            Incorrect password. Please try again.
+        </div>
+    </div>
+
+    <div id="successAnimation" class="success-animation">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <path d="M14 27 L22 35 L38 16"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="nav-logo">
+      <div class="gradient-circle-logo"></div>
+        <a href="../../../index.html">Ishaan Bose</a>
+    </div>
+
+    <div class="time-container">
+      <span class="icon" id="timeIcon">⏳</span>
+      <span id="currentTime"></span>
+    </div>
+
+    <ul class="menu">
+        <li><a class="menuItem" href="../../../index.html">Work</a></li>
+        <li><a class="menuItem" href="../../../about.html">About</a></li>
+        <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+        <li><a class="menuItem" href="../../../ishaan bose resume 2023 .pdf">Resume</a></li>
+        <li>
+          <a href="mailto:ishaan.bose@gmail.com">
+            <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">send</span> Contact me</button>
+          </a>
+        </li>
+    </ul>
+    <button class="hamburger">
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons" style="display: none;">close</i>
+    </button>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <body>
+
+      <div id="portfolioContent">
+
+        <nav class="section-nav">
+          <ol>
+            <li><a href="#context">Context</a></li>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#ideation">Decisions</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ol>
+        </nav>
+
+        <div class="blockwrapper">
+          <div class="blocklist">
+
+            <!-- CONTEXT -->
+            <div class="block" id="context">
+
+              <div class="block">
+                <div class="subtitle">PROJECT</div>
+                <h2 class="textcasetitle">Designing recovery for accidentally deleted HCP Terraform workspaces</h2>
+              </div>
+
+              <div class="has-gap margin-sm padding-top">
+                <div class="row padding-bottom-lg">
+                  <div class="block padding-bottom">
+                    <div class="subtitle">ORGANIZATION</div>
+                    <div class="flex">
+                      <img style="width: 28px; height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
+                      <h2 class="largetext">HashiCorp</h2>
+                    </div>
+                  </div>
+                  <div class="block">
+                    <div class="subtitle">WHEN</div>
+                    <h2 class="largetext">Jul–Nov 2025</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="block padding-bottom">
+                    <div class="subtitle">ROLE</div>
+                    <h2 class="largetext">Product Designer, Terraform Core-Cloud</h2>
+                  </div>
+                  <div class="block">
+                    <div class="subtitle">TOOLS</div>
+                    <h2 class="largetext">Figma, Customer Interviews, Synthesis Docs</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROBLEM -->
+            <div class="block" id="problem">
+              <div class="subtitle">PROBLEM</div>
+              <h4>When a workspace was deleted, recovery barely existed. The cost of that gap was enormous.</h4>
+              <p>Workspace Recovery started with a question that sounded small: what should happen when someone accidentally deletes an HCP Terraform workspace? At the time, the honest answer was "not much." Once a workspace was gone, customers were left recreating it by hand, manually importing orphaned resources, or rolling back much larger system snapshots just to get one workspace back.</p>
+
+              <div class="problemcard margin-top">
+                <div class="subtitle">THE SCALE OF THE PROBLEM</div>
+                <p>One internal support note cited Epic Games, where recovering nine deleted workspaces was estimated at <strong>three to five days per workspace</strong>. That made it clear this was not just about adding an undo button.</p>
+              </div>
+
+              <p style="margin-top: 24px;">In HCP Terraform, a workspace is not just a project container. It holds the state, variables, history, and workflow context needed to manage real infrastructure over time. Deletion could wipe all of that, with no native path to get it back.</p>
+            </div>
+
+            <!-- CONTEXT / ACTORS -->
+            <div class="block">
+              <div class="subtitle" id="research">CONTEXT</div>
+              <h4>The person who caused the deletion was rarely the person responsible for fixing it.</h4>
+              <p>My research plan focused on two main personas: app developers and platform engineers. In practice, downstream teams or automation layers (API calls, internal tooling, workspace-as-code workflows) were often triggering deletions, while the actual cleanup fell on upstream platform admins.</p>
+              <p style="margin-top: 16px;">That mismatch shaped the whole problem. Recovery had to fit the reality of enterprise operations, not just the UI. I partnered with PM Garvita Rai to frame the work around three questions: how accidental deletion actually happened, what a believable recovery path should bring back, and how customers were already trying to protect themselves from this risk.</p>
+            </div>
+
+            <!-- RESEARCH -->
+            <div class="block">
+              <div class="subtitle">RESEARCH</div>
+              <h4>Customer interviews and contextual inquiry gave us a much clearer picture of who actually owns recovery when things go wrong.</h4>
+              <p>We ran customer interviews and contextual inquiry, then pulled findings into a tighter MVP definition. My role was not just to design a flow. I was helping the team decide what problem we were actually solving, who the feature was really for in the moment of failure, and where to stop before "workspace recovery" quietly turned into a much larger disaster-recovery or archival project.</p>
+
+              <div class="row margin-top">
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">State recovery was the real value</p>
+                  <p>Customers consistently treated the state file as the thing that really mattered. Manual re-import was the true pain point, especially at scale with 1,000+ resources.</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Two different mindsets</p>
+                  <p>Some customers had already been burned. Others wanted protection for something they hoped would never happen. I was designing for both recovery and peace of mind.</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Existing guardrails weren't enough</p>
+                  <p>Git approvals, Sentinel policies, and internal controls still left gaps. The riskiest failures came from automation and API-driven flows that no confirmation UI could catch.</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">The real recovery actor was an org admin</p>
+                  <p>Downstream workspace admins almost always escalated deletion issues upward. That finding moved recovery from a workspace-level feature to an organization-level one.</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">30-day retention was the right tradeoff</p>
+                  <p>Seven days was too short. Much longer raised drift risk and variable decay concerns. Research pointed to 30 days as the most defensible window.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- TWISTS -->
+            <div class="block">
+              <div class="subtitle">TWISTS AND TURNS</div>
+              <h4>Scope pressure was constant, and "recovery" could mean a lot of different things.</h4>
+              <p>At first, it was tempting to think the answer was better deletion prevention. But many accidental deletions came through code and API workflows. More confirmation UI was never going to be enough. The work shifted toward recovery as its own product capability.</p>
+              <p style="margin-top: 16px;">Customers asked for configurable retention windows, archival behavior, rollback to older states, and full audit history. The research plan explicitly scoped all of those out, and that restraint mattered. Without it, the project could have turned into a much blurrier platform effort.</p>
+              <p style="margin-top: 16px;">There was also a real tension between simplicity and safety. A one-click restore sounds great until you think about what happens next. Silent restoration could hide drift or surface other problems only after a user made a critical change. The design had to optimize for confidence, not just speed.</p>
+            </div>
+
+            <!-- DESIGN DECISIONS -->
+            <div class="block" id="ideation">
+              <div class="subtitle">KEY DESIGN DECISIONS</div>
+              <h4>A handful of decisions early on ended up defining most of the MVP.</h4>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Recovery lives at the org level</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: Recovery could logically live at workspace, project, or organization level. Duplicating it across views would create inconsistency and fragment the experience.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Because the operational owner was almost always a platform engineer or org admin, I scoped the entry point to organization-level access only, which matched the actual recovery actor.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Actor map: downstream deletion → escalation → org admin recovery ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>"Recoverable Items" instead of "Workspace Recovery"</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: Naming it "Workspace Recovery" would lock the feature to a single object type, requiring a second IA change when stacks and other resources needed the same capability.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Renamed to <em>Recoverable Items</em>, which is extensible to stacks and other object types without forcing a future rebrand or IA disruption.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Naming scope: Workspace Recovery vs. Recoverable Items ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Deliberate friction in the recovery flow</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: Silent restoration could hide drift or surface problems only after a user made a critical change. A confidence problem worse than slow recovery.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> A dedicated recovery run behaves like a normal Terraform plan/apply, but with context. Users verify what they're bringing back before it takes effect.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Flow: deleted workspace → Recoverable Items → recovery run → restored ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Fixed 30-day retention window</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long windows introduced archival debt and variable drift risk.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Fixed 30-day retention: long enough to cover real incidents, short enough to avoid becoming a de facto archival system.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Retention tradeoff: 7 days / 30 days / configurable ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OUTCOME -->
+            <div class="block" id="solution">
+              <div class="subtitle">OUTCOME</div>
+              <h4>A recurring customer request became a defined, buildable MVP called Recoverable Items.</h4>
+              <p>By the end of the project, the team had aligned on an in-product recovery concept scoped around accidentally deleted workspaces and stacks, organization-level access, a 30-day retention window, and a recovery run that restores the workspace "as if it were never deleted."</p>
+              <p style="margin-top: 16px;">The design work also clarified what was explicitly out of scope: full audit history, unlimited retention, n-2 rollback, and a generic archival system. An internal demo described the feature as nearly ready and targeted for beta, and the design work formed the basis for that handoff.</p>
+
+              <div class="row margin-top">
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Recoverable Items</p>
+                  <p>MVP scoped to accidentally deleted workspaces and stacks with org-level access</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">30-day window</p>
+                  <p>Research-backed retention tradeoff between utility and drift risk</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Recovery run</p>
+                  <p>Deliberate, verifiable restore flow rather than silent one-click restoration</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div class="block" id="conclusion">
+              <div class="subtitle">CONCLUSION</div>
+              <h4>Enterprise UX is often about designing for failure. Good product judgment shows up in what you choose not to build.</h4>
+              <p>The hard part of this project was not drawing an "undelete" flow. It was understanding the system around the failure: who caused it, who owned the recovery, what data actually mattered, and where a tightly scoped fix could accidentally become a much larger platform promise.</p>
+              <p style="margin-top: 16px;">By keeping the work focused on high-confidence recovery instead of generalized rollback or archival, I helped the team move from reacting to a feature request to defining something more coherent and buildable. The project also reinforced something I come back to often: in enterprise software, the real user of a recovery feature is usually not the person who made the mistake.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    <script src="../../../js/main.js"></script>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+
+    </body>
+  </div>
+
+  <footer>
+    <p class="center heavy">Seen enough?</p>
+    <p class="center">Get in touch.</p>
+
+    <div class="img-wrap text-secondary-color">
+      <a href="https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class="sm_icon_center" src="../../../assets/newli.svg"></a>
+      <a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class="sm_icon_center" src="../../../assets/send-4008.svg"></a>
+    </div>
+
+    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2025</p>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </footer>
+
+</html>

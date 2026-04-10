@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+     <!-- Google Tag Manager -->
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NRTS34N');</script>
+      <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../../css/styles.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../../assets/favicon.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Design Portfolio | Terraform Remediation Agent</title>
+
+  </head>
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<div id="loginContainer" class="center vertical-middle">
+        <div class="login-header">
+            <div class="lock-icon">🔒</div>
+            <h1>This case study is protected by NDA</h1>
+            <p class="subtitle">Enter the password to access</p>
+        </div>
+
+        <div class="input-group">
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <button id="unlockBtn" onclick="checkPassword()">
+            Unlock Case Study
+        </button>
+
+        <div id="errorMessage" class="error-message">
+            Incorrect password. Please try again.
+        </div>
+    </div>
+
+    <div id="successAnimation" class="success-animation">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <path d="M14 27 L22 35 L38 16"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="nav-logo">
+      <div class="gradient-circle-logo"></div>
+        <a href="../../../index.html">Ishaan Bose</a>
+    </div>
+
+    <div class="time-container">
+      <span class="icon" id="timeIcon">⏳</span>
+      <span id="currentTime"></span>
+    </div>
+
+    <ul class="menu">
+        <li><a class="menuItem" href="../../../index.html">Work</a></li>
+        <li><a class="menuItem" href="../../../about.html">About</a></li>
+        <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
+        <li><a class="menuItem" href="../../../ishaan bose resume 2023 .pdf">Resume</a></li>
+        <li>
+          <a href="mailto:ishaan.bose@gmail.com">
+            <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">send</span> Contact me</button>
+          </a>
+        </li>
+    </ul>
+    <button class="hamburger">
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons" style="display: none;">close</i>
+    </button>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <body>
+
+      <div id="portfolioContent">
+
+        <nav class="section-nav">
+          <ol>
+            <li><a href="#context">Context</a></li>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#ideation">Decisions</a></li>
+            <li><a href="#solution">Outcome</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ol>
+        </nav>
+
+        <div class="blockwrapper">
+          <div class="blocklist">
+
+            <!-- CONTEXT -->
+            <div class="block" id="context">
+
+              <div class="block">
+                <div class="subtitle">PROJECT</div>
+                <h2 class="textcasetitle">Designing a trustworthy agentic remediation workflow for HCP Terraform</h2>
+              </div>
+
+              <div class="has-gap margin-sm padding-top">
+                <div class="row padding-bottom-lg">
+                  <div class="block padding-bottom">
+                    <div class="subtitle">ORGANIZATION</div>
+                    <div class="flex">
+                      <img style="width: 28px; height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
+                      <h2 class="largetext">HashiCorp</h2>
+                    </div>
+                  </div>
+                  <div class="block">
+                    <div class="subtitle">WHEN</div>
+                    <h2 class="largetext">2025–2026</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="block padding-bottom">
+                    <div class="subtitle">ROLE</div>
+                    <h2 class="largetext">Product Designer</h2>
+                  </div>
+                  <div class="block">
+                    <div class="subtitle">TOOLS</div>
+                    <h2 class="largetext">Figma, Internal Prototypes, Customer-Zero Conversations</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROBLEM -->
+            <div class="block" id="problem">
+              <div class="subtitle">PROBLEM</div>
+              <h4>Teams already knew about their infrastructure problems. The hard part was turning that signal into safe, reviewable fixes.</h4>
+              <p>The core challenge was not a lack of detection. Security scanners, cost tools, and internal systems were already surfacing misconfigurations and issues. The gap was between finding a problem and getting a fix back into Terraform code.</p>
+
+              <div class="problemcard margin-top">
+                <div class="subtitle">THE REAL FRICTION</div>
+                <p>Security teams could identify misconfigurations but often did not own the code. Platform teams owned standards but not every repository. App teams were closest to delivery but not always set up to handle infrastructure remediation quickly. The result was predictable: handoffs, backlog churn, and repetitive work for changes that mattered but were never anyone's priority. Provider bumps, module updates, control fixes, tagging, day-two maintenance.</p>
+              </div>
+
+              <p style="margin-top: 24px;">The design challenge was making remediation feel genuinely helpful without making it feel reckless.</p>
+            </div>
+
+            <!-- CONTEXT / APPROACH -->
+            <div class="block">
+              <div class="subtitle" id="research">CONTEXT</div>
+              <h4>This was a workflow design problem, not a generic AI feature.</h4>
+              <p>The work sat within HashiCorp's broader agentic exploration, including Project Iverson, and was closely tied to HCP Terraform's role as the system where infrastructure changes are planned and applied. If HashiCorp could safely generate changes and write them back into source control, the same pattern could eventually support security fixes, cost improvements, upgrades, and other operational cleanup.</p>
+              <p style="margin-top: 16px;">I pulled together strategy conversations, customer-zero discussions, and internal design and engineering syncs to shape a tighter product direction. Most of my time went into the moments where the experience could build confidence or lose it: onboarding a repo or workspace, understanding why a remediation was suggested, reviewing blast radius, and tracking what the system had already done.</p>
+            </div>
+
+            <!-- RESEARCH -->
+            <div class="block">
+              <div class="subtitle">RESEARCH</div>
+              <h4>The same themes kept coming up across every customer conversation and internal sync.</h4>
+              <p>I used these recurring signals to frame the product shape and decide where to focus the first useful experience.</p>
+
+              <div class="row margin-top">
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Detection wasn't the bottleneck</p>
+                  <p>Teams already had signals from security and cost tools. What they lacked was a low-friction path from issue detection to a reviewable code change.</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Toil reduction was the clearest value</p>
+                  <p>Repetitive, lower-ambiguity tasks like provider upgrades and straightforward fixes were the right place to start. Not autonomous management; just getting painful maintenance off people's plates.</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Trust depended on context, not accuracy</p>
+                  <p>When people saw auto-created PRs, they wanted to know what rule triggered it, how confident the system was, what else might be affected, and whether similar changes could be grouped.</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Focused workflows beat chatbots</p>
+                  <p>The notes consistently leaned toward opinionated, task-specific experiences over an open-ended assistant. People wanted help with real jobs to be done, not a vague prompt box.</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Ownership boundaries shaped the UX</p>
+                  <p>Security identifies, platform sets standards, app teams review and own. That made auditability, history, and clear handoff points just as important as the remediation itself.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- TWISTS -->
+            <div class="block">
+              <div class="subtitle">TWISTS AND TURNS</div>
+              <h4>Scope, onboarding, and the line between product and plumbing were all live tensions.</h4>
+              <p>The biggest pull was toward a broader "agentic experience" connecting many tools and use cases at once. But the bigger the concept got, the harder it was to make the first workflow feel concrete and trustworthy. The team kept returning to a narrower question: what is the first remediation loop that creates real value and proves the model?</p>
+              <p style="margin-top: 16px;">Onboarding was the other major tension. Repo-based onboarding looked simpler from an implementation standpoint because the system ultimately needed to write back to source control. But in monorepos and shared-module setups, a single repo could affect many Terraform workspaces, which obscured blast radius and ownership. Workspace- and project-based onboarding better matched HCP Terraform's mental model, even if it was more complex under the hood.</p>
+              <p style="margin-top: 16px;">There was also a tension between designing a product experience and designing plumbing. VCS write-back, OAuth and service-account strategy, permission validation, and notification behavior could easily get dismissed as implementation details, but they were central to whether the workflow felt safe. I ended up treating those surfaces as UX, not just infrastructure.</p>
+            </div>
+
+            <!-- DESIGN DECISIONS -->
+            <div class="block" id="ideation">
+              <div class="subtitle">KEY DESIGN DECISIONS</div>
+              <h4>A few decisions ended up shaping most of the private-beta direction.</h4>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Design for a specific job, not generic AI interaction</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: The concept could easily drift toward an open-ended assistant that felt powerful in demos but vague in practice.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Pushed the experience toward a focused workflow: identify an issue, propose a fix, write back through familiar PR mechanics. That fit how teams already review infrastructure changes.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Flow: issue detected → remediation proposed → PR opened → human review ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Make trust visible inside the workflow</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: An auto-created PR is meaningless without context. Teams needed to understand why a change existed before they could act on it.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Confidence signal, rule context, blast radius, and a history of prior PRs and actions were not extra polish; they were the product. Treated each as a required surface, not a nice-to-have.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ PR detail: rule context, confidence, blast radius, prior actions ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Treat write-back as a reusable product surface</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: Designing a one-off handoff from a single source would require rethinking the pattern each time a new integration was added.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Evolved toward a general write-back model (issue creation, PR history, logs, notifications, and approval states) that could support multiple remediation sources over time.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Write-back surface: issues, PR history, logs, notifications, approvals ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Favor the user's operational model over the simpler technical model</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: Repo-based onboarding was technically simpler, but obscured blast radius and ownership, especially in monorepos and shared-module setups.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Steered toward workspace and project context, matching how Terraform operations are actually managed and giving users a clearer sense of what the agent was acting on.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Onboarding: repo-first vs. workspace/project-first entry points ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OUTCOME -->
+            <div class="block" id="solution">
+              <div class="subtitle">OUTCOME</div>
+              <h4>A broad agentic concept narrowed into a more focused, believable remediation workflow.</h4>
+              <p>The clearest outcome was a sharper private-beta direction. The team moved from a broad agentic concept toward a narrower remediation workflow built around proactive scanning, generated PRs, and reusable write-back patterns. The design work also made trust requirements explicit: confidence, blast radius, history, and explainability were not side features; they were part of the MVP.</p>
+              <p style="margin-top: 16px;">The work shaped the private-beta definition, clarified where the initial experience should live, and influenced how adjacent integration and VCS workflows were framed. It also surfaced the operational requirements that needed to be solved before the experience could scale beyond an early-adopter setting.</p>
+
+              <div class="row margin-top">
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Proactive remediation loop</p>
+                  <p>From broad agentic exploration to a focused: detect issue → generate fix → open PR → human review</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Trust as a product requirement</p>
+                  <p>Confidence, blast radius, rule context, and history treated as core surfaces, not secondary features</p>
+                </div>
+                <div class="gencard margin-top">
+                  <p class="heavy text-primary-color">Reusable write-back pattern</p>
+                  <p>A general model for PR creation, issue history, and notifications that could support multiple remediation sources</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div class="block" id="conclusion">
+              <div class="subtitle">CONCLUSION</div>
+              <h4>In enterprise AI, the product is not just automation. It is automation people can understand, verify, and safely act on.</h4>
+              <p>This project changed how I think about AI in enterprise products. The design problem was never "how do we add an agent?" It was how to make automation feel accountable inside a messy system of repos, workspaces, permissions, and human ownership boundaries.</p>
+              <p style="margin-top: 16px;">It pushed me to think more like a systems designer, connecting product strategy, platform constraints, and UX details that could easily get dismissed as implementation concerns. And it reinforced something I keep coming back to in enterprise work: the more powerful the automation, the more important it is to design for verification, control, and shared understanding.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    <script src="../../../js/main.js"></script>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+
+    </body>
+  </div>
+
+  <footer>
+    <p class="center heavy">Seen enough?</p>
+    <p class="center">Get in touch.</p>
+
+    <div class="img-wrap text-secondary-color">
+      <a href="https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class="sm_icon_center" src="../../../assets/newli.svg"></a>
+      <a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class="sm_icon_center" src="../../../assets/send-4008.svg"></a>
+    </div>
+
+    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2025</p>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </footer>
+
+</html>

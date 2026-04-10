@@ -1696,11 +1696,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
 
     /* Per-card glow colors */
-    .portgrid > a:nth-child(1) .rowhover { --glow-1: rgba(41, 182, 255, 0.5);  --glow-2: rgba(120, 220, 255, 0.3); }
-    .portgrid > a:nth-child(2) .rowhover { --glow-1: rgba(168, 85, 247, 0.5);  --glow-2: rgba(216, 155, 255, 0.3); }
-    .portgrid > a:nth-child(3) .rowhover { --glow-1: rgba(244, 63, 94, 0.5);   --glow-2: rgba(255, 150, 160, 0.3); }
-    .portgrid > a:nth-child(4) .rowhover { --glow-1: rgba(249, 115, 22, 0.5);  --glow-2: rgba(255, 200, 100, 0.3); }
-    .portgrid > a:nth-child(5) .rowhover { --glow-1: rgba(16, 185, 129, 0.5);  --glow-2: rgba(110, 231, 183, 0.3); }
+    .portgrid > a:nth-child(1) .rowhover { --glow-1: rgba(236, 72, 153, 0.5);  --glow-2: rgba(251, 182, 215, 0.3); } /* Remediation Agent — pink */
+    .portgrid > a:nth-child(2) .rowhover { --glow-1: rgba(20, 184, 166, 0.5);  --glow-2: rgba(153, 246, 228, 0.3); } /* Recoverable Items — teal */
+    .portgrid > a:nth-child(3) .rowhover { --glow-1: rgba(41, 182, 255, 0.5);  --glow-2: rgba(120, 220, 255, 0.3); } /* Key Value Tags — blue */
+    .portgrid > a:nth-child(4) .rowhover { --glow-1: rgba(168, 85, 247, 0.5);  --glow-2: rgba(216, 155, 255, 0.3); } /* MLM — purple */
+    .portgrid > a:nth-child(5) .rowhover { --glow-1: rgba(244, 63, 94, 0.5);   --glow-2: rgba(255, 150, 160, 0.3); } /* UI Refresh — rose */
+    .portgrid > a:nth-child(6) .rowhover { --glow-1: rgba(249, 115, 22, 0.5);  --glow-2: rgba(255, 200, 100, 0.3); } /* Image Insights — orange */
+    .portgrid > a:nth-child(7) .rowhover { --glow-1: rgba(16, 185, 129, 0.5);  --glow-2: rgba(110, 231, 183, 0.3); } /* Ad Comparison — emerald */
 
     /* Rolling gradient — extends beyond card bounds */
     .rowhover::before {
