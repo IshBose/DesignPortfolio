@@ -224,6 +224,23 @@
             <div class="block">
               <div class="row">
                 <div class="col-sm">
+                  <h4>How much friction is the right amount?</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift — a workspace that looked recovered but no longer matched its config or state expectations.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not. We leaned into the Terraform plan as the trust mechanism: show users exactly what would be restored before it takes effect, the same way Terraform surfaces changes before any apply. Familiar, verifiable, and honest about what it's doing.</p>
+                </div>
+                <div class="col-lg">
+                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
+                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Flow: deleted workspace → Recoverable Items → recovery run → plan output → restore ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
                   <h4>Recovery lives at the org level</h4>
                   <br>
                   <p class="text-secondary-color">Challenge: Recovery could logically live at workspace, project, or organization level. Duplicating it across views would create inconsistency and fragment the experience.</p>
@@ -250,23 +267,6 @@
                 <div class="col-lg">
                   <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
                     <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Naming scope: Workspace Recovery vs. Recoverable Items ]</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Deliberate friction in the recovery flow</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Silent restoration could hide drift or surface problems only after a user made a critical change. A confidence problem worse than slow recovery.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> A dedicated recovery run behaves like a normal Terraform plan/apply, but with context. Users verify what they're bringing back before it takes effect.</p>
-                </div>
-                <div class="col-lg">
-                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
-                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Flow: deleted workspace → Recoverable Items → recovery run → restored ]</p>
                   </div>
                 </div>
               </div>
