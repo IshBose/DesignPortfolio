@@ -196,6 +196,18 @@ let section = document.querySelectorAll('section');
 
       
 
+       // Pill nav — mark active tab based on current page
+       (function () {
+         const path = window.location.pathname;
+         const isAbout = path.includes('about');
+         document.querySelectorAll('.pill-tab').forEach(tab => {
+           const page = tab.dataset.page;
+           if ((isAbout && page === 'about') || (!isAbout && page === 'work')) {
+             tab.classList.add('active');
+           }
+         });
+       })();
+
        // Added: JavaScript functionality to toggle the menu
         const menu = document.querySelector(".menu");
         const menuItems = document.querySelectorAll(".menuItem");

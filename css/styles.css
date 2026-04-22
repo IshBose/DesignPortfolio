@@ -93,7 +93,7 @@
 :root {
     --blk: #131316;
     --accent: #3478FF;
-    --hover: white;
+    --hover: #090C12;
     --font-family: "regola", sans-serif;
     --packer: #02a8ef;
     --terraform: #7B42BC;
@@ -428,6 +428,7 @@ h3{
 }
 
 .hamburger {
+  display: none; /* hidden on desktop; shown via mobile media query */
   position: fixed;
   z-index: 100;
   top: 2.5rem;
@@ -489,6 +490,74 @@ h3{
 .time-container.visible {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+
+/* Pill nav */
+.pill-nav {
+  position: fixed;
+  top: 24px;
+  right: 200px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #ffffff;
+  border: 1px solid var(--bordercolor);
+  border-radius: 100px;
+  padding: 4px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.pill-slider {
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border-radius: 100px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.pill-tab {
+  position: relative;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondarytext);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.pill-tab.active {
+  background: #ffffff;
+  color: var(--primarytext);
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+.pill-sep {
+  width: 1px;
+  height: 18px;
+  background: var(--bordercolor);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.pill-btn {
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondarytext);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.pill-btn:hover {
+  background: var(--card);
+  color: var(--primarytext);
 }
 
 .showMenu {
@@ -1685,8 +1754,20 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     }
     /* Override rowhover pseudo-element radius for new card shape */
     .card-new.rowhover { border-radius: 12px; padding: 0; }
-    .card-new.rowhover::after { border-radius: 12px; }
-    .card-new.rowhover::before { border-radius: 24px; }
+
+    /* Extend white cover 10px beyond card edges — creates a buffer so the
+       gradient glow never touches the card content */
+    .card-new.rowhover::after {
+      inset: -10px;
+      border-radius: 22px;
+    }
+
+    /* Softer, more diffuse gradient for card-new */
+    .card-new.rowhover::before {
+      border-radius: 28px;
+      filter: blur(28px);
+    }
+    .card-new.rowhover:hover::before { opacity: 0.55; }
 
     .card-img { overflow: hidden; border-radius: 12px 12px 0 0; }
     .card-img img { width: 100%; display: block; object-fit: cover; }
@@ -1697,7 +1778,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       display: flex;
       flex-direction: column;
       gap: 8px;
-      padding: 20px;
+      padding-top: 20px;
       flex: 1;
       position: relative;
       z-index: 1;
@@ -2329,8 +2410,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
 
       .hamburger{
+        display: flex;
         right: 24px;
         top: 1.8rem;
+      }
+      .pill-nav {
+        display: none;
       }
 
       .section-nav {
