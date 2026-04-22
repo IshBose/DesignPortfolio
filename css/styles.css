@@ -100,7 +100,7 @@
     --card: #F0F1F5;
     --primarytext: #141218;
     --secondarytext: #686868;
-    --background:#F7F7FF;
+    --background:#FFFFFF;
     --bordercolor: #DBD7D2;
     --highlight: #B21F1F;
 
@@ -402,11 +402,10 @@ h3{
 
 
 .gradient-circle-logo {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%; /* Makes it a circle */
-  background: linear-gradient(180deg, #1A2A6C 0%, #B21F1F 50%, #FDBB2D 100%);
-
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 
@@ -535,9 +534,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
   .portgrid{
     grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
     display: grid;
-    gap: 128px;
+    gap:64px;
     max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -558,8 +560,11 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 }
 
-.portgrid a:hover{
-  transform: none;
+.portgrid a {
+  transition: transform 0.2s ease;
+}
+.portgrid a:hover {
+  transform: scale(1.015);
 }
 
 .portgridcol2 {
@@ -1575,8 +1580,188 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       to { --gradient-angle: 360deg; }
     }
 
+    /* ── Hero section ── */
+    .hero-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .hero-left { flex: 0 0 50%; max-width: 50%; }
+    .hero-name {
+      display: none;
+    }
+    .hero-tagline {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--primarytext);
+      max-width: 600px;
+      margin-bottom: 32px;
+      line-height: 1.35;
+    }
+    .hero-status { display: flex; flex-direction: column; gap: 4px; }
+    .hero-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+    .hero-status-active {
+      background: #F0F1F5;
+      color: var(--primarytext);
+    }
+    .hero-right { flex-shrink: 0; }
+    .hero-halftone {
+      width: 240px;
+      height: 240px;
+      display: block;
+    }
+    
+    /* Globe city tooltip */
+    .globe-tooltip {
+      position: fixed;
+      z-index: 9999;
+      background: var(--background);
+      border: 1px solid var(--bordercolor);
+      border-radius: 12px;
+      padding: 12px;
+      width: 172px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.12s ease;
+    }
+    .globe-tooltip.visible { opacity: 1; }
+    .globe-tooltip-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 8px;
+      object-fit: cover;
+    }
+    .globe-tooltip-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primarytext);
+      margin-bottom: 2px;
+    }
+    .globe-tooltip-caption {
+      font-size: 12px;
+      color: var(--secondarytext);
+    }
 
+    .section-header {
+      margin-top: 120px;
+      padding-bottom: 64px;
+    }
 
+    .section-header-row {
+      display: flex;
+      align-items: center;   /* vertical alignment */
+      gap: 24px;             /* spacing between text and line */
+      max-width: 800px;      /* prevents over-stretching */
+    }
+
+   .section-header-rule {
+  flex: 1;
+  border-top: 1px solid #DBD7D2;
+  max-width: 200px;
+}
+
+     .section-header-h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--primarytext);
+    
+    }
+    /* ── New card grid items ── */
+    .card-new {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    /* Override rowhover pseudo-element radius for new card shape */
+    .card-new.rowhover { border-radius: 12px; padding: 0; }
+    .card-new.rowhover::after { border-radius: 12px; }
+    .card-new.rowhover::before { border-radius: 24px; }
+
+    .card-img { overflow: hidden; border-radius: 12px 12px 0 0; }
+    .card-img img { width: 100%; display: block; object-fit: cover; }
+
+    .card-blank { min-height: 340px; }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+    /* Card layout rows */
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .card-company {
+      font-size: 14px;
+      color: var(--primarytext);
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
+
+    .card-header-row h3{
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .card-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--bordercolor);
+      color: var(--secondarytext);
+      background: var(--background);
+    }
+    .tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .tag-dot-green  { background: #58A942; }
+    .tag-dot-purple { background: linear-gradient(135deg, #92BFFE 0%, #EE84F5 50%, #B978FF 100%); }
+    .tag-dot-orange { background: #FDBB2D; }
+    .card-desc { font-size: 14px; flex: 1; }
+    .btn-learn-more {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--bordercolor);
+      color: var(--primarytext);
+      background: var(--background);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
 
     .row2{
       padding-top: 8px;
@@ -2422,10 +2607,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         }
 
         .portgrid{
-          display: block;
+          display: grid;
+          grid-template-columns: 1fr;
           margin-top: 40px;
-
+          gap: 16px;
         }
+        .hero-row { flex-direction: column-reverse; }
+        .hero-name { font-size: 32px; }
+        .hero-halftone { width: 140px; height: 140px; }
 
         .row2 h3{
           font-size: 14px;
