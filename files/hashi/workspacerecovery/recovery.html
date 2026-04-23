@@ -125,10 +125,12 @@
 
             <!-- CONTEXT -->
             <div class="block" id="context">
+                <img src="../../../images/workspacerecoverimg.png" class="fullwidth minus-margin" >
+
 
               <div class="block">
                 <div class="subtitle">PROJECT</div>
-                <h2 class="textcasetitle">Designing recovery for accidentally deleted HCP Terraform workspaces</h2>
+                <h2 class="textcasetitle">Preventing downtime for large enterprises through frictionless recovery</h2>
               </div>
 
               <div class="has-gap margin-sm padding-top">
@@ -148,11 +150,11 @@
                 <div class="row">
                   <div class="block padding-bottom">
                     <div class="subtitle">ROLE</div>
-                    <h2 class="largetext">Product Designer, Terraform Core-Cloud</h2>
+                    <h2 class="largetext">Lead Product Designer</h2>
                   </div>
                   <div class="block">
                     <div class="subtitle">TOOLS</div>
-                    <h2 class="largetext">Figma, Customer Interviews, Synthesis Docs</h2>
+                    <h2 class="largetext">Figma, Snowflake</h2>
                   </div>
                 </div>
               </div>
@@ -161,24 +163,27 @@
             <!-- PROBLEM -->
             <div class="block" id="problem">
               <div class="subtitle">PROBLEM</div>
-              <h4>When a workspace was deleted, recovery barely existed. The cost of that gap was enormous.</h4>
-              <p>Workspace Recovery started with a question that sounded small: what should happen when someone accidentally deletes an HCP Terraform workspace? At the time, the honest answer was "not much." Once a workspace was gone, customers were left recreating it by hand, manually importing orphaned resources, or rolling back much larger system snapshots just to get one workspace back.</p>
+              <h4>Workspace Recovery started with a question that sounded small: what should happen when someone accidentally deletes an HCP Terraform workspace?</h4>
+              <p style="margin-top: 24px;">In HCP Terraform, a workspace is not just a project container. It holds the state, variables, history, and workflow context needed to manage real infrastructure over time. Deletion could wipe all of that, with no native path to get it back.</p>
+
+
+                 <img src="./WhyThisMatters.png" class="fullwidth">
 
               <div class="problemcard margin-top">
                 <div class="subtitle">THE SCALE OF THE PROBLEM</div>
-                <p>One internal support note cited Epic Games, where recovering nine deleted workspaces was estimated at <strong>three to five days per workspace</strong>. That made it clear this was not just about adding an undo button.</p>
+                <p>One internal support note cited Epic Games, where recovering nine deleted workspaces was estimated at <strong>three to five days per workspace</strong>. That made it clear that this was significant pain when it does occur.</p>
               </div>
-
-              <p style="margin-top: 24px;">In HCP Terraform, a workspace is not just a project container. It holds the state, variables, history, and workflow context needed to manage real infrastructure over time. Deletion could wipe all of that, with no native path to get it back.</p>
             </div>
 
             <!-- CONTEXT / ACTORS -->
             <div class="block">
               <div class="subtitle" id="research">CONTEXT</div>
               <h4>The person who caused the deletion was rarely the person responsible for fixing it.</h4>
-              <p>My research plan focused on two main personas: app developers and platform engineers. In practice, downstream teams or automation layers (API calls, internal tooling, workspace-as-code workflows) were often triggering deletions, while the actual cleanup fell on upstream platform admins.</p>
-              <p style="margin-top: 16px;">That mismatch shaped the whole problem. Recovery had to fit the reality of enterprise operations, not just the UI. I partnered with PM Garvita Rai to frame the work around three questions: how accidental deletion actually happened, what a believable recovery path should bring back, and how customers were already trying to protect themselves from this risk.</p>
+              <img src="./Personas.png" class="fullwidth">
+              <p style="margin-top: 16px;">That mismatch shaped the whole problem. Recovery had to fit the reality of enterprise operations, not just the UI. I partnered with my PM to frame the work around three questions: how accidental deletion actually happened, what a believable recovery path should bring back, and how customers were already trying to protect themselves from this risk.</p>
             </div>
+
+
 
             <!-- RESEARCH -->
             <div class="block">
@@ -188,30 +193,26 @@
 
               <div class="row margin-top">
                 <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">State recovery was the real value</p>
-                  <p>Customers consistently treated the state file as the thing that really mattered. Manual re-import was the true pain point, especially at scale with 1,000+ resources.</p>
+                  <p class="heavy text-primary-color">State recovery was essential</p>
+                  <p>The state file was what customers actually cared about. Manual re-import was the real pain, especially at scale with 1,000+ resources.</p>
                 </div>
                 <div class="gencard margin-top">
                   <p class="heavy text-primary-color">Two different mindsets</p>
-                  <p>Some customers had already been burned. Others wanted protection for something they hoped would never happen. I was designing for both recovery and peace of mind.</p>
+                  <p>Some had already been burned. Others were protecting against something they hoped would never happen. I was designing for both.</p>
                 </div>
                 <div class="gencard margin-top">
                   <p class="heavy text-primary-color">Existing guardrails weren't enough</p>
-                  <p>Git approvals, Sentinel policies, and internal controls still left gaps. The riskiest failures came from automation and API-driven flows that no confirmation UI could catch.</p>
+                  <p>Git approvals, Sentinel, and internal controls still left gaps, especially in automation and API-driven flows where no confirmation UI could intervene.</p>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">The real recovery actor was an org admin</p>
-                  <p>Downstream workspace admins almost always escalated deletion issues upward. That finding moved recovery from a workspace-level feature to an organization-level one.</p>
-                </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">30-day retention was the right tradeoff</p>
-                  <p>Seven days was too short. Much longer raised drift risk and variable decay concerns. Research pointed to 30 days as the most defensible window.</p>
-                </div>
-              </div>
+              <img src="./User journey map -- As is Scenario Workspace Recovery.png" class="fullwidth">
             </div>
+
+
+
+                                
+
 
             <!-- TWISTS -->
             <div class="block">
@@ -235,12 +236,11 @@
                   <br>
                   <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift — a workspace that looked recovered but no longer matched its config or state expectations.</p>
                   <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not. We leaned into the Terraform plan as the trust mechanism: show users exactly what would be restored before it takes effect, the same way Terraform surfaces changes before any apply. Familiar, verifiable, and honest about what it's doing.</p>
+                  <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not..</p>
                 </div>
                 <div class="col-lg">
-                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
-                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Flow: deleted workspace → Recoverable Items → recovery run → plan output → restore ]</p>
-                  </div>
+                                   <img src="./recovery.gif" class="fullwidth">
+
                 </div>
               </div>
             </div>
@@ -255,11 +255,11 @@
                   <p class="text-primary-color"><strong>Decision:</strong> Because the operational owner was almost always a platform engineer or org admin, I scoped the entry point to organization-level access only, which matched the actual recovery actor.</p>
                 </div>
                 <div class="col-lg">
-                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
-                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Actor map: downstream deletion → escalation → org admin recovery ]</p>
-                  </div>
+                                   <img src="./Persona2.png" class="fullwidth">
+
                 </div>
               </div>
+
             </div>
 
             <div class="block">
@@ -272,11 +272,12 @@
                   <p class="text-primary-color"><strong>Decision:</strong> Renamed to <em>Recoverable Items</em>, which is extensible to stacks and other object types without forcing a future rebrand or IA disruption.</p>
                 </div>
                 <div class="col-lg">
-                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
-                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Naming scope: Workspace Recovery vs. Recoverable Items ]</p>
-                  </div>
+                   <img src="./recovIA.png" class="fullwidth">
+
                 </div>
               </div>
+              <img src="./Naming.png" class="fullwidth">
+
             </div>
 
             <div class="block">
@@ -301,20 +302,20 @@
               <div class="subtitle">OUTCOME</div>
               <h4>A recurring customer request became a defined, buildable MVP called Recoverable Items.</h4>
               <p>By the end of the project, the team had aligned on an in-product recovery concept scoped around accidentally deleted workspaces and stacks, organization-level access, a 30-day retention window, and a recovery run that restores the workspace "as if it were never deleted."</p>
-              <p style="margin-top: 16px;">The design work also clarified what was explicitly out of scope: full audit history, unlimited retention, n-2 rollback, and a generic archival system. An internal demo described the feature as nearly ready and targeted for beta, and the design work formed the basis for that handoff.</p>
+              <p style="margin-top: 16px;">The design work also clarified what was explicitly out of scope: full audit history, unlimited retention, n-2 rollback, and a generic archival system. An internal demo described the feature as a gamechanger for customers, and the design work formed the basis for that impact.</p>
 
               <div class="row margin-top">
                 <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Recoverable Items</p>
-                  <p>MVP scoped to accidentally deleted workspaces and stacks with org-level access</p>
+                  <p class="heavy text-primary-color">Trust built into the product</p>
+                  <p>Users expect the tool that they pay $XXXk or $XXXXk to fix their issues if they make a mistake.</p>
                 </div>
                 <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">30-day window</p>
-                  <p>Research-backed retention tradeoff between utility and drift risk</p>
+                  <p class="heavy text-primary-color">$77M in contract value </p>
+                  <p>Directly impacts business revenue by delivering a highly impactful feature.</p>
                 </div>
                 <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Recovery run</p>
-                  <p>Deliberate, verifiable restore flow rather than silent one-click restoration</p>
+                  <p class="heavy text-primary-color">Enterprise ready product</p>
+                  <p>Creates a resilient selling narrative for our target customers, the top 2000 orgs in the world.</p>
                 </div>
               </div>
             </div>
@@ -362,7 +363,7 @@
       <a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class="sm_icon_center" src="../../../assets/send-4008.svg"></a>
     </div>
 
-    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2025</p>
+    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2026</p>
 
     <script
       type="module"

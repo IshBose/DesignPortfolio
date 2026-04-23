@@ -142,7 +142,7 @@
                   </div>
                   <div class="block">
                     <div class="subtitle">WHEN</div>
-                    <h2 class="largetext">2025–2026</h2>
+                    <h2 class="largetext">2026</h2>
                   </div>
                 </div>
                 <div class="row">
@@ -152,7 +152,7 @@
                   </div>
                   <div class="block">
                     <div class="subtitle">TOOLS</div>
-                    <h2 class="largetext">Figma, Internal Prototypes, Customer-Zero Conversations</h2>
+                    <h2 class="largetext">Figma, Claude Code, Copilot CLIs</h2>
                   </div>
                 </div>
               </div>
@@ -161,22 +161,20 @@
             <!-- PROBLEM -->
             <div class="block" id="problem">
               <div class="subtitle">PROBLEM</div>
-              <h4>Teams already knew about their infrastructure problems. The hard part was turning that signal into safe, reviewable fixes.</h4>
+              <h4>Teams already knew about their infrastructure problems. The hard part was prioritizing what is fundamentally toil.</h4>
               <p>The core challenge was not a lack of detection. Security scanners, cost tools, and internal systems were already surfacing misconfigurations and issues. The gap was between finding a problem and getting a fix back into Terraform code.</p>
 
               <div class="problemcard margin-top">
                 <div class="subtitle">THE REAL FRICTION</div>
-                <p>Security teams could identify misconfigurations but often did not own the code. Platform teams owned standards but not every repository. App teams were closest to delivery but not always set up to handle infrastructure remediation quickly. The result was predictable: handoffs, backlog churn, and repetitive work for changes that mattered but were never anyone's priority. Provider bumps, module updates, control fixes, tagging, day-two maintenance.</p>
+                <p>Security teams spotted problems but didn't own the code. Platform teams owned standards but not every repo. App teams were closest to delivery but rarely set up for infra remediation. The result: handoffs, backlog churn, and repetitive work, such as provider bumps, module updates, control fixes, tagging,that mattered but belonged to no one.</p>
               </div>
-
-              <p style="margin-top: 24px;">The design challenge was making remediation feel genuinely helpful without making it feel reckless.</p>
             </div>
 
             <!-- CONTEXT / APPROACH -->
             <div class="block">
               <div class="subtitle" id="research">CONTEXT</div>
               <h4>This was a workflow design problem, not a generic AI feature.</h4>
-              <p>The work sat within HashiCorp's broader agentic exploration, including Project Iverson, and was closely tied to HCP Terraform's role as the system where infrastructure changes are planned and applied. If HashiCorp could safely generate changes and write them back into source control, the same pattern could eventually support security fixes, cost improvements, upgrades, and other operational cleanup.</p>
+              <p>The work sat within HashiCorp's broader agentic exploration, and was closely tied to HCP Terraform's role as the system where infrastructure changes are planned and applied. If HashiCorp could safely generate changes and write them back into source control, the same pattern could eventually support security fixes, cost improvements, upgrades, and other operational cleanup.</p>
               <p style="margin-top: 16px;">I pulled together strategy conversations, customer-zero discussions, and internal design and engineering syncs to shape a tighter product direction. Most of my time went into the moments where the experience could build confidence or lose it: onboarding a repo or workspace, understanding why a remediation was suggested, reviewing blast radius, and tracking what the system had already done.</p>
             </div>
 

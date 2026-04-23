@@ -97,7 +97,7 @@
     --font-family: "regola", sans-serif;
     --packer: #02a8ef;
     --terraform: #7B42BC;
-    --card: #F0F1F5;
+    --card: #F8F8F8;
     --primarytext: #141218;
     --secondarytext: #686868;
     --background:#FFFFFF;
@@ -870,7 +870,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
             width: 60px;
             height: 60px;
             margin: 0 auto 15px;
-            background: linear-gradient(180deg, #1A2A6C 0%, #B21F1F 50%, #FDBB2D 100%);
+            background: #F8F8F8;
+            border: 1px solid var(--bordercolor);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1687,6 +1688,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       width: 240px;
       height: 240px;
       display: block;
+      margin-right: 32px;
     }
     
     /* Globe city tooltip */
@@ -1799,7 +1801,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .card-header-row h3{
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 400;
     }
     .card-footer-row {
       display: flex;
