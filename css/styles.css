@@ -2084,17 +2084,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           flex-direction: column;
           align-items: flex-start;
       }
-      
+
       .date {
           margin-left: 0;
           margin-top: 0.25rem;
       }
-      
+
       .accordion-icon {
           position: absolute;
           right: 1rem;
       }
-
     }
     
 
@@ -2398,6 +2397,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
       .nav-logo{
         left: 24px;
+        top: 20px;
       }
 
       .gradient-circle{
@@ -2405,18 +2405,14 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         width: 14px;
       }
 
-      
-
-      .nav-logo img{
+      .hamburger{
         display: none;
       }
-
-      .hamburger{
-        display: flex;
-        right: 24px;
-        top: 1.8rem;
-      }
       .pill-nav {
+        right: 24px;
+        top: 16px;
+      }
+      .gallery-container {
         display: none;
       }
 
@@ -2602,8 +2598,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
        
         .blocklist{
           width: 100%;
-          grid-column-start: 2;
-          grid-column-end: 7;
+          grid-column: 1 / -1;
           gap: 40px;
 
         }
@@ -2617,7 +2612,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           padding-right: 24px;
           padding-top: 100px;
           column-gap: 0px;
-  
+          grid-template-columns: 1fr;
         }
 
         .textcasetitle{
@@ -2631,7 +2626,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
         .rowcard{
           flex-direction: column;
-          
+          gap: 16px;
         }
         .block img{
           max-width: 100%;
@@ -2699,9 +2694,13 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           margin-top: 40px;
           gap: 16px;
         }
-        .hero-row { flex-direction: column-reverse; }
+        .hero-row { flex-direction: column-reverse; align-items: center; gap: 24px; }
+        .hero-left { flex: 0 0 100%; max-width: 100%; width: 100%; }
+        .hero-right { display: flex; justify-content: center; }
         .hero-name { font-size: 32px; }
-        .hero-halftone { width: 140px; height: 140px; }
+        .hero-tagline { font-size: 16px; margin-bottom: 20px; }
+        .hero-halftone { width: 140px; height: 140px; margin-right: 0; }
+        .hero-status-row { flex-wrap: wrap; gap: 4px; }
 
         .row2 h3{
           font-size: 14px;
@@ -2719,6 +2718,23 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
           font-size: 12px;
         }
       
+      }
+
+          /************************************************************ Narrow Phone Overrides (must come after 800px block)  ******************************************************************/
+
+      @media screen and (max-width: 640px) {
+        .hero-halftone { width: 100px; height: 100px; }
+        .textcasetitle { font-size: 18px; }
+        .largetext { font-size: 16px; }
+        .profilepic { margin-left: 0; }
+        h4 { font-size: 16px; }
+        .hero-tagline { font-size: 14px; }
+        .indexcontainer { margin-left: 16px; margin-right: 16px; }
+        .blocklist { gap: 56px; }
+        /* Narrow phones: hide external links, keep Work/About only */
+        .pill-btn { display: none; }
+        .pill-sep { display: none; }
+        .pill-tab { padding: 5px 12px; font-size: 13px; }
       }
 
           /************************************************************ Normal Laptop Sizes  ******************************************************************/

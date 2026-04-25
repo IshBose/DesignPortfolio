@@ -218,9 +218,10 @@
             <div class="block">
               <div class="subtitle">TWISTS AND TURNS</div>
               <h4>Scope pressure was constant, and "recovery" could mean a lot of different things.</h4>
-              <p>At first, it was tempting to think the answer was better deletion prevention. But many accidental deletions came through code and API workflows. More confirmation UI was never going to be enough. The work shifted toward recovery as its own product capability.</p>
-              <p style="margin-top: 16px;">Customers asked for configurable retention windows, archival behavior, rollback to older states, and full audit history. The research plan explicitly scoped all of those out, and that restraint mattered. Without it, the project could have turned into a much blurrier platform effort.</p>
-              <p style="margin-top: 16px;">There was also a real tension between simplicity and safety. A one-click restore sounds great until you think about what happens next. Silent restoration could hide drift or surface other problems only after a user made a critical change. The design had to optimize for confidence, not just speed.</p>
+              <p>The temptation early on was better deletion prevention. But most accidental deletions came through code and API flows — no confirmation UI could catch those. Recovery had to be its own capability. Customers pushed for configurable retention, rollback, and audit history; all of it got scoped out. That restraint is what kept the project from dissolving into a platform effort. The metric analysis below was a key input in making those calls.</p>
+           
+           <img src="./Metric analysis.png" class="fullwidth">
+
             </div>
 
             <!-- DESIGN DECISIONS -->
@@ -243,6 +244,8 @@
 
                 </div>
               </div>
+                <img src="./RecoveryInitiatls.png" class="fullwidth">
+
             </div>
 
             <div class="block">
@@ -285,17 +288,31 @@
                 <div class="col-sm">
                   <h4>Fixed 30-day retention window</h4>
                   <br>
-                  <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long windows introduced archival debt and variable drift risk.</p>
+                  <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long ones risked becoming a de facto archival system.</p>
                   <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Fixed 30-day retention: long enough to cover real incidents, short enough to avoid becoming a de facto archival system.</p>
+                  <p class="text-primary-color"><strong>Decision:</strong> Research pointed to 30 days — long enough for real incidents, short enough to avoid archival debt. We fixed it rather than making it a setting.</p>
                 </div>
                 <div class="col-lg">
-                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
-                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Retention tradeoff: 7 days / 30 days / configurable ]</p>
-                  </div>
+                  <img src="./General Settings.png" class="fullwidth">
                 </div>
               </div>
             </div>
+
+            <div class="block">
+              <div class="row">
+                <div class="col-sm">
+                  <h4>Naming collisions</h4>
+                  <br>
+                  <p class="text-secondary-color">Challenge: If a deleted workspace's name gets reused before recovery, the two objects conflict — something has to be blocked.</p>
+                  <br>
+                  <p class="text-primary-color"><strong>Decision:</strong> We blocked recovery rather than creation. Collisions are rare, and halting active work to protect a deleted workspace is the wrong tradeoff.</p>
+                </div>
+                <div class="col-lg">
+                  <img src="./otheraeas.png" class="fullwidth">
+                </div>
+              </div>
+            </div>
+
 
             <!-- OUTCOME -->
             <div class="block" id="solution">
