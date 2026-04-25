@@ -38,6 +38,14 @@
 
     
      
+  <style>
+    @keyframes toast-flash {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      80%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
   </head>
 
 
@@ -132,7 +140,7 @@
 
       <div class="portgrid padding-top-lg">
         <!-- Card 1: Blank — Remediation Agent (NDA) -->
-        <a href="files/hashi/remediationagent/agent.html">
+        <a href="#" onclick="event.preventDefault();var t=document.getElementById('coming-soon-toast');t.style.animation='none';t.offsetHeight;t.style.animation='toast-flash 5s ease forwards';">
           <div class="card-new card-blank rowhover">
                         <div class="card-img">
               <img src="./images/remediationimg.png" alt="Recoverable Items">
@@ -325,6 +333,8 @@
 
     <script src="./js/land-dots.js"></script>
     <script src="./js/main.js"></script>
+
+    <div id="coming-soon-toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--primarytext);color:#fff;padding:10px 20px;border-radius:100px;font-size:14px;opacity:0;transition:opacity 0.3s ease;pointer-events:none;z-index:9999;white-space:nowrap;">Not so fast! This case study is currently being worked on, and is coming soon!</div>
 
     </body>
 
