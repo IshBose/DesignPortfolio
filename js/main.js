@@ -529,12 +529,135 @@ let section = document.querySelectorAll('section');
   const cosTilt = Math.cos(TILT), sinTilt = Math.sin(TILT);
 
   let rot = 0;
+  let planeAngle = 0;
+  const TORAD = Math.PI / 180;
+
+  // Spherical linear interpolation between two lon/lat points along a great circle
+  function slerp3(lon1, lat1, lon2, lat2, t) {
+    const φ1 = lat1 * TORAD, λ1 = lon1 * TORAD;
+    const φ2 = lat2 * TORAD, λ2 = lon2 * TORAD;
+    const x1 = Math.cos(φ1)*Math.cos(λ1), y1 = Math.sin(φ1), z1 = Math.cos(φ1)*Math.sin(λ1);
+    const x2 = Math.cos(φ2)*Math.cos(λ2), y2 = Math.sin(φ2), z2 = Math.cos(φ2)*Math.sin(λ2);
+    const dot = Math.max(-1, Math.min(1, x1*x2 + y1*y2 + z1*z2));
+    const omega = Math.acos(dot);
+    if (omega < 1e-10) return [lon1, lat1];
+    const so = Math.sin(omega);
+    const a = Math.sin((1 - t) * omega) / so;
+    const b = Math.sin(t * omega) / so;
+    const x = a*x1 + b*x2, y = a*y1 + b*y2, z = a*z1 + b*z2;
+    return [Math.atan2(z, x) / TORAD, Math.asin(Math.max(-1, Math.min(1, y))) / TORAD];
+  }
+
+  // Dashed great-circle arcs connecting each city in sequence
+  function drawFlightPaths() {
+    const N = CITIES.length;
+    ctx.save();
+    ctx.lineWidth = 0.8 * DPR;
+    ctx.strokeStyle = "rgba(52,120,255,0.20)";
+    ctx.setLineDash([3 * DPR, 5 * DPR]);
+    for (let ci = 0; ci < N; ci++) {
+      const from = CITIES[ci], to = CITIES[(ci + 1) % N];
+      ctx.beginPath();
+      let penDown = false;
+      for (let i = 0; i <= 80; i++) {
+        const [lon, lat] = slerp3(from.lon, from.lat, to.lon, to.lat, i / 80);
+        const p = project(lon, lat);
+        if (p) {
+          if (!penDown) { ctx.moveTo(p[0], p[1]); penDown = true; }
+          else            ctx.lineTo(p[0], p[1]);
+        } else {
+          penDown = false;
+        }
+      }
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    ctx.restore();
+  }
+
+  function drawAirplane() {
+    const N = CITIES.length;
+    const t_total = planeAngle % N;
+    const seg = Math.floor(t_total) % N;
+    const t   = t_total - Math.floor(t_total);
+    const from = CITIES[seg], to = CITIES[(seg + 1) % N];
+
+    const [lon, lat] = slerp3(from.lon, from.lat, to.lon, to.lat, t);
+    const p = project(lon, lat);
+    if (!p) return;
+
+    // Heading from tangent — step slightly forward along the great circle
+    const t2 = Math.min(t + 0.005, 0.999);
+    const [lon2, lat2] = slerp3(from.lon, from.lat, to.lon, to.lat, t2);
+    const p2 = project(lon2, lat2);
+    if (!p2) return;
+
+    const heading = Math.atan2(p2[1] - p[1], p2[0] - p[0]);
+    const s = 3.2 * DPR;
+    ctx.save();
+    ctx.translate(p[0], p[1]);
+    ctx.rotate(heading);
+    ctx.lineJoin    = "round";
+    ctx.lineCap     = "round";
+    ctx.fillStyle   = "#e4e4e4";
+    ctx.strokeStyle = "rgba(0,0,0,0.16)";
+    ctx.lineWidth   = 0.6 * DPR;
+    // Fuselage
+    ctx.beginPath();
+    ctx.moveTo( s * 3.0, 0);
+    ctx.bezierCurveTo( s * 2.3, -s * 0.18,  s * 1.0, -s * 0.30,  s * 0.8, -s * 0.30);
+    ctx.lineTo(-s * 2.1, -s * 0.22);
+    ctx.bezierCurveTo(-s * 2.5, -s * 0.15, -s * 2.9, -s * 0.07, -s * 3.0,  0);
+    ctx.bezierCurveTo(-s * 2.9,  s * 0.07, -s * 2.5,  s * 0.15, -s * 2.1,  s * 0.22);
+    ctx.lineTo( s * 0.8,  s * 0.30);
+    ctx.bezierCurveTo( s * 1.0,  s * 0.30,  s * 2.3,  s * 0.18,  s * 3.0,  0);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Left main wing
+    ctx.beginPath();
+    ctx.moveTo( s * 0.80, -s * 0.30);
+    ctx.lineTo(-s * 0.15, -s * 2.22);
+    ctx.bezierCurveTo(-s * 0.30, -s * 2.30, -s * 0.62, -s * 2.27, -s * 0.80, -s * 2.12);
+    ctx.lineTo(-s * 0.90, -s * 0.30);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Right main wing
+    ctx.beginPath();
+    ctx.moveTo( s * 0.80,  s * 0.30);
+    ctx.lineTo(-s * 0.15,  s * 2.22);
+    ctx.bezierCurveTo(-s * 0.30,  s * 2.30, -s * 0.62,  s * 2.27, -s * 0.80,  s * 2.12);
+    ctx.lineTo(-s * 0.90,  s * 0.30);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Left horizontal stabilizer
+    ctx.beginPath();
+    ctx.moveTo(-s * 2.10, -s * 0.22);
+    ctx.lineTo(-s * 2.50, -s * 0.90);
+    ctx.bezierCurveTo(-s * 2.60, -s * 0.96, -s * 2.76, -s * 0.90, -s * 2.82, -s * 0.78);
+    ctx.lineTo(-s * 2.92, -s * 0.22);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Right horizontal stabilizer
+    ctx.beginPath();
+    ctx.moveTo(-s * 2.10,  s * 0.22);
+    ctx.lineTo(-s * 2.50,  s * 0.90);
+    ctx.bezierCurveTo(-s * 2.60,  s * 0.96, -s * 2.76,  s * 0.90, -s * 2.82,  s * 0.78);
+    ctx.lineTo(-s * 2.92,  s * 0.22);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+  }
 
   const CITIES = [
-    { lon: -117.2, lat: 32.7,  label: "San Diego, CA",    caption: "Where I currently live",    img: "" },
-    { lon: -121.9, lat: 37.3,  label: "San Jose, CA",     caption: "Where I feel 'home' is",    img: "" },
+    { lon: -117.2, lat: 32.7,  label: "San Diego, CA",    caption: "Where I currently live",    img: "images/sdhero.jpeg" },
+    { lon: -121.9, lat: 37.3,  label: "San Jose, CA",     caption: "Where I feel 'home' is",    img: "images/sjhero.jpeg" },
     { lon:  -98.5, lat: 29.4,  label: "San Antonio, TX",  caption: "Where it all begin... still love the spurs to this date!",   img: "" },
-    { lon:    5.5, lat: 51.4,  label: "Eindhoven, NL",    caption: "A transformational era of my life, I graduated high school here",   img: "" },
+    { lon:    5.5, lat: 51.4,  label: "Eindhoven, NL",    caption: "A transformational era of my life, I graduated high school here",   img: "images/eindhovenhero.jpeg" },
     { lon:  121.5, lat: 31.2,  label: "Shanghai, China",  caption: "Fun fact: I lived here for 3 years",   img: "" },
   ];
 
@@ -578,7 +701,10 @@ let section = document.querySelectorAll('section');
       ctx.fill();
     }
 
-    // City markers — drawn on top of land dots
+    // Flight paths — great circle arcs between cities, on top of land dots
+    drawFlightPaths();
+
+    // City markers — drawn on top of flight paths
     cityPositions = [];
     for (const city of CITIES) {
       const p = project(city.lon, city.lat);
@@ -604,7 +730,11 @@ let section = document.querySelectorAll('section');
       ctx.stroke();
     }
 
+    // Airplane — on top of everything
+    drawAirplane();
+
     rot += 0.06;
+    planeAngle += 0.004;
     requestAnimationFrame(draw);
   }
 
