@@ -196,6 +196,18 @@ let section = document.querySelectorAll('section');
 
       
 
+       // Pill nav — mark active tab based on current page
+       (function () {
+         const path = window.location.pathname;
+         const isAbout = path.includes('about');
+         document.querySelectorAll('.pill-tab').forEach(tab => {
+           const page = tab.dataset.page;
+           if ((isAbout && page === 'about') || (!isAbout && page === 'work')) {
+             tab.classList.add('active');
+           }
+         });
+       })();
+
        // Added: JavaScript functionality to toggle the menu
         const menu = document.querySelector(".menu");
         const menuItems = document.querySelectorAll(".menuItem");
@@ -495,3 +507,159 @@ let section = document.querySelectorAll('section');
         function attachListeners() {
             setupImageClickHandlers();
         }
+
+
+/// ****** GLOBE
+(function () {
+  const canvas = document.getElementById("halftone-globe");
+  if (!canvas || typeof window.LAND_DOTS === "undefined") return;
+
+  const ctx = canvas.getContext("2d");
+  const DPR = window.devicePixelRatio || 1;
+  const CSS = 240;
+  const S = CSS * DPR;
+  canvas.width = S;
+  canvas.height = S;
+  canvas.style.width  = CSS + "px";
+  canvas.style.height = CSS + "px";
+
+  const cx = S / 2, cy = S / 2;
+  const R  = S / 2 - 3 * DPR;
+  const TILT = 22 * Math.PI / 180;
+  const cosTilt = Math.cos(TILT), sinTilt = Math.sin(TILT);
+
+  let rot = 0;
+
+  const CITIES = [
+    { lon: -117.2, lat: 32.7,  label: "San Diego, CA",    caption: "Where I currently live",    img: "" },
+    { lon: -121.9, lat: 37.3,  label: "San Jose, CA",     caption: "Where I feel 'home' is",    img: "" },
+    { lon:  -98.5, lat: 29.4,  label: "San Antonio, TX",  caption: "Where it all begin... still love the spurs to this date!",   img: "" },
+    { lon:    5.5, lat: 51.4,  label: "Eindhoven, NL",    caption: "A transformational era of my life, I graduated high school here",   img: "" },
+    { lon:  121.5, lat: 31.2,  label: "Shanghai, China",  caption: "Fun fact: I lived here for 3 years",   img: "" },
+  ];
+
+  // CSS-pixel positions of visible cities, updated each frame for hit-testing
+  let cityPositions = [];
+
+  function project(lon, lat) {
+    const λ = (lon + rot) * Math.PI / 180;
+    const φ = lat * Math.PI / 180;
+    const cosφ = Math.cos(φ), sinφ = Math.sin(φ);
+    const cosλ = Math.cos(λ), sinλ = Math.sin(λ);
+    const c = sinTilt * sinφ + cosTilt * cosφ * cosλ;
+    if (c < 0) return null;
+    return [
+      cx + R * cosφ * sinλ,
+      cy - R * (cosTilt * sinφ - sinTilt * cosφ * cosλ),
+      c
+    ];
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, S, S);
+
+    // Globe outline
+    ctx.strokeStyle = "rgba(0,0,0,0.13)";
+    ctx.lineWidth = DPR;
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Land dots
+    ctx.fillStyle = "#000000";
+    const maxR = 1.3 * DPR;
+    const minR = 0.25 * DPR;
+    for (const pt of window.LAND_DOTS) {
+      const p = project(pt[0], pt[1]);
+      if (!p) continue;
+      const r = minR + (maxR - minR) * p[2];
+      ctx.beginPath();
+      ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // City markers — drawn on top of land dots
+    cityPositions = [];
+    for (const city of CITIES) {
+      const p = project(city.lon, city.lat);
+      if (!p) continue;
+
+      cityPositions.push({ city, x: p[0] / DPR, y: p[1] / DPR });
+
+      // Halo
+      ctx.beginPath();
+      ctx.arc(p[0], p[1], 5 * DPR, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(52, 120, 255, 0.18)";
+      ctx.fill();
+
+      // Filled dot
+      ctx.beginPath();
+      ctx.arc(p[0], p[1], 3 * DPR, 0, Math.PI * 2);
+      ctx.fillStyle = "#3478FF";
+      ctx.fill();
+
+      // White ring
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 1.2 * DPR;
+      ctx.stroke();
+    }
+
+    rot += 0.06;
+    requestAnimationFrame(draw);
+  }
+
+  // ---- Tooltip ----
+  const tooltip = document.createElement("div");
+  tooltip.className = "globe-tooltip";
+  document.body.appendChild(tooltip);
+
+  function showTooltip(entry, clientX, clientY) {
+    const { city } = entry;
+    tooltip.innerHTML =
+      (city.img ? `<img class="globe-tooltip-img" src="${city.img}" alt="${city.label}">` : "") +
+      `<div class="globe-tooltip-label">${city.label}</div>` +
+      `<div class="globe-tooltip-caption">${city.caption}</div>`;
+    tooltip.classList.add("visible");
+    placeTooltip(clientX, clientY);
+  }
+
+  function placeTooltip(clientX, clientY) {
+    tooltip.style.left = "0px";
+    tooltip.style.top  = "0px";
+    const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+    const vw = window.innerWidth,   vh = window.innerHeight;
+    let x = clientX + 18;
+    let y = clientY - th / 2;
+    if (x + tw > vw - 8) x = clientX - tw - 18;
+    if (y < 8) y = 8;
+    if (y + th > vh - 8) y = vh - th - 8;
+    tooltip.style.left = x + "px";
+    tooltip.style.top  = y + "px";
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove("visible");
+  }
+
+  canvas.addEventListener("mousemove", e => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    let hit = null;
+    for (const entry of cityPositions) {
+      const dx = mx - entry.x, dy = my - entry.y;
+      if (dx * dx + dy * dy < 144) { hit = entry; break; }
+    }
+    if (hit) {
+      canvas.style.cursor = "pointer";
+      showTooltip(hit, e.clientX, e.clientY);
+    } else {
+      canvas.style.cursor = "";
+      hideTooltip();
+    }
+  });
+
+  canvas.addEventListener("mouseleave", hideTooltip);
+
+  draw();
+})();

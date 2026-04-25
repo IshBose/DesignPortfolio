@@ -12,26 +12,15 @@
 
 
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="../../images/halftoneface.png" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--CSS Styles -->
     <link rel="stylesheet" href="../../css/styles.css" />
 
-    <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../../assets/favicon.png"
-    />
-
-    <!-- Animate CSS CDN -->
+    <!-- Favicons -->    <!-- Animate CSS CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -53,7 +42,7 @@
 
    <!--NAV-->
  <div class="nav-logo">
-  <div class="gradient-circle-logo"></div>
+  <img class="gradient-circle-logo" src="../../images/halftoneface.png" alt="">
     <a href="../../index.html"  >Ishaan Bose</a>
     </div>
 
@@ -61,16 +50,29 @@
       <span class="icon" id="timeIcon">⏳</span>
       <span id="currentTime"></span>
   </div>
+    <!-- Pill nav — desktop -->
+    <nav class="pill-nav">
+      <div class="pill-slider">
+        <a href="../../index.html" class="pill-tab" data-page="work">Work</a>
+        <a href="../../about.html" class="pill-tab" data-page="about">About</a>
+      </div>
+      <div class="pill-sep"></div>
+      <a href="https://www.linkedin.com/in/ishaanbose/" target="_blank" class="pill-btn">LinkedIn</a>
+      <a href="mailto:ishaan.bose@gmail.com" class="pill-btn">Email me</a>
+    </nav>
 
-<ul class="menu">
-    <li><a class="menuItem" href="../../index.html">Work</a></li>
-    <li><a class="menuItem" href="../../about.html">About</a></li>
-    <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">Linkedin</a></li>
-    <li><a class="menuItem" href="../../ishaan bose resume 2023 .pdf">Resume</a></li>
-    <li> <a href = "mailto: ishaan.bose@gmail.com" >
-      <button class="btn"><span class="material-symbols-outlined" style="vertical-align: bottom; font-size: 18px;">
-    send
-    </span> Contact me</button></a>
+
+    <!-- Mobile menu -->
+    <ul class="menu">
+        <li><a class="menuItem" href="../../index.html">Work</a></li>
+        <li><a class="menuItem" href="../../about.html">About</a></li>
+        <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">LinkedIn</a></li>
+        <li><a href="mailto:ishaan.bose@gmail.com"><button class="btn margin-right">Email me</button></a></li>
+    </ul>
+    <button class="hamburger">
+      <i class="menuIcon material-icons">menu</i>
+      <i class="closeIcon material-icons" style="display: none;">close</i>
+    </button></a>
   </li>
 
  
