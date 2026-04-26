@@ -126,6 +126,9 @@
             <!-- CONTEXT -->
             <div class="block" id="context">
 
+                              <img src="../../../images/remediationimg.png" class="fullwidth minus-margin" >
+
+
               <div class="block">
                 <div class="subtitle">PROJECT</div>
                 <h2 class="textcasetitle">Designing a trustworthy agentic remediation workflow for HCP Terraform</h2>
@@ -148,11 +151,11 @@
                 <div class="row">
                   <div class="block padding-bottom">
                     <div class="subtitle">ROLE</div>
-                    <h2 class="largetext">Product Designer</h2>
+                    <h2 class="largetext">Lead Product Designer</h2>
                   </div>
                   <div class="block">
                     <div class="subtitle">TOOLS</div>
-                    <h2 class="largetext">Figma, Claude Code, Copilot CLIs</h2>
+                    <h2 class="largetext">Figma, Claude Code, Copilot CLI</h2>
                   </div>
                 </div>
               </div>
@@ -174,8 +177,9 @@
             <div class="block">
               <div class="subtitle" id="research">CONTEXT</div>
               <h4>This was a workflow design problem, not a generic AI feature.</h4>
-              <p>The work sat within HashiCorp's broader agentic exploration, and was closely tied to HCP Terraform's role as the system where infrastructure changes are planned and applied. If HashiCorp could safely generate changes and write them back into source control, the same pattern could eventually support security fixes, cost improvements, upgrades, and other operational cleanup.</p>
-              <p style="margin-top: 16px;">I pulled together strategy conversations, customer-zero discussions, and internal design and engineering syncs to shape a tighter product direction. Most of my time went into the moments where the experience could build confidence or lose it: onboarding a repo or workspace, understanding why a remediation was suggested, reviewing blast radius, and tracking what the system had already done.</p>
+              <p>This sat within HashiCorp's broader agentic exploration. HCP Terraform was already where infrastructure changes were planned and applied — if it could safely generate and write fixes back to source control, the same pattern could extend to security, cost, upgrades, and other maintenance work.</p>
+                         <img src="./Context.png" class="fullwidth">
+
             </div>
 
             <!-- RESEARCH -->
@@ -184,29 +188,18 @@
               <h4>The same themes kept coming up across every customer conversation and internal sync.</h4>
               <p>I used these recurring signals to frame the product shape and decide where to focus the first useful experience.</p>
 
-              <div class="row margin-top">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Detection wasn't the bottleneck</p>
-                  <p>Teams already had signals from security and cost tools. What they lacked was a low-friction path from issue detection to a reviewable code change.</p>
+              <div class="margin-top">
+                <div class="countercard margin-top">
+                  <div class="step">1</div>
+                  <p class="text-primary-color"><b>Detection wasn't the bottleneck</b> — Teams already had signals from security and cost tools. What they lacked was a low-friction path from issue detection to a reviewable code change.</p>
                 </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Toil reduction was the clearest value</p>
-                  <p>Repetitive, lower-ambiguity tasks like provider upgrades and straightforward fixes were the right place to start. Not autonomous management; just getting painful maintenance off people's plates.</p>
+                <div class="countercard" id="cardcolor2">
+                  <div class="step">2</div>
+                  <p class="text-primary-color"><b>Toil reduction was the clearest value</b> — Repetitive, lower-ambiguity tasks like provider upgrades and straightforward fixes were the right place to start. Not autonomous management; just getting painful maintenance off people's plates.</p>
                 </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Trust depended on context, not accuracy</p>
-                  <p>When people saw auto-created PRs, they wanted to know what rule triggered it, how confident the system was, what else might be affected, and whether similar changes could be grouped.</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Focused workflows beat chatbots</p>
-                  <p>The notes consistently leaned toward opinionated, task-specific experiences over an open-ended assistant. People wanted help with real jobs to be done, not a vague prompt box.</p>
-                </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Ownership boundaries shaped the UX</p>
-                  <p>Security identifies, platform sets standards, app teams review and own. That made auditability, history, and clear handoff points just as important as the remediation itself.</p>
+                <div class="countercard" id="cardcolor3">
+                  <div class="step">3</div>
+                  <p class="text-primary-color"><b>Trust depended on context, not accuracy</b> — When people saw auto-created PRs, they wanted to know what rule triggered it, how confident the system was, what else might be affected, and whether similar changes could be grouped.</p>
                 </div>
               </div>
             </div>
@@ -216,8 +209,10 @@
               <div class="subtitle">TWISTS AND TURNS</div>
               <h4>Scope, onboarding, and the line between product and plumbing were all live tensions.</h4>
               <p>The biggest pull was toward a broader "agentic experience" connecting many tools and use cases at once. But the bigger the concept got, the harder it was to make the first workflow feel concrete and trustworthy. The team kept returning to a narrower question: what is the first remediation loop that creates real value and proves the model?</p>
-              <p style="margin-top: 16px;">Onboarding was the other major tension. Repo-based onboarding looked simpler from an implementation standpoint because the system ultimately needed to write back to source control. But in monorepos and shared-module setups, a single repo could affect many Terraform workspaces, which obscured blast radius and ownership. Workspace- and project-based onboarding better matched HCP Terraform's mental model, even if it was more complex under the hood.</p>
-              <p style="margin-top: 16px;">There was also a tension between designing a product experience and designing plumbing. VCS write-back, OAuth and service-account strategy, permission validation, and notification behavior could easily get dismissed as implementation details, but they were central to whether the workflow felt safe. I ended up treating those surfaces as UX, not just infrastructure.</p>
+               <img src="./twists.png" class="fullwidth">
+              <img src="./Mental model.png" class="fullwidth">
+
+
             </div>
 
             <!-- DESIGN DECISIONS -->
