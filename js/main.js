@@ -528,7 +528,7 @@ let section = document.querySelectorAll('section');
   const TILT = 22 * Math.PI / 180;
   const cosTilt = Math.cos(TILT), sinTilt = Math.sin(TILT);
 
-  let rot = 0;
+  let rot = 90;
   let planeAngle = 0;
   const TORAD = Math.PI / 180;
 
