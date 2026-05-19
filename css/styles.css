@@ -103,6 +103,8 @@
     --background:#FFFFFF;
     --bordercolor: #DBD7D2;
     --highlight: #B21F1F;
+    --newcard: #F0F0F0;
+    --newborder: #E0E0E0;
 
 
   }
@@ -1234,7 +1236,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
    
     .block{
       display: block;
-      gap: 16px;
+      gap: 24px;
       width: 100%;
     }
 
@@ -1402,8 +1404,8 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       flex-direction: column;
       align-self: stretch;
       border-radius: 4px;
-      background: var(--card);
-      border: 1px solid #DBD7D2;
+      background: var(--newcard);
+      border: 1px solid var(--newborder);
     }
 
     .gencard img{
@@ -2777,5 +2779,99 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       }
       @media screen and (max-width: 1261px) {
 
-  
+
       }
+
+/* ── Shared case study components ── */
+
+.img-frame {
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  overflow: hidden;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+.img-frame img {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: block;
+}
+.img-caption {
+  font-size: 13px;
+  color: var(--secondarytext);
+  margin-top: 10px;
+  margin-bottom: 24px;
+  padding-left: 4px;
+}
+.decision-header {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  padding-bottom: 8px;
+}
+.hook-line {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--secondarytext);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.hmw-card {
+  border-left: 2px solid var(--accent);
+  padding: 14px 18px;
+  background: var(--card);
+  border-radius: 0 6px 6px 0;
+  margin-top: 12px;
+}
+.hmw-card p {
+  color: var(--primarytext) !important;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.hmw-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.solution-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+.solution-preview-grid .img-frame {
+  margin-top: 0;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--bordercolor);
+  margin: 0;
+}
+.solution-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  margin-left: -24px;
+}
+.solution-media-grid img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.org-logo-sm {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.margin-top-xs {
+  margin-top: 0.75rem;
+}
+.margin-top-xl {
+  margin-top: 3rem;
+}
