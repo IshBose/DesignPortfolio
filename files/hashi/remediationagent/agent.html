@@ -12,46 +12,56 @@
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="../../../images/halftoneface.png" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../../../css/styles.css" />    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <title>Design Portfolio | Terraform Remediation Agent</title>
+
+    <style>
+      /* Page-specific overrides */
+      .block .subtitle {
+        margin-bottom: 8px;
+      }
+      .block h4 {
+        padding-bottom: 0;
+        margin-bottom: 12px;
+      }
+      .countercard {
+        background: var(--card);
+        border-color: var(--bordercolor);
+      }
+      #cardcolor2 {
+        background-color: #EFEFEF;
+      }
+      #cardcolor3 {
+        background-color: #E6E6E7;
+      }
+    </style>
 
   </head>
 
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <body>
 
-<div id="loginContainer" class="center vertical-middle">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="loginContainer" class="center vertical-middle">
         <div class="login-header">
             <div class="lock-icon">🔒</div>
             <h1>This case study is protected by NDA</h1>
             <p class="subtitle">Enter the password to access</p>
         </div>
-
         <div class="input-group">
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="Enter password"
-                autocomplete="off"
-            >
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
             <span class="toggle-password" onclick="togglePassword()">👁️</span>
         </div>
-
-        <button id="unlockBtn" onclick="checkPassword()">
-            Unlock Case Study
-        </button>
-
-        <div id="errorMessage" class="error-message">
-            Incorrect password. Please try again.
-        </div>
+        <button id="unlockBtn" onclick="checkPassword()">Unlock Case Study</button>
+        <div id="errorMessage" class="error-message">Incorrect password. Please try again.</div>
     </div>
 
     <div id="successAnimation" class="success-animation">
@@ -64,14 +74,14 @@
 
     <div class="nav-logo">
       <img class="gradient-circle-logo" src="../../../images/halftoneface.png" alt="">
-        <a href="../../../index.html">Ishaan Bose</a>
+      <a href="../../../index.html">Ishaan Bose</a>
     </div>
 
     <div class="time-container">
       <span class="icon" id="timeIcon">⏳</span>
       <span id="currentTime"></span>
     </div>
-    <!-- Pill nav — desktop -->
+
     <nav class="pill-nav">
       <div class="pill-slider">
         <a href="../../../index.html" class="pill-tab" data-page="work">Work</a>
@@ -82,8 +92,6 @@
       <a href="mailto:ishaan.bose@gmail.com" class="pill-btn">Email me</a>
     </nav>
 
-    
-    <!-- Mobile menu -->
     <ul class="menu">
         <li><a class="menuItem" href="../../../index.html">Work</a></li>
         <li><a class="menuItem" href="../../../about.html">About</a></li>
@@ -94,310 +102,735 @@
       <i class="menuIcon material-icons">menu</i>
       <i class="closeIcon material-icons" style="display: none;">close</i>
     </button>
-          </a>
-        </li>
-    </ul>
-    <button class="hamburger">
-        <i class="menuIcon material-icons">menu</i>
-        <i class="closeIcon material-icons" style="display: none;">close</i>
-    </button>
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div id="portfolioContent">
 
-    <body>
+      <nav class="section-nav">
+        <ol>
+          <li><a href="#context">Context</a></li>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#hmw">How Might We</a></li>
+          <li><a href="#solution">Solution</a></li>
+          <li><a href="#deepdive">Deep Dive</a></li>
+          <li><a href="#reflection">Reflection</a></li>
+        </ol>
+      </nav>
 
-      <div id="portfolioContent">
+      <div class="blockwrapper">
+        <div class="blocklist">
 
-        <nav class="section-nav">
-          <ol>
-            <li><a href="#context">Context</a></li>
-            <li><a href="#problem">Problem</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#ideation">Decisions</a></li>
-            <li><a href="#solution">Outcome</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-          </ol>
-        </nav>
+          <!-- ── HERO ──────────────────────────────────────────────── -->
+          <div class="block" id="context">
 
-        <div class="blockwrapper">
-          <div class="blocklist">
+            <!--<div style="max-width: 70%; margin: 0 auto;">
+              <img src="../../../images/remediationimg.png" class="fullwidth minus-margin">
+            </div>-->
 
-            <!-- CONTEXT -->
-            <div class="block" id="context">
+            <div class="block">
+               <img src="./agxland.png" class="fullwidth minus-margin">
 
-                              <img src="../../../images/remediationimg.png" class="fullwidth minus-margin">
+              <div class="subtitle">PROJECT</div>
+              <h2 class="textcasetitle">Designing a trustworthy agentic remediation workflow for HCP Terraform</h2>
+              <p class="hook-line">Infrastructure teams already knew about their problems. The gap was between finding an issue and getting a fix back into code. This is what we built to close it.</p>
+            </div>
 
-
-              <div class="block">
-                <div class="subtitle">PROJECT</div>
-                <h2 class="textcasetitle">Designing a trustworthy agentic remediation workflow for HCP Terraform</h2>
-              </div>
-
-              <div class="has-gap margin-sm padding-top">
-                <div class="row padding-bottom-lg">
-                  <div class="block padding-bottom">
-                    <div class="subtitle">ORGANIZATION</div>
-                    <div class="flex">
-                      <img style="width: 28px; height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
-                      <h2 class="largetext">HashiCorp</h2>
-                    </div>
-                  </div>
-                  <div class="block">
-                    <div class="subtitle">WHEN</div>
-                    <h2 class="largetext">2026</h2>
+            <div class="has-gap margin-sm padding-top">
+              <div class="row padding-bottom-lg">
+                <div class="block padding-bottom">
+                  <div class="subtitle">ORGANIZATION</div>
+                  <div class="flex">
+                    <img class="org-logo-sm" src="../../../images/image 19.png">
+                    <h2 class="largetext">HashiCorp</h2>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="block padding-bottom">
-                    <div class="subtitle">ROLE</div>
-                    <h2 class="largetext">Lead Product Designer</h2>
-                  </div>
-                  <div class="block">
-                    <div class="subtitle">TOOLS</div>
-                    <h2 class="largetext">Figma, Claude Code, Copilot CLI</h2>
-                  </div>
+                <div class="block">
+                  <div class="subtitle">WHEN</div>
+                  <h2 class="largetext">2026</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="block padding-bottom">
+                  <div class="subtitle">ROLE</div>
+                  <h2 class="largetext">Lead Product Designer</h2>
+                </div>
+                <div class="block">
+                  <div class="subtitle">TOOLS</div>
+                  <h2 class="largetext">Figma, Claude Code, Copilot CLI</h2>
                 </div>
               </div>
             </div>
 
-            <!-- PROBLEM -->
-            <div class="block" id="problem">
-              <div class="subtitle">PROBLEM</div>
-              <h4>Teams already knew about their infrastructure problems. The hard part was prioritizing what is fundamentally toil.</h4>
-              <p>The core challenge was not a lack of detection. Security scanners, cost tools, and internal systems were already surfacing misconfigurations and issues. The gap was between finding a problem and getting a fix back into Terraform code.</p>
+            <hr class="divider margin-top-lg">
 
-              <div class="problemcard margin-top">
-                <div class="subtitle">THE REAL FRICTION</div>
-                <p>Security teams spotted problems but didn't own the code. Platform teams owned standards but not every repo. App teams were closest to delivery but rarely set up for infra remediation. The result: handoffs, backlog churn, and repetitive work, such as provider bumps, module updates, control fixes, tagging,that mattered but belonged to no one.</p>
+            <!-- Context body -->
+            <div class="margin-top-xl">
+              <div class="subtitle">CONTEXT</div>
+              <h4>Agents fundamentally change the way that you approach existing problems.</h4>
+              <p>Infrastructure is no different. With the proliferation of coding agents, and the ubiquity of Terraform, it seemed like a perfect match to introduce agentic workflows to automate some of our core persona's most tedious workflows. The question is, how do we do that? </p>
+            </div>
+
+    
+
+          </div>
+
+          <!-- ── PROBLEM ─────────────────────────────────────────────── -->
+          <div class="block" id="problem">
+            <div class="subtitle">USER PROBLEM</div>
+            <h4>It is extremely easy to get started with Terraform, AKA "day one" but scaling past that, "day two" is difficult</h4>
+            <p>Security teams could spot misconfigurations but didn't own the code. Platform teams owned standards but not every repo. App teams were closest to delivery but rarely set up for infra remediation. The result: handoffs, backlog churn, and a pile of repetitive work that mattered but belonged to no one.</p>
+
+            <div style="margin-top: 24px; border-radius: 8px; background: var(--newcard); border: 1px solid var(--newborder); padding: 24px 24px;">
+              <p style="font-weight: 600; font-size: 15px; color: var(--primarytext); margin-bottom: 6px;">Common maturity path</p>
+              <p style="font-size: 14px; color: var(--secondarytext); margin-bottom: 28px;">Day 2 was our focus due to customer reported friction in scaling</p>
+              <div style="display: flex; align-items: center;">
+
+                <div style="flex: 1; background: var(--background); border: 1px solid var(--bordercolor); border-radius: 8px; padding: 16px 20px;">
+                  <p style="font-weight: 500; font-size: 15px; color: var(--primarytext); margin-bottom: 10px;">Day 0</p>
+                  <p style="font-size: 14px; color: var(--secondarytext); line-height: 1.5;">Signing up and onboarding users of the platform</p>
+                </div>
+
+                <svg width="56" height="16" viewBox="0 0 56 16" fill="none" style="flex-shrink:0;">
+                  <line x1="2" y1="8" x2="44" y2="8" stroke="#BDBDBD" stroke-width="1.5"/>
+                  <polyline points="38,3 46,8 38,13" fill="none" stroke="#BDBDBD" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+
+                <div style="flex: 1; background: var(--background); border: 1px solid var(--bordercolor); border-radius: 8px; padding: 16px 20px;">
+                  <p style="font-weight: 500; font-size: 15px; color: var(--primarytext); margin-bottom: 10px;">Day 1</p>
+                  <p style="font-size: 14px; color: var(--secondarytext); line-height: 1.5;">Provisioning core resources and creating microservices</p>
+                </div>
+
+                <svg width="56" height="16" viewBox="0 0 56 16" fill="none" style="flex-shrink:0;">
+                  <line x1="2" y1="8" x2="44" y2="8" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="5,4"/>
+                  <polyline points="38,3 46,8 38,13" fill="none" stroke="#BDBDBD" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+
+                <div style="flex: 1; background: var(--background); border: 2px solid var(--accent); border-radius: 8px; padding: 16px 20px;">
+                  <p style="font-weight: 500; font-size: 15px; color: var(--primarytext); margin-bottom: 10px;">Day 2</p>
+                  <p style="font-size: 14px; color: var(--secondarytext); line-height: 1.5;">Managing cost, governance and optimization</p>
+                </div>
+
               </div>
             </div>
 
-            <!-- CONTEXT / APPROACH -->
-            <div class="block">
-              <div class="subtitle" id="research">CONTEXT</div>
-              <h4>This was a workflow design problem, not a generic AI feature.</h4>
-              <p>This sat within HashiCorp's broader agentic exploration. HCP Terraform was already where infrastructure changes were planned and applied — if it could safely generate and write fixes back to source control, the same pattern could extend to security, cost, upgrades, and other maintenance work.</p>
-                         <img src="./Context.png" class="fullwidth">
 
-            </div>
+          </div>
 
-            <!-- RESEARCH -->
-            <div class="block">
-              <div class="subtitle">RESEARCH</div>
-              <h4>The same themes kept coming up across every customer conversation and internal sync.</h4>
-              <p>I used these recurring signals to frame the product shape and decide where to focus the first useful experience.</p>
+          <!-- ── HOW MIGHT WE ────────────────────────────────────────── -->
+          <div class="block" id="hmw">
+            <div class="subtitle">HOW MIGHT WE</div>
+            <h4>I approached this as a workflow design problem, not a generic AI feature.</h4>
+            <p>My role was to figure out what the first useful experience should be, where trust would break down, and how the workflow could fit the way Terraform teams already operated. I pulled together customer-zero conversations, engineering syncs, and product discussions to find the focus. Three signals kept coming up.</p>
 
               <div class="margin-top">
                 <div class="countercard margin-top">
                   <div class="step">1</div>
-                  <p class="text-primary-color"><b>Detection wasn't the bottleneck</b> — Teams already had signals from security and cost tools. What they lacked was a low-friction path from issue detection to a reviewable code change.</p>
+                  <p class="text-primary-color"><b>How do we tie in existing signals to suggest remediation</b> — Teams already had signals from security and cost tools. What they lacked was a low-friction path from issue detection to a reviewable code change.</p>
                 </div>
                 <div class="countercard" id="cardcolor2">
                   <div class="step">2</div>
-                  <p class="text-primary-color"><b>Toil reduction was the clearest value</b> — Repetitive, lower-ambiguity tasks like provider upgrades and straightforward fixes were the right place to start. Not autonomous management; just getting painful maintenance off people's plates.</p>
+                  <p class="text-primary-color"><b>How might we reduce toil in repetitive workflows?</b> — Repetitive, lower-ambiguity tasks like provider upgrades and straightforward fixes were the right place to start. Not autonomous management; just getting painful maintenance off people's plates.</p>
                 </div>
                 <div class="countercard" id="cardcolor3">
                   <div class="step">3</div>
-                  <p class="text-primary-color"><b>Trust depended on context, not accuracy</b> — When people saw auto-created PRs, they wanted to know what rule triggered it, how confident the system was, what else might be affected, and whether similar changes could be grouped.</p>
+                  <p class="text-primary-color"><b>How might we build trust in AI generated code?</b> — When people saw auto-created PRs, they wanted to know what rule triggered it, how confident the system was, what else might be affected, and whether similar changes could be grouped.</p>
                 </div>
               </div>
-            </div>
+            
+            
+              <div style="margin-top: 32px; border-radius: 8px; background: var(--newcard); border: 1px solid var(--newborder); padding: 28px 32px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
 
-            <!-- TWISTS -->
-            <div class="block">
-              <div class="subtitle">TWISTS AND TURNS</div>
-              <h4>Scope, onboarding, and the line between product and plumbing were all live tensions.</h4>
-              <p>The biggest pull was toward a broader "agentic experience" connecting many tools and use cases at once. But the bigger the concept got, the harder it was to make the first workflow feel concrete and trustworthy. The team kept returning to a narrower question: what is the first remediation loop that creates real value and proves the model?</p>
-               <img src="./twists.png" class="fullwidth">
-
-
-            </div>
-
-            <!-- DESIGN DECISIONS -->
-            <div class="block" id="ideation">
-              <div class="subtitle">KEY DESIGN DECISIONS</div>
-              <h4>A few decisions ended up shaping most of the private-beta direction.</h4>
-            </div>
-
-            <!--<div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Make the entry point feel like a product, not a settings page</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: The remediation agent was a new surface with no established home in HCP Terraform. Without a clear entry point, users would miss it or not understand what it did.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Designed a dedicated landing page that led with outcomes, what the agent could fix and why it mattered, before asking for any setup. Visually distinct from the rest of the product to signal this was something new.</p>
+                <!-- Left: Remediation loop -->
+                <div>
+                  <img src="./loop.png" style="width: 100%; display: block;">
                 </div>
-                <div class="col-lg">
-                </div>
-              </div>
-            </div>-->
 
-            <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Design for a specific job, not generic AI interaction</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: The concept could easily drift toward an open-ended assistant that felt powerful in demos but vague in practice.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Pushed the experience toward a focused workflow.</p>
-                </div>
-                <div class="col-lg">
-                              <img src="./Fleet.png" class="fullwidth">
-
-                </div>
-              </div>
-                              <img src="./Generalflow.png" class="fullwidth">
-
-            </div>
-
-            <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Make trust visible inside the workflow</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: An auto-created PR is meaningless without context. Teams needed to understand why a change existed before they could act on it.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Confidence signal, rule context, blast radius, and a history of prior PRs and actions were not extra polish; they were the product. Treated each as a required surface, not a nice-to-have.</p>
-                </div>
-                <div class="col-lg">
-                 <img src="./confidencematrix.png" class="fullwidth">
-                 </div>
-
-
-              </div>
-                <img src="./Blast radius.png" class="fullwidth">
-
-            </div>
-
-            <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Treat write-back as a reusable product surface</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Designing a one-off handoff from a single source would require rethinking the pattern each time a new integration was added.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Evolved toward a general write-back model (issue creation, PR history, logs, notifications, and approval states) that could support multiple remediation sources over time.</p>
-                </div>
-                <div class="col-lg">
-                               <img src="./PR Screen.png" class="fullwidth">
-
-                </div>
-              </div>
-            </div>
-
-            <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Favor the user's operational model over the simpler technical model</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Repo-based onboarding was technically simpler, but obscured blast radius and ownership, especially in monorepos and shared-module setups.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Steered toward workspace and project context, matching how Terraform operations are actually managed and giving users a clearer sense of what the agent was acting on.</p>
-                </div>
-                <div class="col-lg">
-                               <img src="./Settings _ Agentic on _ TF Agent on.png" class="fullwidth">
-
-                </div>
-              </div>
-                            <img src="./Mental model.png" class="fullwidth">
-
-            </div>
-
-           <!--- <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Scope use cases to improve discoverability of what the agent can actually do</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Early explorations framed the agent as a general-purpose fixer, which left users unsure what it could act on, when to trust it, and where to even start.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Anchored the initial experience around a specific, legible set of remediation categories — drift, policy violations, deprecated modules — so users could quickly understand the agent's scope and build trust incrementally before expanding to broader use cases.</p>
-                </div>
-                <div class="col-lg">
-                  <div class="problemcard" style="height: 100%; display: flex; align-items: center; justify-content: center; min-height: 160px;">
-                    <p class="text-secondary-color" style="text-align: center; font-size: 14px;">[ Use case scoping: general fixer vs. categorized remediation entry points ]</p>
+                <!-- Right: Actually central to UX -->
+                <div>
+                  <p style="font-weight: 600; font-size: 15px; color: var(--primarytext); margin-bottom: 4px;">Actually central to UX</p>
+                  <p style="font-size: 13px; color: var(--secondarytext); line-height: 1.5; margin-bottom: 20px;">Determines whether the workflow feels safe. This is crucial to ensuring users can adopt comfortably.</p>
+                  <div style="border-top: 1px solid var(--bordercolor);">
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bordercolor);">
+                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">security</span>
+                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Trust:</strong> Changes are traceable and reversible</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bordercolor);">
+                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">verified_user</span>
+                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Safety:</strong> Prevent risky actions before they happen</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bordercolor);">
+                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">manage_accounts</span>
+                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Identity:</strong> Secure, least-privilege access</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
+                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">notifications_active</span>
+                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Confidence:</strong> The right people know at the right time</p>
+                    </div>
                   </div>
                 </div>
+
               </div>
-            </div>-->
+            </div>
+          </div>
 
-            <!-- OUTCOME -->
-            <div class="block" id="solution">
-              <div class="subtitle">OUTCOME</div>
-              <h4>A broad agentic concept narrowed into a more focused, believable remediation workflow.</h4>
-              <p>The clearest outcome was a sharper private-beta direction. The team moved from a broad agentic concept toward a narrower remediation workflow built around proactive scanning, generated PRs, and reusable write-back patterns. The design work also made trust requirements explicit: confidence, blast radius, history, and explainability were not side features; they were part of the MVP.</p>
-              <p style="margin-top: 16px;">The work shaped the private-beta definition, clarified where the initial experience should live, and influenced how adjacent integration and VCS workflows were framed. It also surfaced the operational requirements that needed to be solved before the experience could scale beyond an early-adopter setting.</p>
+          <!-- ── SOLUTION PREVIEW ───────────────────────────────────── -->
+          <div class="block" id="solution">
+            <div class="subtitle">SOLUTION</div>
+            <h4>A focused remediation loop: detect issue, generate fix, open PR, human review.</h4>
+            <p>We kept the scope tight: one workflow, one loop. The agent finds a remediation opportunity, generates a proposed change, and writes it back through PR mechanics. Every surface points back to that same loop, with enough context at each step that a reviewer can actually act on it.</p>
 
-              <div class="row margin-top">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Proactive remediation loop</p>
-                  <p>From broad agentic exploration to a focused: detect issue → generate fix → open PR → human review</p>
+            <div style="border-radius:6px;margin-top: 24px; margin-bottom: 24px; padding: 24px; background: var(--newcard); border: 1px solid var(--newborder);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;">
+                <span style="font-weight: 300; color: var(--secondarytext);">Customers want something easy to learn and repeat.</span>
+                <span style="font-size: 12px; font-weight: 500; color: #2d7a3a; background: #eafaf0; border: 1px solid #b6e8c4; border-radius: 100px; padding: 3px 12px;">Familiar</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0;">
+                <div style="background: #fff; border: 1px solid var(--bordercolor); border-radius: 8px; padding: 10px 20px; font-size: 15px; font-weight: 300; color: var(--primarytext); white-space: nowrap;">Identify an issue</div>
+                <svg width="48" height="16" viewBox="0 0 48 16" fill="none" style="flex-shrink:0;"><line x1="2" y1="8" x2="38" y2="8" stroke="#7B42BC" stroke-width="1.5"/><polyline points="32,3 40,8 32,13" fill="none" stroke="#7B42BC" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <div style="background: #fff; border: 1px solid var(--bordercolor); border-radius: 8px; padding: 10px 20px; font-size: 15px; font-weight: 300; color: var(--primarytext); white-space: nowrap;">Propose a fix</div>
+                <svg width="48" height="16" viewBox="0 0 48 16" fill="none" style="flex-shrink:0;"><line x1="2" y1="8" x2="38" y2="8" stroke="#7B42BC" stroke-width="1.5"/><polyline points="32,3 40,8 32,13" fill="none" stroke="#7B42BC" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <div style="background: #fff; border: 1px solid var(--bordercolor); border-radius: 8px; padding: 10px 20px; font-size: 15px; font-weight: 300; color: var(--primarytext); white-space: nowrap;">Write back through VCS</div>
+                <svg width="48" height="16" viewBox="0 0 48 16" fill="none" style="flex-shrink:0;"><line x1="2" y1="8" x2="38" y2="8" stroke="#7B42BC" stroke-width="1.5"/><polyline points="32,3 40,8 32,13" fill="none" stroke="#7B42BC" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <div style="background: #eafaf0; border: 1px solid #b6e8c4; border-radius: 8px; padding: 10px 20px; font-size: 15px; font-weight: 300; color: #2d7a3a; white-space: nowrap;">Review</div>
+              </div>
+            </div>
+            <div class="solution-media-grid">
+              <div>
+                <img src="./Githubcover.png" class="fullwidth">
+                <p class="img-caption">Auto raising PR's on Github to reduce toil and cutdown on time to remediation.</p>
+              </div>
+              <div>
+                <img src="./PRCover.png" class="fullwidth">
+                <p class="img-caption">Logging all actions that an agent takes to drive trust in the system.</p>
+              </div>
+              <div>
+                <img src="./Diffcover.png" class="fullwidth">
+                <p class="img-caption">Presenting code diffs so that a user understands why a change is being made.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Decision 1 -->
+          <div class="block">
+             <div class="subtitle">DEEP DIVE</div>
+            <h4 class="decision-header margin-top">The empty state is a product moment, not a placeholder</h4>
+            <p class="text-secondary-color">Challenge: Agentic workflows ship off by default. Without a meaningful landing, teams that would benefit from this just never turn it on.</p>
+            <p class="text-primary-color margin-top-xs"><strong>Decision:</strong> I designed the pre-enablement page to do real work. It leads with what the agent can do, shows a preview before anyone commits to enabling it, and introduces each available agent by name. By the time someone hits "Enable agentic workflows," they already understand what they're signing up for.</p>
+            <div class="img-frame">
+              <img src="./LandingPage.png" class="fullwidth">
+            </div>
+            <p class="img-caption">Pre-enablement landing: the agent introduces itself before asking for commitment.</p>
+          </div>
+
+          <!-- Decision 2 -->
+
+
+
+          <div class="block">
+            <h4 class="decision-header">Make trust visible inside the workflow</h4>
+            <p class="text-secondary-color">Challenge: An auto-created PR is meaningless without context. Teams needed to understand why a change existed before they could act on it.</p>
+            <p class="text-primary-color margin-top-xs"><strong>Decision:</strong> Confidence signal, rule context, blast radius, and a history of prior PRs were not extra polish. They were the product. I treated each as a required surface. Without them, the PR exists but cannot actually be reviewed.</p>
+
+            <!-- GitHub PR body component with annotations -->
+            <div style="position: relative; overflow: visible;">
+            <div style="border: 1px solid #d0d7de; border-radius: 8px; overflow: hidden; margin-top: 28px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.5; color: #1f2328;">
+
+              <!-- Comment header -->
+              <div style="background: #f6f8fa; border-bottom: 1px solid #d0d7de; padding: 10px 16px; display: flex; align-items: center; gap: 10px;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: #24292f; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; flex-shrink: 0;">TF</div>
+                <span style="font-weight: 600;">Terra-bot</span>
+                <span style="color: #636c76;">commented</span>
+                <span style="color: #636c76;">last month</span>
+              </div>
+
+              <!-- Body -->
+              <div style="padding: 16px 20px;">
+
+                <p style="margin: 0 0 6px; font-size: 15px; font-weight: 600;">🤖 Terraform Remediation Scan</p>
+                <p style="margin: 0 0 20px; color: #636c76; font-size: 13px;">This PR was automatically generated by a Terraform remediation agent that scanned the repository for security issues, dependency risks, configuration drift, and hygiene problems. Each finding includes a confidence score and blast radius assessment.</p>
+
+                <!-- Findings Summary -->
+                <p style="font-size: 13px; font-weight: 600; margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid #d0d7de;">Findings Summary</p>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 12px;">
+                  <thead>
+                    <tr>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">ID</th>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">Category</th>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">Severity</th>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">Confidence</th>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">Blast Radius</th>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">TF-001</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Dependency</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #fff8c5; color: #9a6700; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; white-space: nowrap;">Medium</span></td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">95%</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Low</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #dafbe1; color: #1a7f37; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600;">Fixed</span></td>
+                    </tr>
+                    <tr style="background: #f6f8fa;">
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">TF-002</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Dependency</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #fff8c5; color: #9a6700; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; white-space: nowrap;">Medium</span></td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">95%</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Low</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #dafbe1; color: #1a7f37; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600;">Fixed</span></td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">TF-003</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Drift / Reliability</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #ffebe9; color: #cf222e; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; white-space: nowrap;">High</span></td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">99%</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">High</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #dafbe1; color: #1a7f37; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600;">Fixed</span></td>
+                    </tr>
+                    <tr style="background: #f6f8fa;">
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">TF-004</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Security</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #ffebe9; color: #cf222e; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; white-space: nowrap;">High</span></td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">92%</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Medium</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #dafbe1; color: #1a7f37; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600;">Fixed</span></td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">TF-005</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Security</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #fff8c5; color: #9a6700; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; white-space: nowrap;">Medium</span></td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">88%</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Low</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #dafbe1; color: #1a7f37; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600;">Fixed</span></td>
+                    </tr>
+                    <tr style="background: #f6f8fa;">
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">TF-006</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Hygiene</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #ddf4ff; color: #0969da; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; white-space: nowrap;">Low</span></td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">97%</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Low</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;"><span style="background: #dafbe1; color: #1a7f37; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600;">Fixed</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Detailed Findings -->
+                <p style="font-size: 13px; font-weight: 600; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 1px solid #d0d7de;">Detailed Findings</p>
+
+                <!-- TF-001 -->
+                <div style="border: 1px solid #d0d7de; border-radius: 6px; margin-bottom: 10px; overflow: hidden;">
+                  <div style="background: #f6f8fa; padding: 8px 12px; border-bottom: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; color: #0969da;">TF-001</span>
+                    <span style="font-weight: 600; font-size: 13px;">Terraform version constraint too loose</span>
+                    <div style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+                      <span style="font-size: 11px; color: #636c76; font-family: ui-monospace, monospace;">main.tf:2</span>
+                      <span style="background: #fff8c5; color: #9a6700; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600;">Medium</span>
+                      <span style="background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 1px 7px; font-size: 11px;">95% confidence</span>
+                      <span style="color: #636c76; font-size: 11px;">Blast: Low</span>
+                    </div>
+                  </div>
+                  <div style="padding: 12px 14px;">
+                    <div style="border-radius: 4px; overflow: hidden; border: 1px solid #d0d7de; margin-bottom: 10px; font-family: ui-monospace, 'Cascadia Code', monospace; font-size: 12px;">
+                      <div style="display: flex;">
+                        <div style="background: #ffebe9; color: #cf222e; padding: 5px 10px; border-right: 1px solid #fcc; font-weight: 700; min-width: 20px; text-align: center; user-select: none;">-</div>
+                        <div style="background: #ffebe9; padding: 5px 10px; flex: 1; color: #1f2328;">required_version = "&gt;= 1.0"</div>
+                      </div>
+                      <div style="display: flex; border-top: 1px solid #d0d7de;">
+                        <div style="background: #e6ffec; color: #1a7f37; padding: 5px 10px; border-right: 1px solid #b7e4c7; font-weight: 700; min-width: 20px; text-align: center; user-select: none;">+</div>
+                        <div style="background: #e6ffec; padding: 5px 10px; flex: 1; color: #1f2328;">required_version = "&gt;= 1.5, &lt; 2.0"</div>
+                      </div>
+                    </div>
+                    <p style="margin: 0 0 6px; font-size: 12px; color: #1f2328;"><strong>Why:</strong> &gt;= 1.0 allows any future major version including Terraform 2.x, which may introduce breaking changes. Pinning to &lt; 2.0 protects against unintended major version upgrades in CI/CD pipelines that auto-install Terraform.</p>
+                    <p style="margin: 0; font-size: 12px; color: #636c76;"><strong style="color: #1f2328;">Blast radius:</strong> Low — only affects environments where Terraform is auto-installed. No resource changes.</p>
+                  </div>
                 </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Trust as a product requirement</p>
-                  <p>Confidence, blast radius, rule context, and history treated as core surfaces, not secondary features</p>
+
+                <!-- TF-002 -->
+                <div style="border: 1px solid #d0d7de; border-radius: 6px; margin-bottom: 10px; overflow: hidden;">
+                  <div style="background: #f6f8fa; padding: 8px 12px; border-bottom: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; color: #0969da;">TF-002</span>
+                    <span style="font-weight: 600; font-size: 13px;">Provider version constraint too loose</span>
+                    <div style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+                      <span style="font-size: 11px; color: #636c76; font-family: ui-monospace, monospace;">main.tf:7</span>
+                      <span style="background: #fff8c5; color: #9a6700; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600;">Medium</span>
+                      <span style="background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 1px 7px; font-size: 11px;">95% confidence</span>
+                      <span style="color: #636c76; font-size: 11px;">Blast: Low</span>
+                    </div>
+                  </div>
+                  <div style="padding: 12px 14px;">
+                    <div style="border-radius: 4px; overflow: hidden; border: 1px solid #d0d7de; margin-bottom: 10px; font-family: ui-monospace, 'Cascadia Code', monospace; font-size: 12px;">
+                      <div style="display: flex;">
+                        <div style="background: #ffebe9; color: #cf222e; padding: 5px 10px; border-right: 1px solid #fcc; font-weight: 700; min-width: 20px; text-align: center; user-select: none;">-</div>
+                        <div style="background: #ffebe9; padding: 5px 10px; flex: 1; color: #1f2328;">version = "~&gt; 3.0"</div>
+                      </div>
+                      <div style="display: flex; border-top: 1px solid #d0d7de;">
+                        <div style="background: #e6ffec; color: #1a7f37; padding: 5px 10px; border-right: 1px solid #b7e4c7; font-weight: 700; min-width: 20px; text-align: center; user-select: none;">+</div>
+                        <div style="background: #e6ffec; padding: 5px 10px; flex: 1; color: #1f2328;">version = "= 3.2.4"</div>
+                      </div>
+                    </div>
+                    <p style="margin: 0 0 6px; font-size: 12px; color: #1f2328;"><strong>Why:</strong> ~&gt; 3.0 allows any 3.x minor version to be resolved at init time if the lock file is absent or regenerated. This can introduce behavioural changes in production. The currently installed 3.2.4 is now pinned exactly, reinforced by committing the lock file (TF-006).</p>
+                    <p style="margin: 0; font-size: 12px; color: #636c76;"><strong style="color: #1f2328;">Blast radius:</strong> Low — no resource changes. Prevents unintended provider upgrades.</p>
+                  </div>
                 </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Reusable write-back pattern</p>
-                  <p>A general model for PR creation, issue history, and notifications that could support multiple remediation sources</p>
+
+                <!-- TF-003 -->
+                <div style="border: 1px solid #d0d7de; border-radius: 6px; margin-bottom: 10px; overflow: hidden;">
+                  <div style="background: #f6f8fa; padding: 8px 12px; border-bottom: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; color: #0969da;">TF-003</span>
+                    <span style="font-weight: 600; font-size: 13px;">timestamp() trigger causes forced replacement on every apply</span>
+                    <div style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+                      <span style="font-size: 11px; color: #636c76; font-family: ui-monospace, monospace;">main.tf:13</span>
+                      <span style="background: #ffebe9; color: #cf222e; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600;">High</span>
+                      <span style="background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 1px 7px; font-size: 11px;">99% confidence</span>
+                      <span style="color: #636c76; font-size: 11px;">Blast: High</span>
+                    </div>
+                  </div>
+                  <div style="padding: 12px 14px;">
+                    <div style="border-radius: 4px; overflow: hidden; border: 1px solid #d0d7de; margin-bottom: 10px; font-family: ui-monospace, 'Cascadia Code', monospace; font-size: 12px;">
+                      <div style="display: flex;">
+                        <div style="background: #ffebe9; color: #cf222e; padding: 5px 10px; border-right: 1px solid #fcc; font-weight: 700; min-width: 20px; text-align: center; user-select: none;">-</div>
+                        <div style="background: #ffebe9; padding: 5px 10px; flex: 1; color: #1f2328;">always_run = timestamp()</div>
+                      </div>
+                      <div style="display: flex; border-top: 1px solid #d0d7de;">
+                        <div style="background: #e6ffec; color: #1a7f37; padding: 5px 10px; border-right: 1px solid #b7e4c7; font-weight: 700; min-width: 20px; text-align: center; user-select: none;">+</div>
+                        <div style="background: #e6ffec; padding: 5px 10px; flex: 1; color: #1f2328;">run_once = "initial"</div>
+                      </div>
+                    </div>
+                    <p style="margin: 0 0 6px; font-size: 12px; color: #1f2328;"><strong>Why:</strong> timestamp() is evaluated at plan time and always returns a new value, meaning null_resource.example is destroyed and recreated on every terraform apply. In a real infrastructure scenario, this attached to a provisioner would re-run that script on every deploy, potentially wiping configuration, restarting services, or triggering cascading changes. This is one of the most common causes of unintended Terraform drift.</p>
+                    <p style="margin: 0; font-size: 12px; color: #636c76;"><strong style="color: #1f2328;">Blast radius:</strong> High — if the provisioner performs real side-effects (installs, restarts, API calls), this causes them to fire on every apply. Replacing with a static trigger ensures it runs only once or when explicitly changed.</p>
+                  </div>
                 </div>
+
+                <!-- TF-004 -->
+                <div style="border: 1px solid #d0d7de; border-radius: 6px; margin-bottom: 10px; overflow: hidden;">
+                  <div style="background: #f6f8fa; padding: 8px 12px; border-bottom: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; color: #0969da;">TF-004</span>
+                    <span style="font-weight: 600; font-size: 13px;">No variable validation — prod inputs unconstrained</span>
+                    <div style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+                      <span style="font-size: 11px; color: #636c76; font-family: ui-monospace, monospace;">variables.tf</span>
+                      <span style="background: #ffebe9; color: #cf222e; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600;">High</span>
+                      <span style="background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 1px 7px; font-size: 11px;">92% confidence</span>
+                      <span style="color: #636c76; font-size: 11px;">Blast: Medium</span>
+                    </div>
+                  </div>
+                  <div style="padding: 12px 14px;">
+                    <p style="margin: 0 0 8px; font-size: 12px; color: #636c76;">Added validation blocks to all 4 variables:</p>
+                    <ul style="margin: 0 0 10px; padding-left: 20px; font-size: 12px; color: #1f2328;">
+                      <li style="margin-bottom: 3px;"><code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">instance_id</code>: Must match EC2 instance ID format (i-[0-9a-f]{8,17})</li>
+                      <li style="margin-bottom: 3px;"><code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">db_name</code>: Lowercase, alphanumeric + underscores, 3-63 chars</li>
+                      <li style="margin-bottom: 3px;"><code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">environment</code>: Must be one of dev, staging, prod</li>
+                      <li><code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">region</code>: Must match AWS region format (us-west-2 style)</li>
+                    </ul>
+                    <p style="margin: 0 0 6px; font-size: 12px; color: #1f2328;"><strong>Why:</strong> Without validation, a misconfigured terraform.tfvars silently propagates into provisioners and resource triggers. Validation fails fast at plan time with a clear error message.</p>
+                    <p style="margin: 0; font-size: 12px; color: #636c76;"><strong style="color: #1f2328;">Blast radius:</strong> Medium — no existing resources change. Adds a guardrail that will block terraform plan on invalid inputs.</p>
+                  </div>
+                </div>
+
+                <!-- TF-005 -->
+                <div style="border: 1px solid #d0d7de; border-radius: 6px; margin-bottom: 10px; overflow: hidden;">
+                  <div style="background: #f6f8fa; padding: 8px 12px; border-bottom: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; color: #0969da;">TF-005</span>
+                    <span style="font-weight: 600; font-size: 13px;">Outputs expose resource IDs without sensitive = true</span>
+                    <div style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+                      <span style="font-size: 11px; color: #636c76; font-family: ui-monospace, monospace;">outputs.tf</span>
+                      <span style="background: #fff8c5; color: #9a6700; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600;">Medium</span>
+                      <span style="background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 1px 7px; font-size: 11px;">88% confidence</span>
+                      <span style="color: #636c76; font-size: 11px;">Blast: Low</span>
+                    </div>
+                  </div>
+                  <div style="padding: 12px 14px;">
+                    <p style="margin: 0 0 8px; font-size: 12px; color: #636c76;">Added <code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">sensitive = true</code> to all three outputs.</p>
+                    <p style="margin: 0 0 6px; font-size: 12px; color: #1f2328;"><strong>Why:</strong> Resource IDs surfaced as plain outputs are printed to stdout during terraform apply and stored unredacted in state. If this module is consumed by a parent module or CI pipeline, these values may be logged — especially important when outputs evolve to include real ARNs, connection strings, or credentials.</p>
+                    <p style="margin: 0; font-size: 12px; color: #636c76;"><strong style="color: #1f2328;">Blast radius:</strong> Low — no infrastructure change. Consumers referencing these outputs in other modules may need to handle them as sensitive values.</p>
+                  </div>
+                </div>
+
+                <!-- TF-006 -->
+                <div style="border: 1px solid #d0d7de; border-radius: 6px; margin-bottom: 20px; overflow: hidden;">
+                  <div style="background: #f6f8fa; padding: 8px 12px; border-bottom: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-family: ui-monospace, monospace; font-size: 11px; font-weight: 600; color: #0969da;">TF-006</span>
+                    <span style="font-weight: 600; font-size: 13px;">.terraform.lock.hcl excluded from git + terraform.tfvars committed</span>
+                    <div style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-shrink: 0;">
+                      <span style="font-size: 11px; color: #636c76; font-family: ui-monospace, monospace;">.gitignore</span>
+                      <span style="background: #ddf4ff; color: #0969da; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600;">Low</span>
+                      <span style="background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 1px 7px; font-size: 11px;">97% confidence</span>
+                      <span style="color: #636c76; font-size: 11px;">Blast: Low</span>
+                    </div>
+                  </div>
+                  <div style="padding: 12px 14px;">
+                    <ul style="margin: 0 0 10px; padding-left: 20px; font-size: 12px; color: #1f2328;">
+                      <li style="margin-bottom: 3px;">Removed <code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">.terraform.lock.hcl</code> from .gitignore — it is now committed.</li>
+                      <li>Added <code style="font-family: ui-monospace, monospace; background: #f6f8fa; padding: 1px 4px; border-radius: 3px; border: 1px solid #d0d7de;">terraform.tfvars</code> to .gitignore — replaced with terraform.tfvars.example.</li>
+                    </ul>
+                    <p style="margin: 0 0 6px; font-size: 12px; color: #1f2328;"><strong>Why:</strong> The Terraform docs explicitly recommend committing the lock file so all team members and CI systems use identical provider versions. Committing tfvars with real instance IDs and database names to a potentially public repo is a security risk.</p>
+                    <p style="margin: 0; font-size: 12px; color: #636c76;"><strong style="color: #1f2328;">Blast radius:</strong> Low — no resource changes. Improves reproducibility and security posture.</p>
+                  </div>
+                </div>
+
+                <!-- Files Changed -->
+                <p style="font-size: 13px; font-weight: 600; margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid #d0d7de;">Files Changed</p>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 12px;">
+                  <thead>
+                    <tr>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">File</th>
+                      <th style="padding: 6px 10px; text-align: left; border: 1px solid #d0d7de; background: #f6f8fa; font-weight: 600;">Change</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">main.tf</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Version constraints tightened; timestamp() trigger replaced</td>
+                    </tr>
+                    <tr style="background: #f6f8fa;">
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">variables.tf</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Validation blocks added to all 4 variables</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">outputs.tf</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">sensitive = true added to all outputs</td>
+                    </tr>
+                    <tr style="background: #f6f8fa;">
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">.gitignore</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Lock file unblocked; terraform.tfvars excluded</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">.terraform.lock.hcl</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Now committed to enforce provider pin</td>
+                    </tr>
+                    <tr style="background: #f6f8fa;">
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">terraform.tfvars</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Removed from tracking (contains prod values)</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de; font-family: ui-monospace, monospace; font-size: 11px;">terraform.tfvars.example</td>
+                      <td style="padding: 6px 10px; border: 1px solid #d0d7de;">Added as a safe template for contributors</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Test Plan -->
+                <p style="font-size: 13px; font-weight: 600; margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid #d0d7de;">Test Plan</p>
+                <div style="font-size: 12px; display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px;">
+                  <label style="display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" checked style="accent-color: #1a7f37; width: 14px; height: 14px; pointer-events: none; flex-shrink: 0;">
+                    <span>terraform init succeeds with pinned provider version</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" checked style="accent-color: #1a7f37; width: 14px; height: 14px; pointer-events: none; flex-shrink: 0;">
+                    <span>terraform validate passes</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" checked style="accent-color: #1a7f37; width: 14px; height: 14px; pointer-events: none; flex-shrink: 0;">
+                    <span>terraform plan shows 0 changes to existing real resources</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" checked style="accent-color: #1a7f37; width: 14px; height: 14px; pointer-events: none; flex-shrink: 0;">
+                    <span>Invalid instance_id triggers a validation error at plan time</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" checked style="accent-color: #1a7f37; width: 14px; height: 14px; pointer-events: none; flex-shrink: 0;">
+                    <span>Outputs are redacted in terraform apply console output</span>
+                  </label>
+                </div>
+
+                <!-- Footer -->
+                <p style="margin: 0; font-size: 11px; color: #636c76;">🤖 Generated by Terraform Remediation Agent</p>
+
               </div>
             </div>
 
-            <!-- CONCLUSION -->
-            <div class="block" id="conclusion">
-              <div class="subtitle">CONCLUSION</div>
-              <h4>In enterprise AI, the product is not just automation. It is automation people can understand, verify, and safely act on.</h4>
-              <p>This project changed how I think about AI in enterprise products. The design problem was never "how do we add an agent?" It was how to make automation feel accountable inside a messy system of repos, workspaces, permissions, and human ownership boundaries.</p>
-              <p style="margin-top: 16px;">It pushed me to think more like a systems designer, connecting product strategy, platform constraints, and UX details that could easily get dismissed as implementation concerns. And it reinforced something I keep coming back to in enterprise work: the more powerful the automation, the more important it is to design for verification, control, and shared understanding.</p>
+            <!-- Annotation 1: Confidence signal — points to confidence column in findings table (~310px from top of PR) -->
+            <div style="position: absolute; left: calc(100% + 16px); top: 310px; width: 168px; display: flex; align-items: flex-start;">
+              <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 16px; height: 1.5px; background: #ef4444;"></div>
+              </div>
+              <div style="padding-left: 8px;">
+                <p style="margin: 0 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Confidence signal</p>
+                <p style="margin: 0; font-size: 11px; color: var(--secondarytext); line-height: 1.45;">Surfacing certainty as a percentage gives reviewers a clear signal of how thoroughly to audit before merging.</p>
+              </div>
             </div>
+
+            <!-- Annotation 2: Blast radius — points to blast radius rows in detailed findings (~720px from top) -->
+            <div style="position: absolute; left: calc(100% + 16px); top: 720px; width: 168px; display: flex; align-items: flex-start;">
+              <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 16px; height: 1.5px; background: #ef4444;"></div>
+              </div>
+              <div style="padding-left: 8px;">
+                <p style="margin: 0 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Blast radius</p>
+                <p style="margin: 0; font-size: 11px; color: var(--secondarytext); line-height: 1.45;">Shows scope of impact across workspaces and modules — so reviewers understand consequences before a single line merges.</p>
+              </div>
+            </div>
+
+            <!-- Annotation 3: Test plan — points to checkboxes near bottom of PR (~1720px from top) -->
+            <div style="position: absolute; left: calc(100% + 16px); top: 1720px; width: 168px; display: flex; align-items: flex-start;">
+              <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 16px; height: 1.5px; background: #ef4444;"></div>
+              </div>
+              <div style="padding-left: 8px;">
+                <p style="margin: 0 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Verifiable outcomes</p>
+                <p style="margin: 0; font-size: 11px; color: var(--secondarytext); line-height: 1.45;">The agent pre-checks its own work. Reviewers see a test plan already run, not just generated code to take on faith.</p>
+              </div>
+            </div>
+
+            </div><!-- end annotation wrapper -->
+
 
           </div>
-        </div>
 
+          <!-- Decision 3 -->
+          <div class="block">
+            <h4 class="decision-header">Treat write-back as a reusable product surface</h4>
+            <p class="text-secondary-color">Challenge: Every new integration would arrive with its own conventions. Designing a one-off handoff each time wasn't going to scale.</p>
+            <p class="text-primary-color margin-top-xs"><strong>Decision:</strong> I built write-back around three shared surfaces any source can plug into: a unified PR feed, a normalized findings inbox, and a per-finding inspect view with the rule, recommended diff, and reasoning trace.</p>
+            <div class="img-frame">
+              <img src="./Decision trace.png" class="fullwidth">
+            </div>
+            <p class="img-caption">Per-finding inspect view: rule, diff, confidence, and reasoning. Everything the reviewer needs before deciding.</p>
+          </div>
+
+          <!-- Decision 4 -->
+          <div class="block">
+            <h4 class="decision-header">Make agent actions auditable, not opaque</h4>
+            <p class="text-secondary-color">Challenge: When an agent acts autonomously, "what did it actually do?" becomes a trust question fast.</p>
+            <p class="text-primary-color margin-top-xs"><strong>Decision:</strong> I designed agent logs as a first-class surface, not a debug afterthought. Every job captures a full event stream: deploys, tool calls, results, successes, and failures. Admins can drill in and replay exactly what happened, in order. That verifiability is what makes the rest of the workflow safe to leave on.</p>
+            <div class="img-frame">
+              <img src="./AgentLogDrill.png" class="fullwidth">
+            </div>
+            <p class="img-caption">Agent log drill-down: a full event stream per job run, replayable in sequence.</p>
+          </div>
+
+          <!-- Decision 5 -->
+          <div class="block">
+            <h4 class="decision-header">Favor the user's operational model over the simpler technical model</h4>
+            <p class="text-secondary-color">Challenge: Repo-based onboarding was technically simpler, but it obscured blast radius and ownership, especially in monorepos and shared-module setups.</p>
+            <p class="text-primary-color" style="margin-top: 12px;"><strong>Decision:</strong> I pushed for workspace and project context over repo-based thinking, because it matched how Terraform operations are actually managed. That gave teams a clearer sense of what the agent was acting on and fit the mental model they already used.</p>
+            <div class="img-frame">
+              <img src="./Settings _ Agentic on _ TF Agent on.png" class="fullwidth" style="margin-top:0; margin-bottom:0;">
+            </div>
+            <!-- Mental model: native recreation of Mental model.png -->
+            <div style="background: var(--card); border: 1px solid var(--bordercolor); border-radius: 12px; padding: 28px; margin-top: 24px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+
+                <!-- Left: Repo-based onboarding -->
+                <div>
+                  <div style="font-size: 15px; font-weight: 500; color: var(--primarytext); margin-bottom: 4px;">Repository based onboarding</div>
+                  <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 20px;">Simpler to implement</div>
+                  <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 8px 18px; font-size: 13px; color: var(--primarytext); background: #fff; white-space: nowrap;">Single repository</div>
+                    <svg width="280" height="52" viewBox="0 0 280 52" style="display: block; overflow: visible; flex-shrink: 0;">
+                      <line x1="140" y1="0" x2="140" y2="22" stroke="#C8C4C0" stroke-width="1.5"/>
+                      <line x1="33" y1="22" x2="248" y2="22" stroke="#C8C4C0" stroke-width="1.5"/>
+                      <line x1="33" y1="22" x2="33" y2="46" stroke="#C8C4C0" stroke-width="1.5"/>
+                      <line x1="104" y1="22" x2="104" y2="46" stroke="#C8C4C0" stroke-width="1.5"/>
+                      <line x1="176" y1="22" x2="176" y2="46" stroke="#C8C4C0" stroke-width="1.5"/>
+                      <line x1="248" y1="22" x2="248" y2="46" stroke="#C8C4C0" stroke-width="1.5"/>
+                      <polygon points="33,52 29,46 37,46" fill="#C8C4C0"/>
+                      <polygon points="104,52 100,46 108,46" fill="#C8C4C0"/>
+                      <polygon points="176,52 172,46 180,46" fill="#C8C4C0"/>
+                      <polygon points="248,52 244,46 252,46" fill="#C8C4C0"/>
+                    </svg>
+                    <div style="display: flex; gap: 6px; width: 280px;">
+                      <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 7px 4px; font-size: 12px; color: var(--primarytext); background: #fff; flex: 1; text-align: center;">Workspace 1</div>
+                      <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 7px 4px; font-size: 12px; color: var(--primarytext); background: #fff; flex: 1; text-align: center;">Workspace 2</div>
+                      <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 7px 4px; font-size: 12px; color: var(--primarytext); background: #fff; flex: 1; text-align: center;">Workspace 3</div>
+                      <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 7px 4px; font-size: 12px; color: var(--primarytext); background: #fff; flex: 1; text-align: center;">...</div>
+                    </div>
+                  </div>
+                  <div style="margin-top: 16px; background: #fff5f5; border: 1px solid #ffcdd2; border-radius: 8px; padding: 11px 14px; display: flex; gap: 9px; align-items: flex-start;">
+                    <span style="color: #c62828; font-size: 15px; line-height: 1.5; flex-shrink: 0;">&#9432;</span>
+                    <span style="font-size: 13px; color: #b71c1c; line-height: 1.5;">One repository can map to many workspaces, which causes blast radius and ownership issues</span>
+                  </div>
+                </div>
+
+                <!-- Right: Workspace/project based onboarding -->
+                <div>
+                  <div style="font-size: 15px; font-weight: 500; color: var(--primarytext); margin-bottom: 4px;">Workspace or project based onboarding</div>
+                  <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 20px;">Better mental model</div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 12px;">
+                      <div style="font-size: 12px; color: var(--secondarytext); margin-bottom: 8px;">Project A</div>
+                      <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 7px; font-size: 12px; background: #fff; text-align: center;">Workspace 1</div>
+                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 7px; font-size: 12px; background: #fff; text-align: center;">Workspace 2</div>
+                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 7px; font-size: 12px; background: #fff; text-align: center;">Workspace 3</div>
+                      </div>
+                    </div>
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 12px;">
+                      <div style="font-size: 12px; color: var(--secondarytext); margin-bottom: 8px;">Project B</div>
+                      <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 7px; font-size: 12px; background: #fff; text-align: center;">Workspace 4</div>
+                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 7px; font-size: 12px; background: #fff; text-align: center;">Workspace 5</div>
+                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 7px; font-size: 12px; background: #fff; text-align: center;">Workspace 6</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="margin-top: 16px; background: #eafaf0; border: 1px solid #b6e8c4; border-radius: 8px; padding: 11px 14px; display: flex; gap: 9px; align-items: center;">
+                    <span style="color: #2d7a3a; font-size: 16px; flex-shrink: 0;">&#10003;</span>
+                    <span style="font-size: 13px; color: #2d7a3a; line-height: 1.5;">Clear blast radius, clear ownership and easier to learn</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- ── REFLECTION ─────────────────────────────────────────── -->
+          <div class="block" id="reflection">
+            <div class="subtitle">REFLECTION</div>
+            <h4>In enterprise AI, the product is not just automation. It is automation people can understand, verify, and safely act on.</h4>
+            <p>We narrowed a broad agentic concept into a focused remediation workflow and made trust requirements explicit. Confidence, explainability, blast radius, and history were core, not extras.</p>
+            <p style="margin-top: 16px;">This project sharpened how I think about AI in enterprise products. The design problem was never "how do we add an agent?" It was how to make automation feel accountable inside a messy system of repos, workspaces, permissions, and human ownership. The more powerful the automation, the more important it is to design for verification, control, and shared understanding.</p>
+
+            <div class="row margin-top">
+              <div class="gencard margin-top">
+                <p class="heavy text-primary-color">Proactive remediation loop</p>
+                <p>Detect issue, generate fix, open PR, human review. Scoped and shippable as a v1.</p>
+              </div>
+              <div class="gencard margin-top">
+                <p class="heavy text-primary-color">Trust as a product requirement</p>
+                <p>Confidence, blast radius, rule context, and history treated as core surfaces, not secondary features.</p>
+              </div>
+              <div class="gencard margin-top">
+                <p class="heavy text-primary-color">Reusable write-back pattern</p>
+                <p>A general model for PR creation, issue history, and notifications that any remediation source can plug into.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
+
+    </div>
 
     <script src="../../../js/main.js"></script>
 
     <script>
       var coll = document.getElementsByClassName("collapsible");
-      var i;
-      for (i = 0; i < coll.length; i++) {
+      for (var i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
           this.classList.toggle("active");
           var content = this.nextElementSibling;
-          if (content.style.display === "block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "block";
-          }
+          content.style.display = content.style.display === "block" ? "none" : "block";
         });
       }
     </script>
 
-    </body>
-  </div>
+  </body>
 
   <footer>
     <p class="center heavy">Seen enough?</p>
     <p class="center">Get in touch.</p>
-
     <div class="img-wrap text-secondary-color">
       <a href="https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class="sm_icon_center" src="../../../assets/newli.svg"></a>
       <a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class="sm_icon_center" src="../../../assets/send-4008.svg"></a>
     </div>
-
     <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2026</p>
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </footer>
 
 </html>
