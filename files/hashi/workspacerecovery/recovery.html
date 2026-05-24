@@ -125,10 +125,101 @@
 
             <!-- CONTEXT -->
             <div class="block" id="context">
-                <img src="../../../images/workspacerecoverimg.png" class="fullwidth minus-margin">
+                <div style="border-radius: 10px; overflow: hidden; width: 100%; aspect-ratio: 16/5; position: relative; display: flex; flex-direction: column; background: #F5F5F7; border: 1px solid var(--bordercolor); min-height: 0;">
+
+                  <!-- Browser chrome -->
+                  <div style="background: #EBEBED; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #D8D8DA; flex-shrink: 0;">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F57; flex-shrink: 0;"></div>
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #FEBC2E; flex-shrink: 0;"></div>
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #28C840; flex-shrink: 0;"></div>
+                    <div style="flex: 1; background: #FFFFFF; border: 1px solid #D8D8DA; border-radius: 4px; padding: 4px 12px; font-size: 11px; color: #999; text-align: center; font-family: var(--font-family);">app.terraform.io / ToolCorp / settings / recoverable-items</div>
+                  </div>
+
+                  <!-- App content -->
+                  <div style="flex: 1; padding: 18px 28px; overflow: hidden; position: relative; background: #FFFFFF;">
+
+                    <!-- Subtle brand glow -->
+                    <div style="position: absolute; top: -40px; right: -40px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(123,66,188,0.07) 0%, transparent 65%); pointer-events: none;"></div>
+
+                    <!-- Breadcrumb + title -->
+                    <div style="font-size: 10px; color: #999; margin-bottom: 8px; font-family: var(--font-family);">ToolCorp &nbsp;›&nbsp; Settings &nbsp;›&nbsp; <span style="color: #666;">Recoverable Items</span></div>
+                    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 12px;">
+                      <div style="font-size: 18px; font-weight: 600; color: var(--primarytext); font-family: var(--font-family);">Recoverable items</div>
+                      <div style="font-size: 11px; color: var(--secondarytext); font-family: var(--font-family);">Items retained for 30 days · 7 items</div>
+                    </div>
+
+                    <!-- Filter bar -->
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px; align-items: center;">
+                      <div style="background: #F5F5F7; border: 1px solid var(--bordercolor); border-radius: 4px; padding: 4px 10px; font-size: 10px; color: var(--secondarytext); font-family: var(--font-family);">Find objects...</div>
+                      <div style="background: #F5F5F7; border: 1px solid var(--bordercolor); border-radius: 4px; padding: 4px 10px; font-size: 10px; color: var(--secondarytext); font-family: var(--font-family);">Type ▾</div>
+                      <div style="background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.3); border-radius: 4px; padding: 4px 10px; font-size: 10px; color: #b45309; font-family: var(--font-family);">⚠ Less than 3 days left</div>
+                      <div style="background: rgba(123,66,188,0.07); border: 1px solid rgba(123,66,188,0.25); border-radius: 4px; padding: 4px 10px; font-size: 10px; color: var(--terraform); font-family: var(--font-family);">Unmanaged RUM</div>
+                    </div>
+
+                    <!-- Table -->
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 5px; overflow: hidden; font-family: var(--font-family);">
+
+                      <!-- Header row -->
+                      <div style="display: grid; grid-template-columns: 2fr 1.6fr 1.6fr 0.7fr 0.5fr 0.8fr; padding: 7px 12px; background: #F5F5F7; border-bottom: 1px solid var(--bordercolor);">
+                        <div style="font-size: 9px; color: #999; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Item</div>
+                        <div style="font-size: 9px; color: #999; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Project</div>
+                        <div style="font-size: 9px; color: #999; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Deletion time</div>
+                        <div style="font-size: 9px; color: #999; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Expiry</div>
+                        <div style="font-size: 9px; color: #999; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">RUM</div>
+                        <div style="font-size: 9px; color: #999; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Actions</div>
+                      </div>
+
+                      <!-- Row 1 — urgent -->
+                      <div style="display: grid; grid-template-columns: 2fr 1.6fr 1.6fr 0.7fr 0.5fr 0.8fr; padding: 8px 12px; border-bottom: 1px solid #F0F0F2; align-items: center; background: #FFFFFF;">
+                        <div>
+                          <div style="font-size: 11px; color: var(--primarytext); font-weight: 500;">prod-infra-west</div>
+                          <div style="font-size: 9px; color: #BBB; margin-top: 1px;">ws-8f3a209c4b1e</div>
+                        </div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">Core Cloud Infra</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">Nov 15, 2025 · 20:41Z</div>
+                        <div style="font-size: 11px; color: #b45309;">⚠ 1 day</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">0</div>
+                        <div style="font-size: 13px; color: #CCC; padding-left: 4px;">···</div>
+                      </div>
+
+                      <!-- Row 2 — highlighted with recover action -->
+                      <div style="display: grid; grid-template-columns: 2fr 1.6fr 1.6fr 0.7fr 0.5fr 0.8fr; padding: 8px 12px; border-bottom: 1px solid #F0F0F2; align-items: center; background: rgba(123,66,188,0.04);">
+                        <div>
+                          <div style="font-size: 11px; color: var(--primarytext); font-weight: 500;">staging-app-east</div>
+                          <div style="font-size: 9px; color: #BBB; margin-top: 1px;">ws-4b9c7e2a1d8f</div>
+                        </div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">App Deployment</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">Nov 16, 2025 · 18:22Z</div>
+                        <div style="font-size: 11px; color: #b45309;">⚠ 2 days</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">0</div>
+                        <div style="display: flex; align-items: center;">
+                          <div style="background: rgba(123,66,188,0.1); border: 1px solid rgba(123,66,188,0.3); border-radius: 4px; padding: 3px 8px; font-size: 10px; color: var(--terraform); white-space: nowrap; font-weight: 500;">↩ Recover</div>
+                        </div>
+                      </div>
+
+                      <!-- Row 3 — fading -->
+                      <div style="display: grid; grid-template-columns: 2fr 1.6fr 1.6fr 0.7fr 0.5fr 0.8fr; padding: 8px 12px; align-items: center; background: #FFFFFF; opacity: 0.45;">
+                        <div>
+                          <div style="font-size: 11px; color: var(--primarytext); font-weight: 500;">nomad-cluster</div>
+                          <div style="font-size: 9px; color: #BBB; margin-top: 1px;">st-2d7f1a90c3c6e</div>
+                        </div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">Network Config</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">Nov 17, 2025 · 14:36Z</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">4 days</div>
+                        <div style="font-size: 11px; color: var(--secondarytext);">0</div>
+                        <div style="font-size: 13px; color: #CCC; padding-left: 4px;">···</div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Bottom fade -->
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, #FFFFFF); pointer-events: none;"></div>
+
+                </div>
 
 
-              <div class="block">
+              <div class="block margin-top">
                 <div class="subtitle">PROJECT</div>
                 <h2 class="textcasetitle">Preventing downtime for large enterprises through frictionless recovery</h2>
               </div>
@@ -167,19 +258,142 @@
               <p style="margin-top: 24px;">In HCP Terraform, a workspace is not just a project container. It holds the state, variables, history, and workflow context needed to manage real infrastructure over time. Deletion could wipe all of that, with no native path to get it back.</p>
 
 
-                 <img src="./WhyThisMatters.png" class="fullwidth">
+                 <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 24px;">
 
-              <div class="problemcard margin-top">
-                <div class="subtitle">THE SCALE OF THE PROBLEM</div>
-                <p>One internal support note cited Epic Games, where recovering nine deleted workspaces was estimated at <strong>three to five days per workspace</strong>. That made it clear that this was significant pain when it does occur.</p>
-              </div>
+                   <!-- Customer types -->
+                   <div style="background:var(--card); border: 1px solid var(--bordercolor); padding: 1rem; border-radius: 6px;">
+                     <div class="subtitle" style="margin-bottom: 12px;">TWO CUSTOMER TYPES</div>
+                     <div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;">
+                       <div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0;">
+                         <div style="border: 2px solid var(--accent); border-radius: 6px; padding: 12px 18px; position: relative;">
+                           <div style="position: absolute; top: -11px; left: 10px; background: #EEF4FF; border: 1px solid var(--accent); border-radius: 10px; padding: 1px 8px; font-size: 10px; color: var(--accent); white-space: nowrap; font-weight: 600;">✓ Higher maturity</div>
+                           <p style="margin: 0; font-size: 13px; font-weight: 500; color: var(--primarytext); white-space: nowrap;">Want the recovery protocol</p>
+                         </div>
+                         <div style="border: 2px solid var(--highlight); border-radius: 6px; padding: 12px 18px;">
+                           <p style="margin: 0; font-size: 13px; font-weight: 500; color: var(--primarytext); white-space: nowrap;">Have accidentally deleted</p>
+                         </div>
+                       </div>
+                     </div>
+
+                   <!-- User flow -->
+                   <div>
+                     <div class="subtitle margin-top" style="margin-bottom: 8px;">USER FLOW WHEN A CUSTOMER ACCIDENTALLY DELETES</div>
+                     <p style="font-size: 14px; color: var(--secondarytext); margin-bottom: 20px;">Customers default to support, but there's no good native path.</p>
+
+                     <!-- Step 1 -->
+                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                       <div style="width: 22px; height: 22px; border-radius: 50%; background: #FEE2E2; border: 1px solid #FECACA; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #B91C1C; flex-shrink: 0;">1</div>
+                       <div style="background: #FEE2E2; border: 1px solid #FECACA; border-radius: 6px; padding: 11px 16px; flex: 1;">
+                         <div style="font-size: 13px; font-weight: 500; color: #B91C1C;">Accidentally delete a workspace</div>
+                       </div>
+                     </div>
+
+                     <!-- Connector -->
+                     <div style="width: 1px; height: 14px; background: var(--bordercolor); margin-left: 11px;"></div>
+
+                     <!-- Step 2 -->
+                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                       <div style="width: 22px; height: 22px; border-radius: 50%; background: #F0F1F5; border: 1px solid #757575; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--primarytext); flex-shrink: 0;">2</div>
+                       <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 11px 16px; background: var(--card); flex: 1;">
+                         <div style="font-size: 13px; font-weight: 500; color: var(--primarytext);">Contact support to help recover it</div>
+                         <div style="font-size: 11px; color: var(--secondarytext); margin-top: 3px;">No native option — support recommends one of these workarounds:</div>
+                       </div>
+                     </div>
+
+                     <!-- Three option cards -->
+                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+
+
+                       <div style="border: 1px solid #FECACA; border-radius: 6px; overflow: hidden;">
+                         <div style="background: #FEE2E2; padding: 7px 12px; border-bottom: 1px solid #FECACA;">
+                           <span style="font-size: 10px; font-weight: 700; color: #B91C1C; letter-spacing: 0.04em;">⚠ HIGHEST PAIN</span>
+                         </div>
+                         <div style="padding: 12px; background: #FFFFFF;">
+                           <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Roll back entire instance to older snapshot</div>
+                           <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Incredibly time consuming — snapshots are massive (&gt;5tb)</div>
+                         </div>
+                       </div>
+
+                       <div style="border: 1px solid #FDE68A; border-radius: 6px; overflow: hidden;">
+                         <div style="background: #FEF3C7; padding: 7px 12px; border-bottom: 1px solid #FDE68A;">
+                           <span style="font-size: 10px; font-weight: 700; color: #92400E; letter-spacing: 0.04em;">⚠ HIGH PAIN</span>
+                         </div>
+                         <div style="padding: 12px; background: #FFFFFF;">
+                           <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Import resources using <code style="background: #F0F1F5; border-radius: 3px; padding: 1px 5px; font-size: 11px;">import</code> block</div>
+                           <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Not feasible for large workspaces, loses history</div>
+                         </div>
+                       </div>
+
+                       <div style="border: 1px solid #FDE68A; border-radius: 6px; overflow: hidden;">
+                         <div style="background: #FEF3C7; padding: 7px 12px; border-bottom: 1px solid #FDE68A;">
+                           <span style="font-size: 10px; font-weight: 700; color: #92400E; letter-spacing: 0.04em;">⚠ HIGH PAIN</span>
+                         </div>
+                         <div style="padding: 12px; background: #FFFFFF;">
+                           <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Rebuild workspaces from scratch</div>
+                           <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Loses all history, may error if resources already exist</div>
+                         </div>
+                       </div>
+
+                     </div>
+                   </div>
+                   </div>
+
+                 </div>
+
+                 <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--bordercolor);">
+                   <div class="subtitle" style="margin-bottom: 8px;">THE SCALE OF THE PROBLEM</div>
+                   <p>One internal support note cited Epic Games, where recovering nine deleted workspaces was estimated at <strong>three to five days per workspace</strong>. That made it clear that this was significant pain when it does occur.</p>
+                 </div>
+
             </div>
 
             <!-- CONTEXT / ACTORS -->
             <div class="block">
               <div class="subtitle" id="research">CONTEXT</div>
               <h4>The person who caused the deletion was rarely the person responsible for fixing it.</h4>
-              <img src="./Personas.png" class="fullwidth">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem;">
+
+                <div style="background: #F0F1F5; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                  <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 12px;">WHO CAUSES THE DELETION</div>
+                  <div style="font-size: 18px; font-weight: 600; color: var(--primarytext); margin-bottom: 4px;">App Developer</div>
+                  <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 16px;">Downstream teams</div>
+                  <div style="padding-top: 16px; border-top: 1px solid #C4C4C6; display: flex; flex-direction: column; gap: 6px;">
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--secondarytext); flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="margin: 0; font-size: 13px; color: var(--secondarytext);">API calls and automation flows</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--secondarytext); flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="margin: 0; font-size: 13px; color: var(--secondarytext);">Internal tooling</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--secondarytext); flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="margin: 0; font-size: 13px; color: var(--secondarytext);">Workspace-as-code workflows</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="background: #E3E3E4; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                  <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 12px;">WHO CLEANS IT UP</div>
+                  <div style="font-size: 18px; font-weight: 600; color: var(--primarytext); margin-bottom: 4px;">Platform Engineer</div>
+                  <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 16px;">Upstream platform admins</div>
+                  <div style="padding-top: 16px; border-top: 1px solid #C4C4C6; display: flex; flex-direction: column; gap: 6px;">
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--terraform); flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="margin: 0; font-size: 13px; color: var(--secondarytext);">Org-level access and visibility</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--terraform); flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="margin: 0; font-size: 13px; color: var(--secondarytext);">Owns infrastructure standards</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 8px;">
+                      <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--terraform); flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="margin: 0; font-size: 13px; color: var(--secondarytext);">Recovery mandate when things go wrong</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
               <p style="margin-top: 16px;">That mismatch shaped the whole problem. Recovery had to fit the reality of enterprise operations, not just the UI. I partnered with my PM to frame the work around three questions: how accidental deletion actually happened, what a believable recovery path should bring back, and how customers were already trying to protect themselves from this risk.</p>
             </div>
 
@@ -220,7 +434,74 @@
               <h4>Scope pressure was constant, and "recovery" could mean a lot of different things.</h4>
               <p>The temptation early on was better deletion prevention. But most accidental deletions came through code and API flows — no confirmation UI could catch those. Recovery had to be its own capability. Customers pushed for configurable retention, rollback, and audit history; all of it got scoped out. That restraint is what kept the project from dissolving into a platform effort. The metric analysis below was a key input in making those calls.</p>
            
-           <img src="./Metric analysis.png" class="fullwidth">
+           <div style="padding: 1rem;">
+
+             <div class="subtitle" style="margin-bottom: 20px; letter-spacing: 0.1em;">METRIC ANALYSIS</div>
+
+             <!-- Funnel chart -->
+             <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+
+               <div style="display: flex; align-items: center; gap: 12px;">
+                 <div style="width: 200px; text-align: right; flex-shrink: 0;">
+                   <div style="font-size: 12px; color: var(--secondarytext);">All deletions this year</div>
+                   <div style="font-size: 10px; color: #BBB; margin-top: 1px;">161K unique orgs</div>
+                 </div>
+                 <div style="flex: 1; height: 36px; background: #F0F1F5; border-radius: 4px; overflow: hidden;">
+                   <div style="width: 100%; height: 100%; background: #D4D4D5; border-radius: 4px;"></div>
+                 </div>
+                 <div style="width: 52px; font-size: 15px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.01em;">2.1M</div>
+               </div>
+
+               <div style="display: flex; align-items: center; gap: 12px;">
+                 <div style="width: 200px; text-align: right; flex-shrink: 0;">
+                   <div style="font-size: 12px; color: var(--secondarytext);">Resource count &gt;0, spam filtered</div>
+                 </div>
+                 <div style="flex: 1; height: 36px; background: #F0F1F5; border-radius: 4px; overflow: hidden;">
+                   <div style="width: 12.5%; height: 100%; background: #C0C0C2; border-radius: 4px;"></div>
+                 </div>
+                 <div style="width: 52px; font-size: 15px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.01em;">262K</div>
+               </div>
+
+               <div style="display: flex; align-items: center; gap: 12px;">
+                 <div style="width: 200px; text-align: right; flex-shrink: 0;">
+                   <div style="font-size: 12px; color: var(--secondarytext);">Force deletes this year</div>
+                 </div>
+                 <div style="flex: 1; height: 36px; background: #F0F1F5; border-radius: 4px; overflow: hidden;">
+                   <div style="width: 7.6%; height: 100%; background: #A8A8AA; border-radius: 4px;"></div>
+                 </div>
+                 <div style="width: 52px; font-size: 15px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.01em;">160K</div>
+               </div>
+
+               <div style="display: flex; align-items: center; gap: 12px;">
+                 <div style="width: 200px; text-align: right; flex-shrink: 0;">
+                   <div style="font-size: 12px; color: var(--primarytext); font-weight: 500;">Real signal (no test orgs)</div>
+                   <div style="font-size: 10px; color: var(--terraform); margin-top: 1px; font-weight: 500;">22% of force deletes</div>
+                 </div>
+                 <div style="flex: 1; height: 36px; background: #F0F1F5; border-radius: 4px; overflow: hidden;">
+                   <div style="width: 1.7%; height: 100%; background: var(--terraform); border-radius: 4px; min-width: 6px;"></div>
+                 </div>
+                 <div style="width: 52px; font-size: 15px; font-weight: 600; color: var(--terraform); letter-spacing: -0.01em;">35K</div>
+               </div>
+
+             </div>
+
+             <!-- Per-org stats -->
+             <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+               <div style="flex: 1; background: #F0F1F5; border: 1px solid #757575; border-radius: 6px; padding: 14px 16px; display: flex; gap: 14px; align-items: center;">
+                 <div style="font-size: 32px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.02em; line-height: 1;">2.6</div>
+                 <div style="font-size: 12px; color: var(--secondarytext); line-height: 1.5;">workspaces deleted<br>per org / week</div>
+               </div>
+               <div style="flex: 1; background: #E3E3E4; border: 1px solid #757575; border-radius: 6px; padding: 14px 16px; display: flex; gap: 14px; align-items: center;">
+                 <div style="font-size: 32px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.02em; line-height: 1;">3.5</div>
+                 <div style="font-size: 12px; color: var(--secondarytext); line-height: 1.5;">workspaces deleted<br>per org / month</div>
+               </div>
+             </div>
+
+             <div style="padding: 12px 16px; background: var(--card); border: 1px solid var(--bordercolor); border-radius: 4px;">
+               <p style="font-size: 13px; color: var(--secondarytext); margin: 0;">Of 2.1M total deletions, ~900K contained "test" in the org name and were filtered as noise. These signals informed the 30-day retention window and ruled out unlimited archival as an MVP requirement.</p>
+             </div>
+
+           </div>
 
             </div>
 
@@ -231,86 +512,91 @@
             </div>
 
             <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>How much friction is the right amount?</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift — a workspace that looked recovered but no longer matched its config or state expectations.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not..</p>
-                </div>
-                <div class="col-lg">
-                                   <img src="./recovery.gif" class="fullwidth">
-
-                </div>
-              </div>
-                <img src="./RecoveryInitiatls.png" class="fullwidth">
-
+              <h4>How much friction is the right amount?</h4>
+              <br>
+              <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift — a workspace that looked recovered but no longer matched its config or state expectations.</p>
+              <br>
+              <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not.</p>
+              <img src="./recovery.gif" class="fullwidth">
+              <img src="./RecoveryInitiatls.png" class="fullwidth">
             </div>
 
             <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Recovery lives at the org level</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Recovery could logically live at workspace, project, or organization level. Duplicating it across views would create inconsistency and fragment the experience.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Because the operational owner was almost always a platform engineer or org admin, I scoped the entry point to organization-level access only, which matched the actual recovery actor.</p>
-                </div>
-                <div class="col-lg">
-                                   <img src="./Persona2.png" class="fullwidth">
+              <h4>Recovery lives at the org level</h4>
+              <br>
+              <p class="text-secondary-color">Challenge: Recovery could logically live at workspace, project, or organization level. Duplicating it across views would create inconsistency and fragment the experience.</p>
+              <br>
+              <p class="text-primary-color"><strong>Decision:</strong> Because the operational owner was almost always a platform engineer or org admin, I scoped the entry point to organization-level access only, which matched the actual recovery actor.</p>
 
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem;">
+
+                <div style="background: #F0F1F5; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                  <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 16px;">WHO CAUSED THE DELETION</div>
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 7px; height: 7px; border-radius: 50%; background: var(--secondarytext); flex-shrink: 0;"></div>
+                      <p style="margin: 0; color: var(--primarytext); font-size: 15px;">App developer</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 7px; height: 7px; border-radius: 50%; background: var(--secondarytext); flex-shrink: 0;"></div>
+                      <p style="margin: 0; color: var(--primarytext); font-size: 15px;">Automation / API flow</p>
+                    </div>
+                  </div>
+                  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #C4C4C6;">
+                    <p style="font-size: 12px; color: var(--secondarytext); margin: 0;">Workspace or project-level access · often no UI interaction</p>
+                  </div>
                 </div>
+
+                <div style="background: #E3E3E4; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                  <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 16px;">WHO OWNS RECOVERY</div>
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 7px; height: 7px; border-radius: 50%; background: var(--terraform); flex-shrink: 0;"></div>
+                      <p style="margin: 0; color: var(--primarytext); font-size: 15px; font-weight: 500;">Platform engineer</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                      <div style="width: 7px; height: 7px; border-radius: 50%; background: var(--terraform); flex-shrink: 0;"></div>
+                      <p style="margin: 0; color: var(--primarytext); font-size: 15px; font-weight: 500;">Org admin</p>
+                    </div>
+                  </div>
+                  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #C4C4C6;">
+                    <p style="font-size: 12px; color: var(--secondarytext); margin: 0;">Org-level access · can see all workspaces including deleted ones</p>
+                  </div>
+                </div>
+
               </div>
 
+              <div style="margin-top: 12px; background: #F0F1F5; border: 1px solid #757575; border-radius: 4px; padding: 14px 16px;">
+                <p style="font-size: 14px; color: var(--primarytext); margin: 0;"><strong>The mismatch:</strong> The person who caused the deletion almost never has the access or mandate to fix it — which is why recovery belongs at the org level, not the workspace level.</p>
+              </div>
             </div>
 
             <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>"Recoverable Items" instead of "Workspace Recovery"</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Naming it "Workspace Recovery" would lock the feature to a single object type, requiring a second IA change when stacks and other resources needed the same capability.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Renamed to <em>Recoverable Items</em>, which is extensible to stacks and other object types without forcing a future rebrand or IA disruption.</p>
-                </div>
-                <div class="col-lg">
-                   <img src="./recovIA.png" class="fullwidth">
-
-                </div>
-              </div>
+              <h4>"Recoverable Items" instead of "Workspace Recovery"</h4>
+              <br>
+              <p class="text-secondary-color">Challenge: Naming it "Workspace Recovery" would lock the feature to a single object type, requiring a second IA change when stacks and other resources needed the same capability.</p>
+              <br>
+              <p class="text-primary-color"><strong>Decision:</strong> Renamed to <em>Recoverable Items</em>, which is extensible to stacks and other object types without forcing a future rebrand or IA disruption.</p>
+              <img src="./recovIA.png" class="fullwidth">
               <img src="./Naming.png" class="fullwidth">
-
             </div>
 
             <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Fixed 30-day retention window</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long ones risked becoming a de facto archival system.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> Research pointed to 30 days — long enough for real incidents, short enough to avoid archival debt. We fixed it rather than making it a setting.</p>
-                </div>
-                <div class="col-lg">
-                  <img src="./General Settings.png" class="fullwidth">
-                </div>
-              </div>
+              <h4>Fixed 30-day retention window</h4>
+              <br>
+              <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long ones risked becoming a de facto archival system.</p>
+              <br>
+              <p class="text-primary-color"><strong>Decision:</strong> Research pointed to 30 days — long enough for real incidents, short enough to avoid archival debt. We fixed it rather than making it a setting.</p>
+              <img src="./General Settings.png" class="fullwidth">
             </div>
 
             <div class="block">
-              <div class="row">
-                <div class="col-sm">
-                  <h4>Naming collisions</h4>
-                  <br>
-                  <p class="text-secondary-color">Challenge: If a deleted workspace's name gets reused before recovery, the two objects conflict — something has to be blocked.</p>
-                  <br>
-                  <p class="text-primary-color"><strong>Decision:</strong> We blocked recovery rather than creation. Collisions are rare, and halting active work to protect a deleted workspace is the wrong tradeoff.</p>
-                </div>
-                <div class="col-lg">
-                  <img src="./otheraeas.png" class="fullwidth">
-                </div>
-              </div>
+              <h4>Naming collisions</h4>
+              <br>
+              <p class="text-secondary-color">Challenge: If a deleted workspace's name gets reused before recovery, the two objects conflict — something has to be blocked.</p>
+              <br>
+              <p class="text-primary-color"><strong>Decision:</strong> We blocked recovery rather than creation. Collisions are rare, and halting active work to protect a deleted workspace is the wrong tradeoff.</p>
+              <img src="./otheraeas.png" class="fullwidth">
             </div>
 
 
