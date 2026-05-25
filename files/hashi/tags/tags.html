@@ -220,8 +220,70 @@
                 However, the current single-value tag format is limited. While it's useful for basic filtering (as appreciated by app developers, it doesn't meet the more advanced needs of platform engineers, who manage infrastructure at scale. To understand this gap, let’s explore the platform engineer’s journey and where the current tagging system falls short.</p>
             
 
-                <img src="./phases.png" class="fullwidth">
-                <img src="./viz timeline.png" class="fullwidth">
+                <!-- phases diagram -->
+                <div style="margin-top: 40px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: auto auto auto; column-gap: 24px; row-gap: 0;">
+                    <!-- Row 1: phase labels -->
+                    <p style="color: var(--accent); font-weight: 600; font-size: 13px; padding-bottom: 8px; border-bottom: 1.5px solid var(--accent); margin-bottom: 12px; align-self: start;">Phase one</p>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 13px; padding-bottom: 8px; border-bottom: 1.5px solid var(--accent); margin-bottom: 12px; align-self: start;">Phase two</p>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 13px; padding-bottom: 8px; border-bottom: 1.5px solid var(--accent); margin-bottom: 12px; align-self: start;">Phase three</p>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 13px; padding-bottom: 8px; border-bottom: 1.5px solid var(--accent); margin-bottom: 12px; align-self: start;">Phase four</p>
+                    <!-- Row 2: descriptions -->
+                    <p style="font-size: 14px; padding-bottom: 12px; align-self: start;">User has defined multiple resources and needs a way to organize it</p>
+                    <p style="font-size: 14px; padding-bottom: 12px; align-self: start;">User finds workspace tags, but cannot tag projects</p>
+                    <p style="font-size: 14px; padding-bottom: 12px; align-self: start;">User creates workspace tags for every project, and reuses them in every workspace within project</p>
+                    <p style="font-size: 14px; padding-bottom: 12px; align-self: start;">User has to recreate multiple tags of the same type to be able to filter effectively</p>
+                    <!-- Row 3: bullet cards -->
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                      <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+                        <li>Users can use internal tools to be able to correlate metadata to their terraform resources</li>
+                        <li>Often this is kept in CSV's</li>
+                      </ul>
+                    </div>
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                      <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+                        <li>Users can't tag projects</li>
+                        <li>Can tag workspaces, but tags are not as robust, and often overwhelming when considering long lists</li>
+                      </ul>
+                    </div>
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                      <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
+                        <li>Here a user will start using a key value notation eg. "Env : Prod"</li>
+                        <li>Users will add the tag to every resource in a project</li>
+                      </ul>
+                    </div>
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                      <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc;">
+                        <li>Since there are no key value tags in the product, users will resort to creating multiple tags with the same prefix to filter, which is prone to user error.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- sentiment timeline -->
+                <div style="margin-top: 16px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-bottom: 6px;">
+                    <p style="font-size: 12px; color: var(--secondarytext); font-style: italic; line-height: 1.5;">"We are power users of Terraform Cloud and have thousands of resources on the platform"</p>
+                    <div></div><div></div><div></div>
+                  </div>
+                  <svg viewBox="0 0 1000 100" style="width: 100%; display: block; overflow: visible;" xmlns="http://www.w3.org/2000/svg">
+                    <text x="4" y="24" font-size="14" fill="#bbb">⊕</text>
+                    <text x="4" y="94" font-size="14" fill="#bbb">⊖</text>
+                    <line x1="20" y1="52" x2="1000" y2="52" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="6,4"/>
+                    <path d="M 20,52 C 60,38 95,18 125,20 C 200,24 290,88 375,88 C 455,88 555,56 625,54 C 715,52 810,66 875,68 C 940,70 980,70 1000,70"
+                          fill="none" stroke="#c8c8c8" stroke-width="2.5"/>
+                    <circle cx="125" cy="20" r="7" fill="white" stroke="#5eead4" stroke-width="2.5"/>
+                    <circle cx="375" cy="88" r="7" fill="white" stroke="#f9a8d4" stroke-width="2.5"/>
+                    <circle cx="625" cy="54" r="7" fill="white" stroke="#fde68a" stroke-width="2.5"/>
+                    <circle cx="875" cy="68" r="7" fill="white" stroke="#f9a8d4" stroke-width="2.5"/>
+                  </svg>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-top: 6px;">
+                    <div></div>
+                    <p style="font-size: 12px; color: var(--secondarytext); font-style: italic; line-height: 1.5;">"I need to be able to organize my resources using metadata labels, or tags at a project level"</p>
+                    <p style="font-size: 12px; color: var(--secondarytext); font-style: italic; line-height: 1.5;">"Some of the tags that I use don't match the standard that we use at a cloud provider level, and I don't want them fundamentally changeable"</p>
+                    <p style="font-size: 12px; color: var(--secondarytext); font-style: italic; line-height: 1.5;">"I need a certain set of tags on each new workspace thats created."</p>
+                  </div>
+                </div>
 
             
               </div>
@@ -232,14 +294,47 @@
                     <p>Tags generally fall into two categories: user-defined (added by app developers) and administrative (added by platform engineers). Administrative tags often use key-value pairs to organize resources more effectively. However, Terraform Cloud didn’t natively support key-value tagging, leading users to hack around it by embedding delimiters like ":" or "=" in single-value tags. In fact, 36% of all tags contained such delimiters, highlighting the clear need for proper support.</p>
             
 
-                <div class=row>
-                  <div class="col-lg">
-                    <img src="./commonlyused.png" class="fullwidth" >
+                <div style="background: var(--card); border: 1px solid var(--bordercolor); border-radius: 10px; padding: 24px; margin-top: 16px; display: flex; gap: 32px; align-items: stretch;">
+                  <!-- Commonly used tags -->
+                  <div style="flex: 2;">
+                    <p style="font-weight: 600; font-size: 16px; margin-bottom: 20px;">Commonly used tags</p>
+                    <div style="display: flex; gap: 12px; height: calc(100% - 44px);">
+                      <div style="flex: 1; border: 2px solid #22c55e; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">autoapply : on</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">contact : billy</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">hasDeprecatedModule</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">localexecution</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">env : prod</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">new</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">tfversion1.8</span>
+                        </div>
+                        <p style="color: #22c55e; margin-top: 14px; font-size: 13px; font-weight: 500;">Arbitrary tags (often single value)</p>
+                      </div>
+                      <div style="flex: 1; border: 2px solid var(--accent); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">costcenter : rnd</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">env : prod</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">BillingID : 128413</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">service : CloudFeed</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">Owner : ishaan</span>
+                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">project : tf-new-compute</span>
+                        </div>
+                        <p style="color: var(--accent); margin-top: 14px; font-size: 13px; font-weight: 500;">Administrative tags (often k/v)</p>
+                      </div>
                     </div>
-                  <div class="col-sm">
-                    <img src="./Tag diagram.png" class="fullwidth" > 
                   </div>
-                </div>  
+                  <!-- Tag diagram: nested circles -->
+                  <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <div style="position: relative; width: 240px; height: 240px; border-radius: 50%; background: #eaebf0; border: 1.5px solid #c8c8d0; flex-shrink: 0; display: flex; align-items: flex-start; justify-content: flex-start; padding: 20px;">
+                      <span style="font-size: 14px; color: var(--primarytext); margin-top:40px;">All tags</span>
+                      <div style="position: absolute; bottom: 28px; right: 20px; width: 140px; height: 140px; border-radius: 50%; background: #d4b8f0; border: 2px solid var(--blk); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+                        <span style="font-weight: 700; font-size: 20px; color: var(--primarytext);">36%</span>
+                        <span style="font-size: 12px; color: var(--primarytext); text-align: center; line-height: 1.3;">Key value tags</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="block">
@@ -279,77 +374,36 @@
               
                 </div>
 
-                <div class="block"  id="solution">  
-                    <div class="row">
-                        <div class="col-sm">
-                          <div class="subtitle">CHALLENGES AND SOLUTIONS</div>
-                          <h4>Tag Binding</h4>
-                          <br>
-                          <p class="text-secondary-color">Challenge:  We need to provide the affordance of both predefined tags, and arbitrary tagging.</p>
-                          <br>
-                          <p class="text-primary-color"><B>Decision: </B>Use fields with smart suggestions, as testing showed that power-select component biased users towards pre-existing tags.</p>
-
-                        </div>
-                        <div class="col-lg">
-                          <img src="./BindingTest.gif" class="fullwidth">
-                        </div>
-                        
-                      </div>
+                <div class="block" id="solution">
+                  <div class="subtitle">CHALLENGES AND SOLUTIONS</div>
+                  <h4>Tag Binding</h4>
+                  <p class="text-secondary-color">Challenge: We need to provide the affordance of both predefined tags, and arbitrary tagging.</p>
+                  <p class="text-primary-color"><B>Decision: </B>Use fields with smart suggestions, as testing showed that power-select component biased users towards pre-existing tags.</p>
+                  <img src="./BindingTest.gif" class="fullwidth">
                   <img src="./Tag Binding Design deciisons.png" class="fullwidth">
                 </div>
 
-
-                <div class="block">  
-                    <div class="row">
-                        <div class="col-sm">
-                          <h4>Tag inheritance & resource hierarchy</h4>
-                          <br>
-                          <p class="text-secondary-color">Challenge:  We do not want to overtly bias users towards overriding tags, but also do not want to not present the affordance of overridability.</p>
-                          <br>
-                          <p class="text-primary-color"><B>Decision: </B>Visually separate inherited tags, but shorten view through grid of tags, as there tends to be many inherited tag per project, and often non-overridable.x</p>
-
-                        </div>
-                        <div class="col-lg">
-                          <img src="./InheritenceTest.gif" class="fullwidth">
-                        </div>
-                        
-                      </div>
+                <div class="block">
+                  <h4>Tag inheritance & resource hierarchy</h4>
+                  <p class="text-secondary-color">Challenge: We do not want to overtly bias users towards overriding tags, but also do not want to not present the affordance of overridability.</p>
+                  <p class="text-primary-color"><B>Decision: </B>Visually separate inherited tags, but shorten view through grid of tags, as there tends to be many inherited tag per project, and often non-overridable.</p>
+                  <img src="./InheritenceTest.gif" class="fullwidth">
                   <img src="./inheritencedecisions.png" class="fullwidth">
                 </div>
-                
-                <div class="block">  
-                    <div class="row">
-                        <div class="col-sm">
-                          <h4>Tag filtering and organization</h4>
-                          <br>
-                          <p class="text-secondary-color">Challenge: We did not store the key and value of all tags in a user’s organization, which made traditional tag filtering patterns unusable (dropdowns)></p>
-                          <br>
-                          <p class="text-primary-color"><B>Decision: </B>The metaphor that matched the most was akin to a query, so the design reflected that. A user would search for a tag and then a list of resources that match that tag would return.</p>
 
-                        </div>
-                        <div class="col-lg">
-                          <img src="./querywriter.gif" class="fullwidth">
-                        </div>
-                        
-                      </div>
+                <div class="block">
+                  <h4>Tag filtering and organization</h4>
+                  <p class="text-secondary-color">Challenge: We did not store the key and value of all tags in a user's organization, which made traditional tag filtering patterns unusable (dropdowns).</p>
+                  <p class="text-primary-color"><B>Decision: </B>The metaphor that matched the most was akin to a query, so the design reflected that. A user would search for a tag and then a list of resources that match that tag would return.</p>
+                  <img src="./querywriter.gif" class="fullwidth">
                   <img src="./tagfilterexplain.png" class="fullwidth">
                 </div>
 
-                <div class="block">  
-                    <div class="row">
-                        <div class="col-sm">
-                          <h4>Mental model issues with naming</h4>
-                          <br>
-                          <p class="text-secondary-color">Challenge: We could not fully deprecate old workspace tags without breaking compatibility guarantees, but having two “tags” with different names felt like we were offloading the complexity of our internal implementation to the user.</p>
-                          <br>
-                          <p class="text-primary-color"><B>Decision: </B>Soft deprecate tag type by removing action through UI, ensuring higher adoption of new tag type</p>
-
-                        </div>
-                        <div class="col-lg">
-                          <img src="./namingblur.png" class="fullwidth">
-                        </div>
-                        
-                      </div>
+                <div class="block">
+                  <h4>Mental model issues with naming</h4>
+                  <p class="text-secondary-color">Challenge: We could not fully deprecate old workspace tags without breaking compatibility guarantees, but having two "tags" with different names felt like we were offloading the complexity of our internal implementation to the user.</p>
+                  <p class="text-primary-color"><B>Decision: </B>Soft deprecate tag type by removing action through UI, ensuring higher adoption of new tag type.</p>
+                  <img src="./namingblur.png" class="fullwidth">
                   <img src="./MentalModelExpalin.png" class="fullwidth">
                 </div>
 
@@ -357,7 +411,7 @@
 
                 <div>
                   <div class="subtitle" id="prototype">Prototype</div>
-                      <h4>The complete end to end journey from tag creation to binding. </h4>
+                      <h4 style="margin-bottom: 24px;">The complete end to end journey from tag creation to binding. </h4>
 
                   <div class="solutionPre margin-top-lg" >
                   <div class="block">
