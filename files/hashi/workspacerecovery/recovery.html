@@ -92,14 +92,7 @@
     </ul>
     <button class="hamburger">
       <i class="menuIcon material-icons">menu</i>
-      <i class="closeIcon material-icons" style="display: none;">close</i>
-    </button>
-          </a>
-        </li>
-    </ul>
-    <button class="hamburger">
-        <i class="menuIcon material-icons">menu</i>
-        <i class="closeIcon material-icons" style="display: none;">close</i>
+      <i class="closeIcon material-icons hidden">close</i>
     </button>
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
@@ -175,10 +168,10 @@
                           <div style="font-size: 11px; color: var(--primarytext); font-weight: 500;">prod-infra-west</div>
                           <div style="font-size: 9px; color: #BBB; margin-top: 1px;">ws-8f3a209c4b1e</div>
                         </div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">Core Cloud Infra</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">Nov 15, 2025 · 20:41Z</div>
+                        <div class="text-xs text-secondary-color">Core Cloud Infra</div>
+                        <div class="text-xs text-secondary-color">Nov 15, 2025 · 20:41Z</div>
                         <div style="font-size: 11px; color: #b45309;">⚠ 1 day</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">0</div>
+                        <div class="text-xs text-secondary-color">0</div>
                         <div style="font-size: 13px; color: #CCC; padding-left: 4px;">···</div>
                       </div>
 
@@ -188,10 +181,10 @@
                           <div style="font-size: 11px; color: var(--primarytext); font-weight: 500;">staging-app-east</div>
                           <div style="font-size: 9px; color: #BBB; margin-top: 1px;">ws-4b9c7e2a1d8f</div>
                         </div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">App Deployment</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">Nov 16, 2025 · 18:22Z</div>
+                        <div class="text-xs text-secondary-color">App Deployment</div>
+                        <div class="text-xs text-secondary-color">Nov 16, 2025 · 18:22Z</div>
                         <div style="font-size: 11px; color: #b45309;">⚠ 2 days</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">0</div>
+                        <div class="text-xs text-secondary-color">0</div>
                         <div style="display: flex; align-items: center;">
                           <div style="background: rgba(123,66,188,0.1); border: 1px solid rgba(123,66,188,0.3); border-radius: 4px; padding: 3px 8px; font-size: 10px; color: var(--terraform); white-space: nowrap; font-weight: 500;">↩ Recover</div>
                         </div>
@@ -203,10 +196,10 @@
                           <div style="font-size: 11px; color: var(--primarytext); font-weight: 500;">nomad-cluster</div>
                           <div style="font-size: 9px; color: #BBB; margin-top: 1px;">st-2d7f1a90c3c6e</div>
                         </div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">Network Config</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">Nov 17, 2025 · 14:36Z</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">4 days</div>
-                        <div style="font-size: 11px; color: var(--secondarytext);">0</div>
+                        <div class="text-xs text-secondary-color">Network Config</div>
+                        <div class="text-xs text-secondary-color">Nov 17, 2025 · 14:36Z</div>
+                        <div class="text-xs text-secondary-color">4 days</div>
+                        <div class="text-xs text-secondary-color">0</div>
                         <div style="font-size: 13px; color: #CCC; padding-left: 4px;">···</div>
                       </div>
 
@@ -255,7 +248,7 @@
             <div class="block" id="problem">
               <div class="subtitle">PROBLEM</div>
               <h4>Workspace Recovery started with a question that sounded small: what should happen when someone accidentally deletes an HCP Terraform workspace?</h4>
-              <p style="margin-top: 24px;">In HCP Terraform, a workspace is not just a project container. It holds the state, variables, history, and workflow context needed to manage real infrastructure over time. Deletion could wipe all of that, with no native path to get it back.</p>
+              <p class="margin-top-24">In HCP Terraform, a workspace is not just a project container. It holds the state, variables, history, and workflow context needed to manage real infrastructure over time. Deletion could wipe all of that, with no native path to get it back.</p>
 
 
                  <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 24px;">
@@ -394,7 +387,7 @@
                 </div>
 
               </div>
-              <p style="margin-top: 16px;">That mismatch shaped the whole problem. Recovery had to fit the reality of enterprise operations, not just the UI. I partnered with my PM to frame the work around three questions: how accidental deletion actually happened, what a believable recovery path should bring back, and how customers were already trying to protect themselves from this risk.</p>
+              <p class="margin-top-16">That mismatch shaped the whole problem. Recovery had to fit the reality of enterprise operations, not just the UI. I partnered with my PM to frame the work around three questions: how accidental deletion actually happened, what a believable recovery path should bring back, and how customers were already trying to protect themselves from this risk.</p>
             </div>
 
 
@@ -605,7 +598,7 @@
               <div class="subtitle">OUTCOME</div>
               <h4>A recurring customer request became a defined, buildable MVP called Recoverable Items.</h4>
               <p>By the end of the project, the team had aligned on an in-product recovery concept scoped around accidentally deleted workspaces and stacks, organization-level access, a 30-day retention window, and a recovery run that restores the workspace "as if it were never deleted."</p>
-              <p style="margin-top: 16px;">The design work also clarified what was explicitly out of scope: full audit history, unlimited retention, n-2 rollback, and a generic archival system. An internal demo described the feature as a gamechanger for customers, and the design work formed the basis for that impact.</p>
+              <p class="margin-top-16">The design work also clarified what was explicitly out of scope: full audit history, unlimited retention, n-2 rollback, and a generic archival system. An internal demo described the feature as a gamechanger for customers, and the design work formed the basis for that impact.</p>
 
               <div class="row margin-top">
                 <div class="gencard margin-top">
@@ -628,7 +621,7 @@
               <div class="subtitle">CONCLUSION</div>
               <h4>Enterprise UX is often about designing for failure. Good product judgment shows up in what you choose not to build.</h4>
               <p>The hard part of this project was not drawing an "undelete" flow. It was understanding the system around the failure: who caused it, who owned the recovery, what data actually mattered, and where a tightly scoped fix could accidentally become a much larger platform promise.</p>
-              <p style="margin-top: 16px;">By keeping the work focused on high-confidence recovery instead of generalized rollback or archival, I helped the team move from reacting to a feature request to defining something more coherent and buildable. The project also reinforced something I come back to often: in enterprise software, the real user of a recovery feature is usually not the person who made the mistake.</p>
+              <p class="margin-top-16">By keeping the work focused on high-confidence recovery instead of generalized rollback or archival, I helped the team move from reacting to a feature request to defining something more coherent and buildable. The project also reinforced something I come back to often: in enterprise software, the real user of a recovery feature is usually not the person who made the mistake.</p>
             </div>
 
           </div>
@@ -666,7 +659,7 @@
       <a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class="sm_icon_center" src="../../../assets/send-4008.svg"></a>
     </div>
 
-    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2026</p>
+    <p class="center margin-y-8">© Ishaan Bose, 2026</p>
 
     <script
       type="module"
