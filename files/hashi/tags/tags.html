@@ -110,20 +110,8 @@
     </ul>
     <button class="hamburger">
       <i class="menuIcon material-icons">menu</i>
-      <i class="closeIcon material-icons" style="display: none;">close</i>
-    </button></a>
-      </li>
-
-    
-
-
-        <!--Some Hamburger that will always show up-->
-      </ul>
-      <button class="hamburger" >
-        <!-- material icons https://material.io/resources/icons/ -->
-        <i class="menuIcon material-icons">menu</i>
-        <i class="closeIcon material-icons" style="display: none;">close</i>
-      </button>
+      <i class="closeIcon material-icons hidden">close</i>
+    </button>
               <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRTS34N"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -207,7 +195,7 @@
               <div class="subtitle">SOLUTION PREVIEW</div>
                 <div class="solutionPre" style="margin-top:-80px;" >
                 <div class="block">
-                  <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                  <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop class="video-frame" >
                     <source src="./NonTalkThroughTagProto.mp4">
                   </video>
                 </div>
@@ -261,7 +249,7 @@
                 </div>
 
                 <!-- sentiment timeline -->
-                <div style="margin-top: 16px;">
+                <div class="margin-top-16">
                   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-bottom: 6px;">
                     <p style="font-size: 12px; color: var(--secondarytext); font-style: italic; line-height: 1.5;">"We are power users of Terraform Cloud and have thousands of resources on the platform"</p>
                     <div></div><div></div><div></div>
@@ -301,24 +289,24 @@
                     <div style="display: flex; gap: 12px; height: calc(100% - 44px);">
                       <div style="flex: 1; border: 2px solid #22c55e; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">autoapply : on</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">contact : billy</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">hasDeprecatedModule</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">localexecution</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">env : prod</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">new</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">tfversion1.8</span>
+                          <span class="tag-chip">autoapply : on</span>
+                          <span class="tag-chip">contact : billy</span>
+                          <span class="tag-chip">hasDeprecatedModule</span>
+                          <span class="tag-chip">localexecution</span>
+                          <span class="tag-chip">env : prod</span>
+                          <span class="tag-chip">new</span>
+                          <span class="tag-chip">tfversion1.8</span>
                         </div>
                         <p style="color: #22c55e; margin-top: 14px; font-size: 13px; font-weight: 500;">Arbitrary tags (often single value)</p>
                       </div>
                       <div style="flex: 1; border: 2px solid var(--accent); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">costcenter : rnd</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">env : prod</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">BillingID : 128413</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">service : CloudFeed</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">Owner : ishaan</span>
-                          <span style="background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px;">project : tf-new-compute</span>
+                          <span class="tag-chip">costcenter : rnd</span>
+                          <span class="tag-chip">env : prod</span>
+                          <span class="tag-chip">BillingID : 128413</span>
+                          <span class="tag-chip">service : CloudFeed</span>
+                          <span class="tag-chip">Owner : ishaan</span>
+                          <span class="tag-chip">project : tf-new-compute</span>
                         </div>
                         <p style="color: var(--accent); margin-top: 14px; font-size: 13px; font-weight: 500;">Administrative tags (often k/v)</p>
                       </div>
@@ -415,7 +403,7 @@
 
                   <div class="solutionPre margin-top-lg" >
                   <div class="block">
-                    <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop style=" padding: 0px; border-radius: 4px;" >
+                    <video controls="controls" width="100%" height="100%" name="Tag preview" controls muted autoplay loop class="video-frame" >
                       <source src="./NonTalkThroughTagProto.mp4">
                     </video>
                   </div>
@@ -514,7 +502,7 @@
     </div>
    
     
-    <p class="center" style="margin-top: 8px; margin-bottom: 8px;">© Ishaan Bose, 2026</p>
+    <p class="center margin-y-8">© Ishaan Bose, 2026</p>
 
     <!-- Website scripts -->
     <script src="assets/js/app.js"></script>

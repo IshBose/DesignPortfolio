@@ -318,6 +318,9 @@
     /* Video/embed frame — used on every case study */
     .video-frame    { padding: 0; border-radius: 4px; overflow: hidden; }
 
+    /* Filled grey tag pill — distinct from .tag-pill (which is the bordered/outline variant on the index grid) */
+    .tag-chip       { background: #d4d4d4; border-radius: 999px; padding: 5px 12px; font-size: 13px; }
+
     /* Responsive visibility — paired with overrides inside the 800px media query */
     .hidden-desktop { display: none; }
 
@@ -2721,7 +2724,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
         #portfolioContent,
         .casestudy{
           padding-left: 40px;
-          padding-right: 40px;
+          padding-right: 40Cpx;
           margin-left: 0;
           margin-right: 0;
           max-width: 100%;
