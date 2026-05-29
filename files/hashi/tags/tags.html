@@ -166,7 +166,7 @@
                               <div class="block padding-bottom">
                               <div class="subtitle">ORGANIZATION</div>
 
-                              <div class="flex">
+                              <div class="flex org-row">
                                       <img style="width: 28px;
             height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
                                 <h2 class="largetext">HashiCorp</h2></div>
@@ -222,25 +222,25 @@
                     <p style="font-size: 14px; padding-bottom: 12px; align-self: start;">User creates workspace tags for every project, and reuses them in every workspace within project</p>
                     <p style="font-size: 14px; padding-bottom: 12px; align-self: start;">User has to recreate multiple tags of the same type to be able to filter effectively</p>
                     <!-- Row 3: bullet cards -->
-                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; margin-top: 16px; margin-bottom: 16px;">
                       <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
                         <li>Users can use internal tools to be able to correlate metadata to their terraform resources</li>
                         <li>Often this is kept in CSV's</li>
                       </ul>
                     </div>
-                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; margin-top: 16px; margin-bottom: 16px;">
                       <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
                         <li>Users can't tag projects</li>
                         <li>Can tag workspaces, but tags are not as robust, and often overwhelming when considering long lists</li>
                       </ul>
                     </div>
-                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; margin-top: 16px; margin-bottom: 16px;">
                       <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc; display: flex; flex-direction: column; gap: 6px;">
                         <li>Here a user will start using a key value notation eg. "Env : Prod"</li>
                         <li>Users will add the tag to every resource in a project</li>
                       </ul>
                     </div>
-                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; align-self: start;">
+                    <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 12px; margin-top: 16px; margin-bottom: 16px;">
                       <ul style="font-size: 13px; color: var(--secondarytext); padding-left: 4px; list-style: disc;">
                         <li>Since there are no key value tags in the product, users will resort to creating multiple tags with the same prefix to filter, which is prone to user error.</li>
                       </ul>
@@ -249,7 +249,7 @@
                 </div>
 
                 <!-- sentiment timeline -->
-                <div class="margin-top-16">
+                <div class="margin-top-lg">
                   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-bottom: 6px;">
                     <p style="font-size: 12px; color: var(--secondarytext); font-style: italic; line-height: 1.5;">"We are power users of Terraform Cloud and have thousands of resources on the platform"</p>
                     <div></div><div></div><div></div>
@@ -343,20 +343,30 @@
                   <h4>Our  long term goal was to increase confidence in resource consumption.</h4>
                   <p>With administrative tags, customers should in theory be able to consume their contract entitlements with greater confidence.</p>
               
-                  <div class="row">
-                    <div class="gencard margin-top">
-                      <p class="heavy text-primary-color">20% Feature Adoption</p>
-                      <p>General Goal</p>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 1rem;">
+                    <div class="gencard margin-top" style="align-items: center; text-align: center;">
+                      <div style="width: 40px; height: 40px; border-radius: 8px; background: #EEF4FF; color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
+                      </div>
+                      <div style="font-size: 34px; font-weight: 600; color: var(--accent); line-height: 1; letter-spacing: -0.02em;">20%</div>
+                      <p class="heavy text-primary-color" style="margin: 0;">Feature adoption</p>
+                      <p style="margin: 0; font-size: 12px; color: var(--secondarytext);">General goal</p>
                     </div>
-                    <div class="gencard margin-top">
-                      <p class="heavy  text-primary-color">+% consumption of contract</p>
-                      <p>Long Term Goal</p>
-
+                    <div class="gencard margin-top" style="align-items: center; text-align: center;">
+                      <div style="width: 40px; height: 40px; border-radius: 8px; background: #F2EAFB; color: var(--terraform); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8z"/><polyline points="14 3 14 8 19 8"/><line x1="9.5" y1="13" x2="14.5" y2="13"/><line x1="9.5" y1="16.5" x2="14.5" y2="16.5"/></svg>
+                      </div>
+                      <div style="color: var(--terraform); line-height: 1; display: flex; align-items: center; justify-content: center;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="4"/><polyline points="5 11 12 4 19 11"/></svg></div>
+                      <p class="heavy text-primary-color" style="margin: 0;">Contract consumption</p>
+                      <p style="margin: 0; font-size: 12px; color: var(--secondarytext);">Long-term goal</p>
                     </div>
-                    <div class="gencard margin-top">
-                      <p class="heavy text-primary-color">-75% Workspace Tag Usage</p>
-                      <p>Migration Indicator</p>
-
+                    <div class="gencard margin-top" style="align-items: center; text-align: center;">
+                      <div style="width: 40px; height: 40px; border-radius: 8px; background: #FEF3C7; color: #B45309; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V4a2 2 0 0 1 2-2h8l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                      </div>
+                      <div style="font-size: 34px; font-weight: 600; color: #B45309; line-height: 1; letter-spacing: -0.02em; display: flex; align-items: center; justify-content: center; gap: 4px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="5 13 12 20 19 13"/></svg>75%</div>
+                      <p class="heavy text-primary-color" style="margin: 0;">Workspace tag usage</p>
+                      <p style="margin: 0; font-size: 12px; color: var(--secondarytext);">Migration indicator</p>
                     </div>
                   </div>
               
@@ -367,32 +377,32 @@
                   <h4>Tag Binding</h4>
                   <p class="text-secondary-color">Challenge: We need to provide the affordance of both predefined tags, and arbitrary tagging.</p>
                   <p class="text-primary-color"><B>Decision: </B>Use fields with smart suggestions, as testing showed that power-select component biased users towards pre-existing tags.</p>
-                  <img src="./BindingTest.gif" class="fullwidth">
-                  <img src="./Tag Binding Design deciisons.png" class="fullwidth">
+                  <div class="img-frame"><img src="./BindingTest.gif" class="fullwidth"></div>
+                  <div class="img-frame"><img src="./Tag Binding Design deciisons.png" class="fullwidth"></div>
                 </div>
 
                 <div class="block">
                   <h4>Tag inheritance & resource hierarchy</h4>
                   <p class="text-secondary-color">Challenge: We do not want to overtly bias users towards overriding tags, but also do not want to not present the affordance of overridability.</p>
                   <p class="text-primary-color"><B>Decision: </B>Visually separate inherited tags, but shorten view through grid of tags, as there tends to be many inherited tag per project, and often non-overridable.</p>
-                  <img src="./InheritenceTest.gif" class="fullwidth">
-                  <img src="./inheritencedecisions.png" class="fullwidth">
+                  <div class="img-frame"><img src="./InheritenceTest.gif" class="fullwidth"></div>
+                  <div class="img-frame"><img src="./inheritencedecisions.png" class="fullwidth"></div>
                 </div>
 
                 <div class="block">
                   <h4>Tag filtering and organization</h4>
                   <p class="text-secondary-color">Challenge: We did not store the key and value of all tags in a user's organization, which made traditional tag filtering patterns unusable (dropdowns).</p>
                   <p class="text-primary-color"><B>Decision: </B>The metaphor that matched the most was akin to a query, so the design reflected that. A user would search for a tag and then a list of resources that match that tag would return.</p>
-                  <img src="./querywriter.gif" class="fullwidth">
-                  <img src="./tagfilterexplain.png" class="fullwidth">
+                  <div class="img-frame"><img src="./querywriter.gif" class="fullwidth"></div>
+                  <div class="img-frame"><img src="./tagfilterexplain.png" class="fullwidth"></div>
                 </div>
 
                 <div class="block">
                   <h4>Mental model issues with naming</h4>
                   <p class="text-secondary-color">Challenge: We could not fully deprecate old workspace tags without breaking compatibility guarantees, but having two "tags" with different names felt like we were offloading the complexity of our internal implementation to the user.</p>
                   <p class="text-primary-color"><B>Decision: </B>Soft deprecate tag type by removing action through UI, ensuring higher adoption of new tag type.</p>
-                  <img src="./namingblur.png" class="fullwidth">
-                  <img src="./MentalModelExpalin.png" class="fullwidth">
+                  <div class="img-frame"><img src="./namingmental.png" class="fullwidth"></div>
+                  <div class="img-frame"><img src="./MentalModelExpalin.png" class="fullwidth"></div>
                 </div>
 
 
@@ -415,20 +425,21 @@
                   <h4>Large customers have indicated increased confidence in RUM usage. </h4>
                   <p>Additionally, design patterns have been adopted by other HashiCorp platform design team, and used in 4 new products.</p>
               
-                  <div class="row">
-                    <div class="gencard margin-top">
-                      <p class="heavy text-primary-color">22% Feature Adoption</p>
-                      <p>General Goal</p>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+                    <div class="gencard margin-top" style="gap: 6px;">
+                      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--secondarytext);">General goal</span>
+                      <div style="font-size: 44px; font-weight: 600; color: var(--accent); line-height: 1; letter-spacing: -0.02em;">22%</div>
+                      <p style="margin: 0; font-size: 14px; color: var(--primarytext);">Feature adoption</p>
                     </div>
-                    <div class="gencard margin-top">
-                      <p class="heavy  text-primary-color">450+ customers onboarded</p>
-                      <p>Long Term Goal</p>
-
+                    <div class="gencard margin-top" style="gap: 6px;">
+                      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--secondarytext);">Long-term goal</span>
+                      <div style="font-size: 44px; font-weight: 600; color: var(--accent); line-height: 1; letter-spacing: -0.02em;">450+</div>
+                      <p style="margin: 0; font-size: 14px; color: var(--primarytext);">Customers onboarded</p>
                     </div>
-                    <div class="gencard margin-top">
-                      <p class="heavy text-primary-color">Workspace tags down 87%</p>
-                      <p>Migration Indicator</p>
-
+                    <div class="gencard margin-top" style="gap: 6px;">
+                      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--secondarytext);">Migration indicator</span>
+                      <div style="font-size: 44px; font-weight: 600; color: #2d7a3a; line-height: 1; letter-spacing: -0.02em; display: flex; align-items: center; gap: 4px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="5 13 12 20 19 13"/></svg>87%</div>
+                      <p style="margin: 0; font-size: 14px; color: var(--primarytext);">Old workspace tags</p>
                     </div>
                   </div>
               

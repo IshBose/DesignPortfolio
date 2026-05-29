@@ -1588,7 +1588,6 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       
         .fullwidth:hover {
             transform: scale(1.02);
-            box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
         }
 
         /* Fullscreen overlay styles */
@@ -2894,10 +2893,12 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
 .img-frame {
   border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   overflow: hidden;
   margin-top: 24px;
   margin-bottom: 0;
+  padding: 16px;
+  background-color: var(--card);
+  border: 1px solid var(--bordercolor);
 }
 .img-frame img {
   margin-top: 0 !important;
@@ -2976,6 +2977,19 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
   border-radius: 4px;
   margin-top: 0;
   margin-bottom: 0;
+}
+.org-row {
+  align-items: center;
+}
+.org-row h2 {
+  margin: 0;
+}
+.org-row .org-logo-sm {
+  margin: 0;
+  max-width: none;
+}
+.has-gap.margin-sm .largetext {
+  margin: 0;
 }
 .margin-top-xs {
   margin-top: 0.75rem;
