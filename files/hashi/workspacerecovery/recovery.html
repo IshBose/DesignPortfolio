@@ -291,7 +291,7 @@
                        <div style="width: 22px; height: 22px; border-radius: 50%; background: #F0F1F5; border: 1px solid #757575; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--primarytext); flex-shrink: 0;">2</div>
                        <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 11px 16px; background: #fff; flex: 1;">
                          <div style="font-size: 13px; font-weight: 500; color: var(--primarytext);">Contact support to help recover it</div>
-                         <div style="font-size: 11px; color: var(--secondarytext); margin-top: 3px;">No native option — support recommends one of these workarounds:</div>
+                         <div style="font-size: 11px; color: var(--secondarytext); margin-top: 3px;">No native option. Support recommends one of these workarounds:</div>
                        </div>
                      </div>
 
@@ -301,7 +301,7 @@
                      <!-- Branch label -->
                      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
                        <div style="width: 22px; height: 22px; border-radius: 50%; background: #FEF3C7; border: 1px solid #FDE68A; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0;">⚠</div>
-                       <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.04em; color: var(--secondarytext); text-transform: uppercase;">Three workarounds — all painful</div>
+                       <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.04em; color: var(--secondarytext); text-transform: uppercase;">Three workarounds, all painful</div>
                      </div>
 
                      <!-- Three option cards -->
@@ -313,7 +313,7 @@
                          </div>
                          <div style="padding: 12px; background: #FFFFFF; flex: 1;">
                            <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Roll back entire instance to older snapshot</div>
-                           <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Incredibly time consuming — snapshots are massive (&gt;5tb)</div>
+                           <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Incredibly time consuming. Snapshots are massive (&gt;5tb)</div>
                          </div>
                        </div>
 
@@ -342,7 +342,7 @@
                      <!-- Conclusion -->
                      <div style="margin-top: 16px; margin-left: 34px; background: #FEE2E2; border: 1px solid #FECACA; border-radius: 6px; padding: 11px 14px; display: flex; gap: 9px; align-items: center;">
                        <span style="color: #B91C1C; font-size: 15px; flex-shrink: 0;">✕</span>
-                       <span style="font-size: 13px; color: #B91C1C; line-height: 1.5;">No path is viable — each one is slow, loses history, or risks live infrastructure.</span>
+                       <span style="font-size: 13px; color: #B91C1C; line-height: 1.5;">No path is viable. Each one is slow, loses history, or risks live infrastructure.</span>
                      </div>
                    </div>
 
@@ -357,7 +357,7 @@
 
             <!-- CONTEXT / ACTORS -->
             <div class="block">
-              <div class="subtitle" id="research">CONTEXT</div>
+              <div class="subtitle">CONTEXT</div>
               <h4>The person who caused the deletion was rarely the person responsible for fixing it.</h4>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem;">
 
@@ -408,7 +408,7 @@
 
 
             <!-- RESEARCH -->
-            <div class="block">
+            <div class="block" id="research">
               <div class="subtitle">RESEARCH</div>
               <h4>Customer interviews and contextual inquiry gave us a much clearer picture of who actually owns recovery when things go wrong.</h4>
               <p>We ran customer interviews and contextual inquiry, then pulled findings into a tighter MVP definition. My role was not just to design a flow. I was helping the team decide what problem we were actually solving, who the feature was really for in the moment of failure, and where to stop before "workspace recovery" quietly turned into a much larger disaster-recovery or archival project.</p>
@@ -419,7 +419,7 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
                   </div>
                   <p class="heavy text-primary-color">State recovery was essential</p>
-                  <p>The state file was what customers cared about — manual re-import at 1,000+ resources was the real pain.</p>
+                  <p>The state file was what customers cared about, manual re-import at 1,000+ resources was the real pain.</p>
                 </div>
                 <div class="gencard margin-top">
                   <div style="width: 40px; height: 40px; border-radius: 8px; background: #F2EAFB; color: var(--terraform); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
@@ -433,7 +433,7 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-3 7.7-7 9.5-4-1.8-7-5.2-7-9.5V6z"/><line x1="12" y1="9" x2="12" y2="13.5"/><line x1="12" y1="16.5" x2="12" y2="16.5"/></svg>
                   </div>
                   <p class="heavy text-primary-color">Existing guardrails weren't enough</p>
-                  <p>Git approvals, Sentinel, and internal controls still left gaps — especially in automation and API-driven flows.</p>
+                  <p>Git approvals, Sentinel, and internal controls still left gaps, especially in automation and API-driven flows.</p>
                 </div>
               </div>
 
@@ -449,7 +449,7 @@
             <div class="block">
               <div class="subtitle">TWISTS AND TURNS</div>
               <h4>Scope pressure was constant, and "recovery" could mean a lot of different things.</h4>
-              <p>The temptation early on was better deletion prevention. But most accidental deletions came through code and API flows — no confirmation UI could catch those. Recovery had to be its own capability. Customers pushed for configurable retention, rollback, and audit history; all of it got scoped out. That restraint is what kept the project from dissolving into a platform effort. The metric analysis below was a key input in making those calls.</p>
+              <p>The temptation early on was better deletion prevention. But most accidental deletions came through code and API flows. No confirmation UI could catch those. Recovery had to be its own capability. Customers pushed for configurable retention, rollback, and audit history; all of it got scoped out. That restraint is what kept the project from dissolving into a platform effort. The metric analysis below was a key input in making those calls.</p>
            
            <div style="padding: 1rem;">
 
@@ -531,7 +531,7 @@
             <div class="block">
               <h4>How much friction is the right amount?</h4>
               <br>
-              <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift — a workspace that looked recovered but no longer matched its config or state expectations.</p>
+              <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift, a workspace that looked recovered but no longer matched its config or state expectations.</p>
               <br>
               <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not.</p>
               <div class="img-frame">
@@ -588,7 +588,7 @@
               </div>
 
               <div style="margin-top: 12px; background: var(--newcard); border: 1px solid var(--bordercolor); border-radius: 4px; padding: 14px 16px;">
-                <p style="font-size: 14px; color: var(--primarytext); margin: 0;"><strong>The mismatch:</strong> The person who caused the deletion almost never has the access or mandate to fix it — which is why recovery belongs at the org level, not the workspace level.</p>
+                <p style="font-size: 14px; color: var(--primarytext); margin: 0;"><strong>The mismatch:</strong> The person who caused the deletion almost never has the access or mandate to fix it, which is why recovery belongs at the org level, not the workspace level.</p>
               </div>
             </div>
 
@@ -611,7 +611,7 @@
               <br>
               <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long ones risked becoming a de facto archival system.</p>
               <br>
-              <p class="text-primary-color"><strong>Decision:</strong> Research pointed to 30 days — long enough for real incidents, short enough to avoid archival debt. We fixed it rather than making it a setting.</p>
+              <p class="text-primary-color"><strong>Decision:</strong> Research pointed to 30 days: long enough for real incidents, short enough to avoid archival debt. We fixed it rather than making it a setting.</p>
               <div class="img-frame">
                 <img src="./General Settings.png" class="fullwidth">
               </div>
@@ -620,7 +620,7 @@
             <div class="block">
               <h4>Naming collisions</h4>
               <br>
-              <p class="text-secondary-color">Challenge: If a deleted workspace's name gets reused before recovery, the two objects conflict — something has to be blocked.</p>
+              <p class="text-secondary-color">Challenge: If a deleted workspace's name gets reused before recovery, the two objects conflict, so something has to be blocked.</p>
               <br>
               <p class="text-primary-color"><strong>Decision:</strong> We blocked recovery rather than creation. Collisions are rare, and halting active work to protect a deleted workspace is the wrong tradeoff.</p>
               <div class="img-frame">
@@ -657,8 +657,8 @@
                   <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(123, 66, 188, 0.1); color: var(--terraform); margin-bottom: 16px;">
                     <span class="material-symbols-outlined">workspace_premium</span>
                   </div>
-                  <div style="font-size: 30px; font-weight: 600; color: var(--primarytext); line-height: 1.1;">Top 2000</div>
-                  <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-bottom: 12px;">orgs in the world</div>
+                  <div style="font-size: 30px; font-weight: 600; color: var(--primarytext); line-height: 1.1;">94</div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-bottom: 12px;">workspaces recovered in the first week</div>
                   <p style="margin: 0; font-size: 14px; color: var(--secondarytext);">Creates a resilient selling narrative for our target customers.</p>
                 </div>
               </div>

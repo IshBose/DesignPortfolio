@@ -204,8 +204,8 @@
             <div class="block">
                 <div class="subtitle" id="problem">PROBLEM</div>
                 <h4>The current implementation of workspace tags within HCP Terraform doesn’t match the mental model of our large customers.</h4>
-                    <p>Terraform Cloud supports “Tags” both in the product and as an object in the Terraform configuration's cloud block. Tags were introduced to help users organize, correlate, and filter Workspaces—the core resource in Terraform Cloud.
-                However, the current single-value tag format is limited. While it's useful for basic filtering (as appreciated by app developers, it doesn't meet the more advanced needs of platform engineers, who manage infrastructure at scale. To understand this gap, let’s explore the platform engineer’s journey and where the current tagging system falls short.</p>
+                    <p>Terraform Cloud supports “Tags” both in the product and as an object in the Terraform configuration's cloud block. Tags were introduced to help users organize, correlate, and filter Workspaces, the core resource in Terraform Cloud.
+                But single-value tags only go so far. They work for basic filtering, which app developers appreciate, but they don't meet the needs of platform engineers managing infrastructure at scale.</p>
             
 
                 <!-- phases diagram -->
@@ -277,7 +277,7 @@
               </div>
 
               <div class="block">
-                <div class="subtitle" id="research">CURRENT BEHAVIOR</div>
+                <div class="subtitle">CURRENT BEHAVIOR</div>
                 <h4>Current usage of workspace tags suggest desire for key value schema and inheritance down the resource hierarchy.</h4>
                     <p>Tags generally fall into two categories: user-defined (added by app developers) and administrative (added by platform engineers). Administrative tags often use key-value pairs to organize resources more effectively. However, Terraform Cloud didn’t natively support key-value tagging, leading users to hack around it by embedding delimiters like ":" or "=" in single-value tags. In fact, 36% of all tags contained such delimiters, highlighting the clear need for proper support.</p>
             
@@ -326,10 +326,10 @@
               </div>
 
               <div class="block">
-                <div class="subtitle" id="RESEARCH">RESEARCH</div>
+                <div class="subtitle" id="research">RESEARCH</div>
                 <h4>Our user research was lean and effective in identifying a problem statement to work with. </h4>
-                <p>To begin we had to ascertain exactly what the user need is here. We knew that generally there was demand for this type of tag, and that users were hacking their way around the current implementation, but we didn’t know exactly how users were setting up tags in their organization.
-                  <br><br>To approach this, my PM and I engaged with 4 different customers who expressed interest in this sort of thing. We focused on specifically the platform engineer persona that I mentioned before, as they were the persona type that was the least served by the current model.</p>
+                <p>We knew there was demand and that users were hacking around the current implementation. What we didn’t know was how they set up tags inside their organizations.
+                  <br><br>My PM and I talked to 4 customers who’d asked for this, focused on the platform engineer persona the current model served least.</p>
               
                   <div class="problemcard margin-top">
                     <div class="subtitle">PROBLEM STATEMENT</div>
@@ -448,7 +448,7 @@
                 <div class="block">
                   <div class="subtitle" id="conclusion">CONCLUSION</div>
                   <h4>Perceived "utility features" have large scale implications on how customers structure their organizations, and are absolutely necessary to creating enterprise ready solutions. </h4>
-                  <p> Adding tags might seem straightforward, but it turned into a months-long effort due to complex cross-team discussions about how tagging should work across all HashiCorp Cloud products—not just Terraform. This delayed timelines and limited scope, but ultimately led to a more robust solution. The biggest skill I developed was learning to navigate the tensions within an EPD structure. The project was at risk, and while cutting corners seemed tempting, I learned to choose my battles—balancing advocacy for a better experience with pragmatic delivery. It’s not something you learn in school, so it was valuable hands-on growth.</p>
+                  <p> Adding tags sounds straightforward, but it became a months-long effort. Tagging had to work across every HashiCorp Cloud product, not just Terraform, which meant complex cross-team alignment. That delayed timelines and cut scope, but produced a stronger solution. The biggest skill I built was navigating the tensions of an EPD structure. The project was at risk, and cutting corners was tempting, but I learned to choose my battles and balance advocacy for the experience against pragmatic delivery.</p>
                 </div>
 
           <!-- END OF BLOCKLIST  -->

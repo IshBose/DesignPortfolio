@@ -152,7 +152,7 @@
 
           
         <div class="block">
-                      <div class="img-wrap"><img src="../../../images/MLMGridCard.png" class="fullwidth"></div>
+                      <div class="img-frame"><img src="../../../images/MLMGridCard.png" class="fullwidth"></div>
 
           <div class="block">
             <div class="subtitle">PROJECT</div>
@@ -202,21 +202,21 @@
         </div>
          
         <div class="block" id="context">
-            <div class="subtitle" id="problem">BACKGROUND</div>
+            <div class="subtitle">BACKGROUND</div>
             <h4>Think of Terraform Modules as the "recipe" for repeatable chunks of infrastructure, and the registry being the recipe books.</h4>
-                <p>Terraform Cloud has the concept of software modules as a foundational element for managing cloud infrastructure. Modules are reusable, self-contained packages of Terraform configurations that encapsulate a set of resources. They help organize and manage infrastructure as code by promoting reusability and maintainability. You can define a module once and then use it many times, which helps for the overall notion of DRY (Do not Repeat Yourself) code. Modules come in two core flavors - public, which are downloaded from the Terraform registry, and private, which are managed by internal organizations.</p>
+                <p>Modules are reusable, self-contained packages of Terraform configuration. You define one once and use it many times, which keeps infrastructure code DRY (Do not Repeat Yourself). They come in two flavors: public, pulled from the Terraform registry, and private, managed inside an organization.</p>
 
-            <div class="img-wrap"><img src="./registrydiagram.png" class="fullwidth"></div>
+            <div class="img-frame"><img src="./registrydiagram.png" class="fullwidth"></div>
 
          
           </div>
         
 
-        <div class="block">
+        <div class="block" id="problem">
             <div class="subtitle">PROBLEM</div>
             <h4>The authors of modules lack the ability to natively manage the lifecycle of their infrastructure modules.</h4>
             <p>
-                Terraform modules, like any software, evolve through versioning (think iOS 17 to 18). Organizations release new versions to address security, bugs, and improvements. The challenge is getting users to upgrade—different roles and skill levels create gaps in how people experience these updates.
+                Terraform modules, like any software, evolve through versioning (think iOS 17 to 18). Organizations release new versions to address security, bugs, and improvements. The challenge is getting users to upgrade. Different roles and skill levels create gaps in how people experience these updates.
             </p>
 
             <div style="background: var(--card); border: 1px solid var(--bordercolor); border-radius: 8px; padding: 16px;margin-top: 24px;">
@@ -350,14 +350,14 @@
 
         <div id="research" class="block">
             <div class="subtitle">EMPATHY BUILDING</div>
-            <h4>I assumed authors and consumers worked on the same team—but they rarely do!</h4>
+            <h4>I assumed authors and consumers worked on the same team, but they rarely do!</h4>
            <p>My EPD team approached this by examining the gap between module authors and module consumers. To build empathy, we joined customer calls to see how organizations were truly structured.
 
-          <br><br>I initially assumed both personas sat on the same DevOps or cloud infra team. In reality, authors were usually platform engineers on central SRE teams, while consumers were app developers or SWE’s seeking quick, self-serve infrastructure. This revealed how communication could easily break down—these groups often never interacted directly, making alignment much harder.
+          <br><br>I initially assumed both personas sat on the same DevOps or cloud infra team. In reality, authors were usually platform engineers on central SRE teams, while consumers were app developers or SWE’s seeking quick, self-serve infrastructure. This revealed how communication could easily break down. These groups often never interacted directly, making alignment much harder.
 
             </p>
 
-             <div id="problem" class="problemcard margin-top-lg">
+             <div class="problemcard margin-top-lg">
             <div class="subtitle">PROBLEM STATEMENT</div>
             <p class="text-primary-color">Module authors need a native way in Terraform to communicate to module consumers for situations when you need to upgrade or migrate your module.
             </p>
@@ -371,7 +371,7 @@
             <h4>Customer calls unveiled a need for deprecation and revocation well after a module version is first published.</h4>
             <p>These customer calls and the problem statement helped us to devise some basic user flows. The parts of the flow that was highlighted are "new" areas. </p>
 
-            <div class="img-wrap"><img src="./Userflow.png" class="fullwidth"></div>
+            <div class="img-frame"><img src="./Userflow.png" class="fullwidth"></div>
 
         </div>
 
@@ -382,16 +382,21 @@
 
                 </p>
 
-                 <div class="rowcard margin-top-24">
-                    <div class="gencard">
-                      <h3>Communication to end users</h3>
-                      <p>Module consumer Persona</p>
+                 <div class="row margin-top-24">
+                    <div class="gencard margin-top" style="gap: 0;">
+                      <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(123, 66, 188, 0.1); color: var(--terraform); margin-bottom: 16px;">
+                        <span class="material-symbols-outlined">campaign</span>
+                      </div>
+                      <div style="font-size: 22px; font-weight: 600; color: var(--primarytext); line-height: 1.15;">Communication to end users</div>
+                      <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-top: 8px;">Module consumer persona</div>
                     </div>
-                    <div class="gencard">
-                      <h3>Dissuasion of previous version usage</h3>
-                      <p>Long tail Goal</p>
+                    <div class="gencard margin-top" style="gap: 0;">
+                      <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(123, 66, 188, 0.1); color: var(--terraform); margin-bottom: 16px;">
+                        <span class="material-symbols-outlined">trending_down</span>
+                      </div>
+                      <div style="font-size: 22px; font-weight: 600; color: var(--primarytext); line-height: 1.15;">Dissuasion of previous version usage</div>
+                      <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-top: 8px;">Long-tail goal</div>
                     </div>
-                    
                  </div>
         </div>
 
@@ -403,24 +408,24 @@
                 <h4>Presenting information in context</h4>
                 <p class="text-secondary-color">Challenge: How might we give information in context in a way that is noisy enough to notice, but not overwhelming?</p>
                 <p class="text-primary-color"><B>Decision: </B>Use shortened accordions, with alerts to draw attention</p>
-                <div class="img-wrap"><img src="./SROWarning.gif" class="fullwidth"></div>
-                <div class="img-wrap"><img src="./SROITeration.png" class="fullwidth"></div>
+                <div class="img-frame"><img src="./SROWarning.gif" class="fullwidth"></div>
+                <div class="img-frame"><img src="./SROITeration.png" class="fullwidth"></div>
             </div>
 
              <div class="block">
                 <h4>Decoupling messaging from a run</h4>
                 <p class="text-secondary-color">Challenge: Users don’t always kick off runs in a set cadence, and sometimes informing them there might be too late. How might we provide information more statically?</p>
                 <p class="text-primary-color"><B>Decision: </B>2 new indicators of module health that is decoupled from the run was included.</p>
-                <div class="img-wrap"><img src="./HealthOverviewFlow.gif" class="fullwidth"></div>
-                <div class="img-wrap"><img src="./HealthonOther.png" class="fullwidth"></div>
+                <div class="img-frame"><img src="./HealthOverviewFlow.gif" class="fullwidth"></div>
+                <div class="img-frame"><img src="./HealthonOther.png" class="fullwidth"></div>
             </div>
 
              <div class="block">
                 <h4>Zooming out and tying it to general workflow</h4>
                 <p class="text-secondary-color">Challenge: What are broader Jobs To Be Done that encompass these workflows, how do they fit in?</p>
                 <p class="text-primary-color"><B>Decision: </B>Module health data included in the explorer, greater change request flows.</p>
-                <div class="img-wrap"><img src="./changereqs.gif" class="fullwidth"></div>
-                <div class="img-wrap"><img src="./changereqexplain.png" class="fullwidth"></div>
+                <div class="img-frame"><img src="./changereqs.gif" class="fullwidth"></div>
+                <div class="img-frame"><img src="./changereqexplain.png" class="fullwidth"></div>
             </div>
 
 
@@ -428,8 +433,8 @@
                 <h4>Crafting a CLI Experience</h4>
                 <p class="text-secondary-color">Challenge: The CLI is often the golden workflow for users, how can we create a minimal viable design for the CLI?</p>
                 <p class="text-primary-color"><B>Decision: </B>Use verbose messaging in the CLI, and summarized in the UI.</p>
-                <div class="img-wrap"><img src="./Org/Workspace/Runs/RunDetailsConsole warnign for revoked.png" class="fullwidth"></div>
-                <div class="img-wrap"><img src="./CLIEXperienceExplain.png" class="fullwidth"></div>
+                <div class="img-frame"><img src="./Org/Workspace/Runs/RunDetailsConsole warnign for revoked.png" class="fullwidth"></div>
+                <div class="img-frame"><img src="./CLIEXperienceExplain.png" class="fullwidth"></div>
             </div>
 
 
@@ -453,9 +458,9 @@
        <div class="block">
         <div id="conclusion" class="subtitle">
             CONCLUSION</div>
-            <p>This project was super interesting as it features a common problem that many organizations face at scale. It was really cool hearing how mature organizations tried to solve this problem in a bespoke way, and how our solution could help them. One of the core learnings here was developing a skill for listening intently, and tuning through the noise. It was really important to face the extreme amount of signals that could come with a research effort of this scale.
+            <p>This project tackled a problem many organizations face at scale. Hearing how mature organizations solved it in bespoke ways, and seeing where our solution could help, was a highlight. The core skill I built was listening intently and tuning through the noise, which matters when a research effort this size throws off an overwhelming number of signals.
 
-               <br><br> Another awesome milestone was seeing this unveiled at the largest possible stage at HashiConf, HashiCorp’s massive annual user conference. <a href="https://www.youtube.com/watch?v=-dmzfQndOtk">You can check out the recording here!</a>
+               <br><br> Another milestone was seeing this unveiled at HashiConf, HashiCorp’s annual user conference. <a href="https://www.youtube.com/watch?v=-dmzfQndOtk">You can check out the recording here!</a>
                 
                 </p>
 
