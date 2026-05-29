@@ -221,7 +221,7 @@
                 <div class="row padding-bottom-lg">
                   <div class="block padding-bottom">
                     <div class="subtitle">ORGANIZATION</div>
-                    <div class="flex">
+                    <div class="flex org-row">
                       <img style="width: 28px; height: 28px; border-radius: 4px; margin-top: 0; margin-bottom: 0;" src="../../../images/image 19.png">
                       <h2 class="largetext">HashiCorp</h2>
                     </div>
@@ -255,22 +255,24 @@
 
                    <!-- Customer types -->
                    <div style="background:var(--card); border: 1px solid var(--bordercolor); padding: 1rem; border-radius: 6px;">
-                     <div class="subtitle" style="margin-bottom: 12px;">TWO CUSTOMER TYPES</div>
-                     <div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;">
-                       <div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0;">
-                         <div style="border: 2px solid var(--accent); border-radius: 6px; padding: 12px 18px; position: relative;">
-                           <div style="position: absolute; top: -11px; left: 10px; background: #EEF4FF; border: 1px solid var(--accent); border-radius: 10px; padding: 1px 8px; font-size: 10px; color: var(--accent); white-space: nowrap; font-weight: 600;">✓ Higher maturity</div>
-                           <p style="margin: 0; font-size: 13px; font-weight: 500; color: var(--primarytext); white-space: nowrap;">Want the recovery protocol</p>
-                         </div>
-                         <div style="border: 2px solid var(--highlight); border-radius: 6px; padding: 12px 18px;">
-                           <p style="margin: 0; font-size: 13px; font-weight: 500; color: var(--primarytext); white-space: nowrap;">Have accidentally deleted</p>
-                         </div>
+                     <div class="subtitle" style="margin-bottom: 16px;">TWO CUSTOMER TYPES</div>
+                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                       <div style="border: 1px solid var(--accent); border-radius: 6px; padding: 16px; background: #fff; position: relative;">
+                         <div style="position: absolute; top: -10px; left: 12px; background: #EEF4FF; border: 1px solid var(--accent); border-radius: 10px; padding: 1px 8px; font-size: 10px; color: var(--accent); white-space: nowrap; font-weight: 600;">✓ Higher maturity</div>
+                         <p style="margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--primarytext);">Want the recovery protocol</p>
+                         <p style="margin: 0; font-size: 12px; color: var(--secondarytext); line-height: 1.5;">Proactive teams planning ahead</p>
+                       </div>
+                       <div style="border: 1px solid var(--highlight); border-radius: 6px; padding: 16px; background: #fff; position: relative;">
+                         <div style="position: absolute; top: -10px; left: 12px; background: #FEE2E2; border: 1px solid var(--highlight); border-radius: 10px; padding: 1px 8px; font-size: 10px; color: var(--highlight); white-space: nowrap; font-weight: 600;">⚠ In crisis</div>
+                         <p style="margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--primarytext);">Have accidentally deleted</p>
+                         <p style="margin: 0; font-size: 12px; color: var(--secondarytext); line-height: 1.5;">Reactive customer types</p>
                        </div>
                      </div>
+                   </div>
 
                    <!-- User flow -->
-                   <div>
-                     <div class="subtitle margin-top" style="margin-bottom: 8px;">USER FLOW WHEN A CUSTOMER ACCIDENTALLY DELETES</div>
+                   <div style="background:var(--card); border: 1px solid var(--bordercolor); padding: 1rem; border-radius: 6px;">
+                     <div class="subtitle" style="margin-bottom: 6px;">USER FLOW WHEN A CUSTOMER ACCIDENTALLY DELETES</div>
                      <p style="font-size: 14px; color: var(--secondarytext); margin-bottom: 20px;">Customers default to support, but there's no good native path.</p>
 
                      <!-- Step 1 -->
@@ -285,50 +287,63 @@
                      <div style="width: 1px; height: 14px; background: var(--bordercolor); margin-left: 11px;"></div>
 
                      <!-- Step 2 -->
-                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                     <div style="display: flex; align-items: center; gap: 12px;">
                        <div style="width: 22px; height: 22px; border-radius: 50%; background: #F0F1F5; border: 1px solid #757575; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--primarytext); flex-shrink: 0;">2</div>
-                       <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 11px 16px; background: var(--card); flex: 1;">
+                       <div style="border: 1px solid var(--bordercolor); border-radius: 6px; padding: 11px 16px; background: #fff; flex: 1;">
                          <div style="font-size: 13px; font-weight: 500; color: var(--primarytext);">Contact support to help recover it</div>
                          <div style="font-size: 11px; color: var(--secondarytext); margin-top: 3px;">No native option — support recommends one of these workarounds:</div>
                        </div>
                      </div>
 
+                     <!-- Connector -->
+                     <div style="width: 1px; height: 14px; background: var(--bordercolor); margin-left: 11px;"></div>
+
+                     <!-- Branch label -->
+                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                       <div style="width: 22px; height: 22px; border-radius: 50%; background: #FEF3C7; border: 1px solid #FDE68A; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0;">⚠</div>
+                       <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.04em; color: var(--secondarytext); text-transform: uppercase;">Three workarounds — all painful</div>
+                     </div>
+
                      <!-- Three option cards -->
-                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-left: 34px;">
 
-
-                       <div style="border: 1px solid #FECACA; border-radius: 6px; overflow: hidden;">
+                       <div style="border: 1px solid #FECACA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
                          <div style="background: #FEE2E2; padding: 7px 12px; border-bottom: 1px solid #FECACA;">
                            <span style="font-size: 10px; font-weight: 700; color: #B91C1C; letter-spacing: 0.04em;">⚠ HIGHEST PAIN</span>
                          </div>
-                         <div style="padding: 12px; background: #FFFFFF;">
+                         <div style="padding: 12px; background: #FFFFFF; flex: 1;">
                            <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Roll back entire instance to older snapshot</div>
                            <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Incredibly time consuming — snapshots are massive (&gt;5tb)</div>
                          </div>
                        </div>
 
-                       <div style="border: 1px solid #FDE68A; border-radius: 6px; overflow: hidden;">
+                       <div style="border: 1px solid #FDE68A; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
                          <div style="background: #FEF3C7; padding: 7px 12px; border-bottom: 1px solid #FDE68A;">
                            <span style="font-size: 10px; font-weight: 700; color: #92400E; letter-spacing: 0.04em;">⚠ HIGH PAIN</span>
                          </div>
-                         <div style="padding: 12px; background: #FFFFFF;">
+                         <div style="padding: 12px; background: #FFFFFF; flex: 1;">
                            <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Import resources using <code style="background: #F0F1F5; border-radius: 3px; padding: 1px 5px; font-size: 11px;">import</code> block</div>
                            <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Not feasible for large workspaces, loses history</div>
                          </div>
                        </div>
 
-                       <div style="border: 1px solid #FDE68A; border-radius: 6px; overflow: hidden;">
+                       <div style="border: 1px solid #FDE68A; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
                          <div style="background: #FEF3C7; padding: 7px 12px; border-bottom: 1px solid #FDE68A;">
                            <span style="font-size: 10px; font-weight: 700; color: #92400E; letter-spacing: 0.04em;">⚠ HIGH PAIN</span>
                          </div>
-                         <div style="padding: 12px; background: #FFFFFF;">
+                         <div style="padding: 12px; background: #FFFFFF; flex: 1;">
                            <div style="font-size: 13px; font-weight: 500; color: var(--primarytext); margin-bottom: 6px;">Rebuild workspaces from scratch</div>
                            <div style="font-size: 11px; color: var(--secondarytext); line-height: 1.5;">Loses all history, may error if resources already exist</div>
                          </div>
                        </div>
 
                      </div>
-                   </div>
+
+                     <!-- Conclusion -->
+                     <div style="margin-top: 16px; margin-left: 34px; background: #FEE2E2; border: 1px solid #FECACA; border-radius: 6px; padding: 11px 14px; display: flex; gap: 9px; align-items: center;">
+                       <span style="color: #B91C1C; font-size: 15px; flex-shrink: 0;">✕</span>
+                       <span style="font-size: 13px; color: #B91C1C; line-height: 1.5;">No path is viable — each one is slow, loses history, or risks live infrastructure.</span>
+                     </div>
                    </div>
 
                  </div>
@@ -346,7 +361,7 @@
               <h4>The person who caused the deletion was rarely the person responsible for fixing it.</h4>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem;">
 
-                <div style="background: #F0F1F5; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                <div class="gencard" style="border-color: var(--secondarytext); padding: 20px;">
                   <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 12px;">WHO CAUSES THE DELETION</div>
                   <div style="font-size: 18px; font-weight: 600; color: var(--primarytext); margin-bottom: 4px;">App Developer</div>
                   <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 16px;">Downstream teams</div>
@@ -366,7 +381,7 @@
                   </div>
                 </div>
 
-                <div style="background: #E3E3E4; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                <div class="gencard" style="border-color: var(--terraform); padding: 20px;">
                   <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 12px;">WHO CLEANS IT UP</div>
                   <div style="font-size: 18px; font-weight: 600; color: var(--primarytext); margin-bottom: 4px;">Platform Engineer</div>
                   <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 16px;">Upstream platform admins</div>
@@ -400,20 +415,29 @@
 
               <div class="row margin-top">
                 <div class="gencard margin-top">
+                  <div style="width: 40px; height: 40px; border-radius: 8px; background: #EEF4FF; color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
+                  </div>
                   <p class="heavy text-primary-color">State recovery was essential</p>
                   <p>The state file was what customers actually cared about. Manual re-import was the real pain, especially at scale with 1,000+ resources.</p>
                 </div>
                 <div class="gencard margin-top">
+                  <div style="width: 40px; height: 40px; border-radius: 8px; background: #F2EAFB; color: var(--terraform); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19.5c0-3 2.5-5.2 5.5-5.2s5.5 2.2 5.5 5.2"/><path d="M16 6.2a2.8 2.8 0 0 1 0 5.4"/><path d="M17.5 14.4c2.2.5 3.8 2.4 3.8 4.8"/></svg>
+                  </div>
                   <p class="heavy text-primary-color">Two different mindsets</p>
                   <p>Some had already been burned. Others were protecting against something they hoped would never happen. I was designing for both.</p>
                 </div>
                 <div class="gencard margin-top">
+                  <div style="width: 40px; height: 40px; border-radius: 8px; background: #FEF3C7; color: #B45309; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; align-self: center;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-3 7.7-7 9.5-4-1.8-7-5.2-7-9.5V6z"/><line x1="12" y1="9" x2="12" y2="13.5"/><line x1="12" y1="16.5" x2="12" y2="16.5"/></svg>
+                  </div>
                   <p class="heavy text-primary-color">Existing guardrails weren't enough</p>
                   <p>Git approvals, Sentinel, and internal controls still left gaps, especially in automation and API-driven flows where no confirmation UI could intervene.</p>
                 </div>
               </div>
 
-              <img src="./User journey map -- As is Scenario Workspace Recovery.png" class="fullwidth">
+                  <img src="./User journey map -- As is Scenario Workspace Recovery.png" class="fullwidth">
             </div>
 
 
@@ -480,11 +504,11 @@
 
              <!-- Per-org stats -->
              <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-               <div style="flex: 1; background: #F0F1F5; border: 1px solid #757575; border-radius: 6px; padding: 14px 16px; display: flex; gap: 14px; align-items: center;">
+               <div style="flex: 1; background: var(--card); border: 1px solid var(--bordercolor); border-radius: 6px; padding: 14px 16px; display: flex; gap: 14px; align-items: center;">
                  <div style="font-size: 32px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.02em; line-height: 1;">2.6</div>
                  <div style="font-size: 12px; color: var(--secondarytext); line-height: 1.5;">workspaces deleted<br>per org / week</div>
                </div>
-               <div style="flex: 1; background: #E3E3E4; border: 1px solid #757575; border-radius: 6px; padding: 14px 16px; display: flex; gap: 14px; align-items: center;">
+               <div style="flex: 1; background: var(--card); border: 1px solid var(--bordercolor); border-radius: 6px; padding: 14px 16px; display: flex; gap: 14px; align-items: center;">
                  <div style="font-size: 32px; font-weight: 600; color: var(--primarytext); letter-spacing: -0.02em; line-height: 1;">3.5</div>
                  <div style="font-size: 12px; color: var(--secondarytext); line-height: 1.5;">workspaces deleted<br>per org / month</div>
                </div>
@@ -510,8 +534,12 @@
               <p class="text-secondary-color">Challenge: A one-click restore sounds fast, but silent restoration could easily hide drift — a workspace that looked recovered but no longer matched its config or state expectations.</p>
               <br>
               <p class="text-primary-color"><strong>Decision:</strong> Research pointed toward accepting friction. Accidental deletion was rare, so the cost of an extra step was low. The cost of getting the restore wrong was not.</p>
-              <img src="./recovery.gif" class="fullwidth">
-              <img src="./RecoveryInitiatls.png" class="fullwidth">
+              <div class="img-frame">
+                <img src="./recovery.gif" class="fullwidth">
+              </div>
+              <div class="img-frame">
+                <img src="./RecoveryInitiatls.png" class="fullwidth">
+              </div>
             </div>
 
             <div class="block">
@@ -523,7 +551,7 @@
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem;">
 
-                <div style="background: #F0F1F5; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                <div style="background: var(--newcard); border: 1px solid var(--highlight); border-radius: 6px; padding: 20px;">
                   <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 16px;">WHO CAUSED THE DELETION</div>
                   <div style="display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; align-items: center; gap: 10px;">
@@ -535,12 +563,12 @@
                       <p style="margin: 0; color: var(--primarytext); font-size: 15px;">Automation / API flow</p>
                     </div>
                   </div>
-                  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #C4C4C6;">
+                  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bordercolor);">
                     <p style="font-size: 12px; color: var(--secondarytext); margin: 0;">Workspace or project-level access · often no UI interaction</p>
                   </div>
                 </div>
 
-                <div style="background: #E3E3E4; border: 1px solid #757575; border-radius: 6px; padding: 20px;">
+                <div style="background: var(--newcard); border: 1px solid var(--terraform); border-radius: 6px; padding: 20px;">
                   <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--secondarytext); font-weight: 600; margin-bottom: 16px;">WHO OWNS RECOVERY</div>
                   <div style="display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; align-items: center; gap: 10px;">
@@ -552,14 +580,14 @@
                       <p style="margin: 0; color: var(--primarytext); font-size: 15px; font-weight: 500;">Org admin</p>
                     </div>
                   </div>
-                  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #C4C4C6;">
+                  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--bordercolor);">
                     <p style="font-size: 12px; color: var(--secondarytext); margin: 0;">Org-level access · can see all workspaces including deleted ones</p>
                   </div>
                 </div>
 
               </div>
 
-              <div style="margin-top: 12px; background: #F0F1F5; border: 1px solid #757575; border-radius: 4px; padding: 14px 16px;">
+              <div style="margin-top: 12px; background: var(--newcard); border: 1px solid var(--bordercolor); border-radius: 4px; padding: 14px 16px;">
                 <p style="font-size: 14px; color: var(--primarytext); margin: 0;"><strong>The mismatch:</strong> The person who caused the deletion almost never has the access or mandate to fix it — which is why recovery belongs at the org level, not the workspace level.</p>
               </div>
             </div>
@@ -570,8 +598,12 @@
               <p class="text-secondary-color">Challenge: Naming it "Workspace Recovery" would lock the feature to a single object type, requiring a second IA change when stacks and other resources needed the same capability.</p>
               <br>
               <p class="text-primary-color"><strong>Decision:</strong> Renamed to <em>Recoverable Items</em>, which is extensible to stacks and other object types without forcing a future rebrand or IA disruption.</p>
-              <img src="./recovIA.png" class="fullwidth">
-              <img src="./Naming.png" class="fullwidth">
+              <div class="img-frame">
+                <img src="./recovIA.png" class="fullwidth">
+              </div>
+              <div class="img-frame">
+                <img src="./Naming.png" class="fullwidth">
+              </div>
             </div>
 
             <div class="block">
@@ -580,7 +612,9 @@
               <p class="text-secondary-color">Challenge: Customers asked for configurable retention. Short windows felt unsafe; long ones risked becoming a de facto archival system.</p>
               <br>
               <p class="text-primary-color"><strong>Decision:</strong> Research pointed to 30 days — long enough for real incidents, short enough to avoid archival debt. We fixed it rather than making it a setting.</p>
-              <img src="./General Settings.png" class="fullwidth">
+              <div class="img-frame">
+                <img src="./General Settings.png" class="fullwidth">
+              </div>
             </div>
 
             <div class="block">
@@ -589,7 +623,9 @@
               <p class="text-secondary-color">Challenge: If a deleted workspace's name gets reused before recovery, the two objects conflict — something has to be blocked.</p>
               <br>
               <p class="text-primary-color"><strong>Decision:</strong> We blocked recovery rather than creation. Collisions are rare, and halting active work to protect a deleted workspace is the wrong tradeoff.</p>
-              <img src="./otheraeas.png" class="fullwidth">
+              <div class="img-frame">
+                <img src="./otheraeas.png" class="fullwidth">
+              </div>
             </div>
 
 
@@ -601,17 +637,29 @@
               <p class="margin-top-16">The design work also clarified what was explicitly out of scope: full audit history, unlimited retention, n-2 rollback, and a generic archival system. An internal demo described the feature as a gamechanger for customers, and the design work formed the basis for that impact.</p>
 
               <div class="row margin-top">
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Trust built into the product</p>
-                  <p>Users expect the tool that they pay $XXXk or $XXXXk to fix their issues if they make a mistake.</p>
+                <div class="gencard margin-top" style="gap: 0;">
+                  <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(123, 66, 188, 0.1); color: var(--terraform); margin-bottom: 16px;">
+                    <span class="material-symbols-outlined">verified_user</span>
+                  </div>
+                  <div style="font-size: 30px; font-weight: 600; color: var(--primarytext); line-height: 1.1;">Trust</div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-bottom: 12px;">built into the product</div>
+                  <p style="margin: 0; font-size: 14px; color: var(--secondarytext);">Users expect the tool that they pay $XXXk or $XXXXk to fix their issues if they make a mistake.</p>
                 </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">$77M in contract value </p>
-                  <p>Directly impacts business revenue by delivering a highly impactful feature.</p>
+                <div class="gencard margin-top" style="gap: 0;">
+                  <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(123, 66, 188, 0.1); color: var(--terraform); margin-bottom: 16px;">
+                    <span class="material-symbols-outlined">payments</span>
+                  </div>
+                  <div style="font-size: 30px; font-weight: 600; color: var(--primarytext); line-height: 1.1;">$77M</div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-bottom: 12px;">in contract value</div>
+                  <p style="margin: 0; font-size: 14px; color: var(--secondarytext);">Directly impacts business revenue by delivering a highly impactful feature.</p>
                 </div>
-                <div class="gencard margin-top">
-                  <p class="heavy text-primary-color">Enterprise ready product</p>
-                  <p>Creates a resilient selling narrative for our target customers, the top 2000 orgs in the world.</p>
+                <div class="gencard margin-top" style="gap: 0;">
+                  <div style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(123, 66, 188, 0.1); color: var(--terraform); margin-bottom: 16px;">
+                    <span class="material-symbols-outlined">workspace_premium</span>
+                  </div>
+                  <div style="font-size: 30px; font-weight: 600; color: var(--primarytext); line-height: 1.1;">Top 2000</div>
+                  <div style="font-size: 13px; font-weight: 600; color: var(--secondarytext); margin-bottom: 12px;">orgs in the world</div>
+                  <p style="margin: 0; font-size: 14px; color: var(--secondarytext);">Creates a resilient selling narrative for our target customers.</p>
                 </div>
               </div>
             </div>

@@ -138,7 +138,7 @@
               <div class="row padding-bottom-lg">
                 <div class="block padding-bottom">
                   <div class="subtitle">ORGANIZATION</div>
-                  <div class="flex">
+                  <div class="flex org-row">
                     <img class="org-logo-sm" src="../../../images/image 19.png">
                     <h2 class="largetext">HashiCorp</h2>
                   </div>
@@ -221,56 +221,112 @@
             <h4>I approached this as a workflow design problem, not a generic AI feature.</h4>
             <p>My role was to figure out what the first useful experience should be, where trust would break down, and how the workflow could fit the way Terraform teams already operated. I pulled together customer-zero conversations, engineering syncs, and product discussions to find the focus. Three signals kept coming up.</p>
 
-              <div class="margin-top">
-                <div class="countercard margin-top">
-                  <div class="step">1</div>
-                  <p class="text-primary-color"><b>How do we tie in existing signals to suggest remediation</b> — Teams already had signals from security and cost tools. What they lacked was a low-friction path from issue detection to a reviewable code change.</p>
-                </div>
-                <div class="countercard" id="cardcolor2">
-                  <div class="step">2</div>
-                  <p class="text-primary-color"><b>How might we reduce toil in repetitive workflows?</b> — Repetitive, lower-ambiguity tasks like provider upgrades and straightforward fixes were the right place to start. Not autonomous management; just getting painful maintenance off people's plates.</p>
-                </div>
-                <div class="countercard" id="cardcolor3">
-                  <div class="step">3</div>
-                  <p class="text-primary-color"><b>How might we build trust in AI generated code?</b> — When people saw auto-created PRs, they wanted to know what rule triggered it, how confident the system was, what else might be affected, and whether similar changes could be grouped.</p>
-                </div>
+
+              <!-- Signal synthesis: the three HMW signals converging on the focus -->
+              <div class="margin-top-xl">
+                <div style="font-size: 15px; font-weight: 600; color: var(--primarytext); margin-bottom: 4px;">Where the signals pointed</div>
+                <div style="font-size: 14px; color: var(--secondarytext); margin-bottom: 16px;">Three how might we's converged into one bet.</div>
+                <svg viewBox="0 0 760 260" style="width: 100%; max-width: 700px; height: auto; display: block; font-family: var(--font-family);">
+                  <defs>
+                    <marker id="convArrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="6" markerHeight="6" orient="auto">
+                      <path d="M2,2 L10,6 L2,10" fill="none" stroke="#BDBDBD" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+                    </marker>
+                  </defs>
+
+                  <!-- Converging connectors -->
+                  <path d="M230,38 C 360,38 380,128 500,128" fill="none" stroke="#BDBDBD" stroke-width="2.5" marker-end="url(#convArrow)"/>
+                  <path d="M230,128 L500,128" fill="none" stroke="#BDBDBD" stroke-width="2.5" marker-end="url(#convArrow)"/>
+                  <path d="M230,218 C 360,218 380,128 500,128" fill="none" stroke="#BDBDBD" stroke-width="2.5" marker-end="url(#convArrow)"/>
+
+                  <!-- Signal 1 -->
+                  <rect x="0" y="8" width="230" height="60" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <circle cx="30" cy="38" r="13" fill="var(--accent)"/>
+                  <text x="30" y="38" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="600" fill="#fff">1</text>
+                  <text x="54" y="38" text-anchor="start" dominant-baseline="central" font-size="14" fill="var(--primarytext)">Tie in existing signals</text>
+
+                  <!-- Signal 2 -->
+                  <rect x="0" y="98" width="230" height="60" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <circle cx="30" cy="128" r="13" fill="var(--accent)"/>
+                  <text x="30" y="128" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="600" fill="#fff">2</text>
+                  <text x="54" y="128" text-anchor="start" dominant-baseline="central" font-size="14" fill="var(--primarytext)">Reduce repetitive toil</text>
+
+                  <!-- Signal 3 -->
+                  <rect x="0" y="188" width="230" height="60" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <circle cx="30" cy="218" r="13" fill="var(--accent)"/>
+                  <text x="30" y="218" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="600" fill="#fff">3</text>
+                  <text x="54" y="218" text-anchor="start" dominant-baseline="central" font-size="14" fill="var(--primarytext)">Build trust in AI changes</text>
+
+                  <!-- Outcome -->
+                  <rect x="508" y="78" width="248" height="100" rx="12" fill="#eef4ff" stroke="var(--accent)" stroke-width="2"/>
+                  <text x="632" y="106" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" letter-spacing="0.8" fill="var(--accent)">THE BET</text>
+                  <text x="632" y="132" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="600" fill="var(--primarytext)">A focused, trustworthy</text>
+                  <text x="632" y="154" text-anchor="middle" dominant-baseline="central" font-size="16" font-weight="600" fill="var(--primarytext)">remediation loop</text>
+                </svg>
               </div>
-            
-            
-              <div style="margin-top: 32px; border-radius: 8px; background: var(--newcard); border: 1px solid var(--newborder); padding: 28px 32px;">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
 
-                <!-- Left: Remediation loop -->
-                <div>
-                  <img src="./loop.png" style="width: 100%; display: block;">
-                </div>
+            
+              <!-- Remediation loop: native recreation of loop.png
+              <div class="margin-top-xl">
+                <div style="font-size: 15px; font-weight: 600; color: var(--primarytext); margin-bottom: 4px;">Remediation loop</div>
+                <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 8px;">Anchors value for users</div>
+                <svg viewBox="0 0 760 380" style="width: 100%; max-width: 480px; height: auto; display: block; font-family: var(--font-family);">
+                  <defs>
+                    <marker id="loopArrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="6" markerHeight="6" orient="auto">
+                      <path d="M2,2 L10,6 L2,10" fill="none" stroke="#BDBDBD" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+                    </marker>
+                  </defs>
 
-                <!-- Right: Actually central to UX -->
-                <div>
-                  <p style="font-weight: 600; font-size: 15px; color: var(--primarytext); margin-bottom: 4px;">Actually central to UX</p>
-                  <p style="font-size: 13px; color: var(--secondarytext); line-height: 1.5; margin-bottom: 20px;">Determines whether the workflow feels safe. This is crucial to ensuring users can adopt comfortably.</p>
-                  <div style="border-top: 1px solid var(--bordercolor);">
-                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bordercolor);">
-                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">security</span>
-                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Trust:</strong> Changes are traceable and reversible</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bordercolor);">
-                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">verified_user</span>
-                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Safety:</strong> Prevent risky actions before they happen</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bordercolor);">
-                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">manage_accounts</span>
-                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Identity:</strong> Secure, least-privilege access</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
-                      <span class="material-icons" style="font-size: 18px; color: var(--primarytext); flex-shrink: 0;">notifications_active</span>
-                      <p style="font-size: 13px; color: var(--primarytext); margin: 0; line-height: 1.4;"><strong>Confidence:</strong> The right people know at the right time</p>
-                    </div>
+                  <!-- Clockwise loop arrows 
+                  <path d="M85,155 L85,83 Q85,55 113,55 L300,55" fill="none" stroke="#BDBDBD" stroke-width="3" marker-end="url(#loopArrow)"/>
+                  <path d="M455,55 L647,55 Q675,55 675,83 L675,150" fill="none" stroke="#BDBDBD" stroke-width="3" marker-end="url(#loopArrow)"/>
+                  <path d="M675,225 L675,297 Q675,325 647,325 L460,325" fill="none" stroke="#BDBDBD" stroke-width="3" marker-end="url(#loopArrow)"/>
+                  <path d="M305,325 L113,325 Q85,325 85,297 L85,233" fill="none" stroke="#BDBDBD" stroke-width="3" marker-end="url(#loopArrow)"/>
+
+                  <!-- Nodes 
+                  <rect x="305" y="20" width="150" height="70" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <text x="380" y="55" text-anchor="middle" dominant-baseline="central" font-size="22" fill="var(--primarytext)">Detect</text>
+
+                  <rect x="600" y="155" width="150" height="70" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <text x="675" y="190" text-anchor="middle" dominant-baseline="central" font-size="22" fill="var(--primarytext)">Propose</text>
+
+                  <rect x="305" y="290" width="150" height="70" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <text x="380" y="325" text-anchor="middle" dominant-baseline="central" font-size="22" fill="var(--primarytext)">Apply</text>
+
+                  <rect x="10" y="155" width="150" height="70" rx="10" fill="#fff" stroke="var(--bordercolor)"/>
+                  <text x="85" y="190" text-anchor="middle" dominant-baseline="central" font-size="22" fill="var(--primarytext)">Verify</text>
+
+                  <!-- Center callout 
+                  <rect x="235" y="145" width="290" height="90" rx="10" fill="#eafaf0" stroke="#b6e8c4"/>
+                  <circle cx="272" cy="190" r="14" fill="#2d7a3a"/>
+                  <path d="M266,190 L270,194 L279,184" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="298" y="182" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="500" fill="var(--primarytext)">One tight feedback</text>
+                  <text x="298" y="208" text-anchor="start" dominant-baseline="central" font-size="18" font-weight="500" fill="var(--primarytext)">loop, proving value</text>
+                </svg>
+              </div>-->
+
+              <!-- Actually central to UX -->
+              <div class="margin-top-xl">
+                <p style="font-weight: 600; font-size: 15px; color: var(--primarytext); margin-bottom: 4px;">Actually central to UX</p>
+                <p style=" color: var(--secondarytext); line-height: 1.5; margin-bottom: 24px;">Determines whether the workflow feels safe. This is crucial to ensuring users can adopt comfortably.</p>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+                  <div style="background: var(--newcard); border: 1px solid var(--newborder); border-radius: 8px; padding: 16px;">
+                    <span class="material-icons" style="font-size: 22px; color: var(--primarytext); display: block; margin-bottom: 10px;">security</span>
+                    <p style="font-size: 14px; color: var(--primarytext); margin: 0; line-height: 1.5;"><strong>Trust:</strong> Changes are traceable and reversible</p>
+                  </div>
+                  <div style="background: var(--newcard); border: 1px solid var(--newborder); border-radius: 8px; padding: 16px;">
+                    <span class="material-icons" style="font-size: 22px; color: var(--primarytext); display: block; margin-bottom: 10px;">verified_user</span>
+                    <p style="font-size: 14px; color: var(--primarytext); margin: 0; line-height: 1.5;"><strong>Safety:</strong> Prevent risky actions before they happen</p>
+                  </div>
+                  <div style="background: var(--newcard); border: 1px solid var(--newborder); border-radius: 8px; padding: 16px;">
+                    <span class="material-icons" style="font-size: 22px; color: var(--primarytext); display: block; margin-bottom: 10px;">manage_accounts</span>
+                    <p style="font-size: 14px; color: var(--primarytext); margin: 0; line-height: 1.5;"><strong>Identity:</strong> Secure, least-privilege access</p>
+                  </div>
+                  <div style="background: var(--newcard); border: 1px solid var(--newborder); border-radius: 8px; padding: 16px;">
+                    <span class="material-icons" style="font-size: 22px; color: var(--primarytext); display: block; margin-bottom: 10px;">notifications_active</span>
+                    <p style="font-size: 14px; color: var(--primarytext); margin: 0; line-height: 1.5;"><strong>Confidence:</strong> The right people know at the right time</p>
                   </div>
                 </div>
-
               </div>
-            </div>
           </div>
 
           <!-- ── SOLUTION PREVIEW ───────────────────────────────────── -->
@@ -284,7 +340,7 @@
                 <span style="font-weight: 300; color: var(--secondarytext);">Customers want something easy to learn and repeat.</span>
                 <span style="font-size: 12px; font-weight: 500; color: #2d7a3a; background: #eafaf0; border: 1px solid #b6e8c4; border-radius: 100px; padding: 3px 12px;">Familiar</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 0;">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0;">
                 <div style="background: #fff; border: 1px solid var(--bordercolor); border-radius: 8px; padding: 10px 20px; font-size: 15px; font-weight: 300; color: var(--primarytext); white-space: nowrap;">Identify an issue</div>
                 <svg width="48" height="16" viewBox="0 0 48 16" fill="none" style="flex-shrink:0;"><line x1="2" y1="8" x2="38" y2="8" stroke="#7B42BC" stroke-width="1.5"/><polyline points="32,3 40,8 32,13" fill="none" stroke="#7B42BC" stroke-width="1.5" stroke-linejoin="round"/></svg>
                 <div style="background: #fff; border: 1px solid var(--bordercolor); border-radius: 8px; padding: 10px 20px; font-size: 15px; font-weight: 300; color: var(--primarytext); white-space: nowrap;">Propose a fix</div>
@@ -641,38 +697,38 @@
             </div>
 
             <!-- Annotation 1: Confidence signal — points to confidence column in findings table (~310px from top of PR) -->
-            <div style="position: absolute; left: calc(100% + 16px); top: 310px; width: 168px; display: flex; align-items: flex-start;">
+            <div style="position: absolute; left: calc(100% + 16px); top: 310px; width: 210px; display: flex; align-items: flex-start;">
               <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
-                <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div>
-                <div style="width: 16px; height: 1.5px; background: #ef4444;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 22px; height: 2px; background: #ef4444;"></div>
               </div>
               <div style="padding-left: 8px;">
-                <p style="margin: 0 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Confidence signal</p>
-                <p style="margin: 0; font-size: 11px; color: var(--secondarytext); line-height: 1.45;">Surfacing certainty as a percentage gives reviewers a clear signal of how thoroughly to audit before merging.</p>
+                <p style="margin: 0 0 5px; font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Confidence signal</p>
+                <p style="margin: 0; font-size: 13px; color: var(--secondarytext); line-height: 1.55;">Surfacing certainty as a percentage gives reviewers a clear signal of how thoroughly to audit before merging.</p>
               </div>
             </div>
 
             <!-- Annotation 2: Blast radius — points to blast radius rows in detailed findings (~720px from top) -->
-            <div style="position: absolute; left: calc(100% + 16px); top: 720px; width: 168px; display: flex; align-items: flex-start;">
+            <div style="position: absolute; left: calc(100% + 16px); top: 720px; width: 210px; display: flex; align-items: flex-start;">
               <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
-                <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div>
-                <div style="width: 16px; height: 1.5px; background: #ef4444;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 22px; height: 2px; background: #ef4444;"></div>
               </div>
               <div style="padding-left: 8px;">
-                <p style="margin: 0 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Blast radius</p>
-                <p style="margin: 0; font-size: 11px; color: var(--secondarytext); line-height: 1.45;">Shows scope of impact across workspaces and modules — so reviewers understand consequences before a single line merges.</p>
+                <p style="margin: 0 0 5px; font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Blast radius</p>
+                <p style="margin: 0; font-size: 13px; color: var(--secondarytext); line-height: 1.55;">Shows scope of impact across workspaces and modules — so reviewers understand consequences before a single line merges.</p>
               </div>
             </div>
 
             <!-- Annotation 3: Test plan — points to checkboxes near bottom of PR (~1720px from top) -->
-            <div style="position: absolute; left: calc(100% + 16px); top: 1720px; width: 168px; display: flex; align-items: flex-start;">
+            <div style="position: absolute; left: calc(100% + 16px); top: 1720px; width: 210px; display: flex; align-items: flex-start;">
               <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
-                <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div>
-                <div style="width: 16px; height: 1.5px; background: #ef4444;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 22px; height: 2px; background: #ef4444;"></div>
               </div>
               <div style="padding-left: 8px;">
-                <p style="margin: 0 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Verifiable outcomes</p>
-                <p style="margin: 0; font-size: 11px; color: var(--secondarytext); line-height: 1.45;">The agent pre-checks its own work. Reviewers see a test plan already run, not just generated code to take on faith.</p>
+                <p style="margin: 0 0 5px; font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #ef4444; text-transform: uppercase;">Verifiable outcomes</p>
+                <p style="margin: 0; font-size: 13px; color: var(--secondarytext); line-height: 1.55;">The agent pre-checks its own work. Reviewers see a test plan already run, not just generated code to take on faith.</p>
               </div>
             </div>
 
@@ -716,10 +772,10 @@
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
 
                 <!-- Left: Repo-based onboarding -->
-                <div>
+                <div style="display: flex; flex-direction: column;">
                   <div style="font-size: 15px; font-weight: 500; color: var(--primarytext); margin-bottom: 4px;">Repository based onboarding</div>
                   <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 20px;">Simpler to implement</div>
-                  <div style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
                     <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 8px 18px; font-size: 13px; color: var(--primarytext); background: #fff; white-space: nowrap;">Single repository</div>
                     <svg width="280" height="52" viewBox="0 0 280 52" style="display: block; overflow: visible; flex-shrink: 0;">
                       <line x1="140" y1="0" x2="140" y2="22" stroke="#C8C4C0" stroke-width="1.5"/>
@@ -747,10 +803,10 @@
                 </div>
 
                 <!-- Right: Workspace/project based onboarding -->
-                <div>
+                <div style="display: flex; flex-direction: column;">
                   <div style="font-size: 15px; font-weight: 500; color: var(--primarytext); margin-bottom: 4px;">Workspace or project based onboarding</div>
                   <div style="font-size: 13px; color: var(--secondarytext); margin-bottom: 20px;">Better mental model</div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; align-content: start;">
                     <div style="border: 1px solid var(--bordercolor); border-radius: 8px; padding: 12px;">
                       <div style="font-size: 12px; color: var(--secondarytext); margin-bottom: 8px;">Project A</div>
                       <div style="display: flex; flex-direction: column; gap: 6px;">
@@ -785,20 +841,7 @@
             <p>We narrowed a broad agentic concept into a focused remediation workflow and made trust requirements explicit. Confidence, explainability, blast radius, and history were core, not extras.</p>
             <p class="margin-top-16">This project sharpened how I think about AI in enterprise products. The design problem was never "how do we add an agent?" It was how to make automation feel accountable inside a messy system of repos, workspaces, permissions, and human ownership. The more powerful the automation, the more important it is to design for verification, control, and shared understanding.</p>
 
-            <div class="row margin-top">
-              <div class="gencard margin-top">
-                <p class="heavy text-primary-color">Proactive remediation loop</p>
-                <p>Detect issue, generate fix, open PR, human review. Scoped and shippable as a v1.</p>
-              </div>
-              <div class="gencard margin-top">
-                <p class="heavy text-primary-color">Trust as a product requirement</p>
-                <p>Confidence, blast radius, rule context, and history treated as core surfaces, not secondary features.</p>
-              </div>
-              <div class="gencard margin-top">
-                <p class="heavy text-primary-color">Reusable write-back pattern</p>
-                <p>A general model for PR creation, issue history, and notifications that any remediation source can plug into.</p>
-              </div>
-            </div>
+
           </div>
 
         </div>
