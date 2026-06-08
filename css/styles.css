@@ -1847,6 +1847,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 
     .card-img { overflow: hidden; border-radius: 12px 12px 0 0; }
     .card-img img { width: 100%; display: block; object-fit: cover; }
+    .card-img video {
+      opacity: 0;
+      transition: opacity 260ms ease;
+      pointer-events: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+      box-sizing: border-box;
+    }
+    .card-img:hover video { opacity: 1; }
 
     .card-blank { min-height: 340px; }
 
