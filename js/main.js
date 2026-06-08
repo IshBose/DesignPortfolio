@@ -138,14 +138,14 @@ let section = document.querySelectorAll('section');
 
         document.addEventListener('DOMContentLoaded', function() {
           const accordionItems = document.querySelectorAll('.accordion-item');
-          
+
           accordionItems.forEach(item => {
               const header = item.querySelector('.accordion-header');
-              
+
               header.addEventListener('click', function() {
                   // Toggle current item
                   item.classList.toggle('active');
-                  
+
                   // Optional: Close other items when one is opened
                   // accordionItems.forEach(otherItem => {
                   //     if (otherItem !== item) {
@@ -154,6 +154,115 @@ let section = document.querySelectorAll('section');
                   // });
               });
           });
+      });
+
+      // ── iPod widget ─────────────────────────────────────────
+      // Edit this list to update the songs shown on the about page.
+      // Album art is fetched from the iTunes Search API at runtime; set an
+      // explicit `art` URL to override.
+      const ipodSongs = [
+        { title: 'Q&A',                 artist: 'Drake' },
+        { title: "AIN'T GIVIN' UP",     artist: 'Isaiah Rashad' },
+        { title: 'Space Song',          artist: 'Beach House' },
+        { title: 'Heaven or Las Vegas', artist: 'Cocteau Twins' },
+        { title: 'Surrender',           artist: 'Suicide' },
+        { title: 'Beams',               artist: 'Arlo Parks' },
+      ];
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const root = document.getElementById('ipod');
+        if (!root) return;
+
+        const listEl = document.getElementById('ipod-list');
+        const npEl = document.getElementById('ipod-now-playing');
+        const artEl = document.getElementById('ipod-art');
+        const titleEl = document.getElementById('ipod-track-title');
+        const artistEl = document.getElementById('ipod-track-artist');
+        const wheel = document.getElementById('ipod-wheel');
+
+        let selected = 0;
+        let mode = 'list';
+
+        ipodSongs.forEach((s, i) => {
+          const li = document.createElement('li');
+          li.className = 'ipod-row';
+          li.dataset.index = i;
+          li.innerHTML =
+            '<img class="ipod-row-art" alt="" />' +
+            '<span class="ipod-row-title">' + s.title + '</span>' +
+            '<span class="ipod-row-artist">' + s.artist + '</span>';
+          li.addEventListener('click', () => { selected = i; select(); });
+          listEl.appendChild(li);
+        });
+
+        function applyRowArt(i) {
+          const img = listEl.children[i]?.querySelector('.ipod-row-art');
+          if (img && ipodSongs[i].art) img.src = ipodSongs[i].art;
+        }
+        ipodSongs.forEach((s, i) => { if (s.art) applyRowArt(i); });
+
+        function render() {
+          [...listEl.children].forEach((el, i) =>
+            el.classList.toggle('is-selected', i === selected));
+          listEl.children[selected]?.scrollIntoView({ block: 'nearest' });
+
+          if (mode === 'now-playing') {
+            const s = ipodSongs[selected];
+            if (s.art) {
+              artEl.src = s.art;
+              artEl.style.visibility = 'visible';
+            } else {
+              artEl.removeAttribute('src');
+              artEl.style.visibility = 'hidden';
+            }
+            artEl.alt = s.title + ' album art';
+            titleEl.textContent = s.title;
+            artistEl.textContent = s.artist;
+          }
+          listEl.hidden = mode !== 'list';
+          npEl.hidden = mode !== 'now-playing';
+        }
+
+        // Look up album art from the iTunes Search API for any song that
+        // doesn't already have an `art` URL set.
+        ipodSongs.forEach(async (s, i) => {
+          if (s.art) return;
+          try {
+            const q = encodeURIComponent(s.artist + ' ' + s.title);
+            const res = await fetch(
+              'https://itunes.apple.com/search?term=' + q +
+              '&entity=song&limit=1&media=music'
+            );
+            const data = await res.json();
+            const url = data.results && data.results[0] && data.results[0].artworkUrl100;
+            if (!url) return;
+            s.art = url.replace('100x100', '300x300');
+            applyRowArt(i);
+            if (mode === 'now-playing' && selected === i) render();
+          } catch (_) { /* leave art unset */ }
+        });
+
+        function move(delta) {
+          if (!ipodSongs.length) return;
+          selected = (selected + delta + ipodSongs.length) % ipodSongs.length;
+          render();
+        }
+        function select() { mode = 'now-playing'; render(); }
+        function menu()   { mode = 'list';        render(); }
+
+        wheel.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-action]');
+          if (!btn) return;
+          switch (btn.dataset.action) {
+            case 'menu':   menu();    break;
+            case 'next':   move(+1);  break;
+            case 'prev':   move(-1);  break;
+            case 'play':   root.classList.toggle('is-playing'); break;
+            case 'select': select();  break;
+          }
+        });
+
+        render();
       });
 
 
@@ -656,7 +765,7 @@ let section = document.querySelectorAll('section');
   const CITIES = [
     { lon: -117.2, lat: 32.7,  label: "San Diego, CA",    caption: "Where I currently live",    img: "images/sdhero.jpeg" },
     { lon: -121.9, lat: 37.3,  label: "San Jose, CA",     caption: "Where I feel 'home' is",    img: "images/sjhero.jpeg" },
-    { lon:  -98.5, lat: 29.4,  label: "San Antonio, TX",  caption: "Where it all begin... still love the spurs to this date!",   img: "" },
+    { lon:  -98.5, lat: 29.4,  label: "San Antonio, TX",  caption: "Where it all begin... still love the spurs to this date!",   img: "images/santhero.jpeg" },
     { lon:    5.5, lat: 51.4,  label: "Eindhoven, NL",    caption: "A transformational era of my life, I graduated high school here",   img: "images/eindhovenhero.jpeg" },
     { lon:  121.5, lat: 31.2,  label: "Shanghai, China",  caption: "Fun fact: I lived here for 3 years",   img: "" },
   ];

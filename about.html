@@ -88,6 +88,7 @@
     <div class="aboutcontainer">
 
 
+        <div class="scrapbook-card">
         <div class="gallery-container">
           <div class="gallery-header">
             <h1>My Photo Memories</h1>
@@ -133,6 +134,7 @@
             <img src="./images/IMG_0920.jpeg" alt="Garden party">
             <div class="caption">&lt3 </div>
           </div>
+        </div>
         </div>
 
         <br><br>
@@ -302,6 +304,40 @@
                 </div>
             </div>
 
+            <div class="ipod-section">
+              <div class="ipod-section-header">
+                <h2>On Repeat</h2>
+                <p>What I've actually been listening to.</p>
+              </div>
+
+              <div class="ipod" id="ipod">
+                <div class="ipod-screen">
+                  <div class="ipod-status-bar">
+                    <span class="ipod-status-title">iPod</span>
+                    <span class="ipod-battery" aria-hidden="true"></span>
+                  </div>
+
+                  <ul class="ipod-list" id="ipod-list" role="listbox"></ul>
+
+                  <div class="ipod-now-playing" id="ipod-now-playing" hidden>
+                    <img class="ipod-art" id="ipod-art" alt="" />
+                    <div class="ipod-track-title" id="ipod-track-title"></div>
+                    <div class="ipod-track-artist" id="ipod-track-artist"></div>
+                    <div class="ipod-progress"><div class="ipod-progress-bar"></div></div>
+                  </div>
+                </div>
+
+                <div class="ipod-wheel" id="ipod-wheel">
+                  <button class="ipod-wheel-btn ipod-menu" data-action="menu" aria-label="Menu">MENU</button>
+                  <button class="ipod-wheel-btn ipod-next" data-action="next" aria-label="Next">&#9654;&#9654;</button>
+                  <button class="ipod-wheel-btn ipod-play" data-action="play" aria-label="Play/Pause">&#9654;&#10073;&#10073;</button>
+                  <button class="ipod-wheel-btn ipod-prev" data-action="prev" aria-label="Previous">&#9664;&#9664;</button>
+                  <button class="ipod-center" id="ipod-center" data-action="select" aria-label="Select"></button>
+                </div>
+              </div>
+            </div>
+
+
 
 
     
@@ -398,10 +434,10 @@
           // Bring to front
           polaroid.style.zIndex = zIndexCounter++;
           
-          // Store the current position
-          const rect = polaroid.getBoundingClientRect();
-          originalLeft = parseInt(polaroid.style.left) || rect.left;
-          originalTop = parseInt(polaroid.style.top) || rect.top;
+          // Store the current position (offsetLeft/Top are relative to the
+          // offsetParent, matching how we'll write style.left/top back)
+          originalLeft = parseInt(polaroid.style.left) || polaroid.offsetLeft;
+          originalTop = parseInt(polaroid.style.top) || polaroid.offsetTop;
           
           // Store the start position of the pointer
           startX = clientX;
@@ -456,7 +492,7 @@
       </div>
      
       
-      <h4 class="center margin-y-8">© Ishaan Bose, 2026</h4>
+      <p class="center margin-y-8">© Ishaan Bose, 2026</p>
   
       <!-- Website scripts -->
       <script src="assets/js/app.js"></script>

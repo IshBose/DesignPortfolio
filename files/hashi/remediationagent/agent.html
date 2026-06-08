@@ -41,7 +41,17 @@
       #cardcolor3 {
         background-color: #E6E6E7;
       }
-    </style>
+      .pr-annotation {
+        position: absolute;
+        left: calc(100% - 16px);
+        width: 210px;
+        display: flex;
+        align-items: flex-start;
+      }
+      @media (max-width: 1200px) {
+        .pr-annotation { display: none; }
+      }
+</style>
 
   </head>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -697,7 +707,7 @@
             </div>
 
             <!-- Annotation 1: Confidence signal — points to confidence column in findings table (~310px from top of PR) -->
-            <div style="position: absolute; left: calc(100% + 16px); top: 310px; width: 210px; display: flex; align-items: flex-start;">
+            <div class="pr-annotation" style="top: 310px;">
               <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
                 <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
                 <div style="width: 22px; height: 2px; background: #ef4444;"></div>
@@ -709,7 +719,7 @@
             </div>
 
             <!-- Annotation 2: Blast radius — points to blast radius rows in detailed findings (~720px from top) -->
-            <div style="position: absolute; left: calc(100% + 16px); top: 720px; width: 210px; display: flex; align-items: flex-start;">
+            <div class="pr-annotation" style="top: 720px;">
               <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
                 <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
                 <div style="width: 22px; height: 2px; background: #ef4444;"></div>
@@ -721,7 +731,7 @@
             </div>
 
             <!-- Annotation 3: Test plan — points to checkboxes near bottom of PR (~1720px from top) -->
-            <div style="position: absolute; left: calc(100% + 16px); top: 1720px; width: 210px; display: flex; align-items: flex-start;">
+            <div class="pr-annotation" style="top: 1720px;">
               <div style="flex-shrink: 0; margin-top: 6px; display: flex; align-items: center;">
                 <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
                 <div style="width: 22px; height: 2px; background: #ef4444;"></div>
