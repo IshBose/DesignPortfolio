@@ -107,7 +107,7 @@
     --newborder: #E0E0E0;
 
     /* Shared page layout: one content-column width across every page, at any screen size */
-    --page-max: 1040px;   /* width of the readable content column */
+    --page-max: 1160px;   /* width of the readable content column */
     --page-pad: 24px;     /* side padding / minimum gutter */
     --rail: 240px;        /* reserved left space for the case-study section-nav */
     /* Distance from each viewport edge to the content column. Nav-logo (left),
@@ -612,7 +612,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     background-color: var(--background);
     color: var(--primarytext);
     overflow-x:hidden;
-    
+    margin: 0;
   }
   
   
@@ -633,7 +633,7 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     display: grid;
-    gap:64px;
+    gap: 88px;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -1762,7 +1762,10 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       width: 240px;
       height: 240px;
       display: block;
-      margin-right: 32px;
+      /* Shifted left so the globe centers over the 2nd card column below.
+         Math: container 1160px, col 2 center ≈ 892px, globe 240px wide
+         pinned right via flex space-between → right margin = 1160 − (892 + 120) = 148px */
+      margin-right: 148px;
     }
     
     /* Globe city tooltip */
@@ -1831,17 +1834,19 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     /* Override rowhover pseudo-element radius for new card shape */
     .card-new.rowhover { border-radius: 12px; padding: 0; }
 
-    /* Extend white cover 10px beyond card edges — creates a buffer so the
-       gradient glow never touches the card content */
+    /* Extend white cover 20px beyond card edges — creates a wider buffer so
+       the visible gradient halo sits clear of the card content */
     .card-new.rowhover::after {
-      inset: -10px;
-      border-radius: 22px;
+      inset: -20px;
+      border-radius: 12px;
     }
 
-    /* Softer, more diffuse gradient for card-new */
+    /* Softer, more diffuse gradient for card-new — pushed further out so
+       the halo has room to breathe between the card edge and its outer falloff */
     .card-new.rowhover::before {
-      border-radius: 28px;
-      filter: blur(28px);
+      inset: -36px;
+      border-radius: 12px;
+      filter: blur(32px);
     }
     .card-new.rowhover:hover::before { opacity: 0.55; }
 
@@ -1876,23 +1881,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
       align-items: flex-start;
       gap: 12px;
     }
-    .card-company {
-      font-size: 14px;
-      color: var(--primarytext);
-      flex-shrink: 0;
-      padding-top: 3px;
-    }
 
     .card-header-row h3{
       font-size: 16px;
       font-weight: 400;
+      flex: 1;
+      min-width: 0;
     }
-    .card-footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-top: 24px;
+    .card-header-row .card-tags {
+      justify-content: flex-end;
+      flex-shrink: 0;
     }
     .card-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     .tag-pill {
@@ -1917,17 +1915,16 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
     .tag-dot-purple { background: linear-gradient(135deg, #92BFFE 0%, #EE84F5 50%, #B978FF 100%); }
     .tag-dot-orange { background: #FDBB2D; }
     .card-desc { font-size: 14px; flex: 1; }
-    .btn-learn-more {
-      display: inline-block;
+    .card-outcome {
       font-size: 14px;
-      font-weight: 500;
-      padding: 6px 14px;
-      border-radius: 8px;
-      border: 1.5px solid var(--bordercolor);
+      font-weight: 400;
       color: var(--primarytext);
-      background: var(--background);
-      white-space: nowrap;
-      flex-shrink: 0;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .card-outcome strong {
+      font-weight: 600;
+      margin-right: 2px;
     }
 
     .row2{
@@ -3269,4 +3266,274 @@ filter: invert(75%) sepia(10%) saturate(1296%) hue-rotate(173deg) brightness(94%
 }
 .margin-top-xl {
   margin-top: 3rem;
+}
+
+/* ── Playground footer: full-width dark band with terminal-style FAQ window ── */
+.playground {
+  background: var(--blk);
+  color: #ffffff;
+  margin-top: 96px;
+  margin-bottom: 0;
+  padding: 56px 0 40px;
+}
+
+.playground-inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  text-align: left;
+}
+
+.playground-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.playground-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+
+.playground-sub {
+  font-size: 15px;
+  font-weight: 100;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+/* Terminal window — macOS chrome + body */
+.terminal {
+  background: #0e0e10;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45),
+              0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  overflow: hidden;
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+}
+
+.terminal-chrome {
+  background: linear-gradient(180deg, #2d2d31 0%, #1e1e22 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  padding: 9px 13px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.terminal-traffic {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.25);
+}
+
+.traffic-red { background: #ff5f57; }
+.traffic-yellow { background: #febc2e; }
+.traffic-green { background: #28c840; }
+
+.terminal-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: -apple-system, "BlinkMacSystemFont", "Helvetica Neue", system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+.terminal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 18px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  min-height: 280px;
+}
+
+.terminal-stream {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 260px;
+}
+
+.terminal-output {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.terminal-prompt-line {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+}
+
+.terminal-prompt {
+  color: #59ed85;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+.terminal-cursor {
+  color: rgba(255, 255, 255, 0.85);
+  animation: terminalCursorBlink 1.1s steps(1, end) infinite;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+@keyframes terminalCursorBlink {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0; }
+}
+
+.terminal-commands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.terminal-cmd {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.72);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.terminal-cmd:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.terminal-cmd:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Send-message flow: inline input that appears in the terminal stream */
+.terminal-send {
+  margin: 0 0 4px;
+  font-family: inherit;
+}
+
+.terminal-send-prompt {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.terminal-send-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.terminal-send-chevron {
+  color: #59ed85;
+  font-weight: 700;
+}
+
+.terminal-send-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  caret-color: #59ed85;
+}
+
+.terminal-send-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.terminal-send-input:disabled {
+  opacity: 0.55;
+}
+
+/* Send message — primary action, Signal Blue fill */
+.terminal-cmd[data-cmd="send"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.terminal-cmd[data-cmd="send"]:hover {
+  background: #4a8aff;
+  border-color: #4a8aff;
+  color: #ffffff;
+}
+
+/* Clear command — visually separated and higher contrast */
+.terminal-cmd[data-cmd="clear"] {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.terminal-cmd[data-cmd="clear"]:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor { animation: none; opacity: 1; }
+  .terminal-cmd { transition: none; }
+}
+
+@media (max-width: 720px) {
+  .playground { margin-top: 64px; padding: 40px 0 28px; }
+  .playground-inner { gap: 18px; }
+  .playground-title { font-size: 22px; }
+  .playground-sub { font-size: 14px; }
+  .terminal-body { padding: 12px 14px; font-size: 12px; min-height: 240px; }
+  .terminal-stream { max-height: 220px; }
+  .terminal-title { font-size: 11px; }
+  .terminal-cmd { font-size: 11px; padding: 3px 8px; }
 }
