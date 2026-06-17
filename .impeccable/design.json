@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-14T00:00:00Z",
+  "title": "Design System: Ishaan Bose Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "workshop-ink": {
+        "role": "neutral",
+        "displayName": "Workshop Ink",
+        "canonical": "oklch(0.18 0.005 280)",
+        "tonalRamp": ["oklch(0.10 0.005 280)", "oklch(0.18 0.005 280)", "oklch(0.28 0.005 280)", "oklch(0.40 0.005 280)", "oklch(0.55 0.005 280)", "oklch(0.70 0.005 280)", "oklch(0.85 0.005 280)", "oklch(0.96 0.005 280)"]
+      },
+      "workshop-ink-deeper": {
+        "role": "neutral",
+        "displayName": "Workshop Ink Deeper",
+        "canonical": "oklch(0.13 0.008 270)",
+        "tonalRamp": ["oklch(0.07 0.008 270)", "oklch(0.13 0.008 270)", "oklch(0.22 0.008 270)", "oklch(0.34 0.008 270)", "oklch(0.48 0.008 270)", "oklch(0.65 0.008 270)", "oklch(0.82 0.008 270)", "oklch(0.95 0.008 270)"]
+      },
+      "primary-text": {
+        "role": "neutral",
+        "displayName": "Primary Text",
+        "canonical": "oklch(0.19 0.005 280)",
+        "tonalRamp": ["oklch(0.11 0.005 280)", "oklch(0.19 0.005 280)", "oklch(0.30 0.005 280)", "oklch(0.42 0.005 280)", "oklch(0.56 0.005 280)", "oklch(0.71 0.005 280)", "oklch(0.85 0.005 280)", "oklch(0.96 0.005 280)"]
+      },
+      "marginalia-gray": {
+        "role": "neutral",
+        "displayName": "Marginalia Gray",
+        "canonical": "oklch(0.50 0.000 0)",
+        "tonalRamp": ["oklch(0.15 0.000 0)", "oklch(0.25 0.000 0)", "oklch(0.35 0.000 0)", "oklch(0.50 0.000 0)", "oklch(0.62 0.000 0)", "oklch(0.75 0.000 0)", "oklch(0.86 0.000 0)", "oklch(0.95 0.000 0)"]
+      },
+      "page-white": {
+        "role": "neutral",
+        "displayName": "Page White",
+        "canonical": "oklch(1.00 0.000 0)",
+        "tonalRamp": ["oklch(0.20 0.000 0)", "oklch(0.35 0.000 0)", "oklch(0.50 0.000 0)", "oklch(0.65 0.000 0)", "oklch(0.80 0.000 0)", "oklch(0.90 0.000 0)", "oklch(0.97 0.000 0)", "oklch(1.00 0.000 0)"]
+      },
+      "press-sheet": {
+        "role": "neutral",
+        "displayName": "Press Sheet",
+        "canonical": "oklch(0.95 0.000 0)",
+        "tonalRamp": ["oklch(0.20 0.000 0)", "oklch(0.35 0.000 0)", "oklch(0.50 0.000 0)", "oklch(0.65 0.000 0)", "oklch(0.78 0.000 0)", "oklch(0.88 0.000 0)", "oklch(0.95 0.000 0)", "oklch(0.99 0.000 0)"]
+      },
+      "drafting-line": {
+        "role": "neutral",
+        "displayName": "Drafting Line",
+        "canonical": "oklch(0.89 0.000 0)",
+        "tonalRamp": ["oklch(0.20 0.000 0)", "oklch(0.35 0.000 0)", "oklch(0.50 0.000 0)", "oklch(0.65 0.000 0)", "oklch(0.78 0.000 0)", "oklch(0.89 0.000 0)", "oklch(0.95 0.000 0)", "oklch(0.99 0.000 0)"]
+      },
+      "signal-blue": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "oklch(0.60 0.20 262)",
+        "tonalRamp": ["oklch(0.20 0.10 262)", "oklch(0.30 0.14 262)", "oklch(0.42 0.18 262)", "oklch(0.52 0.20 262)", "oklch(0.60 0.20 262)", "oklch(0.72 0.16 262)", "oklch(0.85 0.10 262)", "oklch(0.96 0.04 262)"]
+      },
+      "stamp-red": {
+        "role": "tertiary",
+        "displayName": "Stamp Red",
+        "canonical": "oklch(0.49 0.18 27)",
+        "tonalRamp": ["oklch(0.18 0.10 27)", "oklch(0.28 0.14 27)", "oklch(0.38 0.16 27)", "oklch(0.49 0.18 27)", "oklch(0.60 0.18 27)", "oklch(0.74 0.14 27)", "oklch(0.86 0.08 27)", "oklch(0.96 0.03 27)"]
+      },
+      "terraform-purple": {
+        "role": "secondary",
+        "displayName": "Terraform Purple",
+        "canonical": "oklch(0.47 0.20 305)",
+        "tonalRamp": ["oklch(0.18 0.10 305)", "oklch(0.28 0.14 305)", "oklch(0.38 0.18 305)", "oklch(0.47 0.20 305)", "oklch(0.58 0.20 305)", "oklch(0.72 0.16 305)", "oklch(0.85 0.10 305)", "oklch(0.96 0.04 305)"]
+      },
+      "packer-cyan": {
+        "role": "secondary",
+        "displayName": "Packer Cyan",
+        "canonical": "oklch(0.70 0.16 230)",
+        "tonalRamp": ["oklch(0.22 0.10 230)", "oklch(0.34 0.14 230)", "oklch(0.46 0.16 230)", "oklch(0.58 0.16 230)", "oklch(0.70 0.16 230)", "oklch(0.80 0.13 230)", "oklch(0.90 0.08 230)", "oklch(0.97 0.03 230)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Case-study titles; the largest type the system uses. Regola Neue 500 at 48px." },
+      "headline": { "displayName": "Headline", "purpose": "Subheadings (h4, .largetext). Light weight at 24px is the visual signature." },
+      "title": { "displayName": "Title", "purpose": "Hero tagline and primary intro paragraphs." },
+      "body": { "displayName": "Body", "purpose": "Default paragraph copy at weight 100. Test contrast every time." },
+      "label": { "displayName": "Label", "purpose": "Card titles, descriptions, pill nav, section-nav links." },
+      "micro": { "displayName": "Micro", "purpose": "Tag pills only." },
+      "italic-display": { "displayName": "Italic Display", "purpose": "Editorial pull-quotes. Tiempos Fine — sparingly." }
+    },
+    "shadows": [
+      { "name": "pill-float", "value": "0 2px 16px rgba(0,0,0,0.07)", "purpose": "Fixed pill nav. Soft ambient — almost invisible." },
+      { "name": "pill-tab-active", "value": "0 1px 4px rgba(0,0,0,0.10)", "purpose": "Active tab inside the pill nav." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "ease", "purpose": "Default state transitions." },
+      { "name": "duration-instant", "value": "50ms", "purpose": "Section-nav active state. Just-perceptible." },
+      { "name": "duration-short", "value": "150ms", "purpose": "Pill-btn hover background/color transitions." },
+      { "name": "duration-medium", "value": "260ms", "purpose": "Project card hover MP4 cross-fade." },
+      { "name": "duration-long", "value": "700ms", "purpose": "Per-card glow cover transition on hover." },
+      { "name": "gradient-roll", "value": "6s linear infinite", "purpose": "Per-card conic-gradient rotation while hovered." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "720px" },
+      { "name": "tablet", "value": "960px" },
+      { "name": "content-column", "value": "1160px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pill Nav",
+      "kind": "nav",
+      "refersTo": "pill-nav",
+      "description": "Fixed top-right nav with a sliding active-tab indicator. The signature shell element.",
+      "html": "<nav class=\"ds-pill-nav\"><div class=\"ds-pill-slider\"><a href=\"#\" class=\"ds-pill-tab ds-pill-tab-active\">Work</a><a href=\"#\" class=\"ds-pill-tab\">About</a></div><div class=\"ds-pill-sep\"></div><a href=\"#\" class=\"ds-pill-btn\">LinkedIn</a><a href=\"#\" class=\"ds-pill-btn\">Email me</a></nav>",
+      "css": ".ds-pill-nav { display: inline-flex; align-items: center; gap: 8px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 100px; padding: 4px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); font-family: 'Regola Neue', sans-serif; } .ds-pill-slider { display: flex; align-items: center; background: #f0f0f0; border-radius: 100px; padding: 3px; gap: 2px; } .ds-pill-tab { padding: 6px 14px; border-radius: 100px; font-size: 14px; font-weight: 400; color: #5a5a5a; text-decoration: none; transition: color 0.2s; white-space: nowrap; } .ds-pill-tab-active { background: #ffffff; color: #141218; font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.10); } .ds-pill-sep { width: 1px; height: 18px; background: #e0e0e0; margin: 0 4px; } .ds-pill-btn { padding: 6px 14px; border-radius: 100px; font-size: 14px; font-weight: 400; color: #5a5a5a; text-decoration: none; white-space: nowrap; transition: background 0.15s, color 0.15s; } .ds-pill-btn:hover { background: #f0f0f0; color: #141218; } .ds-pill-btn:focus-visible, .ds-pill-tab:focus-visible { outline: 2px solid #3478ff; outline-offset: 2px; border-radius: 100px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Index project card with hover MP4 preview and per-card colored glow. The conversion gate to a case study.",
+      "html": "<a class=\"ds-project-card-link\" href=\"#\"><div class=\"ds-project-card\"><div class=\"ds-card-img\"><img src=\"https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80\" alt=\"Case study preview\"></div><div class=\"ds-card-body\"><div class=\"ds-card-header-row\"><h3>Terraform Remediation Agent</h3><div class=\"ds-card-tags\"><span class=\"ds-tag-pill\"><span class=\"ds-tag-dot ds-tag-dot-orange\"></span>In Beta</span><span class=\"ds-tag-pill\"><span class=\"ds-tag-dot ds-tag-dot-purple\"></span>Product Design</span></div></div><p class=\"ds-card-desc\">Shaping an agentic remediation workflow that turns detected infrastructure issues into safe, reviewable PRs.</p><p class=\"ds-card-outcome\"><strong>Outcome:</strong> In private beta &middot; agentic remediation, end-to-end</p></div></div></a>",
+      "css": ".ds-project-card-link { text-decoration: none; color: inherit; display: block; } .ds-project-card { position: relative; border-radius: 12px; background: #ffffff; overflow: hidden; isolation: isolate; transition: box-shadow 0.3s ease; font-family: 'Regola Neue', sans-serif; color: #141218; } .ds-project-card::before { content: ''; position: absolute; inset: -30px; border-radius: 28px; background: conic-gradient(from 0deg, rgba(236,72,153,0.5), rgba(251,182,215,0.3), rgba(236,72,153,0.5)); filter: blur(28px); z-index: -1; opacity: 0; transition: opacity 0.7s ease; } .ds-project-card:hover::before { opacity: 0.55; } .ds-card-img { overflow: hidden; border-radius: 12px 12px 0 0; aspect-ratio: 2224 / 1796; } .ds-card-img img { width: 100%; height: 100%; display: block; object-fit: cover; } .ds-card-body { display: flex; flex-direction: column; gap: 8px; padding: 20px 16px 16px; } .ds-card-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; } .ds-card-header-row h3 { font-size: 16px; font-weight: 400; margin: 0; flex: 1; min-width: 0; } .ds-card-header-row .ds-card-tags { justify-content: flex-end; flex-shrink: 0; } .ds-card-desc { font-size: 14px; color: #5a5a5a; margin: 0; } .ds-card-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; } .ds-tag-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 100px; border: 1px solid #e0e0e0; color: #5a5a5a; background: #ffffff; } .ds-tag-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; } .ds-tag-dot-orange { background: #FDBB2D; } .ds-tag-dot-purple { background: linear-gradient(135deg, #92BFFE 0%, #EE84F5 50%, #B978FF 100%); } .ds-card-outcome { font-size: 14px; font-weight: 400; color: #141218; line-height: 1.4; margin: 0; } .ds-card-outcome strong { font-weight: 600; margin-right: 2px; }"
+    },
+    {
+      "name": "Tag Pill",
+      "kind": "chip",
+      "refersTo": "tag-pill",
+      "description": "Project-status pill with a 7px colored dot indicator. Always paired with a tag-dot color (green=shipped, orange=in-progress, purple-gradient=discipline).",
+      "html": "<span class=\"ds-tag-pill ds-tag-shipped\"><span class=\"ds-tag-dot ds-tag-dot-green\"></span>Shipped &middot; 2025</span> <span class=\"ds-tag-pill ds-tag-discipline\"><span class=\"ds-tag-dot ds-tag-dot-purple\"></span>Product Design</span>",
+      "css": ".ds-tag-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 100px; border: 1px solid #e0e0e0; color: #5a5a5a; background: #ffffff; font-family: 'Regola Neue', sans-serif; } .ds-tag-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; } .ds-tag-dot-green { background: #58A942; } .ds-tag-dot-purple { background: linear-gradient(135deg, #92BFFE 0%, #EE84F5 50%, #B978FF 100%); } .ds-tag-dot-orange { background: #FDBB2D; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "The default ghost-style button. No filled chromatic CTA exists in this system.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\">Email me</button>",
+      "css": ".ds-btn-outline { background: #ffffff; border: 1px solid #131316; color: #131316; padding: 12px 16px; font-size: 16px; font-weight: 500; line-height: 16px; font-family: 'Regola Neue', sans-serif; border-radius: 6px; cursor: pointer; transition: background 0.1s ease-in, transform 0.1s ease-in; } .ds-btn-outline:hover { background: #f0f0f0; transform: scale(1.02); } .ds-btn-outline:focus-visible { outline: 2px solid #3478ff; outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Card Outcome",
+      "kind": "custom",
+      "refersTo": "card-outcome",
+      "description": "Outcome paragraph below the card description, leading with a bold 'Outcome:' label. Replaced the older 'Learn more →' pill — the whole card is already a link, so the footer slot was never doing any work. Carries shipped-outcome signal under the description instead.",
+      "html": "<p class=\"ds-card-outcome\"><strong>Outcome:</strong> First-class recovery for an irreversible delete</p>",
+      "css": ".ds-card-outcome { font-size: 14px; font-weight: 400; color: #141218; line-height: 1.4; margin: 0; font-family: 'Regola Neue', sans-serif; } .ds-card-outcome strong { font-weight: 600; margin-right: 2px; }"
+    },
+    {
+      "name": "Section Nav",
+      "kind": "nav",
+      "refersTo": "section-nav-link",
+      "description": "Case-study left-rail scrollspy. Seven fixed sections: Context, Problem, Research, Ideation, Solution, Prototype, Conclusion.",
+      "html": "<nav class=\"ds-section-nav\"><ol><li class=\"ds-section-nav-item ds-section-nav-active\"><a href=\"#context\">Context</a></li><li class=\"ds-section-nav-item\"><a href=\"#problem\">Problem</a></li><li class=\"ds-section-nav-item\"><a href=\"#research\">Research</a></li><li class=\"ds-section-nav-item\"><a href=\"#ideation\">Ideation</a></li><li class=\"ds-section-nav-item\"><a href=\"#solution\">Solution</a></li><li class=\"ds-section-nav-item\"><a href=\"#prototype\">Prototype</a></li><li class=\"ds-section-nav-item\"><a href=\"#conclusion\">Conclusion</a></li></ol></nav>",
+      "css": ".ds-section-nav { font-size: 14px; font-weight: 100; font-family: 'Regola Neue', sans-serif; } .ds-section-nav ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; } .ds-section-nav a { display: block; padding: 8px 0; color: #8E8E93; text-decoration: none; transition: color 50ms ease-in-out; } .ds-section-nav a:hover, .ds-section-nav a:focus-visible { color: #131316; outline: none; } .ds-section-nav-active > a { color: #131316; font-weight: 500; }"
+    },
+    {
+      "name": "Time Pill",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Real-time clock with a time-of-day emoji. Signature personality element in the header. Specific to Ishaan; do not abstract.",
+      "html": "<div class=\"ds-time-container\"><span class=\"ds-time-icon\">⏳</span><span class=\"ds-time-text\">3:42 PM</span></div>",
+      "css": ".ds-time-container { display: inline-flex; align-items: center; gap: 6px; font-family: 'Regola Neue', sans-serif; font-size: 14px; color: #5a5a5a; padding: 4px 10px; border-radius: 100px; background: #ffffff; border: 1px solid #e0e0e0; } .ds-time-icon { font-size: 14px; line-height: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Workshop",
+    "overview": "A senior product designer's reading room. The site reads like a printed dossier: a tight content column, a near-monochrome page, generous interior whitespace, and personality carried by a few specific objects — the halftoneface logo, the halftone globe canvas, the time-of-day emoji, the draggable polaroids on About. Everything else stays out of the way of the writing.\n\nThe system is built around the case-study reading experience. Senior hiring managers open one case study to evaluate craft and leveling signal; the shell exists to get them there and the body exists to be read. Restraint is the voice: hairline borders, a single signal-blue accent, no decorative gradients in copy, no shadows under headings. The visual quietness is what lets the writing register as senior.\n\nThis system explicitly rejects: Y2K / brutalist / maximalist designer-showcase aesthetics; generic Webflow / Framer dark-hero templates with reflexive scroll-reveal cadence; the SaaS landing-page formula (hero metric + gradient + blue CTA); the editorial-magazine aesthetic of italic display serif + drop caps + ruled three-column grids when there's no editorial reason to use it.",
+    "keyCharacteristics": [
+      "One content column, 1160px max, anchored to every page (--page-max)",
+      "Near-monochrome palette: white page, near-black ink, one Signal Blue accent",
+      "Brand accents (Terraform Purple, Packer Cyan) appear only inside the relevant case studies",
+      "Self-hosted Regola Neue across the system; Tiempos Fine reserved for italic display moments",
+      "Flat by default; soft ambient shadows only on floating elements (pill nav, lightbox)",
+      "Hairline borders (1px / 1.5px) — never colored stripes",
+      "Per-card colored glow on hover as the one piece of decorative motion in the index grid"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Signal Blue is the only chromatic color in the shell. The shell is index + About + nav + footer. Case studies may introduce their product's brand accent (Terraform Purple, Packer Cyan) inside their own page, but those accents do not leak back into the shell. If a third chromatic color shows up in the shell, the rule is broken.", "section": "colors" },
+      { "name": "The Hairline Rule", "body": "Borders are 1px or 1.5px, in Drafting Line (#e0e0e0). No 2px+ borders. No colored stripes on the left or right of cards or callouts. If a card needs more presence, give it a soft shadow on hover or interior padding, not a heavier border.", "section": "colors" },
+      { "name": "The Brand-Scoped Color Rule", "body": "Terraform Purple and Packer Cyan are scoped to their case studies. Mixing them on the same page (the index) is forbidden; that's the company's marketing site's job, not a personal portfolio's.", "section": "colors" },
+      { "name": "The Single-Family Rule", "body": "Regola Neue carries every UI surface. Tiempos Fine is permitted only for italic display moments and only when a paragraph needs to register editorially. Do not pair a second sans-serif (no Inter, no DM Sans, no Plus Jakarta). A single well-chosen family carrying every weight is the design choice.", "section": "typography" },
+      { "name": "The Light-Weight-At-Body Rule", "body": "Body paragraphs use Regola 100. This is the single most fragile call in the system. Test in browser at every change; if contrast even feels close, the answer is to darken the ink, never to bump the weight.", "section": "typography" },
+      { "name": "The Smart-Quotes Rule", "body": "HTML entities (&lsquo; / &rsquo; / &ndash; / &mdash; / &middot;) carry typographic punctuation. Straight quotes are forbidden in shipped copy.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Headings, body, cards at rest, sections, and dividers have no shadow. If a designer adds a shadow under a heading 'for hierarchy,' they're solving the wrong problem; the answer is type weight or whitespace.", "section": "elevation" },
+      { "name": "The Float-Only Shadow Rule", "body": "Shadows are reserved for elements that genuinely float (fixed nav, active state inside that nav, modal lightbox). A card at rest does not float; it sits.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use the --page-max: 1160px content column on every new page. The shared column is what holds the system together.",
+      "Do anchor the pill nav and the section-nav to --page-gutter so they align with the content column at every screen width.",
+      "Do keep Signal Blue (#3478FF) as the one chromatic accent in the shell. Use it for links and focus rings only.",
+      "Do declare hover MP4s with <link rel=\"prefetch\"> in the page head. Never preload — it competes with initial render.",
+      "Do test new copy at every breakpoint. Long headline words plus the 48px display scale will overflow narrow grids; reduce the clamp or rewrite the copy.",
+      "Do match Regola weight 100 for body, 300 for h4, 400 for labels, 500 for hero/cta, 600 for h3. Do not invent in-between weights.",
+      "Do use HTML entities for typographic punctuation (&lsquo;, &ndash;, &middot;).",
+      "Do carry the seven-section flow (Context → Problem → Research → Ideation → Solution → Prototype → Conclusion) on every case study.",
+      "Do ship a @media (prefers-reduced-motion: reduce) alternative for every animation — hover MP4s, the halftone globe, polaroids, scroll-spy."
+    ],
+    "donts": [
+      "Don't drift into Y2K / brutalist / maximalist designer-showcase aesthetics. The audience is senior hiring managers, not Awwwards judges.",
+      "Don't ship anything that reads as a generic Webflow / Framer template — no templated dark hero, no reflexive scroll-reveals on every section, no Inter as a 'safe' pairing.",
+      "Don't use border-left or border-right greater than 1px as a colored stripe on cards, callouts, or alerts. Banned.",
+      "Don't use gradient text (background-clip: text). Banned.",
+      "Don't put a tiny uppercase tracked eyebrow above every section. One named kicker as a deliberate brand system is voice; an eyebrow on every section is AI grammar.",
+      "Don't scaffold sections with 01 / 02 / 03 markers unless the section actually IS a sequence that the reader needs to follow in order.",
+      "Don't introduce a second sans-serif. Regola Neue covers every UI surface. Tiempos Fine is the only paired family, and only in italic display moments.",
+      "Don't lighten Marginalia Gray (#5A5A5A). It sits at the 4.5:1 contrast floor; one shade lighter fails AA.",
+      "Don't add shadows under headings, cards-at-rest, sections, or dividers. Flat by default.",
+      "Don't let Terraform Purple or Packer Cyan leak out of their case studies into the shell.",
+      "Don't add a 'Layout Principles' or 'Motion' top-level section to this file when it changes. Fold new rules into Overview (philosophy) or Components (per-component behavior). The six section names are fixed."
+    ]
+  }
+}

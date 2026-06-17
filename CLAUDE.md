@@ -90,5 +90,13 @@ Push to GitHub → GitHub Pages serves the repo at `ishaanbose.com` (custom doma
 - **Smart quotes / HTML entities**: existing HTML uses entities like `&lsquo;`, `&ndash;`, `&middot;` for typographic punctuation. Keep that convention.
 - **jQuery is loaded** but new interactivity is mostly vanilla JS — follow whichever the surrounding code uses.
 
+## Design Context
+- **Register**: `brand` — the portfolio site itself is the product being judged.
+- **Audience**: senior design hiring managers reading for senior/staff IC leveling signal during a hiring loop.
+- **Voice**: thoughtful · quietly playful · precise. Restraint reads as senior; flourishes (clock emoji, halftoneface, polaroids) must be specific to Ishaan.
+- **Anti-references**: Y2K / brutalist / maximalist showcase aesthetic; generic Webflow / Framer templates.
+- **A11y bar**: WCAG 2.1 AA + `prefers-reduced-motion` alternatives on every animation.
+- Full strategic spec in [PRODUCT.md](PRODUCT.md). Visual system spec in [DESIGN.md](DESIGN.md) (if present). Both are read by `/impeccable` commands.
+
 ## Memory & References
 See [/Users/ishaanbose/.claude/projects/-Users-ishaanbose-Documents-GitHub-DesignPortfolio/memory/MEMORY.md](../../.claude/projects/-Users-ishaanbose-Documents-GitHub-DesignPortfolio/memory/MEMORY.md) for the persisted user preferences and patterns (e.g., hover video pattern, prefetch policy). Update it when new conventions emerge.
