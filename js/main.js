@@ -52,8 +52,12 @@ let section = document.querySelectorAll('section');
                 let id = sec.getAttribute('id');
 
                 if (top >= offset && top < offset + height) {
-                    const target = document.querySelector(`[href='#${id}']`).parentElement;
-                    activeLink(target);
+                    // Not every <section> has a matching nav anchor (the index's
+                    // work and contact sections don't), so bail instead of throwing.
+                    if (!id) return;
+                    const link = document.querySelector(`[href='#${id}']`);
+                    if (!link || !link.parentElement) return;
+                    activeLink(link.parentElement);
                 }
             })
         };
@@ -142,144 +146,25 @@ let section = document.querySelectorAll('section');
           accordionItems.forEach(item => {
               const header = item.querySelector('.accordion-header');
 
-              header.addEventListener('click', function() {
-                  // Toggle current item
-                  item.classList.toggle('active');
+              function toggle() {
+                  const open = item.classList.toggle('active');
+                  header.setAttribute('aria-expanded', open ? 'true' : 'false');
+              }
 
-                  // Optional: Close other items when one is opened
-                  // accordionItems.forEach(otherItem => {
-                  //     if (otherItem !== item) {
-                  //         otherItem.classList.remove('active');
-                  //     }
-                  // });
+              header.addEventListener('click', toggle);
+
+              // The header is a div with role="button", so Enter/Space have to
+              // be wired up by hand to match native button behaviour.
+              header.addEventListener('keydown', function(e) {
+                  if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                      e.preventDefault();
+                      toggle();
+                  }
               });
           });
       });
 
-      // ── iPod widget ─────────────────────────────────────────
-      // Edit this list to update the songs shown on the about page.
-      // Album art is fetched from the iTunes Search API at runtime; set an
-      // explicit `art` URL to override.
-      const ipodSongs = [
-        { title: 'Q&A',                 artist: 'Drake' },
-        { title: "AIN'T GIVIN' UP",     artist: 'Isaiah Rashad' },
-        { title: 'Space Song',          artist: 'Beach House' },
-        { title: 'Heaven or Las Vegas', artist: 'Cocteau Twins' },
-        { title: 'Surrender',           artist: 'Suicide' },
-        { title: 'Beams',               artist: 'Arlo Parks' },
-      ];
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const root = document.getElementById('ipod');
-        if (!root) return;
-
-        const listEl = document.getElementById('ipod-list');
-        const npEl = document.getElementById('ipod-now-playing');
-        const artEl = document.getElementById('ipod-art');
-        const titleEl = document.getElementById('ipod-track-title');
-        const artistEl = document.getElementById('ipod-track-artist');
-        const wheel = document.getElementById('ipod-wheel');
-
-        let selected = 0;
-        let mode = 'list';
-
-        ipodSongs.forEach((s, i) => {
-          const li = document.createElement('li');
-          li.className = 'ipod-row';
-          li.dataset.index = i;
-          li.innerHTML =
-            '<img class="ipod-row-art" alt="" />' +
-            '<span class="ipod-row-title">' + s.title + '</span>' +
-            '<span class="ipod-row-artist">' + s.artist + '</span>';
-          li.addEventListener('click', () => { selected = i; select(); });
-          listEl.appendChild(li);
-        });
-
-        function applyRowArt(i) {
-          const img = listEl.children[i]?.querySelector('.ipod-row-art');
-          if (img && ipodSongs[i].art) img.src = ipodSongs[i].art;
-        }
-        ipodSongs.forEach((s, i) => { if (s.art) applyRowArt(i); });
-
-        function render() {
-          [...listEl.children].forEach((el, i) =>
-            el.classList.toggle('is-selected', i === selected));
-          listEl.children[selected]?.scrollIntoView({ block: 'nearest' });
-
-          if (mode === 'now-playing') {
-            const s = ipodSongs[selected];
-            if (s.art) {
-              artEl.src = s.art;
-              artEl.style.visibility = 'visible';
-            } else {
-              artEl.removeAttribute('src');
-              artEl.style.visibility = 'hidden';
-            }
-            artEl.alt = s.title + ' album art';
-            titleEl.textContent = s.title;
-            artistEl.textContent = s.artist;
-          }
-          listEl.hidden = mode !== 'list';
-          npEl.hidden = mode !== 'now-playing';
-        }
-
-        // Look up album art from the iTunes Search API for any song that
-        // doesn't already have an `art` URL set.
-        ipodSongs.forEach(async (s, i) => {
-          if (s.art) return;
-          try {
-            const q = encodeURIComponent(s.artist + ' ' + s.title);
-            const res = await fetch(
-              'https://itunes.apple.com/search?term=' + q +
-              '&entity=song&limit=1&media=music'
-            );
-            const data = await res.json();
-            const url = data.results && data.results[0] && data.results[0].artworkUrl100;
-            if (!url) return;
-            s.art = url.replace('100x100', '300x300');
-            applyRowArt(i);
-            if (mode === 'now-playing' && selected === i) render();
-          } catch (_) { /* leave art unset */ }
-        });
-
-        function move(delta) {
-          if (!ipodSongs.length) return;
-          selected = (selected + delta + ipodSongs.length) % ipodSongs.length;
-          render();
-        }
-        function select() { mode = 'now-playing'; render(); }
-        function menu()   { mode = 'list';        render(); }
-
-        wheel.addEventListener('click', (e) => {
-          const btn = e.target.closest('[data-action]');
-          if (!btn) return;
-          switch (btn.dataset.action) {
-            case 'menu':   menu();    break;
-            case 'next':   move(+1);  break;
-            case 'prev':   move(-1);  break;
-            case 'play':   root.classList.toggle('is-playing'); break;
-            case 'select': select();  break;
-          }
-        });
-
-        render();
-      });
-
-
-
-/*
-      document.querySelectorAll('.portgridcolcard img').forEach(img => {
-        const originalSrc = img.src;
-        const gifSrc = originalSrc.replace('.png', '.gif'); // Assuming your GIF has the same name but different extension
-        
-        img.addEventListener('mouseenter', () => {
-          img.src = gifSrc;
-        });
-        
-        img.addEventListener('mouseleave', () => {
-          img.src = originalSrc;
-        });
-      });*/
 
 
       document.addEventListener('DOMContentLoaded', function() {
@@ -294,11 +179,11 @@ let section = document.querySelectorAll('section');
 
 
       document.addEventListener('DOMContentLoaded', function() {
-        // Wait for 1 second (1000ms) before showing the portgrid
+        // Let the hero settle before the work list fades in
         setTimeout(function() {
-          const portgrid = document.querySelector('.portgrid');
-          if (portgrid) {
-            portgrid.classList.add('visible');
+          const worklist = document.querySelector('.worklist');
+          if (worklist) {
+            worklist.classList.add('visible');
           }
         }, 600);
       });
@@ -308,12 +193,9 @@ let section = document.querySelectorAll('section');
        // Pill nav — mark active tab based on current page
        (function () {
          const path = window.location.pathname;
-         const isAbout = path.includes('about');
+         const page = path.includes('writings') ? 'writings' : path.includes('about') ? 'about' : 'work';
          document.querySelectorAll('.pill-tab').forEach(tab => {
-           const page = tab.dataset.page;
-           if ((isAbout && page === 'about') || (!isAbout && page === 'work')) {
-             tab.classList.add('active');
-           }
+           tab.classList.toggle('active', tab.dataset.page === page);
          });
        })();
 
@@ -456,10 +338,12 @@ let section = document.querySelectorAll('section');
             
             if (input.type === 'password') {
                 input.type = 'text';
-                toggle.textContent = '🙈';
+                toggle.textContent = 'visibility_off';
+                toggle.setAttribute('title', 'Hide password');
             } else {
                 input.type = 'password';
-                toggle.textContent = '👁️';
+                toggle.textContent = 'visibility';
+                toggle.setAttribute('title', 'Show password');
             }
         }
 
@@ -617,6 +501,128 @@ let section = document.querySelectorAll('section');
             setupImageClickHandlers();
         }
 
+
+/// ****** WORK LIST HOVER PREVIEW
+(function () {
+  const rows = document.querySelectorAll(".worklist-row[data-preview-poster]");
+  if (!rows.length) return;
+
+  // Pointer-driven preview is a desktop affordance only; touch never hovers.
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  const preview = document.createElement("div");
+  preview.className = "work-preview";
+  preview.setAttribute("aria-hidden", "true");
+  const media = document.createElement("div");
+  media.className = "work-preview-media";
+  const img = document.createElement("img");
+  img.alt = "";
+  const video = document.createElement("video");
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.preload = "none";
+  media.appendChild(img);
+  media.appendChild(video);
+  preview.appendChild(media);
+  document.body.appendChild(preview);
+
+  const GAP = 18;
+  let visible = false;
+  let anchored = false; // opened by keyboard focus rather than the pointer
+
+  function place(x, y) {
+    const w = preview.offsetWidth;
+    const h = preview.offsetHeight;
+    // Flip to the other side of the anchor rather than spilling off-screen.
+    let left = x + GAP;
+    if (left + w > window.innerWidth - 8) left = x - GAP - w;
+    left = Math.max(8, left);
+    let top = y + GAP;
+    if (top + h > window.innerHeight - 8) top = y - GAP - h;
+    top = Math.max(8, top);
+    preview.style.transform = "translate(" + Math.round(left) + "px, " + Math.round(top) + "px)";
+  }
+
+  function show(row, x, y) {
+    img.src = row.dataset.previewPoster;
+    const src = row.dataset.previewVideo;
+    media.classList.remove("playing");
+    if (src && !reduced.matches) {
+      // Only crossfade to the video once it actually has frames, otherwise a
+      // cold hover fades an empty element in over the poster.
+      if (video.getAttribute("src") !== src) video.src = src;
+      const started = video.play();
+      if (started && typeof started.catch === "function") started.catch(function () {});
+    } else {
+      video.removeAttribute("src");
+      video.load();
+    }
+    visible = true;
+    place(x, y);
+    preview.classList.add("visible");
+    return true;
+  }
+
+  function hide() {
+    if (!visible) return;
+    visible = false;
+    preview.classList.remove("visible");
+    media.classList.remove("playing");
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  rows.forEach(function (row) {
+    row.addEventListener("mouseenter", function (e) {
+      if (!fine.matches) return;
+      anchored = false;
+      show(row, e.clientX, e.clientY);
+    });
+    row.addEventListener("mousemove", function (e) {
+      if (visible) place(e.clientX, e.clientY);
+    });
+    row.addEventListener("mouseleave", hide);
+
+    // Keyboard parity: anchor the preview to the row itself. The row is a
+    // container now, so this listens for the title link's focus bubbling up —
+    // focusing the secondary press link shouldn't preview the case study.
+    row.addEventListener("focusin", function (e) {
+      if (!fine.matches) return;
+      const link = e.target;
+      if (!link.classList.contains("worklist-title")) return;
+      anchored = true;
+      // Wait a frame: focusing a row below the fold scrolls it into view first,
+      // so the rect we anchor to has to be the post-scroll one.
+      requestAnimationFrame(function () {
+        if (document.activeElement !== link) return;
+        const r = row.getBoundingClientRect();
+        show(row, r.right, r.bottom);
+      });
+    });
+    row.addEventListener("focusout", hide);
+  });
+
+  video.addEventListener("playing", function () {
+    if (visible) media.classList.add("playing");
+  });
+
+  window.addEventListener("scroll", function () {
+    // A keyboard-anchored preview rides along with its row; only the
+    // cursor-tracking one goes stale on scroll.
+    if (anchored) {
+      const active = document.activeElement;
+      const row = active && active.closest ? active.closest(".worklist-row") : null;
+      if (visible && row) {
+        const r = row.getBoundingClientRect();
+        place(r.right, r.bottom);
+        return;
+      }
+    }
+    hide();
+  }, { passive: true });
+})();
 
 /// ****** GLOBE
 (function () {
@@ -901,4 +907,385 @@ let section = document.querySelectorAll('section');
   canvas.addEventListener("mouseleave", hideTooltip);
 
   draw();
+})();
+
+/// ****** HALFTONE DITHER
+/* An ordered-Bayer halftone renderer. One surface uses it today -- the field
+   inside the footer card -- but it stays parameterised by `field` and `palette`
+   so a second is a config object rather than a rewrite. Same trick a newspaper
+   press uses: a fixed threshold grid turns a smooth ramp into hard-edged dots,
+   the same dot language as halftoneface.png and the hero globe.
+
+   A palette entry of `null` is not painted at all, which lets a surface dissolve
+   into the page instead of ending on a rectangle.
+
+   Drawn rather than shipped as an image so the dots stay square at any size
+   instead of stretching to fit one baked aspect ratio.  */
+(function () {
+  const REVEAL_MS = 1100;
+
+  const BAYER = [
+     0, 32,  8, 40,  2, 34, 10, 42,
+    48, 16, 56, 24, 50, 18, 58, 26,
+    12, 44,  4, 36, 14, 46,  6, 38,
+    60, 28, 52, 20, 62, 30, 54, 22,
+     3, 35, 11, 43,  1, 33,  9, 41,
+    51, 19, 59, 27, 49, 17, 57, 25,
+    15, 47,  7, 39, 13, 45,  5, 37,
+    63, 31, 55, 23, 61, 29, 53, 21
+  ];
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function smoothstep(a, b, x) {
+    const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+    return t * t * (3 - 2 * t);
+  }
+
+  // Deterministic per-cell noise. Math.random() here would make the speckle crawl
+  // between frames and jump on every resize.
+  function hash(i, j) {
+    let h = (i * 374761393 + j * 668265263) | 0;
+    h = Math.imul(h ^ (h >>> 13), 1274126177);
+    return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
+  }
+
+  // ── The renderer ──────────────────────────────────────────────────────────
+
+  function makeSurface(canvas, cfg) {
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    const levels = cfg.levels;
+    const state = { w: 0, h: 0, cols: 0, rows: 0 };
+
+    // The field only depends on size, so it is sampled once per resize and only
+    // re-quantized per frame while the reveal is running.
+    state.measure = function () {
+      const W = Math.max(1, Math.round(canvas.clientWidth));
+      const H = Math.max(1, Math.round(canvas.clientHeight));
+      if (W === state.w && H === state.h) return false;
+
+      state.w = W;
+      state.h = H;
+      state.cols = Math.ceil(W / cfg.cell);
+      state.rows = Math.ceil(H / cfg.cell);
+
+      const total = state.cols * state.rows;
+      state.vals = new Float32Array(total);
+      state.thr  = new Float32Array(total);
+      state.spk  = new Float32Array(total);
+      state.idx  = new Int8Array(total);
+
+      for (let r = 0; r < state.rows; r++) {
+        const y = r * cfg.cell + cfg.cell / 2;
+        for (let c = 0; c < state.cols; c++) {
+          const n = r * state.cols + c;
+          state.vals[n] = cfg.field(c * cfg.cell + cfg.cell / 2, y, W, H);
+          state.thr[n]  = BAYER[(r & 7) * 8 + (c & 7)] / 64;
+          state.spk[n]  = hash(c, r);
+        }
+      }
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width  = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
+    };
+
+    state.draw = function (gain) {
+      const { cols, rows, vals, thr, spk, idx } = state;
+      const total = cols * rows;
+
+      for (let n = 0; n < total; n++) {
+        const s = vals[n] * gain * levels;
+        let i = Math.floor(s);
+        if (s - i > thr[n]) i += 1;
+        if (i < 0) i = 0; else if (i > levels) i = levels;
+        idx[n] = cfg.speckle ? cfg.speckle(i, spk[n]) : i;
+      }
+
+      ctx.clearRect(0, 0, state.w, state.h);
+
+      // Run-length the fills: whole rows of a flat region collapse into a single
+      // fillRect, which is what keeps the reveal at 60fps on a wide screen.
+      for (let c = 0; c < cfg.palette.length; c++) {
+        const colour = cfg.palette[c];
+        if (colour === null) continue;      // transparent step -- paint nothing
+        ctx.fillStyle = colour;
+        for (let r = 0; r < rows; r++) {
+          const base = r * cols;
+          let run = 0;
+          for (let q = 0; q <= cols; q++) {
+            if (q < cols && idx[base + q] === c) { run++; continue; }
+            if (run) {
+              ctx.fillRect((q - run) * cfg.cell, r * cfg.cell, run * cfg.cell, cfg.cell);
+              run = 0;
+            }
+          }
+        }
+      }
+    };
+
+    return state;
+  }
+
+  function mount(canvas, cfg) {
+    const state = makeSurface(canvas, cfg);
+    if (!state) return;
+
+    let developed = false;
+    let pending   = false;   // blanked and waiting to develop
+
+    function render(gain) { state.measure(); state.draw(gain); }
+
+    // The settled field, unconditionally and before anything else. Everything
+    // below only ever replaces it with an animated route to the same place, so
+    // if any of that machinery turns out to be unavailable the card is already
+    // correct rather than blank.
+    render(1);
+
+    // The surface develops rather than fades in: the ramp resolves out of the
+    // page the way a print comes up in a tray. It fits the material, it runs
+    // once, and it costs nothing after the last frame.
+    function develop() {
+      if (developed) return;
+      developed = true;
+      pending = false;
+
+      const start = performance.now();
+      state.measure();
+      (function step(now) {
+        const t = Math.min(1, (now - start) / REVEAL_MS);
+        const eased = 1 - Math.pow(2, -10 * t);       // ease-out-expo
+        state.draw(t === 1 ? 1 : eased);
+        if (t < 1) requestAnimationFrame(step);
+      })(start);
+    }
+
+    if (!reduceMotion.matches && "IntersectionObserver" in window) {
+      // Arming inside a frame is the point, not a detail. requestAnimationFrame
+      // and IntersectionObserver are both delivered by the rendering loop, so
+      // wherever one is throttled to a halt -- a background tab at load, a
+      // headless renderer -- so is the other. Gating on an actual frame means a
+      // dead loop can never blank a field it would then be unable to bring back.
+      // Because this ramp's lightest step paints nothing, that failure is a
+      // completely empty card, not merely an un-animated one.
+      requestAnimationFrame(function () {
+        const box = canvas.getBoundingClientRect();
+        // Already on screen: leave it settled rather than animating something the
+        // reader is looking at mid-load.
+        if (box.top < window.innerHeight && box.bottom > 0) return;
+        pending = true;
+        state.draw(0);
+
+        // IntersectionObserver is frame-driven too, but it does not always keep
+        // step with requestAnimationFrame -- there are contexts where rAF ticks
+        // and the observer stays silent, which would leave this blanked field
+        // with nothing to bring it back. Settle it after a spell regardless.
+        // Losing a 1.1s flourish is a far cheaper failure than a card that never
+        // draws at all.
+        window.setTimeout(function () {
+          if (!pending) return;
+          pending = false;
+          state.draw(1);
+        }, 5000);
+
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            io.disconnect();
+            develop();
+          });
+        }, { threshold: 0.15 });
+        io.observe(canvas);
+      });
+    }
+
+    let resizeTimer = null;
+    const ro = new ResizeObserver(function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(function () { render(pending ? 0 : 1); }, 150);
+    });
+    ro.observe(canvas);
+  }
+
+  // ── The footer card's field ───────────────────────────────────────────────
+
+  const ARC_R    = 2.2;   // sphere radius, in card heights
+  const ARC_X    = 0.95;  // sphere centre x, as a fraction of card width
+  const ARC_APEX = 0.50;  // where the limb tops out, as a fraction of card height
+  const RIM_FALL = 0.23;  // terminator glow falloff, in card heights
+  const GUARD_B  = 50;    // px of baseline strip held pale for the colophon
+
+  // Light to dark, on an off-white card: index 0 is null, so the ramp's lightest
+  // step is simply not painted and the card's own background is what shows. That
+  // is why there is no CSS gradient fallback to keep in sync with this array, and
+  // why the field's edges dissolve instead of ending on a rectangle.
+  //
+  // --accent (#3478ff) sits at index 5 so the card reads as the site's own blue
+  // pushed to saturation rather than as a new colour. Indices 7 and 8 are the
+  // stray hues: a real quantized gradient throws odd pixels where levels break,
+  // and that artifact is the difference between "dither" and "banded gradient".
+  // Purple is the terraform accent, on purpose.
+  const FOOTER_PALETTE = [
+    null, "#e4edfb", "#c8dcff", "#9cbeff", "#5b93ff", "#2f6cff", "#0a1d9e",
+    "#7b42bc", "#e8e2f4"
+  ];
+
+  function footerField(x, y, W, H) {
+    // The limb of a very large sphere entering from the lower right. The globe in
+    // the hero is a whole small world; this is the edge of a much bigger one.
+    //
+    // Radius is capped against width as well as height. On a phone the card is
+    // near-square, and a radius set purely off height puts the sphere's centre so
+    // far off-canvas that the limb enters as a straight vertical edge.
+    const R  = Math.min(H * ARC_R, W * 0.95);
+    const cx = W * ARC_X;
+    // Where the limb tops out has to track the card's aspect from both ends.
+    // Squarer (a phone) and the bloom slides toward the bottom-right corner, out
+    // from under the copy. Wider and shorter, and it has to climb instead: the
+    // baseline guard owns the lower third of a short card, so an arc topping out
+    // mid-height gets held back into a faint horizontal streak. Push it too far
+    // the other way, though, and the apex leaves the card entirely: everything
+    // visible then sits inside the sphere, where `occ` crushes it to nothing.
+    const squareness = Math.min(1, Math.max(0, (2.6 - W / H) / 1.4));
+    const wideness   = Math.min(1, Math.max(0, (W / H - 2.4) / 2.2));
+    const cy = H * (ARC_APEX + 0.30 * squareness - 0.20 * wideness) + R;
+    const d  = Math.hypot(x - cx, y - cy);
+
+    const rim = Math.exp(-Math.abs(d - R) / (H * RIM_FALL)); // glowing terminator
+    const amb = Math.max(0, 1 - d / (R * 1.5)) * 0.30;       // wash falling off it
+    // The sphere occludes. A hard step here quantizes into flat slabs along the
+    // limb, so the shoulder is short but not instant.
+    const occ = 0.26 + 0.74 * smoothstep(R - H * 0.05, R + H * 0.09, d);
+
+    let v = (0.035 + rim * 0.92 + amb) * occ;
+
+    // Copy sits in the left column and along the baseline. Rather than laying a
+    // scrim over the dither -- which flattens the dots into a smooth wash -- the
+    // hold-back is baked in BEFORE quantization, so what sits behind the text is
+    // still true dither, just dither that never reaches the saturated end of the
+    // ramp where ink copy would start to lose contrast.
+    //
+    // Guard geometry is width-relative so it scales with the card. A
+    // height-relative fade was fine on a full-bleed band but left the copy
+    // sitting in the glow once the card narrowed to 700px.
+    // 0.44 rather than the half-width this started at: the ask now caps at 40%
+    // of the row, so holding back a full half wastes canvas the copy never
+    // reaches. Anything that widens .site-footer-sub has to move this with it.
+    const guardX    = W * 0.44;
+    const guardLeft = 1 - smoothstep(guardX, guardX + W * 0.22, x);
+    // The fade is capped in px as well as scaled by height: on a 144px card a
+    // pure H * 0.34 fade starts above the arc's apex and flattens the bloom.
+    const guardBase = smoothstep(H - GUARD_B - Math.min(H * 0.34, 30), H - GUARD_B, y);
+
+    // The two guards hold back by different amounts because they protect
+    // different text. The left column carries --primarytext, which still clears
+    // 11:1 on the ramp's index 3, so it only needs holding to ~0.38. The baseline
+    // carries --secondarytext at 13px, which is spent by index 2, so it is held
+    // much harder. One shared strength would have to satisfy the stricter of the
+    // two and would drain the colour out of the whole card.
+    v *= (1 - 0.62 * guardLeft) * (1 - 0.86 * guardBase);
+
+    // A floor applied after the guard. Without it the guarded regions quantize to
+    // solid index 0 -- nothing painted -- and the card goes dead flat over half
+    // its width; at 0.05 the ramp's second step fires on roughly a third of
+    // cells, which is the sparse dot texture the pale regions are supposed to
+    // have. Index 1 is #e4edfb, ~15:1 against --primarytext, so this cannot cost
+    // the copy any contrast.
+    v = Math.max(v, 0.05 + 0.022 * (1 - y / H));
+
+    return Math.min(1, Math.max(0, v));
+  }
+
+  function footerSpeckle(i, noise) {
+    // Purple rides the saturated end of the ramp, where the levels actually break.
+    if ((i === 4 && noise > 0.955) || (i === 5 && noise > 0.972)) return 7;
+    if (i === 1 && noise > 0.9962) return 8;   // index 0 paints nothing -- leave it alone
+    return i;
+  }
+
+  const FOOTER_CFG = {
+    cell: 4, levels: 6, palette: FOOTER_PALETTE,
+    field: footerField, speckle: footerSpeckle
+  };
+
+  // ── The pill nav's field ──────────────────────────────────────────────────
+
+  /* The same surface as the footer, read as a slit. The pill is ~44px tall and
+     at most ~760 wide, so an arc's curvature is all but invisible across it --
+     what survives at this scale is the light falling off the sphere, which is
+     enough to read as the same material.
+
+     The contrast guarantee here is structural rather than masked, and that is
+     the whole difference from the footer. The footer can afford saturated steps
+     because its guard masks hold back the two regions that carry copy; the pill
+     carries copy across its entire width with nowhere to guard, so instead the
+     ramp simply stops at the footer's index 2. #c8dcff is 4.97:1 against
+     --secondarytext (the 14px tabs, links and clock) and 13.4:1 against
+     --primarytext, so no part of this field can cost the nav its AA no matter
+     where the bloom lands. Do not extend NAV_PALETTE without redoing that sum:
+     the footer's next step down, #9cbeff, is 3.69:1 and fails.
+
+     Index 3 is the stray hue, same trick as the footer's speckle -- the
+     terraform purple drained to a tint that still clears 4.95:1. */
+  const NAV_PALETTE = [null, "#e4edfb", "#c8dcff", "#ded7ef"];
+
+  function navField(x, y, W, H) {
+    // Anchored just past the lower-right corner: the same light the footer's
+    // sphere throws, caught on a strip too short to show the body it comes from.
+    const cx = W * 1.06;
+    const cy = H * 1.9;
+    const R  = Math.hypot(W, cy);
+    const d  = Math.hypot(x - cx, y - cy) / R;
+
+    // The gain is not decoration. The bloom's own centre sits off-canvas, so the
+    // strip only ever samples the tail of the falloff -- ungained, the ramp never
+    // reaches its second step and the whole pill flattens into one wash of index
+    // 1, which is a tint, not a halftone. At 1.3 the deeper step carries the
+    // right third and the dots stay legible as dots.
+    let v = Math.pow(1 - Math.min(1, d), 1.2) * 1.3;
+    // Light from above. Without it a 44px band is a purely horizontal ramp, and
+    // the dots read as a gradient swatch rather than as a lit surface.
+    v *= 1 - 0.28 * (1 - y / H);
+    // A floor, for the same reason the footer has one: below it the left half
+    // quantizes to index 0 -- nothing painted -- and the pill goes dead white
+    // under the logo instead of carrying the sparse texture it should.
+    return Math.min(1, Math.max(v, 0.055));
+  }
+
+  function navSpeckle(i, noise) {
+    return i === 2 && noise > 0.94 ? 3 : i;
+  }
+
+  /* A finer cell than the footer's 4px: the pill is a fraction of the card's
+     height and sits directly behind 14px type, where 4px dots start to compete
+     with the letterforms instead of sitting under them. */
+  const NAV_CFG = {
+    cell: 3, levels: 2, palette: NAV_PALETTE,
+    field: navField, speckle: navSpeckle
+  };
+
+  // ── Wiring ────────────────────────────────────────────────────────────────
+
+  /* index.html loads main.js with `defer`, but every case study and about.html
+     load it partway down the document -- ahead of the footer markup -- so at this
+     point the element may not exist yet. Wait for the parse rather than depend on
+     where a given page happens to put its script tag. */
+  function init() {
+    document.querySelectorAll(".site-footer-dither").forEach(function (canvas) {
+      mount(canvas, FOOTER_CFG);
+    });
+    document.querySelectorAll(".pill-nav-dither").forEach(function (canvas) {
+      mount(canvas, NAV_CFG);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
