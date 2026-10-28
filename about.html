@@ -39,20 +39,23 @@
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
      <!--NAV-->
-     <div class="nav-logo">
-       <img class="gradient-circle-logo" src="./images/halftoneface.png" alt="">
-         <a href="./index.html"  >Ishaan Bose</a>
-         </div>
- 
-         <div class="time-container">
-           <span class="icon" id="timeIcon">⏳</span>
-           <span id="currentTime"></span>
-       </div>
-    <!-- Pill nav — desktop -->
+    <!-- Pill nav — logo, clock, tabs and links all ride inside the pill -->
     <nav class="pill-nav">
+      <canvas class="pill-nav-dither" aria-hidden="true"></canvas>
+      <div class="nav-logo">
+        <img class="gradient-circle-logo" src="./images/halftoneface.png" alt="">
+        <a href="./index.html">Ishaan Bose</a>
+      </div>
+      <div class="pill-sep"></div>
+      <div class="time-container">
+        <span class="icon" id="timeIcon">⏳</span>
+        <span id="currentTime"></span>
+      </div>
+      <div class="pill-sep"></div>
       <div class="pill-slider">
         <a href="./index.html" class="pill-tab" data-page="work">Work</a>
         <a href="./about.html" class="pill-tab" data-page="about">About</a>
+        <a href="./writings.html" class="pill-tab" data-page="writings">Writings</a>
       </div>
       <div class="pill-sep"></div>
       <a href="https://www.linkedin.com/in/ishaanbose/" target="_blank" class="pill-btn">LinkedIn</a>
@@ -64,6 +67,7 @@
     <ul class="menu">
         <li><a class="menuItem" href="./index.html">Work</a></li>
         <li><a class="menuItem" href="./about.html">About</a></li>
+        <li><a class="menuItem" href="./writings.html">Writings</a></li>
         <li><a class="menuItem" href="https://www.linkedin.com/in/ishaanbose/">LinkedIn</a></li>
         <li><a href="mailto:ishaan.bose@gmail.com"><button class="btn margin-right">Email me</button></a></li>
     </ul>
@@ -87,6 +91,15 @@
     
     <div class="aboutcontainer">
 
+          <h1 style="margin-bottom: 24px; font-family: 'tiempoitalic'; font-style: italic;">A new way <br> <span style="color: #BBBBBB;">to explore the human mind</span></h1>
+
+                  <p>
+                    I have been designing for about 5 years professionally now, and it is still as fun as when I started. Okay, well I guess I don't love the constant meetings or having to come up with OKRs, but I still find it fun to genuinely just design. There is something special about thinking through a problem deeply, collaborating with others, and finding ways to express yourself within a never ending list of constraints. I think if anything, working on developer tools for the last 4 years have only added this feeling for me. I believe I really appreciate what it takes to design in an environment that is often underserved by good UX, if not an after thought altogether. I want to play a part in building that design culture and finding new problems to solve.
+
+                    <br><br>Now, after 4 years at HashiCorp, I find myself starting a new journey as a founding product designer at Andromeda. At Andromeda, I will be establishing a design culture from scratch, launching a new product, and venturing into marketing and brand design. There is a lot of ambiguity ahead, but I find that opportunity tantalizing. I won't claim to know every single move that will unfurl ahead of me, but I can claim to be ready to meet these challenges head on. What is the worst that can happen? I go bald from stress? Perhaps, but the growth afforded by this opportunity will be well worth it.
+                  </p>
+
+        <br><br>
 
         <div class="scrapbook-card">
         <div class="gallery-container">
@@ -134,46 +147,97 @@
             <img src="./images/IMG_0920.jpeg" alt="Garden party">
             <div class="caption">&lt3 </div>
           </div>
+
+          <div class="polaroid" id="polaroid9">
+            <img src="./images/E8FB7F88-FED1-4617-B7F6-BE919F38F101_1_102_o.jpeg" alt="Groomsmen on a Seattle rooftop">
+            <div class="caption">Best friend's wedding</div>
+          </div>
+
+          <div class="polaroid" id="polaroid10">
+            <img src="./images/3EF493DC-E237-4C7F-A56D-6A90D333EB12_4_5005_c.jpeg" alt="Mount Rainier">
+            <div class="caption">Mount Rainier</div>
+          </div>
+
+          <div class="polaroid" id="polaroid11">
+            <img src="./images/CFE40C80-24DD-4D1A-AC30-93CE4ACA5613_4_5005_c.jpeg" alt="Catalina Island">
+            <div class="caption">Catalina Island</div>
+          </div>
         </div>
         </div>
-
-        <br><br>
-          <h1 style="margin-bottom: 24px;">A new way <br> <span style="color: #BBBBBB;">to explore the human mind</span></h1>
-
-                <div class="subtitle">bio</div>
-                  
-                  <p>
-                    I found the world of design in high school when I took Design Technology as part of the international baccalaureate program while studying in the Netherlands.  While the subject was more industrial design focused, the concept of user centric design stood out to me immediately. 
-
-                    <br><br>The notion that you could solve problems that real humans have, and make their lives easier AND get paid for it sounded unreal. From that moment on I decided that this would be the path that I took, no matter how difficult it might be. My journey took me to the University of California, San Diego where I got to explore design through the lens of Cognitive Science, and to build my craft through many projects, both in school and on my own.
-
-                    <br><br> I've been really lucky to get some transformative experiences that have been really crucial in helping me grow as a designer. I truly believe that the internships that I've been able to accomplish had more impact on my career than any class I took x10. 
-
-                    <br><br>These decisions lead me to where I am now; a product designer working at HashiCorp. Right now, I am dedicated to learning everyday and continuing to grow my craft, day by day.
-                  </p>
-        
 
 
 
 
                <br><br>
-               
+
+                  <section class="outside" aria-labelledby="outside-heading">
+                    <h3 id="outside-heading">Outside of work you can find me&hellip;</h3>
+                    <div class="outside-groups">
+                      <div class="outside-group">
+                        <p class="outside-label">listening &mdash;</p>
+                        <ul class="outside-list">
+                          <li>Drake</li>
+                          <li>Jorja Smith</li>
+                          <li>Faye Webster</li>
+                        </ul>
+                      </div>
+
+                      <div class="outside-group">
+                        <p class="outside-label">doing &mdash;</p>
+                        <ul class="outside-list">
+                          <li>probably watching a soccer game</li>
+                          <li>trying to maintain my 20k step average</li>
+                          <li>cooking yet another Instagram meal</li>
+                        </ul>
+                      </div>
+
+                      <div class="outside-group">
+                        <p class="outside-label">learning &mdash;</p>
+                        <ul class="outside-list">
+                          <li>how to do front end animations</li>
+                          <li>some new agent harness</li>
+                          <li>reading a book on how LLMs will end us all</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </section>
+
+                  <div class="about-columns">
+                  <div class="about-columns-main">
                   <h3>My experience</h3 >
                   <div class="accordion margin-top-16">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
+                    <div class="accordion-item is-current">
+                        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                             <div class="accordion-title">
-                                <div class="company">HashiCorp</div>
-                                <div class="role">Product Designer</div>
+                                <div class="company">Andromeda</div>
+                                <div class="role">Founding Product Designer</div>
                             </div>
-                            <div class="date">2024 - Present</div>
+                            <div class="date">2026 - Present</div>
                             <div class="accordion-icon"><span class="material-symbols-outlined">
                               keyboard_arrow_down
                               </span></div>
                         </div>
                         <div class="accordion-content">
                             <p class="description">
-                              Promoted to Product Designer in 13 months. Sole designer on Terraform Core-Cloud team, serving 2000 customers world wide on HashiCorp's flag ship product.
+                              Founding designer at Andromeda, shaping the product end to end &mdash; from first principles through to shipped interface.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+                            <div class="accordion-title">
+                                <div class="company">HashiCorp</div>
+                                <div class="role">Product Designer II</div>
+                            </div>
+                            <div class="date">2026</div>
+                            <div class="accordion-icon"><span class="material-symbols-outlined">
+                              keyboard_arrow_down
+                              </span></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="description">
+                              Sole designer on Terraform Core-Cloud team, serving 2000 customers world wide on HashiCorp's flag ship product.
                             </p>
                             <div class="skills">
                                 <span class="skill-tag">Figma</span>
@@ -183,11 +247,29 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="accordion-item">
-                        <div class="accordion-header">
+
+                    <div class="accordion-item is-continued">
+                        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                             <div class="accordion-title">
-                                <div class="company">HashiCorp</div>
+                                <div class="company visually-hidden">HashiCorp</div>
+                                <div class="role">Product Designer</div>
+                            </div>
+                            <div class="date">2025 - 2026</div>
+                            <div class="accordion-icon"><span class="material-symbols-outlined">
+                              keyboard_arrow_down
+                              </span></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="description">
+                              Promoted to Product Designer in 13 months.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item is-continued">
+                        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+                            <div class="accordion-title">
+                                <div class="company visually-hidden">HashiCorp</div>
                                 <div class="role">Associate Product Designer</div>
                             </div>
                             <div class="date">2023 - 2024</div>
@@ -208,10 +290,10 @@
                         </div>
                     </div>
                     
-                    <div class="accordion-item">
-                        <div class="accordion-header">
+                    <div class="accordion-item is-continued">
+                        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                             <div class="accordion-title">
-                                <div class="company">HashiCorp</div>
+                                <div class="company visually-hidden">HashiCorp</div>
                                 <div class="role">Product Design Intern</div>
                             </div>
                             <div class="date">2022</div>
@@ -233,7 +315,7 @@
                     </div>
                     
                     <div class="accordion-item">
-                        <div class="accordion-header">
+                        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                             <div class="accordion-title">
                                 <div class="company">Demandbase</div>
                                 <div class="role">UX Designer</div>
@@ -254,10 +336,10 @@
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                      <div class="accordion-header">
+                    <div class="accordion-item is-continued">
+                      <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                           <div class="accordion-title">
-                              <div class="company">Demandbase</div>
+                              <div class="company visually-hidden">Demandbase</div>
                               <div class="role">UX Design Intern</div>
                           </div>
                           <div class="date">2021-2022</div>
@@ -279,7 +361,7 @@
                   </div>
 
                     <div class="accordion-item">
-                      <div class="accordion-header">
+                      <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                           <div class="accordion-title">
                               <div class="company">Institutional Shareholder Services</div>
                               <div class="role">UX/UI Design Intern</div>
@@ -302,40 +384,9 @@
                       </div>
                   </div>
                 </div>
+                </div>
             </div>
 
-            <div class="ipod-section">
-              <div class="ipod-section-header">
-                <h2>On Repeat</h2>
-                <p>What I've actually been listening to.</p>
-              </div>
-
-              <div class="ipod" id="ipod">
-                <div class="ipod-screen">
-                  <div class="ipod-status-bar">
-                    <span class="ipod-status-title">iPod</span>
-                    <span class="ipod-battery" aria-hidden="true"></span>
-                  </div>
-
-                  <ul class="ipod-list" id="ipod-list" role="listbox"></ul>
-
-                  <div class="ipod-now-playing" id="ipod-now-playing" hidden>
-                    <img class="ipod-art" id="ipod-art" alt="" />
-                    <div class="ipod-track-title" id="ipod-track-title"></div>
-                    <div class="ipod-track-artist" id="ipod-track-artist"></div>
-                    <div class="ipod-progress"><div class="ipod-progress-bar"></div></div>
-                  </div>
-                </div>
-
-                <div class="ipod-wheel" id="ipod-wheel">
-                  <button class="ipod-wheel-btn ipod-menu" data-action="menu" aria-label="Menu">MENU</button>
-                  <button class="ipod-wheel-btn ipod-next" data-action="next" aria-label="Next">&#9654;&#9654;</button>
-                  <button class="ipod-wheel-btn ipod-play" data-action="play" aria-label="Play/Pause">&#9654;&#10073;&#10073;</button>
-                  <button class="ipod-wheel-btn ipod-prev" data-action="prev" aria-label="Previous">&#9664;&#9664;</button>
-                  <button class="ipod-center" id="ipod-center" data-action="select" aria-label="Select"></button>
-                </div>
-              </div>
-            </div>
 
 
 
@@ -482,30 +533,44 @@
 
 
  
-    <footer>
+    <!-- ── Site footer ───────────────────────────────────────────────────────
+         Contained dithered card, identical on every page. Layout lives in the
+         SITE FOOTER block of css/styles.css; the field behind it is drawn by
+         HALFTONE DITHER in js/main.js. Every link here is absolute or a fragment,
+         so this block is copied verbatim regardless of directory depth. -->
+    <footer class="site-footer">
+      <canvas class="site-footer-dither" aria-hidden="true"></canvas>
+      <div class="site-footer-inner">
 
-      <p class="center">Seen enough?</p>      <p class="center">Get in touch.</p>
-  
-      <div class="img-wrap">
-      <a href=" https://www.linkedin.com/in/ishaanbose/" target="_blank"><img class ="sm_icon_center" src = "assets/newli.svg" ></a>
-      <a href="mailto:ishaan.bose@gmail.com" target="_blank"><img class ="sm_icon_center" src = "assets/send-4008.svg"></a>
+        <div class="site-footer-top">
+          <p class="site-footer-sub">If any of this is close to what you&rsquo;re working on, I&rsquo;d like to hear about it.</p>
+          <div class="site-footer-actions">
+            <a class="btn btn-icon btn-footer-primary" href="mailto:ishaan.bose@gmail.com">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7.13933 9.36075L10.1373 6.36274M2 6.79074L14.42 2.08008L9.71 14.5001L7.14 9.36075L2 6.79074Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              Email me
+            </a>
+            <a class="btn btn-icon btn-footer-secondary" href="https://www.linkedin.com/in/ishaanbose/" target="_blank" rel="noopener">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12.6667 2.5C13.0203 2.5 13.3594 2.64048 13.6095 2.89052C13.8595 3.14057 14 3.47971 14 3.83333V13.1667C14 13.5203 13.8595 13.8594 13.6095 14.1095C13.3594 14.3595 13.0203 14.5 12.6667 14.5H3.33333C2.97971 14.5 2.64057 14.3595 2.39052 14.1095C2.14048 13.8594 2 13.5203 2 13.1667V3.83333C2 3.47971 2.14048 3.14057 2.39052 2.89052C2.64057 2.64048 2.97971 2.5 3.33333 2.5H12.6667ZM12.3333 12.8333V9.3C12.3333 8.7236 12.1044 8.1708 11.6968 7.76322C11.2892 7.35564 10.7364 7.12667 10.16 7.12667C9.59333 7.12667 8.93333 7.47333 8.61333 7.99333V7.25333H6.75333V12.8333H8.61333V9.54667C8.61333 9.03333 9.02667 8.61333 9.54 8.61333C9.78754 8.61333 10.0249 8.71167 10.2 8.8867C10.375 9.06173 10.4733 9.29913 10.4733 9.54667V12.8333H12.3333ZM4.58667 6.20667C4.88371 6.20667 5.16859 6.08867 5.37863 5.87863C5.58867 5.66859 5.70667 5.38371 5.70667 5.08667C5.70667 4.46667 5.20667 3.96 4.58667 3.96C4.28786 3.96 4.00128 4.0787 3.78999 4.28999C3.5787 4.50128 3.46 4.78786 3.46 5.08667C3.46 5.70667 3.96667 6.20667 4.58667 6.20667ZM5.51333 12.8333V7.25333H3.66667V12.8333H5.51333Z" fill="currentColor"/>
+              </svg>
+              LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-footer-base">
+          <p>&copy; Ishaan Bose, 2026</p>
+          <a class="site-footer-top-link" href="#main">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 12V2.5M7 2.5 2.75 6.75M7 2.5l4.25 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to top
+          </a>
+        </div>
+
       </div>
-     
-      
-      <p class="center margin-y-8">© Ishaan Bose, 2026</p>
-  
-      <!-- Website scripts -->
-      <script src="assets/js/app.js"></script>
-  
-      <!-- Ion icons scripts -->
-      <script
-        type="module"
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-      ></script>
-      <script
-        nomodule
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-      ></script>
-  </footer>
+    </footer>
 
 </html>

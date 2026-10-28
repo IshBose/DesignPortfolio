@@ -83,9 +83,6 @@ components:
     textColor: "{colors.workshop-ink}"
     rounded: "{rounded.sm}"
     padding: "12px 16px"
-  card-outcome:
-    textColor: "{colors.primary-text}"
-    padding: "0"
   pill-nav:
     backgroundColor: "{colors.page-white}"
     textColor: "{colors.marginalia-gray}"
@@ -101,16 +98,21 @@ components:
     textColor: "{colors.marginalia-gray}"
     rounded: "{rounded.pill}"
     padding: "6px 14px"
-  tag-pill:
-    backgroundColor: "{colors.page-white}"
-    textColor: "{colors.marginalia-gray}"
+  tag-chip:
+    backgroundColor: "#d4d4d4"
+    textColor: "{colors.primary-text}"
     rounded: "{rounded.pill}"
-    padding: "3px 10px"
-  project-card:
+    padding: "5px 12px"
+  worklist-row:
     backgroundColor: "{colors.page-white}"
     textColor: "{colors.primary-text}"
-    rounded: "{rounded.lg}"
-    padding: "0"
+    rounded: "0"
+    padding: "12px"
+  worklist-row-hover:
+    backgroundColor: "#F0F1F5"
+    textColor: "{colors.primary-text}"
+    rounded: "0"
+    padding: "12px"
   section-nav-link:
     textColor: "{colors.marginalia-gray}"
     padding: "8px 0"
@@ -132,13 +134,13 @@ The system is built around the case-study reading experience. Senior hiring mana
 This system explicitly rejects: Y2K / brutalist / maximalist designer-showcase aesthetics; generic Webflow / Framer dark-hero templates with reflexive scroll-reveal cadence; the SaaS landing-page formula (hero metric + gradient + blue CTA); the editorial-magazine aesthetic of italic display serif + drop caps + ruled three-column grids when there's no editorial reason to use it.
 
 **Key Characteristics:**
-- One content column, `1160px` max, anchored to every page (`--page-max`)
+- One content column anchored to every page (`--page-max`): `1160px` on case studies, narrowed to `700px` on the index via a scoped `--page-max` on `.indexcontainer`. Every block on a page runs that full measure rather than sitting in a narrower sub-column
 - Near-monochrome palette: white page, near-black ink, one Signal Blue accent
 - Brand accents (Terraform Purple, Packer Cyan) appear only inside the relevant case studies
 - Self-hosted Regola Neue across the system; Tiempos Fine reserved for italic display moments
 - Flat by default; soft ambient shadows only on floating elements (pill nav, lightbox)
 - Hairline borders (1px / 1.5px) — never colored stripes
-- Per-card colored glow on hover as the one piece of decorative motion in the index grid
+- A floating cover preview on work-row hover as the one piece of decorative motion in the index
 
 ## 2. Colors
 
@@ -216,28 +218,37 @@ Shadows appear only on floating elements: the fixed pill nav, the active pill ta
 ## 5. Components
 
 ### Buttons
-- **Shape:** small radius (6px) for the primary `.btn`. No fully-rounded buttons — that role is owned by pill-nav and tag-pill.
+- **Shape:** small radius (6px) for the primary `.btn`. No fully-rounded buttons — that role is owned by pill-nav and tag-chip.
 - **Primary** (`.btn`): Page White background, 1px Workshop Ink border, Workshop Ink text, 12px×16px padding, 16px / 500. Hover: Press Sheet background, 1.02 scale, 0.1s ease. The outline-style "ghost" treatment is the default; this system has no filled chromatic CTA.
 - **Hover / Focus:** focus-visible ring is 2px Signal Blue at 2px offset with a 4px radius. The same ring covers `.pill-tab`, `.pill-btn`, `.hamburger`, `.collapsible`, `.accordion-header`, and `.skip-link`. Never customize per-component.
 
-### Card Outcome Line (`.card-outcome`)
-- **Style:** Block paragraph below `.card-desc`. Regola 14px / 400, Primary Text color, left-aligned. Leads with a bold inline `Outcome:` label (Regola 600) so the line reads as a labeled callout, not a separate row. Carries the shipped-outcome signal that replaced the older "Learn more →" CTA — the whole card is already a link, so the footer slot was never doing any work.
-- **Why labeled.** The bold "Outcome:" makes the line scannable as "what changed" even when the description above it has done a lot of the work. Without the label, it would read as a second description paragraph.
+### Chips (`.tag-chip`)
+- **Style:** filled Press Sheet–adjacent grey (`#d4d4d4`), fully rounded (999px), 5px×12px padding, 13px label. Used inside case studies to mark a term or a value, not on the index.
+- **Scope:** the index carries no chips. Status and outcome live inside each case study now that the work list is text-only.
 
-### Chips (`.tag-pill`)
-- **Style:** Page White background, 1px Drafting Line border, Marginalia Gray label at 12px / 500, fully rounded (100px), 3px×10px padding. Always paired with a 7px `.tag-dot` indicator.
-- **Tag dot palette:** Green `#58A942` (shipped), Orange `#FDBB2D` (in progress / beta), Gradient (`#92BFFE → #EE84F5 → #B978FF`) for the "Product Design" discipline marker. Decorative-only; never used as text or border colors elsewhere.
+### Work List (`.worklist`)
+The index's only content component: one joined table of every case study, newest first.
 
-### Cards (`.card-new` + `.rowhover`)
-- **Corner Style:** 12px outer radius. Card image gets 12px on top corners only (`12px 12px 0 0`).
-- **Background:** Page White at rest.
-- **Shadow Strategy:** none at rest. On hover, a paired per-card conic-gradient blooms behind the card (the per-card glow colors defined in `.portgrid > a:nth-child(N) .rowhover`). The white `.rowhover::after` cover sits between glow and content, so the card itself reads clean while the glow halos beyond its edges.
-- **Border:** none. The 12px radius alone defines the shape.
-- **Internal Padding:** none on the card itself; the `.card-img` and `.card-body` (with 20px `padding-top` and `8px` row gap) handle spacing. The body stacks: header row (title left + tag pills right) → description → outcome line. Tags live in the header next to the title, not below the body.
-- **Hover MP4:** every project card has a paired `<picture>` + `<video>` element. Static WebP/PNG is the default; the muted, looping MP4 fades in on hover (260ms ease). The MP4 is declared with `<link rel="prefetch">` (never `preload`) in the page head so it does not compete with initial render.
+- **Structure:** a quiet `Work` label over a hairline, then one `<li>` per piece, each divided by a 1px Drafting Line rule. Rows are `display: grid` on `88px 1fr auto` with named areas — year rail, title over subtitle, company.
+- **Year rail:** the year prints only on the first row of each year block; repeats keep the year in the accessibility tree via `.visually-hidden` and leave the column visually empty. Marginalia Gray, tabular numerals.
+- **Title:** Workshop Ink at 14px / 400. The whole row is the link, and the title is the only thing at full contrast — that is what makes the list scannable.
+- **Subtitle (`.worklist-desc`):** one line under the title saying what the piece is. Marginalia Gray at 13px / 300. Keep it under ~70 characters so it stays on one line at the 800px measure.
+- **Company:** Marginalia Gray at 13px / 300, right-aligned, matching the subtitle exactly. It is the only place the employer is named, which is why the list needs no per-company headings.
+- **The one-voice rule:** subtitle and company share a size, weight, and color. If one of them drifts, the row grows a third level of hierarchy it does not need.
+- **Hover:** the row fills with `#F0F1F5` — the same tone `.hero-status-active` uses for the current role, so the work list and the hero role list read as one system. No shadow, no scale, no glow.
+- **Measure:** the full `--page-max` column (700px on the index), sharing both edges with the hero above it. Under 800px the year rail collapses and the year rides above the title.
+
+### Work Preview (`.work-preview`)
+A single fixed element that follows the cursor while a work row is hovered, showing that case study's cover.
+
+- **Chrome:** built on the `.globe-tooltip` vocabulary — Page White, 1px Drafting Line border, 12px radius, soft ambient shadow, `pointer-events: none`, 120ms opacity fade. The two floating objects on the index deliberately match.
+- **Media:** a poster `<img>` at 16:10 with a muted, looping MP4 stacked on top. The video crossfades in only on its `playing` event, so a cold hover never fades an empty box over the poster. Pieces with no video (the Demandbase and UCSD archive) show the poster alone.
+- **Sources:** declared per row as `data-preview-poster` and optional `data-preview-video`. MP4s and archive stills are declared with `<link rel="prefetch">` in the page head — never `preload`.
+- **Constraints:** bound only under `(hover: hover) and (pointer: fine)`, so touch never triggers it. Position is clamped to the viewport and flips to the other side of the cursor near an edge. Keyboard focus shows the same preview anchored to the row. Under `prefers-reduced-motion: reduce` the video is skipped entirely and the poster stands alone.
 
 ### Pill Nav (`.pill-nav`) — signature
-- **Position:** `position: fixed; top: 24px; right: var(--page-gutter)`. The right edge aligns with the content column's right edge at any screen width.
+- **Position:** `position: fixed; top: 24px`. On the shell pages (index, About) the pill also carries the logo and the time pill, and `\.pill-nav:has(.nav-logo)` centres it horizontally. Case-study pages keep their standalone top-left logo and centred clock, so their pill stays pinned to `right: var(--page-gutter)` — centring it there would drop the pill on top of the fixed clock.
+- **Contents (shell pages), left to right:** logo + name · clock · Work/About slider · LinkedIn · Email me, divided by `.pill-sep` hairlines. `.pill-nav .nav-logo` and `.pill-nav .time-container` override the standalone fixed positioning back to `position: static`; the clock's scroll-driven `.hidden` / `.visible` states are neutralised there too, since the pill never retracts.
 - **Container:** Page White background, 1px Drafting Line border, fully rounded (100px), 4px padding, Pill Float shadow.
 - **Slider:** Press Sheet track, 100px radius, 3px padding, 2px gap between tabs.
 - **Tab (`.pill-tab`):** 14px / 400, Marginalia Gray default, 6px×14px padding, 100px radius. Active tab: Page White background, Primary Text label, 500 weight, Pill Tab Active shadow.
@@ -250,9 +261,10 @@ Shadows appear only on floating elements: the fixed pill nav, the active pill ta
 - **Section flow:** every case-study page follows the same seven-step section vocabulary — Context → Problem → Research → Ideation → Solution → Prototype → Conclusion. Do not invent new section names per case study; the consistency is the point.
 
 ### Hero (index)
-- **Layout:** two-column flex row (`.hero-row`, 40px gap). Left 50% carries the tagline and the work history; right column is the halftone globe canvas.
-- **Tagline (`.hero-tagline`):** Regola 20px / 500, line-height 1.35, max-width 600px, 32px bottom margin.
-- **Work history (`.hero-status`):** a stacked, two-column row per role. Active role is Primary Text; past roles are Marginalia Gray.
+- **Layout:** a single stacked column (`.hero-row`, 40px gap): the halftone globe sits on top, horizontally centred in the column, with the tagline and work history left-aligned under it. Everything spans the full `--page-max` measure — the hero, the work list, and the contact block share one left and one right edge.
+- **Tagline (`.hero-tagline`):** Regola 20px / 500, line-height 1.35, full column width, 32px bottom margin.
+- **Work history (`.hero-status`):** a stacked, two-column row per role, current role first. Exactly one row carries `.hero-status-active` (`#F0F1F5` fill, Primary Text); every past role is Marginalia Gray. When the current role changes, move the class — do not leave two rows reading as "Now".
+- **Company marks (`.hero-status-logo`):** a 16×16 logo with a 4px radius sits before each name, `object-fit: contain` inside an 8px gap. Decorative only — `alt=""`, because the company is already named in the text beside it. A role with no logo on file gets `.hero-status-logo-blank`, an empty slot of the same size, so every name keeps one left edge; never drop the element or the column ragged-edges.
 
 ### Halftone Globe (signature, index hero)
 A canvas-rendered dotted globe sourced from `js/land-110m.json` + `js/land-dots.js`. Slowly rotating, monochrome dot-map. The single most ambitious decorative element in the system. Treat as immutable — it's part of the brand at this point.
@@ -261,7 +273,7 @@ A canvas-rendered dotted globe sourced from `js/land-110m.json` + `js/land-dots.
 Draggable Polaroid-card scrapbook. Real photos in tilted card frames. Personality carrier on the About page; do not reuse on case-study pages.
 
 ### Time Pill (`.time-container`) — signature
-The real-time clock with time-of-day emoji that lives in the header. Updates client-side, every minute. The emoji rotates through time-of-day glyphs. Specific to Ishaan; do not abstract into a reusable "live status" component.
+The real-time clock with time-of-day emoji. On the shell pages it sits inside the pill nav; on case-study pages it floats centred below the top edge and retracts on scroll. Updates client-side, every minute. The emoji rotates through time-of-day glyphs. Specific to Ishaan; do not abstract into a reusable "live status" component.
 
 ## 6. Do's and Don'ts
 
@@ -269,15 +281,15 @@ The real-time clock with time-of-day emoji that lives in the header. Updates cli
 - **Do** use the `--page-max: 1160px` content column on every new page. The shared column is what holds the system together.
 - **Do** anchor the pill nav and the section-nav to `--page-gutter` so they align with the content column at every screen width.
 - **Do** keep Signal Blue (`#3478FF`) as the one chromatic accent in the shell. Use it for links and focus rings only.
-- **Do** declare hover MP4s with `<link rel="prefetch">` in the page head. Never `preload` — it competes with initial render.
+- **Do** declare hover media (MP4s and archive stills) with `<link rel="prefetch">` in the page head. Never `preload` — it competes with initial render.
 - **Do** test new copy at every breakpoint. Long headline words plus the 48px display scale will overflow narrow grids; reduce the clamp or rewrite the copy.
 - **Do** match Regola weight 100 for body, 300 for h4, 400 for labels, 500 for hero/cta, 600 for h3. Do not invent in-between weights.
 - **Do** use HTML entities for typographic punctuation (`&lsquo;`, `&ndash;`, `&middot;`).
 - **Do** carry the seven-section flow (Context → Problem → Research → Ideation → Solution → Prototype → Conclusion) on every case study.
-- **Do** ship a `@media (prefers-reduced-motion: reduce)` alternative for every animation — hover MP4s, the halftone globe, polaroids, scroll-spy.
+- **Do** ship a `@media (prefers-reduced-motion: reduce)` alternative for every animation — the work preview's video, the halftone globe, polaroids, scroll-spy, section reveals.
 
 ### Don't:
-- **Don't** drift into Y2K / brutalist / maximalist designer-showcase aesthetics. The audience is senior hiring managers, not Awwwards judges.
+- **Don't** drift into Y2K / brutalist / maximalist designer-showcase aesthetics. The site is a reading surface, not an Awwwards entry.
 - **Don't** ship anything that reads as a generic Webflow / Framer template — no templated dark hero, no reflexive scroll-reveals on every section, no Inter as a "safe" pairing.
 - **Don't** use `border-left` or `border-right` greater than 1px as a colored stripe on cards, callouts, or alerts. Banned.
 - **Don't** use gradient text (`background-clip: text`). Banned.
